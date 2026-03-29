@@ -14,9 +14,3 @@ texture = ExtResource("1_wcsa2")
 [node name="AttackScript" type="Node" parent="." unique_id=948159779]
 unique_name_in_owner = true
 script = ExtResource("3_kx4vt")
-
-[node name="Timer" type="Timer" parent="AttackScript" unique_id=1818193049]
-wait_time = 3.0
-one_shot = true
-
-[connection signal="timeout" from="AttackScript/Timer" to="AttackScript" method="_on_timer_timeout"]

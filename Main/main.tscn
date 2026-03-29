@@ -21,6 +21,7 @@ unique_name_in_owner = true
 script = ExtResource("3_eunhr")
 
 [node name="Minion" parent="MinionManager" unique_id=1804796180 instance=ExtResource("2_qvhan")]
+z_index = 1
 position = Vector2(428, 370)
 
 [node name="Minions" type="HBoxContainer" parent="MinionManager" unique_id=1168177660]

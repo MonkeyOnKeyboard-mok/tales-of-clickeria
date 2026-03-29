@@ -4,22 +4,28 @@ class_name AttackComponent
 ## consts
 ## exports
 ## public vars
+var base_damage : int = 1
+var current_target : Node2D = null
 ## private vars
-var target : Node2D = null
 ## onready vars
+@onready var attack_timer: Timer = $Timer
 # "obj_" for node references;
 ## built-in override methods
 
 func _ready() -> void:
-	_new_target()
+	pass
 
 func _process(_delta: float) -> void:
 	pass
 
 ## public methods
-
+func minion_attack(enemy) -> void:
+	current_target = enemy
+	enemy.lifeBar.take_damage(1)
+	print("El minion hizo daño")
+	attack_timer.start()
 ## private methods
 
-func _new_target() -> void:
-	target = get_tree().get_first_node_in_group("enemy")
-	print(target)
+
+func _on_timer_timeout() -> void:
+	minion_attack(current_target)
