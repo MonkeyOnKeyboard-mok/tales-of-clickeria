@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b8hthhw0wyov"]
+
+[ext_resource type="Texture2D" uid="uid://bwp6jousxhbw7" path="res://Main/Minions/chess-chimp.png" id="1_wcsa2"]
+[ext_resource type="Script" uid="uid://b62d5db8wpdft" path="res://Main/Minions/minion.gd" id="1_wgde4"]
+[ext_resource type="Script" uid="uid://cxwj28ev8hbnf" path="res://Main/Minions/attack_script.gd" id="3_kx4vt"]
+
+[node name="Minion" type="Node2D" unique_id=1804796180]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_wgde4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=621908551]
+texture = ExtResource("1_wcsa2")
+
+[node name="AttackScript" type="Node" parent="." unique_id=948159779]
+unique_name_in_owner = true
+script = ExtResource("3_kx4vt")

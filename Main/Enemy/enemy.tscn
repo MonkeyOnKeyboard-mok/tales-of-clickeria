@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bboyklv1jcrnt"]
+
+[ext_resource type="Script" uid="uid://defngvidp2kdu" path="res://Main/Enemy/enemy.gd" id="1_svo2v"]
+[ext_resource type="PackedScene" uid="uid://cu1egge4kvlo8" path="res://Components/HealthBar/progress_bar.tscn" id="2_svo2v"]
+[ext_resource type="Texture2D" uid="uid://d1uv54oarno0" path="res://Main/Enemy/kare-design-monkey-gorilla-figure-medium-w-300-h-385-d-280-mm-black--kare-60465_3.jpg" id="3_jskd6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jskd6"]
+size = Vector2(136, 136)
+
+[node name="Enemy" type="Node2D" unique_id=534595693]
+script = ExtResource("1_svo2v")
+
+[node name="HealthBar" parent="." unique_id=1483188681 groups=["enemy"] instance=ExtResource("2_svo2v")]
+unique_name_in_owner = true
+offset_left = -48.0
+offset_top = 77.0
+offset_right = 52.0
+offset_bottom = 107.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1530025120]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=616767845]
+shape = SubResource("RectangleShape2D_jskd6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=246720376]
+scale = Vector2(0.2399019, 0.2399019)
+texture = ExtResource("3_jskd6")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

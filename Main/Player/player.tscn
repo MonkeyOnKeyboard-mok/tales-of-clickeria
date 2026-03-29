@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cabsunufi42v0"]
+
+[ext_resource type="Script" uid="uid://boxabh4xebbem" path="res://Main/Player/player.gd" id="1_8hbiy"]
+[ext_resource type="PackedScene" uid="uid://cu1egge4kvlo8" path="res://Components/HealthBar/progress_bar.tscn" id="1_u6saw"]
+
+[node name="Player" type="Node2D" unique_id=1417812519]
+script = ExtResource("1_8hbiy")
+
+[node name="ProgressBar" parent="." unique_id=1483188681 instance=ExtResource("1_u6saw")]
+custom_minimum_size = Vector2(60, 250)
+offset_left = -13.0
+offset_top = -107.0
+offset_right = 17.0
+offset_bottom = 143.0
+fill_mode = 1
+
+[node name="PlayerHealth" type="Label" parent="." unique_id=1597409113]
+offset_left = -33.0
+offset_top = -138.0
+offset_right = 7.0
+offset_bottom = -115.0

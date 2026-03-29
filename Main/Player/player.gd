@@ -1,0 +1,21 @@
+extends Node
+## enums
+## consts
+## exports
+## public vars
+## private vars
+## onready vars
+@onready var player_health: Label = $PlayerHealth
+
+# "obj_" for node references;
+## built-in override methods
+
+func _ready() -> void:
+	player_health.text = "Player Health: "
+
+func _process(_delta: float) -> void:
+	pass
+
+## public methods
+
+## private methods

@@ -1,22 +1,81 @@
 [gd_scene format=3 uid="uid://dekvsha1jjdtp"]
 
+[ext_resource type="Script" uid="uid://lavhxrtdf0q2" path="res://Main/main.gd" id="1_k3v36"]
+[ext_resource type="PackedScene" uid="uid://bboyklv1jcrnt" path="res://Main/Enemy/enemy.tscn" id="1_yh5la"]
+[ext_resource type="PackedScene" uid="uid://cabsunufi42v0" path="res://Main/Player/player.tscn" id="2_2w1kt"]
+[ext_resource type="PackedScene" uid="uid://b8hthhw0wyov" path="res://Main/Minions/minion.tscn" id="2_qvhan"]
+[ext_resource type="Script" uid="uid://dahdgirdrj3jh" path="res://Main/Minions/minion_container.gd" id="3_eunhr"]
+
 [node name="Main" type="Node2D" unique_id=1222045523]
+script = ExtResource("1_k3v36")
+
+[node name="Enemy" parent="." unique_id=534595693 instance=ExtResource("1_yh5la")]
+z_index = 4
+position = Vector2(558, 150)
+
+[node name="Player" parent="." unique_id=1417812519 instance=ExtResource("2_2w1kt")]
+position = Vector2(1018, 157)
+
+[node name="MinionManager" type="Node2D" parent="." unique_id=2037279204]
+unique_name_in_owner = true
+script = ExtResource("3_eunhr")
+
+[node name="Minion" parent="MinionManager" unique_id=1804796180 instance=ExtResource("2_qvhan")]
+position = Vector2(428, 370)
+
+[node name="Minions" type="HBoxContainer" parent="MinionManager" unique_id=1168177660]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.37
+anchor_right = 0.5
+anchor_bottom = 0.37
+offset_left = 407.0
+offset_top = 350.0
+offset_right = 717.0
+offset_bottom = 390.0
+mouse_filter = 2
+theme_override_constants/separation = 50
+
+[node name="ColorRect" type="ColorRect" parent="MinionManager/Minions" unique_id=2032518908]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="ColorRect2" type="ColorRect" parent="MinionManager/Minions" unique_id=2094265506]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="ColorRect3" type="ColorRect" parent="MinionManager/Minions" unique_id=678653736]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="ColorRect4" type="ColorRect" parent="MinionManager/Minions" unique_id=205809116]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
 
 [node name="UIContainer" type="Control" parent="." unique_id=1660199315]
+z_index = -1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1153.0
 offset_bottom = 647.0
+mouse_filter = 2
 
 [node name="MainLayout" type="VBoxContainer" parent="UIContainer" unique_id=1979908562]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 1000.0
+mouse_filter = 2
 theme_override_constants/separation = 0
 
 [node name="Enemy" type="ColorRect" parent="UIContainer/MainLayout" unique_id=587117373]
 custom_minimum_size = Vector2(0, 323)
 layout_mode = 2
+mouse_filter = 2
 color = Color(0.54509807, 0, 0, 0.30588236)
 
 [node name="Minions" type="ColorRect" parent="UIContainer/MainLayout" unique_id=2126235408]
@@ -36,12 +95,13 @@ anchor_left = 0.5
 anchor_top = 0.37
 anchor_right = 0.5
 anchor_bottom = 0.37
-offset_left = -50.0
-offset_top = -51.550003
-offset_right = 50.0
-offset_bottom = 48.449997
+offset_left = -312.5
+offset_top = -56.550003
+offset_right = 312.5
+offset_bottom = 43.449997
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 75
 
 [node name="ColorRect" type="ColorRect" parent="UIContainer/MainLayout/Player/Abilities" unique_id=1063128050]
@@ -72,10 +132,11 @@ anchor_left = 0.5
 anchor_top = 0.37
 anchor_right = 0.5
 anchor_bottom = 0.37
-offset_left = -512.0
+offset_left = -312.0
 offset_top = 72.45
-offset_right = -432.0
+offset_right = -122.0
 offset_bottom = 112.45
+mouse_filter = 2
 theme_override_constants/separation = 10
 
 [node name="ColorRect" type="ColorRect" parent="UIContainer/MainLayout/Player/Passives" unique_id=1782229328]
