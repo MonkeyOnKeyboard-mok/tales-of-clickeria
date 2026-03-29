@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://dekvsha1jjdtp"]
+
+[node name="Main" type="Node2D" unique_id=1222045523]
+
+[node name="UIContainer" type="Control" parent="." unique_id=1660199315]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="MainLayout" type="VBoxContainer" parent="UIContainer" unique_id=1979908562]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 1000.0
+theme_override_constants/separation = 0
+
+[node name="Enemy" type="ColorRect" parent="UIContainer/MainLayout" unique_id=587117373]
+custom_minimum_size = Vector2(0, 323)
+layout_mode = 2
+color = Color(0.54509807, 0, 0, 0.30588236)
+
+[node name="Minions" type="ColorRect" parent="UIContainer/MainLayout" unique_id=2126235408]
+custom_minimum_size = Vector2(0, 108)
+layout_mode = 2
+color = Color(0, 0.5647059, 0, 0.20784314)
+
+[node name="Player" type="ColorRect" parent="UIContainer/MainLayout" unique_id=2060088778]
+custom_minimum_size = Vector2(0, 215)
+layout_mode = 2
+color = Color(0, 0, 0.30673096, 0.3882353)
+
+[node name="Abilities" type="HBoxContainer" parent="UIContainer/MainLayout/Player" unique_id=688663333]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.37
+anchor_right = 0.5
+anchor_bottom = 0.37
+offset_left = -50.0
+offset_top = -51.550003
+offset_right = 50.0
+offset_bottom = 48.449997
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 75
+
+[node name="ColorRect" type="ColorRect" parent="UIContainer/MainLayout/Player/Abilities" unique_id=1063128050]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="ColorRect2" type="ColorRect" parent="UIContainer/MainLayout/Player/Abilities" unique_id=950311949]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="ColorRect3" type="ColorRect" parent="UIContainer/MainLayout/Player/Abilities" unique_id=85990262]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="ColorRect4" type="ColorRect" parent="UIContainer/MainLayout/Player/Abilities" unique_id=2098509608]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="Passives" type="HBoxContainer" parent="UIContainer/MainLayout/Player" unique_id=176079483]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.37
+anchor_right = 0.5
+anchor_bottom = 0.37
+offset_left = -512.0
+offset_top = 72.45
+offset_right = -432.0
+offset_bottom = 112.45
+theme_override_constants/separation = 10
+
+[node name="ColorRect" type="ColorRect" parent="UIContainer/MainLayout/Player/Passives" unique_id=1782229328]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="ColorRect2" type="ColorRect" parent="UIContainer/MainLayout/Player/Passives" unique_id=1806447496]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="ColorRect3" type="ColorRect" parent="UIContainer/MainLayout/Player/Passives" unique_id=879154683]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="ColorRect4" type="ColorRect" parent="UIContainer/MainLayout/Player/Passives" unique_id=2119519351]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
