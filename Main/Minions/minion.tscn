@@ -3,10 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://bwp6jousxhbw7" path="res://Main/Minions/chess-chimp.png" id="1_wcsa2"]
 [ext_resource type="Script" uid="uid://b62d5db8wpdft" path="res://Main/Minions/minion.gd" id="1_wgde4"]
 [ext_resource type="Script" uid="uid://cxwj28ev8hbnf" path="res://Main/Minions/attack_script.gd" id="3_kx4vt"]
+[ext_resource type="Script" uid="uid://b2t0lnaaglegb" path="res://Main/Minions/minion_stats.gd" id="4_kx4vt"]
+
+[sub_resource type="Resource" id="Resource_kx4vt"]
+script = ExtResource("4_kx4vt")
+metadata/_custom_type_script = "uid://b2t0lnaaglegb"
 
 [node name="Minion" type="Node2D" unique_id=1804796180]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_wgde4")
+stats = SubResource("Resource_kx4vt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=621908551]
 texture = ExtResource("1_wcsa2")
@@ -18,5 +24,8 @@ script = ExtResource("3_kx4vt")
 [node name="Timer" type="Timer" parent="AttackScript" unique_id=1818193049]
 wait_time = 3.0
 one_shot = true
+
+[node name="Stats" type="Node" parent="." unique_id=345543992]
+unique_name_in_owner = true
 
 [connection signal="timeout" from="AttackScript/Timer" to="AttackScript" method="_on_timer_timeout"]

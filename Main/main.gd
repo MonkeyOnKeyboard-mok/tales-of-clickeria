@@ -28,9 +28,10 @@ func spawn_enemy() -> void:
 	print("monono spawned")
 	minions.set_new_target(current_enemy)
 	
-func spawn_minion() -> void:
+func spawn_minion(type : UnitStats) -> void:
 	var minion_instance = MINION.instantiate()
 	minions.add_child(minion_instance)
+	minion_instance.stats = type
 	minions.arrange_children()
 	print(minion_instance.global_position)
 	print("minion spawned")

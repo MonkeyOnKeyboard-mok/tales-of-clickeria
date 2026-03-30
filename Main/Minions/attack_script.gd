@@ -2,6 +2,7 @@ extends Node
 class_name AttackComponent
 ## enums
 ## consts
+const PROJECTILE = preload("uid://bcpb5orwfprdb")
 ## exports
 ## public vars
 var base_damage : int = 1
@@ -19,13 +20,24 @@ func _process(_delta: float) -> void:
 	pass
 
 ## public methods
-func minion_attack(enemy) -> void:
+#func minion_attack(enemy) -> void:  ## Original
+	#current_target = enemy
+	#current_target.lifeBar.take_damage(1)
+	#print("El minion hizo daño")
+	#attack_timer.start()
+	
+func minion_attack(enemy) -> void:  ## Version con proyectil
+	var projectile = PROJECTILE.instantiate()
+	projectile.global_position = get_parent().global_position
 	current_target = enemy
-	current_target.lifeBar.take_damage(1)
-	print("El minion hizo daño")
-	attack_timer.start()
-## private methods
+	var direction = (current_target.global_position - get_parent().global_position).normalized()
+	projectile.direction = direction
+	add_child(projectile)
+	projectile.anim.play(get_parent().stats.damage_type)
+	print("El minion tiró un camotito")
+	attack_timer.start(get_parent().stats.attack_speed)
 
+## private methods
 
 func _on_timer_timeout() -> void:
 	minion_attack(current_target)

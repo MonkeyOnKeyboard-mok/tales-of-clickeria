@@ -11,8 +11,7 @@ extends Node
 ## built-in override methods
 
 func _ready() -> void:
-	add_to_group("enemy")
-	#get_parent().enemy_spawned(self) # BORRAR
+	pass
 
 func _process(_delta: float) -> void:
 	pass
@@ -20,7 +19,6 @@ func _process(_delta: float) -> void:
 ## public methods
 
 ## private methods
-
 
 func _on_area_2d_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:

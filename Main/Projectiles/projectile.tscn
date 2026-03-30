@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bcpb5orwfprdb"]
+
+[ext_resource type="Texture2D" uid="uid://cmbg5dcxancmh" path="res://Main/Projectiles/LightEffects/LightEffect_01.png" id="1_krxqh"]
+[ext_resource type="Script" uid="uid://c0efgssi1styg" path="res://Main/Projectiles/projectile.gd" id="1_pvlp7"]
+[ext_resource type="Texture2D" uid="uid://cmwxckqysuhd3" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_01.png" id="2_ey74j"]
+[ext_resource type="Texture2D" uid="uid://ck318nbdfiady" path="res://Main/Projectiles/LightEffects/LightEffect_02.png" id="2_pvlp7"]
+[ext_resource type="Texture2D" uid="uid://b3iclpi83u4q0" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_02.png" id="3_8mxdl"]
+[ext_resource type="Texture2D" uid="uid://c5r7y1dpt4qjk" path="res://Main/Projectiles/LightEffects/LightEffect_03.png" id="3_32jmy"]
+[ext_resource type="Texture2D" uid="uid://c7m84btqlvswi" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_03.png" id="4_2aon7"]
+[ext_resource type="Texture2D" uid="uid://barw3d6vjbidp" path="res://Main/Projectiles/LightEffects/LightEffect_04.png" id="4_v6pwx"]
+[ext_resource type="Texture2D" uid="uid://i8t36nunkk7d" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_04.png" id="5_fvxr2"]
+[ext_resource type="Texture2D" uid="uid://b3u2qiig8luem" path="res://Main/Projectiles/LightEffects/LightEffect_05.png" id="5_ydsla"]
+[ext_resource type="Texture2D" uid="uid://cr3mu77hfca0s" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_05.png" id="6_c67rq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpiix"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("2_ey74j")
+}, {
+"duration": 0.8,
+"texture": ExtResource("3_8mxdl")
+}, {
+"duration": 0.8,
+"texture": ExtResource("4_2aon7")
+}, {
+"duration": 0.8,
+"texture": ExtResource("5_fvxr2")
+}, {
+"duration": 0.8,
+"texture": ExtResource("6_c67rq")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": ExtResource("1_krxqh")
+}, {
+"duration": 0.3,
+"texture": ExtResource("2_pvlp7")
+}, {
+"duration": 0.3,
+"texture": ExtResource("3_32jmy")
+}, {
+"duration": 0.3,
+"texture": ExtResource("4_v6pwx")
+}, {
+"duration": 0.3,
+"texture": ExtResource("5_ydsla")
+}],
+"loop": false,
+"name": &"light",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_32jmy"]
+
+[node name="Projectile" type="CharacterBody2D" unique_id=981540825]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_pvlp7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1107616421]
+rotation = -1.5707964
+sprite_frames = SubResource("SpriteFrames_jpiix")
+animation = &"fire"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2036603231]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1175681738]
+scale = Vector2(2.2376597, 2.0830698)
+shape = SubResource("CircleShape2D_32jmy")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

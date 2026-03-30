@@ -15,7 +15,8 @@ offset_bottom = 143.0
 fill_mode = 1
 
 [node name="PlayerHealth" type="Label" parent="." unique_id=1597409113]
-offset_left = -33.0
-offset_top = -138.0
-offset_right = 7.0
-offset_bottom = -115.0
+offset_left = -39.0
+offset_top = -135.0
+offset_right = 70.0
+offset_bottom = -112.0
+text = "Player Health:"

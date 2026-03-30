@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://bg5nnqgeloj4y"]
+
+[ext_resource type="Script" uid="uid://b2t0lnaaglegb" path="res://Main/Minions/minion_stats.gd" id="1_uf1jn"]
+
+[resource]
+script = ExtResource("1_uf1jn")
+base_damage = 1.0
+damage_type = "light"
+crit_chance = 1.0
+attack_speed = 2.0
+metadata/_custom_type_script = "uid://b2t0lnaaglegb"

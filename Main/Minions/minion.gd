@@ -2,6 +2,7 @@ extends Node
 ## enums
 ## consts
 ## exports
+@export var stats : UnitStats 
 ## public vars
 var target : Node2D = null
 ## private vars

@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dq8jdyv371hu5"]
+
+[ext_resource type="Texture2D" uid="uid://bwp6jousxhbw7" path="res://Main/Minions/chess-chimp.png" id="1_60qt2"]
+[ext_resource type="Script" uid="uid://kwsgbjh26k2v" path="res://Main/Shop/shop.gd" id="1_rafwt"]
+[ext_resource type="Texture2D" uid="uid://bamtcc6sauohu" path="res://Main/Shop/animation_1-9.png" id="3_hqijh"]
+[ext_resource type="Texture2D" uid="uid://dn8pva60h306g" path="res://Main/Shop/animation_1-8.png" id="4_vwf2g"]
+
+[node name="Shop" type="Control" unique_id=623432963]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rafwt")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=960699991]
+z_index = 1
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 300.0
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 51
+columns = 3
+
+[node name="MinionFuego" type="TextureButton" parent="GridContainer" unique_id=1275999442]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("1_60qt2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GridContainer/MinionFuego" unique_id=584724045]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 56.0
+offset_right = 67.0
+offset_bottom = 131.0
+text = "  Mono 
+de fuego
+     $5"
+
+[node name="MinionLuz" type="TextureButton" parent="GridContainer" unique_id=1723744708]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("1_60qt2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GridContainer/MinionLuz" unique_id=590246935]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 56.0
+offset_right = 72.0
+offset_bottom = 131.0
+text = " Mono
+de luz
+   $5
+     "
+
+[node name="Label" type="Label" parent="." unique_id=1390789570]
+layout_mode = 0
+offset_left = 77.0
+offset_top = -30.0
+offset_right = 117.0
+offset_bottom = -7.0
+text = "Shop"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1099836972]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(5.0096025, 7.521226)
+mouse_filter = 2
+color = Color(1, 1, 1, 0.4745098)
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=139421506]
+layout_mode = 0
+offset_left = -34.0
+offset_top = 171.0
+offset_right = 16.0
+offset_bottom = 221.0
+rotation = -1.5707964
+scale = Vector2(1, 0.71999985)
+texture_normal = ExtResource("3_hqijh")
+texture_pressed = ExtResource("4_vwf2g")
+
+[connection signal="pressed" from="GridContainer/MinionFuego" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="GridContainer/MinionLuz" to="." method="_on_minion_luz_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_arrow_pressed"]

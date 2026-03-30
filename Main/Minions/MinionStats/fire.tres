@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://c6758l4ovsyf1"]
+
+[ext_resource type="Script" uid="uid://b2t0lnaaglegb" path="res://Main/Minions/minion_stats.gd" id="1_m3874"]
+[ext_resource type="Texture2D" uid="uid://cmwxckqysuhd3" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_01.png" id="2_tlbh0"]
+[ext_resource type="Texture2D" uid="uid://b3iclpi83u4q0" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_02.png" id="3_csm8q"]
+[ext_resource type="Texture2D" uid="uid://c7m84btqlvswi" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_03.png" id="4_77687"]
+[ext_resource type="Texture2D" uid="uid://i8t36nunkk7d" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_04.png" id="5_eaixi"]
+[ext_resource type="Texture2D" uid="uid://cr3mu77hfca0s" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_05.png" id="6_4ercm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3snon"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tlbh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_csm8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_77687")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eaixi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4ercm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_m3874")
+base_damage = 2.0
+damage_type = "fire"
+attack_speed = 3.0
+sprites = SubResource("SpriteFrames_3snon")
+metadata/_custom_type_script = "uid://b2t0lnaaglegb"

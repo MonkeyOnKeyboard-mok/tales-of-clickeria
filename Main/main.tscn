@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cabsunufi42v0" path="res://Main/Player/player.tscn" id="2_2w1kt"]
 [ext_resource type="Script" uid="uid://dahdgirdrj3jh" path="res://Main/Minions/minion_container.gd" id="3_eunhr"]
 [ext_resource type="PackedScene" uid="uid://bvftv4jsopgv6" path="res://Main/Debugger/debugger.tscn" id="5_k3v36"]
+[ext_resource type="PackedScene" uid="uid://dq8jdyv371hu5" path="res://Main/Shop/shop.tscn" id="5_liyct"]
 
 [node name="Main" type="Node2D" unique_id=1222045523]
 script = ExtResource("1_k3v36")
@@ -123,3 +124,10 @@ offset_left = 44.0
 offset_top = 37.0
 offset_right = 44.0
 offset_bottom = 37.0
+
+[node name="Shop" parent="." unique_id=623432963 instance=ExtResource("5_liyct")]
+z_index = 4
+offset_left = 1136.0
+offset_top = 326.0
+offset_right = 1136.0
+offset_bottom = 326.0
