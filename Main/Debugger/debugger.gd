@@ -3,10 +3,8 @@ extends Node
 ## consts
 ## exports
 ## public vars
-var target : Node2D = null
 ## private vars
 ## onready vars
-@onready var attack : AttackComponent = %AttackScript
 # "obj_" for node references;
 ## built-in override methods
 
@@ -18,8 +16,12 @@ func _process(_delta: float) -> void:
 
 ## public methods
 
-func new_target(enemy: Node2D) -> void:
-	print("minion target: ", enemy)
-	attack.minion_attack(enemy)
-	
 ## private methods
+
+
+func _on_button_pressed() -> void:
+	get_parent().spawn_enemy()
+
+
+func _on_minion_spawner_pressed() -> void:
+	get_parent().spawn_minion()

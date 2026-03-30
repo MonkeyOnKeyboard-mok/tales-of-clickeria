@@ -1,10 +1,13 @@
 extends Node
 ## enums
 ## consts
+const ENEMY = preload("uid://bboyklv1jcrnt")
+const MINION = preload("uid://b8hthhw0wyov")
 ## exports
 ## public vars
 var current_enemy : Node2D = null
 ## private vars
+var enemy_position: Vector2 = Vector2(576,160)
 ## onready vars
 @onready var minions: MinionManager = %MinionManager
 # "obj_" for node references;
@@ -17,8 +20,19 @@ func _process(_delta: float) -> void:
 	pass
 
 ## public methods
-func enemy_spawned(enemy: Node2D) -> void:
-	current_enemy = enemy
+func spawn_enemy() -> void:
+	var enenmy_instance = ENEMY.instantiate()
+	add_child(enenmy_instance)
+	enenmy_instance.global_position = enemy_position
+	current_enemy = enenmy_instance
 	print("monono spawned")
+	minions.set_new_target(current_enemy)
 	
+func spawn_minion() -> void:
+	var minion_instance = MINION.instantiate()
+	minions.add_child(minion_instance)
+	minions.arrange_children()
+	print(minion_instance.global_position)
+	print("minion spawned")
+
 ## private methods

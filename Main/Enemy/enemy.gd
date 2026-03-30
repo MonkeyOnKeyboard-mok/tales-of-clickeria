@@ -1,5 +1,4 @@
 extends Node
-#signal enemy_spawned
 ## enums
 ## consts
 ## exports
@@ -13,7 +12,7 @@ extends Node
 
 func _ready() -> void:
 	add_to_group("enemy")
-	get_parent().enemy_spawned(self)
+	#get_parent().enemy_spawned(self) # BORRAR
 
 func _process(_delta: float) -> void:
 	pass

@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 ## public methods
 func minion_attack(enemy) -> void:
 	current_target = enemy
-	enemy.lifeBar.take_damage(1)
+	current_target.lifeBar.take_damage(1)
 	print("El minion hizo daño")
 	attack_timer.start()
 ## private methods

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://lavhxrtdf0q2" path="res://Main/main.gd" id="1_k3v36"]
 [ext_resource type="PackedScene" uid="uid://cabsunufi42v0" path="res://Main/Player/player.tscn" id="2_2w1kt"]
+[ext_resource type="PackedScene" uid="uid://b8hthhw0wyov" path="res://Main/Minions/minion.tscn" id="2_qvhan"]
 [ext_resource type="Script" uid="uid://dahdgirdrj3jh" path="res://Main/Minions/minion_container.gd" id="3_eunhr"]
-[ext_resource type="PackedScene" uid="uid://bvftv4jsopgv6" path="res://Main/Debugger/debugger.tscn" id="5_k3v36"]
 
 [node name="Main" type="Node2D" unique_id=1222045523]
 script = ExtResource("1_k3v36")
@@ -13,8 +13,45 @@ position = Vector2(1018, 157)
 
 [node name="MinionManager" type="Node2D" parent="." unique_id=2037279204]
 unique_name_in_owner = true
-position = Vector2(572, 376)
 script = ExtResource("3_eunhr")
+
+[node name="Minion" parent="MinionManager" unique_id=1804796180 instance=ExtResource("2_qvhan")]
+z_index = 1
+position = Vector2(428, 370)
+
+[node name="Minions" type="HBoxContainer" parent="MinionManager" unique_id=1168177660]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.37
+anchor_right = 0.5
+anchor_bottom = 0.37
+offset_left = 407.0
+offset_top = 350.0
+offset_right = 717.0
+offset_bottom = 390.0
+mouse_filter = 2
+theme_override_constants/separation = 50
+
+[node name="ColorRect" type="ColorRect" parent="MinionManager/Minions" unique_id=2032518908]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="ColorRect2" type="ColorRect" parent="MinionManager/Minions" unique_id=2094265506]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="ColorRect3" type="ColorRect" parent="MinionManager/Minions" unique_id=678653736]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
+
+[node name="ColorRect4" type="ColorRect" parent="MinionManager/Minions" unique_id=205809116]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
 
 [node name="UIContainer" type="Control" parent="." unique_id=1660199315]
 z_index = -1
@@ -117,9 +154,3 @@ color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
-
-[node name="Debugger" parent="." unique_id=452095247 instance=ExtResource("5_k3v36")]
-offset_left = 44.0
-offset_top = 37.0
-offset_right = 44.0
-offset_bottom = 37.0
