@@ -3,13 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://bwp6jousxhbw7" path="res://Main/Minions/chess-chimp.png" id="1_wcsa2"]
 [ext_resource type="Script" uid="uid://b62d5db8wpdft" path="res://Main/Minions/minion.gd" id="1_wgde4"]
 [ext_resource type="Script" uid="uid://cxwj28ev8hbnf" path="res://Main/Minions/attack_script.gd" id="3_kx4vt"]
-[ext_resource type="Script" uid="uid://b2t0lnaaglegb" path="res://Main/Minions/minion_stats.gd" id="4_kx4vt"]
+[ext_resource type="Script" uid="uid://b2t0lnaaglegb" path="res://Main/Minions/MinionStats/minion_stats.gd" id="4_kx4vt"]
+[ext_resource type="Script" uid="uid://bvmvya1nqb62j" path="res://Main/Minions/dragg_and_drop.gd" id="5_t0o5w"]
 
 [sub_resource type="Resource" id="Resource_kx4vt"]
 script = ExtResource("4_kx4vt")
 metadata/_custom_type_script = "uid://b2t0lnaaglegb"
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0o5w"]
+
 [node name="Minion" type="Node2D" unique_id=1804796180]
+z_index = 4
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_wgde4")
 stats = SubResource("Resource_kx4vt")
@@ -28,4 +32,15 @@ one_shot = true
 [node name="Stats" type="Node" parent="." unique_id=345543992]
 unique_name_in_owner = true
 
+[node name="DraggAndDrop" type="Node2D" parent="." unique_id=101666223]
+scale = Vector2(0.9999998, 0.9999998)
+script = ExtResource("5_t0o5w")
+
+[node name="Area2D" type="Area2D" parent="DraggAndDrop" unique_id=1824790604]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DraggAndDrop/Area2D" unique_id=1142872222]
+scale = Vector2(19.380493, 19.8195)
+shape = SubResource("CircleShape2D_t0o5w")
+
 [connection signal="timeout" from="AttackScript/Timer" to="AttackScript" method="_on_timer_timeout"]
+[connection signal="input_event" from="DraggAndDrop/Area2D" to="DraggAndDrop" method="_on_area_2d_input_event"]

@@ -10,6 +10,7 @@ var current_enemy : Node2D = null
 var enemy_position: Vector2 = Vector2(576,160)
 ## onready vars
 @onready var minions: MinionManager = %MinionManager
+@onready var player: Node2D = %Player
 # "obj_" for node references;
 ## built-in override methods
 
@@ -32,8 +33,8 @@ func spawn_minion(type : UnitStats) -> void:
 	var minion_instance = MINION.instantiate()
 	minions.add_child(minion_instance)
 	minion_instance.stats = type
-	minions.arrange_children()
-	print(minion_instance.global_position)
+	#minions.arrange_children()
+	minion_instance.global_position = Vector2(50,400)
 	print("minion spawned")
 
 ## private methods

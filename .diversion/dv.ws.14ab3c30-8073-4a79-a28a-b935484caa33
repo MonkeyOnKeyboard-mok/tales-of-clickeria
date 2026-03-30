@@ -1,0 +1,15 @@
+{
+  "WorkspaceID": "dv.ws.14ab3c30-8073-4a79-a28a-b935484caa33",
+  "RepoID": "dv.repo.f7e798de-a914-4f7b-a29a-088342e8f20b",
+  "Path": "D:\\gODOT\\Projects\\tales-of-clickeria\\tales-of-clickeria",
+  "AccountID": "Google_110593844360517930922",
+  "BranchID": "dv.branch.6",
+  "BranchName": "santi",
+  "CommitID": "dv.commit.6",
+  "Paused": false,
+  "ShouldDownload": false,
+  "RepoName": "MagiClick",
+  "ReadOnly": false,
+  "DigestMethod": "sha1",
+  "OrganizationTier": "INDIE"
+}

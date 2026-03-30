@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://c6758l4ovsyf1"]
 
-[ext_resource type="Script" uid="uid://b2t0lnaaglegb" path="res://Main/Minions/minion_stats.gd" id="1_m3874"]
+[ext_resource type="Script" uid="uid://b2t0lnaaglegb" path="res://Main/Minions/MinionStats/minion_stats.gd" id="1_m3874"]
 [ext_resource type="Texture2D" uid="uid://cmwxckqysuhd3" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_01.png" id="2_tlbh0"]
 [ext_resource type="Texture2D" uid="uid://b3iclpi83u4q0" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_02.png" id="3_csm8q"]
 [ext_resource type="Texture2D" uid="uid://c7m84btqlvswi" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_03.png" id="4_77687"]
