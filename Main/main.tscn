@@ -39,85 +39,9 @@ mouse_filter = 2
 color = Color(0.54509807, 0, 0, 0.30588236)
 
 [node name="Minions" type="ColorRect" parent="UIContainer/MainLayout" unique_id=2126235408]
-custom_minimum_size = Vector2(0, 108)
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 color = Color(0, 0.5647059, 0, 0.20784314)
-
-[node name="Player" type="ColorRect" parent="UIContainer/MainLayout" unique_id=2060088778]
-custom_minimum_size = Vector2(0, 215)
-layout_mode = 2
-color = Color(0, 0, 0.30673096, 0.3882353)
-
-[node name="Abilities" type="HBoxContainer" parent="UIContainer/MainLayout/Player" unique_id=688663333]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.37
-anchor_right = 0.5
-anchor_bottom = 0.37
-offset_left = -312.5
-offset_top = -56.550003
-offset_right = 312.5
-offset_bottom = 43.449997
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/separation = 75
-
-[node name="ColorRect" type="ColorRect" parent="UIContainer/MainLayout/Player/Abilities" unique_id=1063128050]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
-
-[node name="ColorRect2" type="ColorRect" parent="UIContainer/MainLayout/Player/Abilities" unique_id=950311949]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
-
-[node name="ColorRect3" type="ColorRect" parent="UIContainer/MainLayout/Player/Abilities" unique_id=85990262]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
-
-[node name="ColorRect4" type="ColorRect" parent="UIContainer/MainLayout/Player/Abilities" unique_id=2098509608]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
-
-[node name="Passives" type="HBoxContainer" parent="UIContainer/MainLayout/Player" unique_id=176079483]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.37
-anchor_right = 0.5
-anchor_bottom = 0.37
-offset_left = -312.0
-offset_top = 72.45
-offset_right = -122.0
-offset_bottom = 112.45
-mouse_filter = 2
-theme_override_constants/separation = 10
-
-[node name="ColorRect" type="ColorRect" parent="UIContainer/MainLayout/Player/Passives" unique_id=1782229328]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
-
-[node name="ColorRect2" type="ColorRect" parent="UIContainer/MainLayout/Player/Passives" unique_id=1806447496]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
-
-[node name="ColorRect3" type="ColorRect" parent="UIContainer/MainLayout/Player/Passives" unique_id=879154683]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
-
-[node name="ColorRect4" type="ColorRect" parent="UIContainer/MainLayout/Player/Passives" unique_id=2119519351]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-color = Color(0.7137255, 0.7137255, 0.7137255, 0.3372549)
 
 [node name="Debugger" parent="." unique_id=452095247 instance=ExtResource("5_k3v36")]
 offset_left = 44.0
