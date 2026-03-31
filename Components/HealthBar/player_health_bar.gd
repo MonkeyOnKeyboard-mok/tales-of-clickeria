@@ -1,8 +1,10 @@
 extends Node
-class_name HealthBar
+class_name PlayerHealthBar
 ## enums
 ## consts
 ## exports
+@onready var player_health2 : Label = get_node("/root/Main/Player/PlayerHealth")
+
 ## public vars
 var max_health : float = 100.0 : set = set_max_health
 var health : float: set = set_health, get = get_health
@@ -20,7 +22,6 @@ func _ready() -> void:
 	health = max_health
 	self.value = _health
 	initialized = true
-
 func _process(_delta: float) -> void:
 	pass
 
@@ -36,14 +37,16 @@ func set_max_health(new_value: float) -> void:
 func set_health(new_health: float) -> void:
 	#if new_health < health:
 		#%HappyBooSkin.hurt()
-	
 	_health = clamp(new_health, 0.0, _max_health)
 	if not initialized:
 		self.value = _health
 		return
 	var tween := create_tween().set_parallel()
 	tween.tween_property(self, "value", _health, 0.3)
-
+	tween.tween_method(
+		func(value): player_health2.text = "Health: " + str(round(value)),
+		self.value, _health, 0.3
+	)
 
 func get_health() -> float:
 	return _health
@@ -53,6 +56,5 @@ func take_damage(damage : float) -> void:
 	print("Before:", health)
 	health -= damage
 	print("After:", health)
-
 
 ## private methods

@@ -6,7 +6,7 @@ extends Node
 ## private vars
 ## onready vars
 @onready var player_health: Label = $PlayerHealth
-@onready var lifeBar: HealthBar = $ProgressBar
+@onready var lifeBar: PlayerHealthBar = $ProgressBar
 # "obj_" for node references;
 ## built-in override methods
 
