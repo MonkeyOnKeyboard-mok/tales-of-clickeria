@@ -15,6 +15,10 @@ run/main_scene="uid://dekvsha1jjdtp"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EconomiaManager="*uid://dig4b8mrq5dpi"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

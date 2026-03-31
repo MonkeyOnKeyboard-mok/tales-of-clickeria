@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dr3t3eiqpx6e4"]
+
+[ext_resource type="Script" uid="uid://c63qxy6njl7mu" path="res://Economia/tienda.gd" id="1_84viq"]
+[ext_resource type="Texture2D" uid="uid://bwriviwwedlmi" path="res://PlaceHolders/Potion.png" id="2_d1fuq"]
+[ext_resource type="Texture2D" uid="uid://clugxkq3f6us8" path="res://PlaceHolders/Wizard.png" id="3_vsh3n"]
+[ext_resource type="Texture2D" uid="uid://bos6l3u72f83k" path="res://PlaceHolders/Coin.png" id="4_vsh3n"]
+
+[node name="Tienda" type="Control" unique_id=1459333485]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.9933275)
+script = ExtResource("1_84viq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1810256925]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 82.0
+
+[node name="LabelGold" type="Label" parent="VBoxContainer" unique_id=555076214]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=2100736278]
+layout_mode = 2
+
+[node name="BuyPotion" type="Button" parent="VBoxContainer" unique_id=1029685361]
+layout_mode = 2
+icon = ExtResource("2_d1fuq")
+
+[node name="BuyWizard" type="Button" parent="VBoxContainer" unique_id=1633996024]
+layout_mode = 2
+icon = ExtResource("3_vsh3n")
+
+[node name="LabelError" type="Label" parent="VBoxContainer" unique_id=1929279823]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="GetMoney" type="Button" parent="VBoxContainer" unique_id=1053511709]
+layout_mode = 2
+icon = ExtResource("4_vsh3n")

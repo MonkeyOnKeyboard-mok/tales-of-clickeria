@@ -22,12 +22,9 @@ func _process(_delta: float) -> void:
 
 ## private methods
 
-
-
 func _on_texture_button_pressed() -> void:
 	print("button pressed")
 	get_parent().spawn_minion(FIRE)
-
 
 func _on_arrow_pressed() -> void:
 	if displayed: 
@@ -42,10 +39,6 @@ func _on_arrow_pressed() -> void:
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "global_position", final_pos, 0.15)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-
-
- 
-
 
 func _on_minion_luz_pressed() -> void:
 	print("button pressed")
