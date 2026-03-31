@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bvftv4jsopgv6" path="res://Main/Debugger/debugger.tscn" id="5_k3v36"]
 [ext_resource type="PackedScene" uid="uid://dq8jdyv371hu5" path="res://Main/Shop/shop.tscn" id="5_liyct"]
 [ext_resource type="PackedScene" uid="uid://dr3t3eiqpx6e4" path="res://Economia/tienda.tscn" id="6_liyct"]
+[ext_resource type="PackedScene" uid="uid://dbk7uae2ink4b" path="res://Main/Upgrades/upgrades.tscn" id="7_ib3t1"]
 
 [node name="Main" type="Node2D" unique_id=1222045523]
 script = ExtResource("1_k3v36")
@@ -65,3 +66,6 @@ offset_left = 17.0
 offset_top = 329.0
 offset_right = 17.0
 offset_bottom = 329.0
+
+[node name="Upgrades" parent="." unique_id=2034106112 instance=ExtResource("7_ib3t1")]
+unique_name_in_owner = true

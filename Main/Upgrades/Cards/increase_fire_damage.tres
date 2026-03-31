@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Cards" format=3 uid="uid://b3oveyu1dbm38"]
+
+[ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="1_uab0u"]
+[ext_resource type="Texture2D" uid="uid://8ikbe6ihck2u" path="res://Main/Upgrades/Cards/minionCard.png" id="1_widxw"]
+
+[resource]
+script = ExtResource("1_uab0u")
+name = "Fire Proficiency"
+description = "Increases your fire units damage by 10%"
+icon = ExtResource("1_widxw")
+effect = "increase_damage_fire"
+value = 10.0
+metadata/_custom_type_script = "uid://bghgd4mavasf6"

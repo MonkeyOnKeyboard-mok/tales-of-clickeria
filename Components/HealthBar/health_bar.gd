@@ -52,6 +52,9 @@ func take_damage(damage : float) -> void:
 	print("Damage:", damage)
 	print("Before:", health)
 	health -= damage
+	if health < 1.0:
+		get_parent().get_parent().enemy_died()
+		get_parent().queue_free()
 	print("After:", health)
 
 

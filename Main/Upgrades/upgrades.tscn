@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dbk7uae2ink4b"]
+
+[ext_resource type="Script" uid="uid://uwrkhpu511o3" path="res://Main/Upgrades/upgrade_control.gd" id="1_r4jiv"]
+[ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="2_1kii3"]
+[ext_resource type="Resource" uid="uid://hcf0x2w6s28d" path="res://Main/Upgrades/Cards/flat_fire_damage.tres" id="3_bc8dv"]
+[ext_resource type="Resource" uid="uid://b3oveyu1dbm38" path="res://Main/Upgrades/Cards/increase_fire_damage.tres" id="4_x5sk2"]
+
+[node name="Upgrades" type="CanvasLayer" unique_id=2034106112]
+
+[node name="Control" type="Control" parent="." unique_id=649635086]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r4jiv")
+upgrade_pool = Array[ExtResource("2_1kii3")]([ExtResource("3_bc8dv"), ExtResource("4_x5sk2"), ExtResource("3_bc8dv")])
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=879496888]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -365.0
+offset_right = -365.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1

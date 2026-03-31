@@ -27,4 +27,4 @@ func _on_enemy_attack() -> void:
 
 func _on_area_2d_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		lifeBar.take_damage(1)
+		lifeBar.take_damage(100)

@@ -5,12 +5,14 @@ const ENEMY = preload("uid://bboyklv1jcrnt")
 const MINION = preload("uid://b8hthhw0wyov")
 ## exports
 ## public vars
+signal enemy_just_died
 var current_enemy : Node2D = null
 ## private vars
 var enemy_position: Vector2 = Vector2(576,160)
 ## onready vars
 @onready var minions: MinionManager = %MinionManager
 @onready var player: Node2D = %Player
+@onready var cards: CanvasLayer = %Upgrades
 # "obj_" for node references;
 ## built-in override methods
 
@@ -36,5 +38,9 @@ func spawn_minion(type : UnitStats) -> void:
 	#minions.arrange_children()
 	minion_instance.global_position = Vector2(400,400)
 	print("minion spawned")
+
+func enemy_died():
+	print("ENEMY JUST DIED")
+	emit_signal("enemy_just_died")
 
 ## private methods

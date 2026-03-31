@@ -1,0 +1,32 @@
+extends Control
+
+var card: Cards
+
+@onready var icon = $Panel/texture
+@onready var name_label = $Panel/name
+@onready var desc_label = $Panel/desc
+@onready var button = $Panel/select
+
+func set_card(new_card: Cards):
+	card = new_card
+	icon.texture = card.icon
+	name_label.text = card.name
+	desc_label.text = card.description
+
+func _on_button_pressed() -> void:
+	#match card.effect:
+		#"damage":
+				#Global.playerBaseDamage += upgrade.value
+		#"armor":
+				#Global.playerBaseArmor -= 0.1
+		#"attack.speed":
+				#Global.attackCooldown -= 0.2
+	#get_parent().get_parent().hide()  # hides UpgradeUI
+	#queue_free()
+	pass
+
+
+func _on_select_pressed() -> void:
+	print("Seleccionaste la Carta: ", name_label.text)
+	get_parent().get_parent().hide()  # hides UpgradeUI
+	queue_free()
