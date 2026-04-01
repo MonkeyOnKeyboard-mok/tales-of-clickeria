@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o2en6msxm3j8"
-path="res://.godot/imported/Wizard.png-18f04d25b46d71b45f19fe22db2cab9c.ctex"
+uid="uid://bqao0xgeix62j"
+path="res://.godot/imported/mage_idle.png-d38e71ccd3b2bbea12f82c0d86021dbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PlaceHolders/Wizard.png"
-dest_files=["res://.godot/imported/Wizard.png-18f04d25b46d71b45f19fe22db2cab9c.ctex"]
+source_file="res://Main/Minions/Assets/mage_idle.png"
+dest_files=["res://.godot/imported/mage_idle.png-d38e71ccd3b2bbea12f82c0d86021dbb.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c63qxy6njl7mu" path="res://Economia/tienda.gd" id="1_84viq"]
 [ext_resource type="Texture2D" uid="uid://bwriviwwedlmi" path="res://PlaceHolders/Potion.png" id="2_d1fuq"]
-[ext_resource type="Texture2D" uid="uid://clugxkq3f6us8" path="res://PlaceHolders/Wizard.png" id="3_vsh3n"]
+[ext_resource type="Texture2D" uid="uid://o2en6msxm3j8" path="res://PlaceHolders/Wizard.png" id="3_vsh3n"]
 [ext_resource type="Texture2D" uid="uid://bos6l3u72f83k" path="res://PlaceHolders/Coin.png" id="4_vsh3n"]
 
 [node name="Tienda" type="Control" unique_id=1459333485]

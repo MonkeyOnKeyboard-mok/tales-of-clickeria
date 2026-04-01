@@ -3,6 +3,7 @@ extends Node
 ## consts
 ## exports
 @export var stats : UnitStats 
+@onready var sprite: AnimatedSprite2D = $Sprite2D
 ## public vars
 var target : Node2D = null
 ## private vars
@@ -12,10 +13,12 @@ var target : Node2D = null
 ## built-in override methods
 
 func _ready() -> void:
-	pass
+	sprite.play("idle")
 
 func _process(_delta: float) -> void:
-	pass
+	if self.global_position.x > 1152/2:
+		sprite.flip_h = false
+	else: sprite.flip_h = true
 
 ## public methods
 

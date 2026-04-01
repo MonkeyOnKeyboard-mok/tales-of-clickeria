@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o2en6msxm3j8"
-path="res://.godot/imported/Wizard.png-18f04d25b46d71b45f19fe22db2cab9c.ctex"
+uid="uid://b1j1nvjj3olhh"
+path="res://.godot/imported/mage_attack.png-5d38ffd882ee97cc06f85d43a1fc7d39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PlaceHolders/Wizard.png"
-dest_files=["res://.godot/imported/Wizard.png-18f04d25b46d71b45f19fe22db2cab9c.ctex"]
+source_file="res://Main/Minions/Assets/mage_attack.png"
+dest_files=["res://.godot/imported/mage_attack.png-5d38ffd882ee97cc06f85d43a1fc7d39.ctex"]
 
 [params]
 
