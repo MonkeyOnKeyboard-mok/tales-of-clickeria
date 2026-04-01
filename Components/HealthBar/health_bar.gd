@@ -4,21 +4,19 @@ class_name HealthBar
 ## consts
 ## exports
 ## public vars
-var max_health : float = 100.0 : set = set_max_health
+var max_health : float  : set = set_max_health
 var health : float: set = set_health, get = get_health
 var min_health : float = 0.0
-var _health := 0.0
-var _max_health := 100.0
+var _health : float
+var _max_health : float
 var initialized := false
 ## private vars
 ## onready vars
+@onready var label: Label = $Label
 # "obj_" for node references;
 ## built-in override methods
 
 func _ready() -> void:
-	max_health = 100.0
-	health = max_health
-	self.value = _health
 	initialized = true
 
 func _process(_delta: float) -> void:
@@ -38,6 +36,7 @@ func set_health(new_health: float) -> void:
 		#%HappyBooSkin.hurt()
 	
 	_health = clamp(new_health, 0.0, _max_health)
+	label.text = str(int(health))
 	if not initialized:
 		self.value = _health
 		return
@@ -52,6 +51,7 @@ func take_damage(damage : float) -> void:
 	print("Damage:", damage)
 	print("Before:", health)
 	health -= damage
+	label.text = str(int(health))
 	if health < 1.0:
 		get_parent().get_parent().enemy_died()
 		get_parent().queue_free()

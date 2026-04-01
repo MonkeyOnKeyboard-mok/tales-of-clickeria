@@ -29,16 +29,17 @@ func _process(_delta: float) -> void:
 func minion_attack(enemy) -> void:  ## Version con proyectil
 	var projectile = PROJECTILE.instantiate()
 	projectile.global_position = get_parent().global_position
-	current_target = enemy
-	var direction = (current_target.global_position - get_parent().global_position).normalized()
-	projectile.direction = direction
-	get_parent().sprite.play("attack")
-	await get_parent().sprite.animation_finished
-	add_child(projectile)
-	get_parent().sprite.play("idle")
-	projectile.anim.play(get_parent().stats.damage_type)
-	print("El minion tiró un camotito")
-	attack_timer.start(get_parent().stats.attack_speed)
+	if enemy:
+		current_target = enemy
+		var direction = (current_target.global_position - get_parent().global_position).normalized()
+		projectile.direction = direction
+		get_parent().sprite.play("attack")
+		await get_parent().sprite.animation_finished
+		add_child(projectile)
+		get_parent().sprite.play("idle")
+		projectile.anim.play(get_parent().stats.damage_type)
+		print("El minion tiró un camotito")
+		attack_timer.start(get_parent().stats.attack_speed)
 
 ## private methods
 

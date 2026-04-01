@@ -12,6 +12,7 @@ var enemy : Node2D = null
 ## onready vars
 @onready var parent = get_parent().get_parent()
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var self_destruct: Timer = $SelfDestruct
 
 # "obj_" for node references;
 ## built-in override methods
@@ -26,8 +27,10 @@ func _process(_delta: float) -> void:
 
 ## private methods
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		area.get_parent().health_bar.take_damage(parent.stats.base_damage)
 		queue_free()
+
+func _on_self_destruct_timeout() -> void:
+	queue_free()

@@ -68,7 +68,6 @@ offset_top = 329.0
 offset_right = 17.0
 offset_bottom = 329.0
 
-
 [node name="Upgrades" parent="." unique_id=2034106112 instance=ExtResource("7_ib3t1")]
 unique_name_in_owner = true
 
@@ -77,4 +76,3 @@ offset_left = 341.0
 offset_top = 9.0
 offset_right = 341.0
 offset_bottom = 9.0
-

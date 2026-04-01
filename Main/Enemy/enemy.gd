@@ -4,8 +4,8 @@ class_name Enemy
 @export var nombre_enemigo: String = "Monstruo"
 
 # Referencias a Componentes (Composición)
-@onready var level_component: LevelComponent = $LevelComponent
-@onready var health_bar: HealthBar = $HealthBar # Asumiendo que tu nodo se llama así
+@onready var level_component: LevelComponent = %LvLComponent
+@onready var health_bar: HealthBar = %HealthBar # Asumiendo que tu nodo se llama así
 
 # Estado interno (opcional, para lógica de muerte)
 var esta_vivo: bool = true
@@ -34,6 +34,7 @@ func _aplicar_nuevas_stats(nueva_salud_max: float, nuevo_dps: float, nuevas_resi
 	# Tu clase HealthBar ya maneja la animación y el clamp internamente
 	health_bar.set_max_health(nueva_salud_max)
 	health_bar.set_health(nueva_salud_max)
+	health_bar.value = nueva_salud_max
 	
 	print("[Enemy] %s actualizado. Nueva Vida Máx: %.1f" % [nombre_enemigo, nueva_salud_max])
 
@@ -75,4 +76,4 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		health_bar.take_damage(50)
+		health_bar.take_damage(1)

@@ -33,8 +33,6 @@ func _ready() -> void:
 	
 	_buscar_y_conectar_jugador()
 	
-	# Conectar la señal del timer
-	timer.timeout.connect(_on_timer_timeout)
 
 ## private methods
 
