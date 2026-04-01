@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bqao0xgeix62j" path="res://Main/Minions/Assets/mage_idle.png" id="3_t0o5w"]
 [ext_resource type="Texture2D" uid="uid://b1j1nvjj3olhh" path="res://Main/Minions/Assets/mage_attack.png" id="3_tc0qx"]
 [ext_resource type="Script" uid="uid://b2t0lnaaglegb" path="res://Main/Minions/MinionStats/minion_stats.gd" id="4_kx4vt"]
-[ext_resource type="Script" uid="uid://bvmvya1nqb62j" path="res://Main/Minions/dragg_and_drop.gd" id="5_t0o5w"]
+[ext_resource type="PackedScene" uid="uid://m714shrd5pt0" path="res://Components/DragAndDrop/dragg_and_drop.tscn" id="6_tc0qx"]
 
 [sub_resource type="Resource" id="Resource_kx4vt"]
 script = ExtResource("4_kx4vt")
@@ -108,8 +108,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t0o5w"]
-
 [node name="Minion" type="Node2D" unique_id=1804796180]
 z_index = 4
 scale = Vector2(0.2, 0.2)
@@ -134,16 +132,6 @@ one_shot = true
 [node name="Stats" type="Node" parent="." unique_id=345543992]
 unique_name_in_owner = true
 
-[node name="DraggAndDrop" type="Node2D" parent="." unique_id=101666223]
-scale = Vector2(0.9999998, 0.9999998)
-script = ExtResource("5_t0o5w")
-
-[node name="Area2D" type="Area2D" parent="DraggAndDrop" unique_id=1824790604]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DraggAndDrop/Area2D" unique_id=1142872222]
-position = Vector2(20.000002, 20.000004)
-scale = Vector2(19.380493, 19.8195)
-shape = SubResource("CircleShape2D_t0o5w")
+[node name="DraggAndDrop" parent="." unique_id=644889432 instance=ExtResource("6_tc0qx")]
 
 [connection signal="timeout" from="AttackScript/Timer" to="AttackScript" method="_on_timer_timeout"]
-[connection signal="input_event" from="DraggAndDrop/Area2D" to="DraggAndDrop" method="_on_area_2d_input_event"]

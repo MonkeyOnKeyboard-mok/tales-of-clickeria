@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://m714shrd5pt0"]
+
+[ext_resource type="Script" uid="uid://bvmvya1nqb62j" path="res://Main/Minions/dragg_and_drop.gd" id="1_wxbqw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0o5w"]
+radius = 7.9572997
+
+[node name="DraggAndDrop" type="Node2D" unique_id=644889432]
+scale = Vector2(0.9999998, 0.9999998)
+script = ExtResource("1_wxbqw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=35310777]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=248571846]
+position = Vector2(20.000002, 20.000004)
+scale = Vector2(19.380493, 19.8195)
+shape = SubResource("CircleShape2D_t0o5w")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

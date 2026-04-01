@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cl0r173uf860r"]
+
+[ext_resource type="Texture2D" uid="uid://dy5wdwcdbs36x" path="res://Main/Upgrades/Hourglass/hourglass.jpg" id="1_kgrww"]
+[ext_resource type="Script" uid="uid://odd6u7nq2u5r" path="res://Main/Upgrades/Hourglass/hourglass.gd" id="1_mpu12"]
+[ext_resource type="PackedScene" uid="uid://m714shrd5pt0" path="res://Components/DragAndDrop/dragg_and_drop.tscn" id="2_nkfu3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nkfu3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kgrww")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Hourglass" type="Node2D" unique_id=2110053612]
+script = ExtResource("1_mpu12")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=119809491]
+scale = Vector2(0.12864469, 0.12864469)
+sprite_frames = SubResource("SpriteFrames_nkfu3")
+
+[node name="DraggAndDrop" parent="." unique_id=644889432 instance=ExtResource("2_nkfu3")]
+scale = Vector2(0.9999998, 0.9976643)
+
+[node name="CollisionShape2D" parent="DraggAndDrop/Area2D" parent_id_path=PackedInt32Array(644889432, 35310777) index="0" unique_id=248571846]
+position = Vector2(2.0000005, 3.0070248)
+scale = Vector2(7.2340465, 11.189038)
+
+[editable path="DraggAndDrop"]

@@ -19,6 +19,7 @@ func _process(_delta: float) -> void:
 	pass
 
 ## public methods
+
 func minion_attack(enemy) -> void:  ## Version con proyectil
 	var projectile = PROJECTILE.instantiate()
 	projectile.global_position = get_parent().global_position

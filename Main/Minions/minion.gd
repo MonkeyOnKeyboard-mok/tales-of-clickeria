@@ -11,6 +11,7 @@ var gs : Dictionary = GlobalStats.minionStats
 ## private vars
 ## onready vars
 @onready var attack : AttackComponent = %AttackScript
+@onready var base_attack_speed : float = stats.attack_speed
 # "obj_" for node references;
 ## built-in override methods
 
@@ -40,5 +41,16 @@ func calculate_damage() -> float:
 	#print("Global Fire Damage Increase:", gs["increased_damage"][stats.type])
 	#print("This minion's damage is: ", damage) 
 	return damage
+
+func apply_attack_speed_buff() -> void:
+	print("Attack Speed increased")
+	stats.attack_speed *= 0.001
+	print("this minion attack speed is: ",stats.attack_speed)
+
+func remove_atk_spd() -> void:
+	print("Attack Speed returned to base")
+	stats.attack_speed = base_attack_speed
+	
+###  cambiar para que solo afectea este minion y no al resource
 
 ## private methods
