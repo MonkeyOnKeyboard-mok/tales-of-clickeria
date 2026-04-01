@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dq8jdyv371hu5" path="res://Main/Shop/shop.tscn" id="5_liyct"]
 [ext_resource type="PackedScene" uid="uid://dr3t3eiqpx6e4" path="res://Economia/tienda.tscn" id="6_liyct"]
 [ext_resource type="PackedScene" uid="uid://dbk7uae2ink4b" path="res://Main/Upgrades/upgrades.tscn" id="7_ib3t1"]
+[ext_resource type="PackedScene" uid="uid://cjdyx712j6gev" path="res://Etapas/ui_etapa.tscn" id="8_rj11h"]
 
 [node name="Main" type="Node2D" unique_id=1222045523]
 script = ExtResource("1_k3v36")
@@ -67,5 +68,13 @@ offset_top = 329.0
 offset_right = 17.0
 offset_bottom = 329.0
 
+
 [node name="Upgrades" parent="." unique_id=2034106112 instance=ExtResource("7_ib3t1")]
 unique_name_in_owner = true
+
+[node name="UI_Etapa" parent="." unique_id=16359694 instance=ExtResource("8_rj11h")]
+offset_left = 341.0
+offset_top = 9.0
+offset_right = 341.0
+offset_bottom = 9.0
+

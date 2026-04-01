@@ -29,5 +29,5 @@ func _process(_delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
-		area.get_parent().lifeBar.take_damage(parent.stats.base_damage)
+		area.get_parent().health_bar.take_damage(parent.stats.base_damage)
 		queue_free()

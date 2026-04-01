@@ -18,6 +18,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 EconomiaManager="*uid://dig4b8mrq5dpi"
+GestorEtapa="*uid://ckjl0eyh7857j"
+
+[global_group]
+
+jugador=""
 
 [physics]
 

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cu1egge4kvlo8" path="res://Components/HealthBar/progress_bar.tscn" id="1_u6saw"]
 [ext_resource type="Script" uid="uid://b84vukckkr48q" path="res://Components/HealthBar/player_health_bar.gd" id="3_kwyrm"]
 
-[node name="Player" type="Node2D" unique_id=1417812519]
+[node name="Player" type="Node2D" unique_id=1417812519 groups=["jugador"]]
 script = ExtResource("1_8hbiy")
 
 [node name="ProgressBar" parent="." unique_id=1483188681 instance=ExtResource("1_u6saw")]

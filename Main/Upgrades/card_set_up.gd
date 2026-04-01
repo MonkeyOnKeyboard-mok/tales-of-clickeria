@@ -14,19 +14,16 @@ func set_card(new_card: Cards):
 	desc_label.text = card.description
 
 func _on_button_pressed() -> void:
-	#match card.effect:
+	#match upgrade.effect:
 		#"damage":
 				#Global.playerBaseDamage += upgrade.value
 		#"armor":
 				#Global.playerBaseArmor -= 0.1
 		#"attack.speed":
 				#Global.attackCooldown -= 0.2
-	#get_parent().get_parent().hide()  # hides UpgradeUI
-	#queue_free()
 	pass
 
-
 func _on_select_pressed() -> void:
-	print("Seleccionaste la Carta: ", name_label.text)
+	print("Seleccionaste la carta: ", name_label.text)
 	get_parent().get_parent().hide()  # hides UpgradeUI
 	queue_free()

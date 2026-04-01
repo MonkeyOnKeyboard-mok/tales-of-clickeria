@@ -16,4 +16,5 @@ offset_bottom = 30.0
 theme_override_styles/background = SubResource("StyleBoxFlat_b02bx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_o22js")
 value = 100.0
+allow_greater = true
 script = ExtResource("1_b02bx")

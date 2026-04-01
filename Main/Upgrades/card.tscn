@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgrkg8wdxx0ln"]
 
-[ext_resource type="Script" uid="uid://b82g7vprs3bl2" path="res://card.gd" id="1_irbl6"]
+[ext_resource type="Script" uid="uid://bg6tg44tqesw0" path="res://Main/Upgrades/card_set_up.gd" id="1_5eta7"]
 [ext_resource type="Texture2D" uid="uid://8ikbe6ihck2u" path="res://Main/Upgrades/Cards/minionCard.png" id="2_xmhy7"]
 [ext_resource type="Texture2D" uid="uid://bos6l3u72f83k" path="res://PlaceHolders/Coin.png" id="3_5eta7"]
 [ext_resource type="Texture2D" uid="uid://bwriviwwedlmi" path="res://PlaceHolders/Potion.png" id="4_5eta7"]
@@ -13,7 +13,7 @@ anchors_preset = 0
 offset_right = 350.0
 offset_bottom = 300.0
 mouse_filter = 2
-script = ExtResource("1_irbl6")
+script = ExtResource("1_5eta7")
 
 [node name="Panel" type="Panel" parent="." unique_id=1053788858]
 layout_mode = 0

@@ -16,6 +16,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-## public methods
+func recibir_ataque_enemigo(dano):
+	lifeBar.take_damage(dano)
 
 ## private methods

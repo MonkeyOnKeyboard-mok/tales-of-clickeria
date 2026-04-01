@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b0ykhkq8bu2m1"]
+
+[ext_resource type="Texture2D" uid="uid://bos6l3u72f83k" path="res://PlaceHolders/Coin.png" id="1_3o4wt"]
+[ext_resource type="Script" uid="uid://cyvio8q3unhy8" path="res://Enemy/enemy.gd" id="1_epr5s"]
+
+[node name="Enemy" type="Node2D" unique_id=1708450790]
+script = ExtResource("1_epr5s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1727139113]
+texture = ExtResource("1_3o4wt")

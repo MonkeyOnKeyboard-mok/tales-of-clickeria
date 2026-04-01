@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cjdyx712j6gev"]
+
+[ext_resource type="Script" uid="uid://dxyc3nget1ilk" path="res://Etapas/ui_etapa.gd" id="1_jvsua"]
+[ext_resource type="Texture2D" uid="uid://bos6l3u72f83k" path="res://PlaceHolders/Coin.png" id="2_7wos1"]
+
+[node name="UI_Etapa" type="Control" unique_id=16359694]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jvsua")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=153519739]
+layout_mode = 0
+offset_right = 189.0
+offset_bottom = 74.0
+
+[node name="LabelEtapa" type="Label" parent="HBoxContainer" unique_id=611059999]
+layout_mode = 2
+
+[node name="ButtonSiguienteEtapa" type="Button" parent="HBoxContainer" unique_id=1437122115]
+layout_mode = 2
+icon = ExtResource("2_7wos1")
