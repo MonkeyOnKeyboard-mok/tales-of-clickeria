@@ -6,8 +6,9 @@
 [resource]
 script = ExtResource("1_8ou4s")
 name = "Fire Mastery"
-description = "Increases your fire units base damage by 5"
+description = "Increases your fire units base damage by 1"
 icon = ExtResource("1_w1pwv")
-effect = "flat_damage_fire"
-value = 5.0
+effect = "flat_damage"
+type = "fire"
+value = 1.0
 metadata/_custom_type_script = "uid://bghgd4mavasf6"

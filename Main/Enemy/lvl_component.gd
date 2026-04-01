@@ -6,8 +6,8 @@ signal stats_calculadas(salud_max: float, dps: float, resistencias: Dictionary)
 
 # Configuración de Balanceo (Ajustables desde el Inspector de Godot)
 @export_group("Balanceo Base")
-@export var salud_base: float = 100.0
-@export var dps_base: float = 10.0
+@export var salud_base: float = 10.0
+@export var dps_base: float = 1.0
 @export var multiplicador_crecimiento: float = 1.5 # 50% más fuerte por nivel
 
 # Estado actual del componente

@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dekvsha1jjdtp"]
+
+[ext_resource type="Script" uid="uid://lavhxrtdf0q2" path="res://Main/main.gd" id="1_k3v36"]
+[ext_resource type="PackedScene" uid="uid://cabsunufi42v0" path="res://Main/Player/player.tscn" id="2_2w1kt"]
+[ext_resource type="Script" uid="uid://dahdgirdrj3jh" path="res://Main/Minions/minion_container.gd" id="3_eunhr"]
+[ext_resource type="PackedScene" uid="uid://bvftv4jsopgv6" path="res://Main/Debugger/debugger.tscn" id="5_k3v36"]
+[ext_resource type="PackedScene" uid="uid://dq8jdyv371hu5" path="res://Main/Shop/shop.tscn" id="5_liyct"]
+[ext_resource type="PackedScene" uid="uid://dr3t3eiqpx6e4" path="res://Economia/tienda.tscn" id="6_liyct"]
+[ext_resource type="PackedScene" uid="uid://dbk7uae2ink4b" path="res://Main/Upgrades/upgrades.tscn" id="7_ib3t1"]
+[ext_resource type="PackedScene" uid="uid://cjdyx712j6gev" path="res://Etapas/ui_etapa.tscn" id="8_rj11h"]
+
+[node name="Main" type="Node2D" unique_id=1222045523]
+script = ExtResource("1_k3v36")
+
+[node name="Player" parent="." unique_id=1417812519 instance=ExtResource("2_2w1kt")]
+unique_name_in_owner = true
+position = Vector2(1018, 157)
+
+[node name="MinionManager" type="Node2D" parent="." unique_id=2037279204]
+unique_name_in_owner = true
+position = Vector2(572, 376)
+script = ExtResource("3_eunhr")
+
+[node name="UIContainer" type="Control" parent="." unique_id=1660199315]
+z_index = -1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+mouse_filter = 2
+
+[node name="MainLayout" type="VBoxContainer" parent="UIContainer" unique_id=1979908562]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 1000.0
+scale = Vector2(1, 0.9872359)
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Enemy" type="ColorRect" parent="UIContainer/MainLayout" unique_id=587117373]
+custom_minimum_size = Vector2(0, 323)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.54509807, 0, 0, 0.30588236)
+
+[node name="Minions" type="ColorRect" parent="UIContainer/MainLayout" unique_id=2126235408]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0.5647059, 0, 0.20784314)
+
+[node name="Debugger" parent="." unique_id=452095247 instance=ExtResource("5_k3v36")]
+offset_left = 44.0
+offset_top = 37.0
+offset_right = 44.0
+offset_bottom = 37.0
+
+[node name="Shop" parent="." unique_id=623432963 instance=ExtResource("5_liyct")]
+z_index = 4
+offset_left = 1136.0
+offset_top = 326.0
+offset_right = 1136.0
+offset_bottom = 326.0
+
+[node name="Tienda" parent="." unique_id=1459333485 instance=ExtResource("6_liyct")]
+offset_left = 17.0
+offset_top = 329.0
+offset_right = 17.0
+offset_bottom = 329.0
+
+[node name="Upgrades" parent="." unique_id=2034106112 instance=ExtResource("7_ib3t1")]
+unique_name_in_owner = true
+
+[node name="UI_Etapa" parent="." unique_id=16359694 instance=ExtResource("8_rj11h")]
+offset_left = 341.0
+offset_top = 9.0
+offset_right = 341.0
+offset_bottom = 9.0

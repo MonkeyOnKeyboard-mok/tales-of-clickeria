@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
-		area.get_parent().health_bar.take_damage(parent.stats.base_damage)
+		area.get_parent().health_bar.take_damage(parent.calculate_damage())
 		queue_free()
 
 func _on_self_destruct_timeout() -> void:

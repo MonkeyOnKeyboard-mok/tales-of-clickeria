@@ -22,7 +22,7 @@ func set_new_target(enemy: Node2D) -> void:   ## El target de los minions se set
 			child.new_target(enemy)
 			print("minion new target set")
 
-## private methods
+## private methods  ## Borrar??
 func arrange_children(): ## Esto se asegura de que los minions estén siempre centrados sin importar cuántos haya
 	var spacing := 120
 	var count := get_child_count() 

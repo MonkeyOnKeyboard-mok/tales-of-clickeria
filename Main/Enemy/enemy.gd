@@ -66,7 +66,7 @@ func morir() -> void:
 	queue_free()
 
 # Loop de ataque (Daño al jugador)
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if esta_vivo and level_component:
 		var dps = level_component.dps_calculado
 		if dps > 0:
@@ -76,4 +76,4 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		health_bar.take_damage(1)
+		health_bar.take_damage(GlobalStats.playerStats["main_attack"])

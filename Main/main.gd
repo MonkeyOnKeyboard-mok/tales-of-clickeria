@@ -33,9 +33,8 @@ func spawn_enemy() -> void:
 	
 func spawn_minion(type : UnitStats) -> void:
 	var minion_instance = MINION.instantiate()
-	minions.add_child(minion_instance)
 	minion_instance.stats = type
-	#minions.arrange_children()
+	minions.add_child(minion_instance)
 	minion_instance.global_position = Vector2(400,400)
 	print("minion spawned")
 

@@ -6,7 +6,7 @@ class_name EnemyAttack
 @export var stats : EnemyStats 
 
 ## signals
-signal enemy_attacked(damage: float, damage_type: String)
+signal enemy_attacked(damage: float, type: String)
 
 ## onready vars
 @onready var timer: Timer = $Timer
@@ -61,7 +61,7 @@ func _calcular_stats_por_etapa(etapa: int) -> void:
 	# Actualizamos el recurso de stats si es necesario para otros scripts
 	if stats:
 		stats.base_damage = current_damage
-		stats.damage_type = "null" # Por defecto, se puede cambiar luego por elemento
+		stats.type = "null" # Por defecto, se puede cambiar luego por elemento
 		stats.crit_chance = 0.0
 		stats.attack_speed = current_attack_speed
 		

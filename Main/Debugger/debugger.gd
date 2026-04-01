@@ -3,6 +3,7 @@ extends Node
 ## consts
 const FIRE = preload("uid://c6758l4ovsyf1")
 const LIGHT = preload("uid://bg5nnqgeloj4y")
+
 ## exports
 ## public vars
 ## private vars

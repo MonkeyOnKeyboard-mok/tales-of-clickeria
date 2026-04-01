@@ -4,7 +4,7 @@ class_name EnemyStats
 ## consts
 ## exports
 @export var base_damage: float
-@export var damage_type: String # "physical", "fire", etc.
+@export var type: String # "physical", "fire", etc.
 @export var crit_chance: float
 @export var attack_speed: float
 ## public vars
