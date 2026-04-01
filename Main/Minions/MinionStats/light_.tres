@@ -6,6 +6,6 @@
 script = ExtResource("1_uf1jn")
 base_damage = 1.0
 type = "light"
-crit_chance = 1.0
+crit_chance = 2.0
 attack_speed = 2.0
 metadata/_custom_type_script = "uid://b2t0lnaaglegb"

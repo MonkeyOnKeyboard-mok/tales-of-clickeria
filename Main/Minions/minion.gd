@@ -34,7 +34,7 @@ func new_target(enemy: Node2D) -> void:
 	attack.minion_attack(enemy)
 
 func calculate_damage() -> float:
-	damage = ((stats.base_damage + gs["flat_damage"][stats.type] + gs["flat_damage"]["global"] ) * gs["increased_damage"][stats.type] +gs["increased_damage"]["global"])
+	damage = (((stats.base_damage + gs["flat_damage"][stats.type] + gs["flat_damage"]["global"] ) * gs["increased_damage"][stats.type] ) * gs["increased_damage"]["global"])
 	#print("Minion Base Damage: ", stats.base_damage)
 	#print("Global Fire Damage Flat:", gs["flat_damage"][stats.type]) 
 	#print("Global Fire Damage Increase:", gs["increased_damage"][stats.type])

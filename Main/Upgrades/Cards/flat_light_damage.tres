@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Cards" format=3 uid="uid://ytn6vsgg4a6f"]
+
+[ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="1_0llgf"]
+[ext_resource type="Texture2D" uid="uid://djb84b52yx0kv" path="res://Main/Upgrades/Cards/lightCard.png" id="1_grpsb"]
+
+[resource]
+script = ExtResource("1_0llgf")
+name = "Lighting Mastery"
+description = "Increases your lightning units base damage by 1"
+icon = ExtResource("1_grpsb")
+effect = "flat_damage"
+type = "light"
+value = 1.0
+metadata/_custom_type_script = "uid://bghgd4mavasf6"

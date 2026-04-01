@@ -15,7 +15,6 @@ func show_upgrades(count: int = 3):
 	var upgrades = get_random_upgrades(count)
 	for card in upgrades:
 		var choice = CARD.instantiate()
-		choice.upgrade_selected.connect(emit_signal_to_global)
 		container.add_child(choice)
 		choice.set_card(card)
 		print(choice.global_position)
@@ -26,5 +25,5 @@ func get_random_upgrades(count: int = 3) -> Array[Cards]:
 	shuffled.shuffle()
 	return shuffled.slice(0, count)
 
-func emit_signal_to_global(type: String) -> void:
-	print("señal para el global")
+#func emit_signal_to_global(type: String) -> void:
+	#print("señal para el global")

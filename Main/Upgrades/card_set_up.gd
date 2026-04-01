@@ -2,8 +2,6 @@ extends Control
 
 var card: Cards
 
-signal upgrade_selected(type: String)
-
 @onready var icon = $Panel/texture
 @onready var name_label = $Panel/name
 @onready var desc_label = $Panel/desc
