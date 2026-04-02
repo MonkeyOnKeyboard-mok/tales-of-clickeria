@@ -118,7 +118,7 @@ stats = SubResource("Resource_kx4vt")
 texture_filter = 1
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_vo21e")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="AttackScript" type="Node" parent="." unique_id=948159779]

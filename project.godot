@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 EconomiaManager="*uid://dig4b8mrq5dpi"
 GestorEtapa="*uid://ckjl0eyh7857j"
 GlobalStats="*uid://7s2hxkcf3k11"
+Event="*uid://wukwlt1is33g"
 
 [global_group]
 

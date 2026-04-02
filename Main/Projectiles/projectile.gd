@@ -7,7 +7,6 @@ var direction := Vector2.ZERO
 var speed : float = 200
 var spawnRot : float
 var enemy : Node2D = null
-#var dmg : float = get_parent().get_parent().stats.damage
 ## private vars
 ## onready vars
 @onready var parent = get_parent().get_parent()

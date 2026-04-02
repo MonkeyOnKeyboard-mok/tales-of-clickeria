@@ -24,7 +24,7 @@ func _process(_delta: float) -> void:
 
 func _on_texture_button_pressed() -> void:
 	print("button pressed")
-	get_parent().spawn_minion(FIRE)
+	Event.emit_signal("spawn_minion", Event.MINION_TYPES["light"])
 
 func _on_arrow_pressed() -> void:
 	if displayed: 
@@ -42,4 +42,4 @@ func _on_arrow_pressed() -> void:
 
 func _on_minion_luz_pressed() -> void:
 	print("button pressed")
-	get_parent().spawn_minion(LIGHT)
+	Event.emit_signal("spawn_minion", Event.MINION_TYPES["fire"])

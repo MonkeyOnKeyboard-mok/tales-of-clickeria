@@ -6,7 +6,7 @@ const CARD = preload("uid://bgrkg8wdxx0ln")
 @onready var main = get_tree().get_root().get_node("Main") # adjust path
 
 func _ready():
-	var _err = main.connect("enemy_just_died", Callable(self, "show_upgrades"))
+	var _err = Event.connect("enemy_died", Callable(self, "show_upgrades"))
 	hide() 
 	
 func show_upgrades(count: int = 3):

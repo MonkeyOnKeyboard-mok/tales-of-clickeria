@@ -1,8 +1,5 @@
 extends Control
 
-const FIRE = preload("uid://c6758l4ovsyf1")
-const LIGHT = preload("uid://bg5nnqgeloj4y")
-
 # Referencias a los nodos de la interfaz
 @onready var lbl_oro: Label = $VBoxContainer/LabelGold
 @onready var btn_pocion: Button = $VBoxContainer/BuyPotion
@@ -62,7 +59,7 @@ func _reclutar_mago() -> void:
 	if EconomiaManager.gastar_oro(costo, "Mago Básico"):
 		# AQUÍ IRÍA LA LÓGICA PARA INSTANCIAR UN MAGO EN EL COMBATE
 		print("Lógica: Se preparó un nuevo mago para el altar.")
-		get_parent().spawn_minion(LIGHT)
+		Event.emit_signal("spawn_minion", Event.MINION_TYPES.values().pick_random())
 		# Ejemplo: GameManager.reclutar_mago_tipo("basico")
 
 func _get_money() -> void:

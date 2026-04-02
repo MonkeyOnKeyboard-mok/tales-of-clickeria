@@ -3,9 +3,10 @@ extends Node
 ## consts
 const ENEMY = preload("uid://bboyklv1jcrnt")
 const MINION = preload("uid://b8hthhw0wyov")
+const HOURGLASS = preload("uid://cl0r173uf860r")
+
 ## exports
 ## public vars
-signal enemy_just_died
 var current_enemy : Node2D = null
 ## private vars
 var enemy_position: Vector2 = Vector2(576,160)
@@ -17,7 +18,11 @@ var enemy_position: Vector2 = Vector2(576,160)
 ## built-in override methods
 
 func _ready() -> void:
-	pass
+	#Event.enemy_died.connect(enemy_died)
+	Event.spawn_enemy.connect(spawn_enemy)
+	Event.spawn_minion.connect(spawn_minion)
+	Event.upgrade_chosen.connect(hide_upgrades)
+	Event.spawn_hourglass.connect(spawn_hourglass)
 
 func _process(_delta: float) -> void:
 	pass
@@ -37,9 +42,14 @@ func spawn_minion(type : UnitStats) -> void:
 	minions.add_child(minion_instance)
 	minion_instance.global_position = Vector2(400,400)
 	print("minion spawned")
-
-func enemy_died():
-	print("ENEMY JUST DIED")
-	emit_signal("enemy_just_died")
+	
+func spawn_hourglass() -> void:
+	var hourglass = HOURGLASS.instantiate()
+	add_child(hourglass)
+	hourglass.global_position = Vector2(400,400)
+	print("hourglass spawned")
+	
+func hide_upgrades() -> void:
+	cards.hide()
 
 ## private methods

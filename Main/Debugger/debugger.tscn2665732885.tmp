@@ -20,18 +20,10 @@ text = "Spawn Enemy"
 [node name="MinionSpawner" type="Button" parent="." unique_id=1755754926]
 custom_minimum_size = Vector2(116, 31)
 layout_mode = 0
-offset_top = 31.0
-offset_right = 118.0
-offset_bottom = 62.0
+offset_top = 45.0
+offset_right = 116.0
+offset_bottom = 76.0
 text = "Spawn Minion"
-
-[node name="HourglasSpawner" type="Button" parent="." unique_id=777940613]
-layout_mode = 0
-offset_top = 61.0
-offset_right = 141.0
-offset_bottom = 92.0
-text = "Spawn Hourglass"
 
 [connection signal="pressed" from="EnemySpawner" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MinionSpawner" to="." method="_on_minion_spawner_pressed"]
-[connection signal="pressed" from="HourglasSpawner" to="." method="_on_hourglas_spawner_pressed"]

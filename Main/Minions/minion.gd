@@ -8,15 +8,19 @@ extends Node
 var target : Node2D = null
 var damage : float 
 var gs : Dictionary = GlobalStats.minionStats
+var current_attack_speed : float 
 ## private vars
 ## onready vars
 @onready var attack : AttackComponent = %AttackScript
 @onready var base_attack_speed : float = stats.attack_speed
+
 # "obj_" for node references;
 ## built-in override methods
 
 func _ready() -> void:
 	sprite.play("idle")
+	current_attack_speed = stats.attack_speed
+	print("spawned minion attack speed is:", current_attack_speed)
 	#print("Minion type: ", stats.type)
 	#print("Minion Atk SPD: ", stats.attack_speed)
 	#print("Minion Base DMG: ", stats.base_damage)
@@ -44,12 +48,14 @@ func calculate_damage() -> float:
 
 func apply_attack_speed_buff() -> void:
 	print("Attack Speed increased")
-	stats.attack_speed *= 0.001
-	print("this minion attack speed is: ",stats.attack_speed)
+	current_attack_speed *= 0.1
+	sprite.speed_scale += 1.0
+	print("this minion attack speed has been increased to: ",current_attack_speed)
 
 func remove_atk_spd() -> void:
 	print("Attack Speed returned to base")
-	stats.attack_speed = base_attack_speed
+	current_attack_speed = stats.attack_speed
+	sprite.speed_scale = 1.0
 	
 ###  cambiar para que solo afectea este minion y no al resource
 

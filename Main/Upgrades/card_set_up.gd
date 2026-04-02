@@ -13,20 +13,10 @@ func set_card(new_card: Cards):
 	name_label.text = card.name
 	desc_label.text = card.description
 
-func _on_button_pressed() -> void:
-	#match upgrade.effect:
-		#"damage":
-				#Global.playerBaseDamage += upgrade.value
-		#"armor":
-				#Global.playerBaseArmor -= 0.1
-		#"attack.speed":
-				#Global.attackCooldown -= 0.2
-	pass
-
 func _on_select_pressed() -> void:
 	print("Seleccionaste la carta: ", name_label.text)
 	GlobalStats.minionStats[card.effect][card.type] += card.value
 	print(GlobalStats.minionStats)
 	#emit_signal("upgrade_selected",card.type)
-	get_parent().get_parent().hide()  # hides UpgradeUI
+	Event.emit_signal("upgrade_chosen")
 	queue_free()

@@ -33,7 +33,7 @@ func minion_attack(enemy) -> void:  ## Version con proyectil
 		get_parent().sprite.play("idle")
 		projectile.anim.play(get_parent().stats.type)
 		print("El minion tiró un camotito")
-		attack_timer.start(get_parent().stats.attack_speed)
+		attack_timer.start(get_parent().current_attack_speed)
 
 ## private methods
 

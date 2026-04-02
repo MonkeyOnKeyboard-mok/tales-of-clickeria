@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dr3t3eiqpx6e4" path="res://Economia/tienda.tscn" id="6_liyct"]
 [ext_resource type="PackedScene" uid="uid://dbk7uae2ink4b" path="res://Main/Upgrades/upgrades.tscn" id="7_ib3t1"]
 [ext_resource type="PackedScene" uid="uid://cjdyx712j6gev" path="res://Etapas/ui_etapa.tscn" id="8_rj11h"]
-[ext_resource type="PackedScene" uid="uid://cl0r173uf860r" path="res://Main/Upgrades/Hourglass/hourglass.tscn" id="9_rj11h"]
 
 [node name="Main" type="Node2D" unique_id=1222045523]
 script = ExtResource("1_k3v36")
@@ -77,6 +76,3 @@ offset_left = 341.0
 offset_top = 9.0
 offset_right = 341.0
 offset_bottom = 9.0
-
-[node name="Hourglass" parent="." unique_id=2110053612 instance=ExtResource("9_rj11h")]
-position = Vector2(460, 446)
