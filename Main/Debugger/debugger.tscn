@@ -32,6 +32,25 @@ offset_right = 141.0
 offset_bottom = 92.0
 text = "Spawn Hourglass"
 
+[node name="LevelUp" type="Button" parent="." unique_id=614754468]
+layout_mode = 0
+offset_left = 723.0
+offset_top = 17.0
+offset_right = 798.0
+offset_bottom = 48.0
+text = "Level Up"
+
+[node name="ByPass" type="Button" parent="LevelUp" unique_id=2050751296]
+layout_mode = 0
+offset_left = 80.0
+offset_top = -16.0
+offset_right = 262.0
+offset_bottom = 15.0
+scale = Vector2(0.5, 0.5)
+text = "Bypass Exp Restriciton"
+
 [connection signal="pressed" from="EnemySpawner" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MinionSpawner" to="." method="_on_minion_spawner_pressed"]
 [connection signal="pressed" from="HourglasSpawner" to="." method="_on_hourglas_spawner_pressed"]
+[connection signal="pressed" from="LevelUp" to="." method="_on_level_up_pressed"]
+[connection signal="pressed" from="LevelUp/ByPass" to="." method="_on_by_pass_pressed"]

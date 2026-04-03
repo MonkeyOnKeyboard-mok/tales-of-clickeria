@@ -22,6 +22,7 @@ func _ready() -> void:
 	self.value = _juice
 	label.text = str(int(self.value))
 	initialized = true
+
 func _process(_delta: float) -> void:
 	pass
 

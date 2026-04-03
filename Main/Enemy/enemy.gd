@@ -28,7 +28,7 @@ func _ready() -> void:
 	level_component.recalcular_stats(GestorEtapa.etapa_actual)
 
 # Esta función es llamada automáticamente por LevelComponent cuando hay nuevas stats
-func _aplicar_nuevas_stats(nueva_salud_max: float, nuevo_dps: float, nuevas_resistencias: Dictionary) -> void:
+func _aplicar_nuevas_stats(nueva_salud_max: float, nuevo_dps: float, nuevas_resistencias: Dictionary, exp_granted : float) -> void:
 	# Actualizamos la barra de vida directamente con el nuevo máximo
 	# Tu clase HealthBar ya maneja la animación y el clamp internamente
 	health_bar.set_max_health(nueva_salud_max)
@@ -36,33 +36,6 @@ func _aplicar_nuevas_stats(nueva_salud_max: float, nuevo_dps: float, nuevas_resi
 	health_bar.value = nueva_salud_max
 	
 	print("[Enemy] %s actualizado. Nueva Vida Máx: %.1f" % [nombre_enemigo, nueva_salud_max])
-
-# Función principal para recibir daño
-func recibir_daño(cantidad: float, tipo_dano: String = "Fisico") -> void:
-	if not esta_vivo or not level_component:
-		return
-
-	# 1. Calcular resistencia usando el componente
-	var daño_real = level_component.aplicar_resistencia(cantidad, tipo_dano)
-	
-	# 2. Aplicar daño a la HealthBar
-	# La HealthBar se encarga de restar, animar y clamping (no bajar de 0)
-	health_bar.take_damage(daño_real)
-	
-	# 3. Verificar muerte consultando a la HealthBar
-	if health_bar.health <= 0.0:
-		morir()
-
-func morir() -> void:
-	if not esta_vivo: return
-	esta_vivo = false
-	
-	print("¡%s ha sido derrotado!") 
-	enemigo_muerto.emit()
-	
-	# Pequeña pausa antes de destruir para ver la barra vacía (opcional)
-	await get_tree().create_timer(0.5).timeout
-	queue_free()
 
 # Loop de ataque (Daño al jugador)
 func _process(_delta: float) -> void:

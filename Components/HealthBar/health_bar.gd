@@ -54,6 +54,8 @@ func take_damage(damage : float) -> void:
 	label.text = str(int(health))
 	if health < 1.0:
 		Event.emit_signal("enemy_died")
+		Event.emit_signal("gained_experience", get_parent().level_component.exp_granted)
+		print("Enemy granted :", get_parent().level_component.exp_granted, "exp")
 		get_parent().queue_free()
 	print("After:", health)
 

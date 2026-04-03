@@ -18,11 +18,14 @@ var enemy_position: Vector2 = Vector2(576,160)
 ## built-in override methods
 
 func _ready() -> void:
+	## Connect to relevant signals
 	#Event.enemy_died.connect(enemy_died)
 	Event.spawn_enemy.connect(spawn_enemy)
 	Event.spawn_minion.connect(spawn_minion)
 	Event.upgrade_chosen.connect(hide_upgrades)
 	Event.spawn_hourglass.connect(spawn_hourglass)
+	## Reset all stats
+	GlobalStats.reset_stats()
 
 func _process(_delta: float) -> void:
 	pass

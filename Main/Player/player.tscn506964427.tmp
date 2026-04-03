@@ -48,7 +48,6 @@ offset_right = 61.0
 offset_bottom = 138.0
 
 [node name="ExpBar" parent="." unique_id=1593121915 instance=ExtResource("6_0tgs8")]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 30)
 offset_left = -499.0
 offset_top = -147.0
@@ -56,12 +55,9 @@ offset_right = -299.0
 offset_bottom = -117.0
 theme_override_styles/background = SubResource("StyleBoxFlat_0tgs8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qn1bl")
-show_percentage = false
 script = ExtResource("7_qn1bl")
 
 [node name="Label" type="Label" parent="ExpBar" unique_id=1003983496]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 2.0
-offset_right = 128.0
-offset_bottom = 25.0
+offset_right = 40.0
+offset_bottom = 23.0

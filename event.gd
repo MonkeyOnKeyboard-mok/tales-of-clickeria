@@ -24,6 +24,10 @@ signal spawn_particle(pos: Vector2)
 ## Player Signals
 @warning_ignore("unused_signal")
 signal gain_juice(amount : float)
+@warning_ignore("unused_signal")
+signal gained_experience(amount : float)
+@warning_ignore("unused_signal")
+signal player_leveled_up
 
 ## Minions 
 

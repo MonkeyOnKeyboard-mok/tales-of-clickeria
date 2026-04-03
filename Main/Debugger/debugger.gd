@@ -24,6 +24,13 @@ func _on_button_pressed() -> void:
 func _on_minion_spawner_pressed() -> void:
 	Event.emit_signal("spawn_minion", Event.MINION_TYPES.values().pick_random())
 
-
 func _on_hourglas_spawner_pressed() -> void:
 	Event.emit_signal("spawn_hourglass")
+
+func _on_level_up_pressed() -> void:
+	if GlobalStats.debugging["level"] == true or GlobalStats.playerStats["can_level_up"] == true:
+		Event.emit_signal("player_leveled_up")
+
+func _on_by_pass_pressed() -> void:
+	GlobalStats.debugging["level"] = !GlobalStats.debugging["level"]
+	print(GlobalStats.debugging["level"])

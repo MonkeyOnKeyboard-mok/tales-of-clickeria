@@ -1,7 +1,14 @@
 extends Node
 
+## Debuggin Variables
+var debugging : Dictionary = {
+	"level" : false
+}
+
 ## Player Variables
 var playerStats : Dictionary = {
+	"level" : 1,
+	"can_level_up" : false,
 	"main_attack" : 1.0,
 	"main_attack_juice" : 1.0
 }
@@ -39,6 +46,8 @@ func _process(_delta: float) -> void:
 
 func reset_stats() -> void:
 	playerStats  = {
+	"level" : 1,
+	"can_level_up" : false,
 	"main_attack" : 1.0,
 	"main_attack_juice" : 5.0
 }

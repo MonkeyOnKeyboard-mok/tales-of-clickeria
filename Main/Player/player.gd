@@ -8,6 +8,7 @@ extends Node
 @onready var player_health: Label = $PlayerHealth
 @onready var lifeBar: PlayerHealthBar = $ProgressBar
 @onready var juiceBar: ProgressBar = %MonsterJuice
+@onready var expBar: ExpBar = %ExpBar
 
 # "obj_" for node references;
 ## built-in override methods
