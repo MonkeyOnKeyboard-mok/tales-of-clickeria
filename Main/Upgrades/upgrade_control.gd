@@ -19,11 +19,9 @@ func show_upgrades(count: int = 3):
 		choice.set_card(card)
 		print(choice.global_position)
 	show()
+	print("mostrando upgrdaes")
 	
 func get_random_upgrades(count: int = 3) -> Array[Cards]:
 	var shuffled = upgrade_pool.duplicate()
 	shuffled.shuffle()
 	return shuffled.slice(0, count)
-
-#func emit_signal_to_global(type: String) -> void:
-	#print("señal para el global")

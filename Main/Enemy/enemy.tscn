@@ -15,6 +15,7 @@ script = ExtResource("5_1ftki")
 metadata/_custom_type_script = "uid://b2qpg7x0oltlu"
 
 [node name="Enemy" type="Node2D" unique_id=534595693 groups=["enemy"]]
+z_index = 1
 script = ExtResource("1_svo2v")
 
 [node name="HealthBar" parent="." unique_id=1483188681 instance=ExtResource("2_svo2v")]

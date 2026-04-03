@@ -52,9 +52,7 @@ func get_health() -> float:
 	return _health
 
 func take_damage(damage : float) -> void:
-	#print("Damage:", damage)
-	#print("Before:", health)
 	health -= damage
-	#print("After:", health)
+
 
 ## private methods

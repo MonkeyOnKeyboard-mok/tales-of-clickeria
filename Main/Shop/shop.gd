@@ -1,8 +1,6 @@
 extends Node
 ## enums
 ## consts
-const FIRE = preload("uid://c6758l4ovsyf1")
-const LIGHT = preload("uid://bg5nnqgeloj4y")
 ## exports
 ## public vars
 ## private vars
@@ -23,8 +21,8 @@ func _process(_delta: float) -> void:
 ## private methods
 
 func _on_texture_button_pressed() -> void:
-	print("button pressed")
-	Event.emit_signal("spawn_minion", Event.MINION_TYPES["light"])
+	print("Fire Wizard bought")
+	Event.emit_signal("spawn_minion", Event.MINION_TYPES["fire"])
 
 func _on_arrow_pressed() -> void:
 	if displayed: 
@@ -41,5 +39,9 @@ func _on_arrow_pressed() -> void:
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
 func _on_minion_luz_pressed() -> void:
-	print("button pressed")
-	Event.emit_signal("spawn_minion", Event.MINION_TYPES["fire"])
+	print("Light Wizard bought")
+	Event.emit_signal("spawn_minion", Event.MINION_TYPES["light"])
+
+func _on_minion_cold_pressed() -> void:
+	print("Cold Wizard bought")
+	Event.emit_signal("spawn_minion", Event.MINION_TYPES["cold"])

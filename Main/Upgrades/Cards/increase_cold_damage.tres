@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Cards" format=3 uid="uid://cnyqlv27xp4dh"]
+
+[ext_resource type="Texture2D" uid="uid://tjucfqw4wivp" path="res://Main/Upgrades/Cards/coldCard.png" id="1_ieaoi"]
+[ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="2_ew364"]
+
+[resource]
+script = ExtResource("2_ew364")
+name = "Cold Proficiency"
+description = "Increases your cold units damage by 5%"
+icon = ExtResource("1_ieaoi")
+effect = "increased_damage"
+type = "cold"
+value = 0.05
+metadata/_custom_type_script = "uid://bghgd4mavasf6"

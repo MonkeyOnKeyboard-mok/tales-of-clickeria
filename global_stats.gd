@@ -2,7 +2,8 @@ extends Node
 
 ## Player Variables
 var playerStats : Dictionary = {
-	"main_attack" : 1.0
+	"main_attack" : 1.0,
+	"main_attack_juice" : 1.0
 }
 
 ###### Minion Variables ######
@@ -37,9 +38,10 @@ func _process(_delta: float) -> void:
 	pass
 
 func reset_stats() -> void:
-	playerStats = {
-	"main_attack" : 1.0
-	}
+	playerStats  = {
+	"main_attack" : 1.0,
+	"main_attack_juice" : 5.0
+}
 	minionStats  = {
 	"flat_damage" :{
 		"fire" : 0.0,

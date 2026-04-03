@@ -50,6 +50,7 @@ func spawn_hourglass() -> void:
 	print("hourglass spawned")
 	
 func hide_upgrades() -> void:
-	cards.hide()
+	cards.get_node("Control").hide()
+
 
 ## private methods

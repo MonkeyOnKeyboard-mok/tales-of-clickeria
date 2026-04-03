@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://bpuuyd5t8a32p"]
+
+[ext_resource type="Script" uid="uid://b2t0lnaaglegb" path="res://Main/Minions/MinionStats/minion_stats.gd" id="1_txsmt"]
+
+[resource]
+script = ExtResource("1_txsmt")
+base_damage = 2.0
+type = "cold"
+crit_chance = 3.0
+attack_speed = 3.0
+metadata/_custom_type_script = "uid://b2t0lnaaglegb"

@@ -4,7 +4,7 @@ extends Node
 ## exports
 ## public vars
 var direction := Vector2.ZERO
-var speed : float = 200
+var speed : float = 300.0
 var spawnRot : float
 var enemy : Node2D = null
 ## private vars
@@ -29,6 +29,8 @@ func _process(_delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		area.get_parent().health_bar.take_damage(parent.calculate_damage())
+		Event.emit_signal("spawn_particle",self.global_position)
+		Event.emit_signal("gain_juice",(parent.calculate_damage()))
 		queue_free()
 
 func _on_self_destruct_timeout() -> void:

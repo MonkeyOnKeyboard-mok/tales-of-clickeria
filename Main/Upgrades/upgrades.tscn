@@ -6,6 +6,8 @@
 [ext_resource type="Resource" uid="uid://b3oveyu1dbm38" path="res://Main/Upgrades/Cards/increase_fire_damage.tres" id="4_x5sk2"]
 [ext_resource type="Resource" uid="uid://ytn6vsgg4a6f" path="res://Main/Upgrades/Cards/flat_light_damage.tres" id="5_yed8k"]
 [ext_resource type="Resource" uid="uid://c1gogp1t14u6t" path="res://Main/Upgrades/Cards/increase_light_damage.tres" id="6_rwimx"]
+[ext_resource type="Resource" uid="uid://de3xxnscsevl" path="res://Main/Upgrades/Cards/flat_cold_damage.tres" id="7_7crw6"]
+[ext_resource type="Resource" uid="uid://cnyqlv27xp4dh" path="res://Main/Upgrades/Cards/increase_cold_damage.tres" id="8_ivfpj"]
 
 [node name="Upgrades" type="CanvasLayer" unique_id=2034106112]
 
@@ -18,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_r4jiv")
-upgrade_pool = Array[ExtResource("2_1kii3")]([ExtResource("3_bc8dv"), ExtResource("4_x5sk2"), ExtResource("5_yed8k"), ExtResource("6_rwimx")])
+upgrade_pool = Array[ExtResource("2_1kii3")]([ExtResource("3_bc8dv"), ExtResource("4_x5sk2"), ExtResource("5_yed8k"), ExtResource("6_rwimx"), ExtResource("7_7crw6"), ExtResource("8_ivfpj")])
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=879496888]
 layout_mode = 1

@@ -6,7 +6,6 @@ class_name Enemy
 # Referencias a Componentes (Composición)
 @onready var level_component: LevelComponent = %LvLComponent
 @onready var health_bar: HealthBar = %HealthBar # Asumiendo que tu nodo se llama así
-
 # Estado interno (opcional, para lógica de muerte)
 var esta_vivo: bool = true
 
@@ -77,3 +76,6 @@ func _process(_delta: float) -> void:
 func _on_area_2d_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		health_bar.take_damage(GlobalStats.playerStats["main_attack"])
+		Event.emit_signal("spawn_particle", get_global_mouse_position())
+		print("mouse poistion at spawn moment:" ,get_global_mouse_position())
+		Event.emit_signal("gain_juice", GlobalStats.playerStats["main_attack_juice"])

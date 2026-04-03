@@ -8,6 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://dr3t3eiqpx6e4" path="res://Economia/tienda.tscn" id="6_liyct"]
 [ext_resource type="PackedScene" uid="uid://dbk7uae2ink4b" path="res://Main/Upgrades/upgrades.tscn" id="7_ib3t1"]
 [ext_resource type="PackedScene" uid="uid://cjdyx712j6gev" path="res://Etapas/ui_etapa.tscn" id="8_rj11h"]
+[ext_resource type="Script" uid="uid://bbjieseqih5r2" path="res://Main/particle_manager.gd" id="9_rj11h"]
+
+[sub_resource type="Curve2D" id="Curve2D_rj11h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 27, 32, 0, 0, 0, 0, 75, 61, 0, 0, 0, 0, 107, 87, 0, 0, 0, 0, 135, 32, 0, 0, 0, 0, 153, -15, 0, 0, 0, 0, 186, -35, 0, 0, 0, 0, 231, 5, 0, 0, 0, 0, 265, 39, 0, 0, 0, 0, 290, 70, 0, 0, 0, 0, 329, 85, 0, 0, 0, 0, 361, 29, 0, 0, 0, 0, 387, -1, 0, 0, 0, 0, 435, -31, 0, 0, 0, 0, 450, 46)
+}
+point_count = 14
 
 [node name="Main" type="Node2D" unique_id=1222045523]
 script = ExtResource("1_k3v36")
@@ -76,3 +83,13 @@ offset_left = 341.0
 offset_top = 9.0
 offset_right = 341.0
 offset_bottom = 9.0
+
+[node name="ParticleManager" type="Node2D" parent="." unique_id=1202987496]
+z_index = 2
+position = Vector2(592, 161)
+script = ExtResource("9_rj11h")
+
+[node name="Path2D" type="Path2D" parent="ParticleManager" unique_id=483570856]
+z_index = 2
+position = Vector2(6, 10)
+curve = SubResource("Curve2D_rj11h")

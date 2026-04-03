@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bhyfuyf85hh86"]
+
+[ext_resource type="Texture2D" uid="uid://bcx6bf47h663t" path="res://Components/Particles/placeholder_particle.png" id="1_quj8h"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n1fo3"]
+gravity = Vector3(0, 30, 0)
+scale_min = 2.0
+scale_max = 2.0
+
+[node name="JuiceParticle" type="GPUParticles2D" unique_id=2027268622]
+texture_filter = 1
+amount = 1000
+texture = ExtResource("1_quj8h")
+lifetime = 0.01
+process_material = SubResource("ParticleProcessMaterial_n1fo3")
