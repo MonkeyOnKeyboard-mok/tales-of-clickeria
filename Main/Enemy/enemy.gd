@@ -7,6 +7,8 @@ class_name Enemy
 @onready var level_component: LevelComponent = %LvLComponent
 @onready var health_bar: HealthBar = %HealthBar # Asumiendo que tu nodo se llama así
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var area_2d: Area2D = $Area2D
+
 var dying := false
 
 # Estado interno (opcional, para lógica de muerte)
@@ -51,6 +53,7 @@ func _process(_delta: float) -> void:
 
 func _death_animation()  -> void:
 	dying = true
+	area_2d.queue_free()
 # Step 1: jump up and to the right
 	var tween = create_tween()
 	tween.tween_property(sprite, "position", sprite.position + Vector2(30, -50), 0.3) \
