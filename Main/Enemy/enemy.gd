@@ -79,6 +79,7 @@ func _death_animation() -> void:
 	.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	# Step 7: clean up
 	Event.emit_signal("enemy_died")
+	print("SE EMITIO SEÑAL MUERTE DEL MONO")
 	tween.finished.connect(func(): queue_free())
 
 func _on_area_2d_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
@@ -86,5 +87,4 @@ func _on_area_2d_input_event(_viewport, event: InputEvent, _shape_idx: int) -> v
 	if event is InputEventMouseButton and event.pressed:
 		health_bar.take_damage(GlobalStats.playerStats["main_attack"])
 		Event.emit_signal("spawn_particle", get_global_mouse_position())
-		#print("mouse poistion at spawn moment:" ,get_global_mouse_position())
 		Event.emit_signal("gain_juice", GlobalStats.playerStats["main_attack_juice"])

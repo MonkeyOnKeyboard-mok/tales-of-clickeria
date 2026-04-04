@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://b8hthhw0wyov"]
+
+[ext_resource type="Script" uid="uid://b62d5db8wpdft" path="res://Main/Minions/minion.gd" id="1_wgde4"]
+[ext_resource type="Script" uid="uid://cxwj28ev8hbnf" path="res://Main/Minions/attack_script.gd" id="3_kx4vt"]
+[ext_resource type="Texture2D" uid="uid://bqao0xgeix62j" path="res://Main/Minions/Assets/mage_idle.png" id="3_t0o5w"]
+[ext_resource type="Texture2D" uid="uid://b1j1nvjj3olhh" path="res://Main/Minions/Assets/mage_attack.png" id="3_tc0qx"]
+[ext_resource type="Script" uid="uid://b2t0lnaaglegb" path="res://Main/Minions/MinionStats/minion_stats.gd" id="4_kx4vt"]
+[ext_resource type="PackedScene" uid="uid://m714shrd5pt0" path="res://Components/DragAndDrop/dragg_and_drop.tscn" id="6_tc0qx"]
+
+[sub_resource type="Resource" id="Resource_kx4vt"]
+script = ExtResource("4_kx4vt")
+metadata/_custom_type_script = "uid://b2t0lnaaglegb"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo21e"]
+atlas = ExtResource("3_tc0qx")
+region = Rect2(0, 0, 38, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l3iy"]
+atlas = ExtResource("3_tc0qx")
+region = Rect2(38, 0, 38, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy0su"]
+atlas = ExtResource("3_tc0qx")
+region = Rect2(76, 0, 38, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0qpd"]
+atlas = ExtResource("3_tc0qx")
+region = Rect2(114, 0, 38, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce4ph"]
+atlas = ExtResource("3_tc0qx")
+region = Rect2(152, 0, 38, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g18li"]
+atlas = ExtResource("3_tc0qx")
+region = Rect2(190, 0, 38, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mp72"]
+atlas = ExtResource("3_tc0qx")
+region = Rect2(228, 0, 38, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc0qx"]
+atlas = ExtResource("3_t0o5w")
+region = Rect2(0, 0, 38, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si1lh"]
+atlas = ExtResource("3_t0o5w")
+region = Rect2(38, 0, 38, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfblm"]
+atlas = ExtResource("3_t0o5w")
+region = Rect2(76, 0, 38, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlluf"]
+atlas = ExtResource("3_t0o5w")
+region = Rect2(114, 0, 38, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81nm6"]
+atlas = ExtResource("3_t0o5w")
+region = Rect2(152, 0, 38, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vo21e"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_vo21e")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_3l3iy")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_yy0su")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_t0qpd")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_ce4ph")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_g18li")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_7mp72")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_tc0qx")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_si1lh")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_wfblm")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_nlluf")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_81nm6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Minion" type="Node2D" unique_id=1804796180]
+z_index = 4
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_wgde4")
+stats = SubResource("Resource_kx4vt")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1361032087]
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_vo21e")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="AttackScript" type="Node" parent="." unique_id=948159779]
+unique_name_in_owner = true
+script = ExtResource("3_kx4vt")
+
+[node name="Timer" type="Timer" parent="AttackScript" unique_id=1818193049]
+wait_time = 3.0
+one_shot = true
+
+[node name="Stats" type="Node" parent="." unique_id=345543992]
+unique_name_in_owner = true
+
+[node name="DraggAndDrop" parent="." unique_id=644889432 instance=ExtResource("6_tc0qx")]
+
+[connection signal="timeout" from="AttackScript/Timer" to="AttackScript" method="_on_timer_timeout"]

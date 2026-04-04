@@ -25,7 +25,7 @@ position = Vector2(1018, 157)
 
 [node name="MinionManager" type="Node2D" parent="." unique_id=2037279204]
 unique_name_in_owner = true
-position = Vector2(572, 376)
+position = Vector2(400, 400)
 script = ExtResource("3_eunhr")
 
 [node name="UIContainer" type="Control" parent="." unique_id=1660199315]
