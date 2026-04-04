@@ -48,7 +48,7 @@ func reset_stats() -> void:
 	playerStats  = {
 	"level" : 1,
 	"can_level_up" : false,
-	"main_attack" : 1.0,
+	"main_attack" : 10.0,
 	"main_attack_juice" : 5.0
 }
 	minionStats  = {

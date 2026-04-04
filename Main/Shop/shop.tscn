@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bwp6jousxhbw7" path="res://Main/Minions/chess-chimp.png" id="1_60qt2"]
 [ext_resource type="Script" uid="uid://kwsgbjh26k2v" path="res://Main/Shop/shop.gd" id="1_rafwt"]
 [ext_resource type="Texture2D" uid="uid://bamtcc6sauohu" path="res://Main/Shop/animation_1-9.png" id="3_hqijh"]
+[ext_resource type="Texture2D" uid="uid://bwriviwwedlmi" path="res://PlaceHolders/Potion.png" id="3_vwf2g"]
 [ext_resource type="Texture2D" uid="uid://dn8pva60h306g" path="res://Main/Shop/animation_1-8.png" id="4_vwf2g"]
 
 [node name="Shop" type="Control" unique_id=623432963]
@@ -20,7 +21,7 @@ layout_mode = 0
 offset_right = 200.0
 offset_bottom = 300.0
 theme_override_constants/h_separation = 8
-theme_override_constants/v_separation = 51
+theme_override_constants/v_separation = 74
 columns = 3
 
 [node name="MinionFuego" type="TextureButton" parent="GridContainer" unique_id=1275999442]
@@ -76,6 +77,19 @@ de frío
    $5
      "
 
+[node name="HealthPotion" type="TextureButton" parent="GridContainer" unique_id=1476557663]
+layout_mode = 2
+texture_normal = ExtResource("3_vwf2g")
+
+[node name="Label" type="Label" parent="GridContainer/HealthPotion" unique_id=1725016388]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 59.0
+offset_right = 59.0
+offset_bottom = 82.0
+text = "Poción
+5  peso"
+
 [node name="Label" type="Label" parent="." unique_id=1390789570]
 layout_mode = 0
 offset_left = 77.0
@@ -106,4 +120,5 @@ texture_pressed = ExtResource("4_vwf2g")
 [connection signal="pressed" from="GridContainer/MinionFuego" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="GridContainer/MinionLuz" to="." method="_on_minion_luz_pressed"]
 [connection signal="pressed" from="GridContainer/MinionCold" to="." method="_on_minion_cold_pressed"]
+[connection signal="pressed" from="GridContainer/HealthPotion" to="." method="_on_health_potion_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_arrow_pressed"]

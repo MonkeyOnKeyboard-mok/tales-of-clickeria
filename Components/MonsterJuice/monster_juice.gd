@@ -50,7 +50,11 @@ func get_juice() -> float:
 	return _juice
 
 func spend_juice(juice_spent : float) -> void:
-	juice -= juice_spent
+	if juice_spent <= juice:
+		juice -= juice_spent
+		Event.emit_signal("player_gained_health", 5.0)
+		print("You bought a health potion")
+	else : print("You don't have enough juice!")
 
 func gain_juice(juice_gained: float) -> void:
 	juice += juice_gained

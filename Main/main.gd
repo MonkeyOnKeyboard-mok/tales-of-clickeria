@@ -19,7 +19,7 @@ var enemy_position: Vector2 = Vector2(576,160)
 
 func _ready() -> void:
 	## Connect to relevant signals
-	#Event.enemy_died.connect(enemy_died)
+	Event.enemy_died.connect(spawn_enemy)
 	Event.spawn_enemy.connect(spawn_enemy)
 	Event.spawn_minion.connect(spawn_minion)
 	Event.upgrade_chosen.connect(hide_upgrades)
@@ -32,6 +32,7 @@ func _process(_delta: float) -> void:
 
 ## public methods
 func spawn_enemy() -> void:
+	await get_tree().create_timer(1.5).timeout
 	var enenmy_instance = ENEMY.instantiate()
 	add_child(enenmy_instance)
 	enenmy_instance.global_position = enemy_position

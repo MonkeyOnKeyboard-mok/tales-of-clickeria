@@ -54,5 +54,7 @@ func get_health() -> float:
 func take_damage(damage : float) -> void:
 	health -= damage
 
+func gain_health(health_gained: float) -> void:
+	health += health_gained
 
 ## private methods

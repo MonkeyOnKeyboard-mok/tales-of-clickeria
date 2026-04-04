@@ -6,6 +6,9 @@ class_name Enemy
 # Referencias a Componentes (Composición)
 @onready var level_component: LevelComponent = %LvLComponent
 @onready var health_bar: HealthBar = %HealthBar # Asumiendo que tu nodo se llama así
+@onready var sprite: Sprite2D = $Sprite2D
+var dying := false
+
 # Estado interno (opcional, para lógica de muerte)
 var esta_vivo: bool = true
 
@@ -46,7 +49,37 @@ func _process(_delta: float) -> void:
 			# GameManager.jugador.recibir_daño(dps * delta)
 			pass
 
+func _death_animation()  -> void:
+	dying = true
+# Step 1: jump up and to the right
+	var tween = create_tween()
+	tween.tween_property(sprite, "position", sprite.position + Vector2(30, -50), 0.3) \
+	.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	# Rotate 90° while in the air
+	tween.parallel().tween_property(sprite, "rotation_degrees", sprite.rotation_degrees + 90, 0.3) \
+	.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+	# Step 2: fall back down (bounce #1)
+	tween.tween_property(sprite, "position", sprite.position + Vector2(30, 0), 0.2) \
+	.set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	# Step 3: small bounce up
+	tween.tween_property(sprite, "position", sprite.position + Vector2(30, -20), 0.15) \
+	.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	# Step 4: settle down (bounce #2)
+	tween.tween_property(sprite, "position", sprite.position + Vector2(30, 0), 0.15) \
+	.set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	# Step 5: rotate 90 degrees
+	tween.tween_property(sprite, "rotation_degrees", sprite.rotation_degrees + 90, 0.5) \
+	.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	# Step 6: fade out
+	tween.tween_property(sprite, "modulate:a", 0.0, 0.5) \
+	.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	# Step 7: clean up
+	Event.emit_signal("enemy_died")
+	tween.finished.connect(func(): queue_free())
+
 func _on_area_2d_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
+	if dying: return
 	if event is InputEventMouseButton and event.pressed:
 		health_bar.take_damage(GlobalStats.playerStats["main_attack"])
 		Event.emit_signal("spawn_particle", get_global_mouse_position())

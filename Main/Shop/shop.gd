@@ -45,3 +45,6 @@ func _on_minion_luz_pressed() -> void:
 func _on_minion_cold_pressed() -> void:
 	print("Cold Wizard bought")
 	Event.emit_signal("spawn_minion", Event.MINION_TYPES["cold"])
+
+func _on_health_potion_pressed() -> void:
+	Event.emit_signal("spent_juice", 50.0)
