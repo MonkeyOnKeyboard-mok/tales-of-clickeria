@@ -2,16 +2,24 @@ extends Control
 
 @onready var lbl_etapa: Label = $HBoxContainer/LabelEtapa
 @onready var btn_siguiente: Button = $HBoxContainer/ButtonSiguienteEtapa
+@onready var timer: Timer = $Timer
+@onready var timerLabel: Label = $Timer/Label
+
+var timerBaseTime : float = 30.0
 
 # Necesitas una referencia al enemigo actual en escena
 @export var enemigo_actual: Node2D 
 
 func _ready() -> void:
+	timer.start(timerBaseTime)
 	# Conectar señal del gestor
 	GestorEtapa.etapa_cambiada.connect(_actualizar_ui_etapa)
 	btn_siguiente.pressed.connect(_on_btn_siguiente_pressed)
 	
 	_actualizar_ui_etapa(GestorEtapa.etapa_actual)
+
+func _process(_delta: float) -> void:
+	timerLabel.text = str(round(timer.time_left))
 
 func _actualizar_ui_etapa(nueva_etapa: int) -> void:
 	lbl_etapa.text = "Etapa %d" % nueva_etapa
@@ -44,3 +52,8 @@ func _generar_nuevo_enemigo() -> void:
 	# enemigo_actual.actualizar_stats(GestorEtapa.etapa_actual)
 	
 	print("Nuevo enemigo generado para Etapa %d" % GestorEtapa.etapa_actual)
+
+func _on_timer_timeout() -> void:
+	_on_btn_siguiente_pressed()
+	timerBaseTime += 30.0
+	timer.start(timerBaseTime)

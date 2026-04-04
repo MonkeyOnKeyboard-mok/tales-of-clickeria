@@ -23,3 +23,12 @@ layout_mode = 2
 [node name="ButtonSiguienteEtapa" type="Button" parent="HBoxContainer" unique_id=1437122115]
 layout_mode = 2
 icon = ExtResource("2_7wos1")
+
+[node name="Timer" type="Timer" parent="." unique_id=1765979367]
+one_shot = true
+
+[node name="Label" type="Label" parent="Timer" unique_id=1266148322]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

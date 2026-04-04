@@ -9,7 +9,7 @@ var etapa_actual: int = 1
 # Constantes de balanceo (Ajustables según necesites)
 const SALUD_BASE: float = 100.0
 const DPS_BASE: float = 10.0
-const MULTIPLICADOR_POR_NIVEL: float = 1.5 # Cada nivel es 50% más fuerte
+const MULTIPLICADOR_POR_NIVEL: float = 3.0 # Cada nivel es 50% más fuerte ## Santi: Lo cambié pa probar
 
 # Función para obtener las stats de un enemigo según la etapa
 func obtener_stats_enemigo(etapa: int) -> Dictionary:

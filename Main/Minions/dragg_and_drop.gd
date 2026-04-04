@@ -1,4 +1,5 @@
 extends Node
+class_name DragAndDrop
 ## enums
 ## consts
 ## exports
