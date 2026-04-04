@@ -20,10 +20,6 @@ func _process(_delta: float) -> void:
 
 ## private methods
 
-func _on_texture_button_pressed() -> void:
-	print("Fire Wizard bought")
-	Event.emit_signal("spawn_minion", Event.MINION_TYPES["fire"])
-
 func _on_arrow_pressed() -> void:
 	if displayed: 
 		offset = Vector2(200, 0)
@@ -38,13 +34,30 @@ func _on_arrow_pressed() -> void:
 	tween.tween_property(self, "global_position", final_pos, 0.15)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
+func _on_texture_button_pressed() -> void:
+	_spawn_bought_item("minion",Event.MINION_TYPES["fire"], 5.0)
+
 func _on_minion_luz_pressed() -> void:
-	print("Light Wizard bought")
-	Event.emit_signal("spawn_minion", Event.MINION_TYPES["light"])
+	_spawn_bought_item("minion",Event.MINION_TYPES["light"], 5.0)
 
 func _on_minion_cold_pressed() -> void:
-	print("Cold Wizard bought")
-	Event.emit_signal("spawn_minion", Event.MINION_TYPES["cold"])
+	_spawn_bought_item("minion",Event.MINION_TYPES["cold"], 5.0)
 
 func _on_health_potion_pressed() -> void:
-	Event.emit_signal("spent_juice", 50.0)
+	_spawn_bought_item("potion", 5.0, 50.0)
+
+func _spawn_bought_item(itemType: String, data, amount:float) -> void:
+	if GlobalStats.playerStats["juice"] <= amount: 
+			print("Not enough juice to buy this item")
+			return
+	else: 
+		match itemType:
+			"minion":
+				Event.emit_signal("spent_juice", amount)
+				Event.emit_signal("spawn_minion",data)
+				print(data.type + " Wizard bought")
+			"potion":
+				Event.emit_signal("spent_juice", amount)
+				Event.emit_signal("player_gained_health", data)
+				
+	

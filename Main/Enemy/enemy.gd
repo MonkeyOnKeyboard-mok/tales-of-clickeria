@@ -40,7 +40,7 @@ func _aplicar_nuevas_stats(nueva_salud_max: float, nuevo_dps: float, nuevas_resi
 	health_bar.set_health(nueva_salud_max)
 	health_bar.value = nueva_salud_max
 	
-	print("[Enemy] %s actualizado. Nueva Vida Máx: %.1f" % [nombre_enemigo, nueva_salud_max])
+	#print("[Enemy] %s actualizado. Nueva Vida Máx: %.1f" % [nombre_enemigo, nueva_salud_max])
 
 # Loop de ataque (Daño al jugador)
 func _process(_delta: float) -> void:
@@ -51,7 +51,7 @@ func _process(_delta: float) -> void:
 			# GameManager.jugador.recibir_daño(dps * delta)
 			pass
 
-func _death_animation()  -> void:
+func _death_animation() -> void:
 	dying = true
 	area_2d.queue_free()
 # Step 1: jump up and to the right
@@ -86,5 +86,5 @@ func _on_area_2d_input_event(_viewport, event: InputEvent, _shape_idx: int) -> v
 	if event is InputEventMouseButton and event.pressed:
 		health_bar.take_damage(GlobalStats.playerStats["main_attack"])
 		Event.emit_signal("spawn_particle", get_global_mouse_position())
-		print("mouse poistion at spawn moment:" ,get_global_mouse_position())
+		#print("mouse poistion at spawn moment:" ,get_global_mouse_position())
 		Event.emit_signal("gain_juice", GlobalStats.playerStats["main_attack_juice"])

@@ -23,13 +23,10 @@ func _ready() -> void:
 	label.text = str(int(self.value))
 	initialized = true
 
-func _process(_delta: float) -> void:
-	pass
-
 ## public methods
 
 func set_max_juice(new_value: float) -> void:
-	print("MAX juice CHANGED:", new_value)
+	#print("MAX juice CHANGED:", new_value)
 	var difference := new_value - _max_juice
 	_max_juice = new_value
 	self.max_value = _max_juice
@@ -44,17 +41,14 @@ func set_juice(new_juice: float) -> void:
 		return
 	var tween := create_tween().set_parallel()
 	tween.tween_property(self, "value", _juice, 0.3)
-	label.text = str(int(self.value))
+	GlobalStats.playerStats["juice"] = _juice
+	label.text = str(int(_juice))
 
 func get_juice() -> float:
 	return _juice
 
 func spend_juice(juice_spent : float) -> void:
-	if juice_spent <= juice:
-		juice -= juice_spent
-		Event.emit_signal("player_gained_health", 5.0)
-		print("You bought a health potion")
-	else : print("You don't have enough juice!")
+	juice -= juice_spent
 
 func gain_juice(juice_gained: float) -> void:
 	juice += juice_gained

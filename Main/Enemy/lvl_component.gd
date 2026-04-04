@@ -38,7 +38,7 @@ func recalcular_stats(etapa_global: int) -> void:
 	# Emitimos las nuevas stats para que el Enemy las use
 	stats_calculadas.emit(salud_maxima_calculada, dps_calculado, resistencias_actuales, exp_granted)
 	
-	print("[LevelComponent] Etapa %d -> Salud: %.1f, DPS: %.1f" % [nivel_actual, salud_maxima_calculada, dps_calculado])
+	#print("[LevelComponent] Etapa %d -> Salud: %.1f, DPS: %.1f" % [nivel_actual, salud_maxima_calculada, dps_calculado])
 
 # Lógica específica de resistencias según el GDD
 func _calcular_resistencias(nivel: int) -> Dictionary:

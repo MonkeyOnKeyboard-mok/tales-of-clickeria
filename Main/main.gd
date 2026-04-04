@@ -4,7 +4,6 @@ extends Node
 const ENEMY = preload("uid://bboyklv1jcrnt")
 const MINION = preload("uid://b8hthhw0wyov")
 const HOURGLASS = preload("uid://cl0r173uf860r")
-
 ## exports
 ## public vars
 var current_enemy : Node2D = null

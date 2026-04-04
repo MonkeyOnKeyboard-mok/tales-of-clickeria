@@ -65,7 +65,7 @@ func _calcular_stats_por_etapa(etapa: int) -> void:
 		stats.crit_chance = 0.0
 		stats.attack_speed = current_attack_speed
 		
-	print("[EnemyAttack] Etapa %d | Daño: %.2f | Velocidad Ataque: %.2f seg" % [etapa, current_damage, current_attack_speed])
+	#print("[EnemyAttack] Etapa %d | Daño: %.2f | Velocidad Ataque: %.2f seg" % [etapa, current_damage, current_attack_speed])
 
 func _configurar_timer() -> void:
 	if timer:

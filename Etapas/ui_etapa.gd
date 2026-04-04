@@ -51,7 +51,7 @@ func _generar_nuevo_enemigo() -> void:
 	# enemigo_actual = nuevo_enemigo
 	# enemigo_actual.actualizar_stats(GestorEtapa.etapa_actual)
 	
-	print("Nuevo enemigo generado para Etapa %d" % GestorEtapa.etapa_actual)
+	#print("Nuevo enemigo generado para Etapa %d" % GestorEtapa.etapa_actual)
 
 func _on_timer_timeout() -> void:
 	_on_btn_siguiente_pressed()

@@ -33,7 +33,7 @@ func actualizar_stats(etapa: int) -> void:
 		barra_vida.max_value = salud_maxima
 		barra_vida.value = salud_actual
 	
-	print("Enemigo Etapa %d listo. Salud: %.2f, DPS: %.2f" % [etapa, salud_maxima, dps_enemigo])
+	#print("Enemigo Etapa %d listo. Salud: %.2f, DPS: %.2f" % [etapa, salud_maxima, dps_enemigo])
 
 # Función para recibir daño
 func recibir_daño(cantidad: float, tipo_daño: String = "Fisico") -> float:
@@ -67,7 +67,7 @@ func recibir_daño(cantidad: float, tipo_daño: String = "Fisico") -> float:
 	return daño_final
 
 func morir() -> void:
-	print("Enemigo de Etapa %d derrotado!" % GestorEtapa.etapa_actual)
+	#print("Enemigo de Etapa %d derrotado!" % GestorEtapa.etapa_actual)
 	muerte.emit()
 	# Aquí podrías poner animación de muerte antes de queue_free()
 	queue_free()

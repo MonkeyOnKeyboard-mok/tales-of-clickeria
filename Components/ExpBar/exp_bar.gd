@@ -32,7 +32,7 @@ func _process(_delta: float) -> void:
 
 ## public methods
 func set_max_exp(new_value: float) -> void:
-	print("MAX EXP CHANGED:", new_value)
+	#print("MAX EXP CHANGED:", new_value)
 	_max_exp = new_value
 	self.max_value = _max_exp
 

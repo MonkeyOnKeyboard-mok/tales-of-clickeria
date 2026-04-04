@@ -38,7 +38,7 @@ func obtener_stats_enemigo(etapa: int) -> Dictionary:
 # Función para avanzar de etapa
 func siguiente_etapa() -> void:
 	etapa_actual += 1
-	print("Avanzando a Etapa %d" % etapa_actual)
+	#print("Avanzando a Etapa %d" % etapa_actual)
 	etapa_cambiada.emit(etapa_actual)
 	# Aquí podrías guardar el progreso si quisieras
 

@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 ## public methods
 
 func set_max_health(new_value: float) -> void:
-	print("MAX HEALTH CHANGED:", new_value)
+	#print("MAX HEALTH CHANGED:", new_value)
 	var difference := new_value - _max_health
 	_max_health = new_value
 	self.max_value = _max_health

@@ -50,17 +50,19 @@ func _limpiar_mensaje() -> void:
 func _comprar_pocion() -> void:
 	var costo = EconomiaManager.precio_pocion
 	if EconomiaManager.gastar_oro(costo, "Poción de Vida"):
+		pass
 		# AQUÍ IRÍA LA LÓGICA REAL DE DAR LA POCIÓN AL JUGADOR
-		print("Lógica: Se agregó 1 poción al inventario.")
+		#print("Lógica: Se agregó 1 poción al inventario.")
 		# Ejemplo: Inventorio.agregar_item("pocion")
 
 func _reclutar_mago() -> void:
 	var costo = EconomiaManager.precio_recluta_basica
 	if EconomiaManager.gastar_oro(costo, "Mago Básico"):
 		# AQUÍ IRÍA LA LÓGICA PARA INSTANCIAR UN MAGO EN EL COMBATE
-		print("Lógica: Se preparó un nuevo mago para el altar.")
+		#print("Lógica: Se preparó un nuevo mago para el altar.")
 		Event.emit_signal("spawn_minion", Event.MINION_TYPES.values().pick_random())
 		# Ejemplo: GameManager.reclutar_mago_tipo("basico")
 
 func _get_money() -> void:
-	EconomiaManager.ganar_oro(50)
+	#EconomiaManager.ganar_oro(50)
+	Event.emit_signal("gain_juice",50.0)

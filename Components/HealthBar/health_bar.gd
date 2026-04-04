@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 ## public methods
 
 func set_max_health(new_value: float) -> void:
-	print("MAX HEALTH CHANGED:", new_value)
+	#print("MAX HEALTH CHANGED:", new_value)
 	var difference := new_value - _max_health
 	_max_health = new_value
 	self.max_value = _max_health
@@ -48,15 +48,15 @@ func get_health() -> float:
 	return _health
 
 func take_damage(damage : float) -> void:
-	print("Damage:", damage)
-	print("Before:", health)
+	#print("Damage:", damage)
+	#print("Before:", health)
 	health -= damage
 	label.text = str(int(health))
 	if health < 1.0:
 		Event.emit_signal("gained_experience", get_parent().level_component.exp_granted)
-		print("Enemy granted :", get_parent().level_component.exp_granted, "exp")
+		#print("Enemy granted :", get_parent().level_component.exp_granted, "exp")
 		get_parent()._death_animation()
-	print("After:", health)
+	#print("After:", health)
 
 
 ## private methods

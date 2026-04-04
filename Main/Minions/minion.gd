@@ -19,6 +19,13 @@ var current_attack_speed : float
 
 func _ready() -> void:
 	sprite.play("idle")
+	var main = get_tree().current_scene
+	print(main)
+	var enemy = main.get_node_or_null("Enemy")
+	print(enemy)
+	if enemy:
+		target = enemy
+		attack.minion_attack(enemy)
 	current_attack_speed = stats.attack_speed
 	print("spawned minion attack speed is:", current_attack_speed)
 	#print("Minion type: ", stats.type)
@@ -47,13 +54,10 @@ func calculate_damage() -> float:
 	return damage
 
 func apply_attack_speed_buff() -> void:
-	print("Attack Speed increased")
 	current_attack_speed *= 0.1
 	sprite.speed_scale += 1.0
-	print("this minion attack speed has been increased to: ",current_attack_speed)
 
 func remove_atk_spd() -> void:
-	print("Attack Speed returned to base")
 	current_attack_speed = stats.attack_speed
 	sprite.speed_scale = 1.0
 	

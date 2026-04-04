@@ -22,7 +22,7 @@ func _process(_delta: float) -> void:
 
 ## public methods
 func spawn_particle(pos: Vector2) -> void:
-	print("spawning particle at:" , pos)
+	#print("spawning particle at:" , pos)
 	var pf = PathFollow2D.new()
 	$Path2D.add_child(pf)
 	pf.progress_ratio = 0.0

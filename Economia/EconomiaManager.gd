@@ -14,7 +14,7 @@ var precio_recluta_basica: int = 100
 func _ready() -> void:
 	# Inicializamos con 0 o un valor de prueba
 	oro = 0
-	print("Sistema de Economía iniciado.")
+	#print("Sistema de Economía iniciado.")
 
 # --- Funciones Públicas (Las que usaremos desde otros scripts) ---
 
@@ -23,7 +23,7 @@ func ganar_oro(cantidad: int) -> void:
 	if cantidad > 0:
 		oro += cantidad
 		oro_actualizado.emit(oro)
-		print("Ganaste %d de oro. Total: %d" % [cantidad, oro])
+		#print("Ganaste %d de oro. Total: %d" % [cantidad, oro])
 
 # Gastar oro (ej. comprar algo)
 func gastar_oro(costo: int, concepto: String) -> bool:
@@ -31,11 +31,11 @@ func gastar_oro(costo: int, concepto: String) -> bool:
 		oro -= costo
 		oro_actualizado.emit(oro)
 		transaccion_exitosa.emit(concepto)
-		print("Compraste: %s por %d de oro." % [concepto, costo])
+		#print("Compraste: %s por %d de oro." % [concepto, costo])
 		return true
 	else:
 		transaccion_fallida.emit("No tienes suficiente oro para: " + concepto)
-		print("Fallo: No hay suficiente oro para %s" % concepto)
+		#print("Fallo: No hay suficiente oro para %s" % concepto)
 		return false
 
 # Obtener el oro actual (útil para verificar antes de mostrar botones)
