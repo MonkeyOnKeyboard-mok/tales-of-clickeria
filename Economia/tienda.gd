@@ -18,8 +18,6 @@ func _ready() -> void:
 	btn_mago.pressed.connect(_reclutar_mago)
 	btn_money.pressed.connect(_get_money)
 	
-	# Actualizamos la UI al iniciar
-	_actualizar_ui_oro(EconomiaManager.obtener_oro())
 
 # --- Funciones de Interfaz ---
 

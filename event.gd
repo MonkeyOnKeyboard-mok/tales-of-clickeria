@@ -35,6 +35,9 @@ signal player_gained_health(amount : float)
 @warning_ignore("unused_signal")
 signal player_leveled_up
 
+## Shop Signals
+@warning_ignore("unused_signal")
+signal update_price
 
 ## Minions 
 
