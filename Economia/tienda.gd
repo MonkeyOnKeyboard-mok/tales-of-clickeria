@@ -9,13 +9,13 @@ extends Control
 
 func _ready() -> void:
 	# Conectamos las señales del gestor de economía
-	EconomiaManager.oro_actualizado.connect(_actualizar_ui_oro)
-	EconomiaManager.transaccion_exitosa.connect(_mostrar_exito)
-	EconomiaManager.transaccion_fallida.connect(_mostrar_error)
-	
-	# Conectamos los botones a sus funciones
-	btn_pocion.pressed.connect(_comprar_pocion)
-	btn_mago.pressed.connect(_reclutar_mago)
+	#EconomiaManager.oro_actualizado.connect(_actualizar_ui_oro)
+	#EconomiaManager.transaccion_exitosa.connect(_mostrar_exito)
+	#EconomiaManager.transaccion_fallida.connect(_mostrar_error)
+	#
+	## Conectamos los botones a sus funciones
+	#btn_pocion.pressed.connect(_comprar_pocion)
+	#btn_mago.pressed.connect(_reclutar_mago)
 	btn_money.pressed.connect(_get_money)
 	
 

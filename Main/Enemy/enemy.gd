@@ -14,8 +14,6 @@ var dying := false
 # Estado interno (opcional, para lógica de muerte)
 var esta_vivo: bool = true
 
-signal enemigo_muerto()
-
 func _ready() -> void:
 	# 1. Validar que existan los componentes necesarios
 	if not level_component:
@@ -61,7 +59,6 @@ func _death_animation() -> void:
 	# Rotate 90° while in the air
 	tween.parallel().tween_property(sprite, "rotation_degrees", sprite.rotation_degrees + 90, 0.3) \
 	.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-
 	# Step 2: fall back down (bounce #1)
 	tween.tween_property(sprite, "position", sprite.position + Vector2(30, 0), 0.2) \
 	.set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)

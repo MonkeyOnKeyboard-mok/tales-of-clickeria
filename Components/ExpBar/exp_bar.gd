@@ -10,7 +10,7 @@ var min_exp : float = 0.0
 var _exp := 0.0
 var _max_exp := 15.0
 var initialized := false
-var lvl_up_multiplier := 10.0
+var lvl_up_multiplier := 2.0
 ## private vars
 ## onready vars
 @onready var label: Label = $Label
@@ -68,3 +68,4 @@ func _level_up() -> void:
 	xp = 0.0
 	max_exp *= lvl_up_multiplier  # or your scaling variable
 	GlobalStats.playerStats["can_level_up"] = false
+	Event.emit_signal("pause_game")

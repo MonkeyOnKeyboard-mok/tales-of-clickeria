@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://cnyqlv27xp4dh" path="res://Main/Upgrades/Cards/increase_cold_damage.tres" id="8_ivfpj"]
 
 [node name="Upgrades" type="CanvasLayer" unique_id=2034106112]
+process_mode = 3
 
 [node name="Control" type="Control" parent="." unique_id=649635086]
 layout_mode = 3

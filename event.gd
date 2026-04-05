@@ -16,6 +16,8 @@ signal spawn_minion
 signal spawn_hourglass
 @warning_ignore("unused_signal")
 signal upgrade_chosen
+@warning_ignore("unused_signal")
+signal pause_game
 
 ## Particle Signals
 @warning_ignore("unused_signal")

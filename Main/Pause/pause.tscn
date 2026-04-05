@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://nju62x8f6byo"]
+
+[ext_resource type="Script" uid="uid://diil6ush4rxuq" path="res://pause.gd" id="1_mlhic"]
+
+[node name="Pause" type="CanvasLayer" unique_id=466694632]
+layer = 0
+script = ExtResource("1_mlhic")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1210574128]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.792078, 16.224434)
+color = Color(0.07766842, 0.09743906, 0.31378233, 0.7647059)

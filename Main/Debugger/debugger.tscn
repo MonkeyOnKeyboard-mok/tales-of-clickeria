@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bgr6av6g1yt40" path="res://Main/Debugger/debugger.gd" id="1_e1o5k"]
 
 [node name="Debugger" type="Control" unique_id=452095247]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,8 +50,17 @@ offset_bottom = 15.0
 scale = Vector2(0.5, 0.5)
 text = "Bypass Exp Restriciton"
 
+[node name="Pause" type="Button" parent="." unique_id=908958379]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 12.0
+offset_right = 956.0
+offset_bottom = 43.0
+text = "Pause"
+
 [connection signal="pressed" from="EnemySpawner" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MinionSpawner" to="." method="_on_minion_spawner_pressed"]
 [connection signal="pressed" from="HourglasSpawner" to="." method="_on_hourglas_spawner_pressed"]
 [connection signal="pressed" from="LevelUp" to="." method="_on_level_up_pressed"]
 [connection signal="pressed" from="LevelUp/ByPass" to="." method="_on_by_pass_pressed"]
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

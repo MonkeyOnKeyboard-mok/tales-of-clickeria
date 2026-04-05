@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dbk7uae2ink4b" path="res://Main/Upgrades/upgrades.tscn" id="7_ib3t1"]
 [ext_resource type="PackedScene" uid="uid://cjdyx712j6gev" path="res://Etapas/ui_etapa.tscn" id="8_rj11h"]
 [ext_resource type="Script" uid="uid://bbjieseqih5r2" path="res://Main/particle_manager.gd" id="9_rj11h"]
+[ext_resource type="PackedScene" uid="uid://nju62x8f6byo" path="res://Main/Pause/pause.tscn" id="10_qac2q"]
 
 [sub_resource type="Curve2D" id="Curve2D_rj11h"]
 _data = {
@@ -17,6 +18,7 @@ _data = {
 point_count = 14
 
 [node name="Main" type="Node2D" unique_id=1222045523]
+process_mode = 1
 script = ExtResource("1_k3v36")
 
 [node name="Player" parent="." unique_id=1417812519 instance=ExtResource("2_2w1kt")]
@@ -93,3 +95,7 @@ script = ExtResource("9_rj11h")
 z_index = 2
 position = Vector2(6, 10)
 curve = SubResource("Curve2D_rj11h")
+
+[node name="Pause" parent="." unique_id=466694632 instance=ExtResource("10_qac2q")]
+process_mode = 3
+layer = -1

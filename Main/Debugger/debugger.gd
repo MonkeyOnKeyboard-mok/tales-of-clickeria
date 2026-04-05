@@ -34,3 +34,6 @@ func _on_level_up_pressed() -> void:
 func _on_by_pass_pressed() -> void:
 	GlobalStats.debugging["level"] = !GlobalStats.debugging["level"]
 	#print(GlobalStats.debugging["level"])
+
+func _on_pause_pressed() -> void:
+	Event.emit_signal("pause_game")

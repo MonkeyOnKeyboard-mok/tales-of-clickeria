@@ -19,4 +19,5 @@ func _on_select_pressed() -> void:
 	print(GlobalStats.minionStats)
 	#emit_signal("upgrade_selected",card.type)
 	Event.emit_signal("upgrade_chosen")
+	Event.emit_signal("pause_game")
 	queue_free()

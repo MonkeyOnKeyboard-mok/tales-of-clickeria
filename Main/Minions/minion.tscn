@@ -109,6 +109,7 @@ animations = [{
 }]
 
 [node name="Minion" type="Node2D" unique_id=1804796180]
+process_mode = 3
 z_index = 4
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_wgde4")
@@ -123,6 +124,7 @@ autoplay = "idle"
 
 [node name="AttackScript" type="Node" parent="." unique_id=948159779]
 unique_name_in_owner = true
+process_mode = 1
 script = ExtResource("3_kx4vt")
 
 [node name="Timer" type="Timer" parent="AttackScript" unique_id=1818193049]

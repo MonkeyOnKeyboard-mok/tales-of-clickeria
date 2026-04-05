@@ -17,7 +17,7 @@ var current_attack_speed: float = 0.0
 var etapa_asignada: int = 1
 
 # Constantes de balanceo (Deben coincidir con las de LevelComponent para coherencia)
-const BASE_DAMAGE: float = 3.0
+const BASE_DAMAGE: float = 2.0
 const BASE_ATTACK_SPEED: float = 3.0 # Segundos entre ataques
 const MULTIPLICADOR_POR_NIVEL: float = 1.5 
 
@@ -81,5 +81,6 @@ func actualizar_por_etapa(nueva_etapa: int) -> void:
 	_configurar_timer()
 
 func _on_timer_timeout() -> void:
+	if get_parent().dying == true: return
 	# Emitimos el daño calculado junto con la señal
 	emit_signal("enemy_attacked", current_damage)
