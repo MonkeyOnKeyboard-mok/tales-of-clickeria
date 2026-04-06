@@ -27,6 +27,36 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Curve2D" id="Curve2D_5an88"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -84, -51, 0, 0, 0, 0, -231, -28, 0, 0, 0, 0, 0, 518)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_yynbb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 84, -51, 0, 0, 0, 0, 231, -28, 0, 0, 0, 0, 0, 518)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_5gxkj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 71, 0, 0, 0, 0, 0, 504)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_4bo1o"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 68, 75, 0, 0, 0, 0, 4, 507)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_mb6jb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -66, 74, 0, 0, 0, 0, -2, 509)
+}
+point_count = 2
+
 [node name="Enemy" type="Node2D" unique_id=534595693 groups=["enemy"]]
 z_index = 1
 script = ExtResource("1_svo2v")
@@ -73,13 +103,28 @@ multiplicador_crecimiento = 3.0
 [node name="ProjectileAttack" type="Node2D" parent="." unique_id=222380406]
 script = ExtResource("7_4bh3l")
 
+[node name="Timer" type="Timer" parent="ProjectileAttack" unique_id=1354776241]
+
 [node name="Path1" type="Path2D" parent="ProjectileAttack" unique_id=1971290271]
 curve = SubResource("Curve2D_4bh3l")
 
 [node name="Path2" type="Path2D" parent="ProjectileAttack" unique_id=1004174789]
 curve = SubResource("Curve2D_e3jus")
 
-[node name="Timer" type="Timer" parent="ProjectileAttack" unique_id=1354776241]
+[node name="Path3" type="Path2D" parent="ProjectileAttack" unique_id=7733266]
+curve = SubResource("Curve2D_5an88")
+
+[node name="Path4" type="Path2D" parent="ProjectileAttack" unique_id=298909225]
+curve = SubResource("Curve2D_yynbb")
+
+[node name="Path5" type="Path2D" parent="ProjectileAttack" unique_id=680642038]
+curve = SubResource("Curve2D_5gxkj")
+
+[node name="Path6" type="Path2D" parent="ProjectileAttack" unique_id=1631426672]
+curve = SubResource("Curve2D_4bo1o")
+
+[node name="Path7" type="Path2D" parent="ProjectileAttack" unique_id=829113881]
+curve = SubResource("Curve2D_mb6jb")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="EnemyAttack/Timer" to="EnemyAttack" method="_on_timer_timeout"]

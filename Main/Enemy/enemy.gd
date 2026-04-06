@@ -23,14 +23,14 @@ func _ready() -> void:
 	if not level_component:
 		push_error("ERROR: El enemigo '%s' no tiene un LevelComponent hijo." % nombre_enemigo)
 		return
-	
+
 	if not health_bar:
 		push_error("ERROR: El enemigo '%s' no tiene un HealthBar hijo." % nombre_enemigo)
 		return
 
 	# 2. Conectar la señal del componente para recibir stats iniciales y actualizaciones
 	level_component.stats_calculadas.connect(_aplicar_nuevas_stats)
-	
+
 	# 3. Forzar cálculo inicial basado en la etapa global actual
 	level_component.recalcular_stats(GestorEtapa.etapa_actual)
 
@@ -41,7 +41,7 @@ func _aplicar_nuevas_stats(nueva_salud_max: float, nuevo_dps: float, nuevas_resi
 	health_bar.set_max_health(nueva_salud_max)
 	health_bar.set_health(nueva_salud_max)
 	health_bar.value = nueva_salud_max
-	
+
 	#print("[Enemy] %s actualizado. Nueva Vida Máx: %.1f" % [nombre_enemigo, nueva_salud_max])
 
 # Loop de ataque (Daño al jugador)

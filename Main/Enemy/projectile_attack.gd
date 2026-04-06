@@ -8,13 +8,18 @@ const PROJECTILE = preload("uid://bcpb5orwfprdb")
 ## onready vars
 @onready var path_1: Path2D = $Path1
 @onready var path_2: Path2D = $Path2
+@onready var path_3: Path2D = $Path3
+@onready var path_4: Path2D = $Path4
+@onready var path_5: Path2D = $Path5
+@onready var path_6: Path2D = $Path6
+@onready var path_7: Path2D = $Path7
 @onready var attack_timer: Timer = $Timer
 var paths : Array = []
 # "obj_" for node references;
 ## built-in override methods
 
 func _ready() -> void:
-	paths = [path_1, path_2]
+	paths = [path_1, path_2, path_3 , path_4, path_5 ,path_6 ,path_7]
 
 func _process(_delta: float) -> void:
 	pass
@@ -44,6 +49,8 @@ func _launch_projectile(path : Path2D) -> void:
 
 func _on_timer_timeout() -> void:
 	if get_parent().dying == true: return
-	for i in get_parent().projectiles_amount:
-		_launch_projectile(paths[i])
+	var shuffled_paths = paths.duplicate()
+	shuffled_paths.shuffle()
+	for i in range(get_parent().projectiles_amount):
+		_launch_projectile(shuffled_paths[i])
 	attack_timer.start(2.0)

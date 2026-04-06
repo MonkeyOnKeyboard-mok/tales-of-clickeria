@@ -11,6 +11,8 @@ var offset : Vector2 = Vector2.ZERO
 @onready var label_light: Label = $GridContainer/MinionLuz/Label
 @onready var label_cold: Label = $GridContainer/MinionCold/Label
 @onready var label_basic_potion: Label = $GridContainer/HealthPotion/Label
+@onready var label_hourglass: Label = $GridContainer/HourGlass/Label
+
 # "obj_" for node references;
 ## built-in override methods
 
@@ -22,7 +24,7 @@ func _process(_delta: float) -> void:
 	label_light.text = "Light Wizard \n      " + str(int(EconomiaManager.precios["mago_light"]))
 	label_cold.text = "Cold Wizard \n      " + str(int(EconomiaManager.precios["mago_cold"]))
 	label_basic_potion.text = "Basic Potion \n      " + str(int(EconomiaManager.precios["pocion_basica"]))
-
+	label_hourglass.text = "Hourglass \n      " + str(int(EconomiaManager.precios["hourglass"]))
 ## public methods
 
 ## private methods
@@ -41,18 +43,20 @@ func _on_arrow_pressed() -> void:
 	tween.tween_property(self, "global_position", final_pos, 0.15)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
+
+## Señales de los botones
 func _on_texture_button_pressed() -> void:
 	_spawn_bought_item("minion", Event.MINION_TYPES["fire"], EconomiaManager.precios["mago_fuego"], "mago_fuego") 
-
 func _on_minion_luz_pressed() -> void:
 	_spawn_bought_item("minion",Event.MINION_TYPES["light"],EconomiaManager.precios["mago_light"], "mago_light") 
-
 func _on_minion_cold_pressed() -> void:
 	_spawn_bought_item("minion",Event.MINION_TYPES["cold"], EconomiaManager.precios["mago_cold"], "mago_cold") 
-
 func _on_health_potion_pressed() -> void:
 	_spawn_bought_item("potion", 5.0, EconomiaManager.precios["pocion_basica"], "pocion_basica") 
 	## Para las pociones, el segundo argumento es la vida que curan
+func _on_hourglass_pressed() -> void:
+	_spawn_bought_item("artifact", "spawn_hourglass", EconomiaManager.precios["hourglass"], "hourglass") 
+	## Para los artefactos, el segundo argumento es una String con el artefacto
 
 func _spawn_bought_item(itemType: String, data, amount:float, key: String) -> void:
 	if GlobalStats.playerStats["juice"] < amount: 
@@ -68,3 +72,7 @@ func _spawn_bought_item(itemType: String, data, amount:float, key: String) -> vo
 			"potion":
 				Event.emit_signal("spent_juice", amount)
 				Event.emit_signal("player_gained_health", data)
+			"artifact":
+				Event.emit_signal("spent_juice", amount)
+				Event.emit_signal(data)
+			

@@ -8,6 +8,7 @@ var precios : Dictionary = {
 	"mago_fuego" : 10.0,
 	"mago_cold" : 10.0,
 	"mago_light" : 10.0,
+	"hourglass" : 1000.0,
 }
 
 # Configuración inicial (puedes cargar esto desde un archivo JSON luego)
@@ -18,6 +19,7 @@ func _ready() -> void:
 	"mago_fuego" : 10.0,
 	"mago_cold" : 10.0,
 	"mago_light" : 10.0,
+	"hourglass" : 1000.0,
 }
 
 # Configurar precios dinámicos (opcional, para subir precios según nivel)
