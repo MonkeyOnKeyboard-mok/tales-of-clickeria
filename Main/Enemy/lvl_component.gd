@@ -9,7 +9,7 @@ signal stats_calculadas(salud_max: float, dps: float, resistencias: Dictionary, 
 @export var salud_base: float = 30.0
 @export var dps_base: float = 2.0
 @export var exp_granted: float = 5.0
-@export var multiplicador_crecimiento: float = 1.5 # 50% más fuerte por nivel
+@export var multiplicador_crecimiento: float = 5.0 # 50% más fuerte por nivel
 
 # Estado actual del componente
 var nivel_actual: int = 1
@@ -30,7 +30,7 @@ func recalcular_stats(etapa_global: int) -> void:
 	
 	salud_maxima_calculada = salud_base * factor_escala
 	dps_calculado = dps_base * factor_escala
-	exp_granted = exp_granted * factor_escala
+	exp_granted *= factor_escala
 	
 	# Lógica de Resistencias (Basado en tu GDD)
 	resistencias_actuales = _calcular_resistencias(nivel_actual)

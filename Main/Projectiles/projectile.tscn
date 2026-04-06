@@ -16,6 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://b3u2qiig8luem" path="res://Main/Projectiles/LightEffects/LightEffect_05.png" id="5_ydsla"]
 [ext_resource type="Texture2D" uid="uid://cct5b608svvst" path="res://Main/Projectiles/Water_Effect/01/Water__05.png" id="6_7rbc2"]
 [ext_resource type="Texture2D" uid="uid://cr3mu77hfca0s" path="res://Main/Projectiles/Fireball_Effect_2/Fireball_Effect_05.png" id="6_c67rq"]
+[ext_resource type="Texture2D" uid="uid://dqmpba7el37dv" path="res://Main/Projectiles/Blood - Magic Effect/Blood-Magic-Effect_06.png" id="7_pjc6y"]
+[ext_resource type="Texture2D" uid="uid://m1ih5f8h0csh" path="res://Main/Projectiles/Blood - Magic Effect/Blood-Magic-Effect_07.png" id="8_dqw54"]
+[ext_resource type="Texture2D" uid="uid://c4oe1yrakjcr5" path="res://Main/Projectiles/Blood - Magic Effect/Blood-Magic-Effect_08.png" id="9_b1no4"]
+[ext_resource type="Texture2D" uid="uid://4m6pn5tjnmjp" path="res://Main/Projectiles/Blood - Magic Effect/Blood-Magic-Effect_09.png" id="10_twkij"]
+[ext_resource type="Texture2D" uid="uid://b06a00q7kx1pa" path="res://Main/Projectiles/Blood - Magic Effect/Blood-Magic-Effect_10.png" id="11_fgapx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jpiix"]
 animations = [{
@@ -37,6 +42,26 @@ animations = [{
 }],
 "loop": false,
 "name": &"cold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.7,
+"texture": ExtResource("7_pjc6y")
+}, {
+"duration": 0.7,
+"texture": ExtResource("8_dqw54")
+}, {
+"duration": 0.7,
+"texture": ExtResource("9_b1no4")
+}, {
+"duration": 0.7,
+"texture": ExtResource("10_twkij")
+}, {
+"duration": 0.7,
+"texture": ExtResource("11_fgapx")
+}],
+"loop": false,
+"name": &"enemy_generic",
 "speed": 5.0
 }, {
 "frames": [{
@@ -80,22 +105,28 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_32jmy"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjc6y"]
+radius = 9.772949
+height = 40.82643
 
 [node name="Projectile" type="CharacterBody2D" unique_id=981540825]
+z_index = 4
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_pvlp7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1107616421]
 rotation = -1.5707964
 sprite_frames = SubResource("SpriteFrames_jpiix")
-animation = &"cold"
+animation = &"enemy_generic"
+frame = 4
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2036603231]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1175681738]
-scale = Vector2(2.2376597, 2.0830698)
-shape = SubResource("CircleShape2D_32jmy")
+position = Vector2(0, -8)
+scale = Vector2(3.6836371, 2.963768)
+shape = SubResource("CapsuleShape2D_pjc6y")
 
 [node name="SelfDestruct" type="Timer" parent="." unique_id=1173370934]
 wait_time = 5.0
@@ -103,4 +134,5 @@ one_shot = true
 autostart = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="SelfDestruct" to="." method="_on_self_destruct_timeout"]

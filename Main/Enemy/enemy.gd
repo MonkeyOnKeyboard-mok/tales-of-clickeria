@@ -8,13 +8,17 @@ class_name Enemy
 @onready var health_bar: HealthBar = %HealthBar # Asumiendo que tu nodo se llama así
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var area_2d: Area2D = $Area2D
+@onready var projectile_attack: Node2D = $ProjectileAttack
 
+var projectiles_amount : int = 0
 var dying := false
 
 # Estado interno (opcional, para lógica de muerte)
 var esta_vivo: bool = true
 
 func _ready() -> void:
+	projectiles_amount = 2
+	projectile_attack.start_attack_timer()
 	# 1. Validar que existan los componentes necesarios
 	if not level_component:
 		push_error("ERROR: El enemigo '%s' no tiene un LevelComponent hijo." % nombre_enemigo)

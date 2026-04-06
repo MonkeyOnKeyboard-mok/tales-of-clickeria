@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://tyokdg0lwlcx" path="res://Main/Enemy/enemy_attack.gd" id="4_nbxsl"]
 [ext_resource type="Script" uid="uid://b2qpg7x0oltlu" path="res://Main/Enemy/EnemyStats/enemy_stats.gd" id="5_1ftki"]
 [ext_resource type="Script" uid="uid://ctel2h81i66u5" path="res://Main/Enemy/lvl_component.gd" id="6_ulnfe"]
+[ext_resource type="Script" uid="uid://yikabhio3ltp" path="res://Main/Enemy/projectile_attack.gd" id="7_4bh3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jskd6"]
 size = Vector2(136, 136)
@@ -13,6 +14,18 @@ size = Vector2(136, 136)
 [sub_resource type="Resource" id="Resource_ulnfe"]
 script = ExtResource("5_1ftki")
 metadata/_custom_type_script = "uid://b2qpg7x0oltlu"
+
+[sub_resource type="Curve2D" id="Curve2D_4bh3l"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -72, 9, 0, 0, 0, 0, -299, 158, 0, 0, 0, 0, -5, 518)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_e3jus"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 72, 9, 0, 0, 0, 0, 299, 158, 0, 0, 0, 0, 5, 518)
+}
+point_count = 3
 
 [node name="Enemy" type="Node2D" unique_id=534595693 groups=["enemy"]]
 z_index = 1
@@ -55,6 +68,19 @@ wait_time = 3.0
 [node name="LvLComponent" type="Node" parent="." unique_id=1034687758]
 unique_name_in_owner = true
 script = ExtResource("6_ulnfe")
+multiplicador_crecimiento = 3.0
+
+[node name="ProjectileAttack" type="Node2D" parent="." unique_id=222380406]
+script = ExtResource("7_4bh3l")
+
+[node name="Path1" type="Path2D" parent="ProjectileAttack" unique_id=1971290271]
+curve = SubResource("Curve2D_4bh3l")
+
+[node name="Path2" type="Path2D" parent="ProjectileAttack" unique_id=1004174789]
+curve = SubResource("Curve2D_e3jus")
+
+[node name="Timer" type="Timer" parent="ProjectileAttack" unique_id=1354776241]
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="EnemyAttack/Timer" to="EnemyAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="ProjectileAttack/Timer" to="ProjectileAttack" method="_on_timer_timeout"]

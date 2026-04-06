@@ -55,7 +55,7 @@ func _on_health_potion_pressed() -> void:
 	## Para las pociones, el segundo argumento es la vida que curan
 
 func _spawn_bought_item(itemType: String, data, amount:float, key: String) -> void:
-	if GlobalStats.playerStats["juice"] <= amount: 
+	if GlobalStats.playerStats["juice"] < amount: 
 			print("Not enough juice to buy this item")
 			return
 	else: 

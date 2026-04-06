@@ -50,6 +50,7 @@ func calculate_damage() -> float:
 	#print("Global Fire Damage Flat:", gs["flat_damage"][stats.type]) 
 	#print("Global Fire Damage Increase:", gs["increased_damage"][stats.type])
 	#print("This minion's damage is: ", damage) 
+	print(damage)
 	return damage
 
 func apply_attack_speed_buff() -> void:

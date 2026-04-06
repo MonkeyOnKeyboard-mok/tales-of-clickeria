@@ -7,12 +7,15 @@
 [ext_resource type="Script" uid="uid://lhh8auc8ilow" path="res://Components/MonsterJuice/monster_juice.gd" id="5_jbntb"]
 [ext_resource type="PackedScene" uid="uid://bxqaed1vqrw2n" path="res://Components/ExpBar/exp_bar.tscn" id="6_0tgs8"]
 [ext_resource type="Script" uid="uid://pq636u6d2swp" path="res://Components/ExpBar/exp_bar.gd" id="7_qn1bl"]
+[ext_resource type="Texture2D" uid="uid://b2c60yjufmk68" path="res://Main/Player/cabecita.png" id="8_qn1bl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tgs8"]
 bg_color = Color(0.7411765, 0.5764706, 0, 0.5254902)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qn1bl"]
 bg_color = Color(0.89411765, 0.88235295, 0.16470589, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qn1bl"]
 
 [node name="Player" type="Node2D" unique_id=1417812519 groups=["jugador"]]
 script = ExtResource("1_8hbiy")
@@ -37,7 +40,6 @@ offset_bottom = -112.0
 
 [node name="MonsterJuice" parent="." unique_id=1400228462 instance=ExtResource("4_b2fwe")]
 unique_name_in_owner = true
-max_value = 100000.0
 show_percentage = false
 script = ExtResource("5_jbntb")
 
@@ -66,3 +68,17 @@ offset_left = 88.0
 offset_top = 2.0
 offset_right = 128.0
 offset_bottom = 25.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2056130545 groups=["jugador"]]
+position = Vector2(-452, 463)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1819720218]
+position = Vector2(4, 3)
+scale = Vector2(5.554742, 4.6420646)
+shape = SubResource("CircleShape2D_qn1bl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=435465360]
+texture_filter = 1
+position = Vector2(-450.00003, 464)
+scale = Vector2(7, 7)
+texture = ExtResource("8_qn1bl")

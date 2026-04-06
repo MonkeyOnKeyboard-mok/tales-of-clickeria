@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_uf1jn")
-base_damage = 1.0
+base_damage = 4.0
 type = "light"
 crit_chance = 2.0
 attack_speed = 1.0

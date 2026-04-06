@@ -10,5 +10,5 @@ description = "Increases your lightning units damage by 5%"
 icon = ExtResource("1_ugfxs")
 effect = "increased_damage"
 type = "light"
-value = 0.05
+value = 0.5
 metadata/_custom_type_script = "uid://bghgd4mavasf6"

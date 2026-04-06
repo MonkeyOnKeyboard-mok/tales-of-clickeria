@@ -10,5 +10,5 @@ description = "Increases your cold units base damage by 1"
 icon = ExtResource("1_d0k62")
 effect = "flat_damage"
 type = "cold"
-value = 1.0
+value = 5.0
 metadata/_custom_type_script = "uid://bghgd4mavasf6"

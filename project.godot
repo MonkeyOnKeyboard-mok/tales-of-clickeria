@@ -25,6 +25,8 @@ Event="*uid://wukwlt1is33g"
 [global_group]
 
 jugador=""
+enemy_projectile=""
+player_projectile=""
 
 [physics]
 

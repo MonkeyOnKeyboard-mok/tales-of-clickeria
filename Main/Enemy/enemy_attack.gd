@@ -83,4 +83,5 @@ func actualizar_por_etapa(nueva_etapa: int) -> void:
 func _on_timer_timeout() -> void:
 	if get_parent().dying == true: return
 	# Emitimos el daño calculado junto con la señal
-	emit_signal("enemy_attacked", current_damage)
+	pass
+	#emit_signal("enemy_attacked", current_damage)

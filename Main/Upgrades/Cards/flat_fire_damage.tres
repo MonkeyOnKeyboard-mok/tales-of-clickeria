@@ -10,5 +10,5 @@ description = "Increases your fire units base damage by 1"
 icon = ExtResource("1_w1pwv")
 effect = "flat_damage"
 type = "fire"
-value = 1.0
+value = 5.0
 metadata/_custom_type_script = "uid://bghgd4mavasf6"
