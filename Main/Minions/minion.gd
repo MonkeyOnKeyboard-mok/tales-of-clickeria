@@ -18,12 +18,12 @@ var current_attack_speed : float
 ## built-in override methods
 
 func _ready() -> void:
-	print("MINION SPAWNEO EN: ", self.global_position)
+	#print("MINION SPAWNEO EN: ", self.global_position)
 	sprite.play("idle")
 	current_attack_speed = stats.attack_speed
 	calculate_damage()
 	var enemy = get_tree().get_nodes_in_group("enemy")
-	print("Enemy is :",enemy)
+	#print("Enemy is :",enemy)
 	if enemy.size() > 0:
 		new_target(enemy[0])
 	#print("spawned minion attack speed is:", current_attack_speed)
@@ -41,7 +41,7 @@ func _process(_delta: float) -> void:
 ## public methods
 
 func new_target(enemy: Node2D) -> void:
-	print("Minion target: ", enemy)
+	#print("Minion target: ", enemy)
 	attack.set_target(enemy)
 
 func calculate_damage() -> float:
@@ -50,7 +50,7 @@ func calculate_damage() -> float:
 	#print("Global Fire Damage Flat:", gs["flat_damage"][stats.type]) 
 	#print("Global Fire Damage Increase:", gs["increased_damage"][stats.type])
 	#print("This minion's damage is: ", damage) 
-	print(damage)
+	#print(damage)
 	return damage
 
 func apply_attack_speed_buff() -> void:

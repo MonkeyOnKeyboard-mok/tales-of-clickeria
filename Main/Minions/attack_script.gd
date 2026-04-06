@@ -24,10 +24,10 @@ func _process(_delta: float) -> void:
 func set_target(enemy) -> void: 
 	current_target = enemy
 	if not attack_timer.is_stopped():
-		print("Attack timer is on, returning...")
+		#print("Attack timer is on, returning...")
 		return
 	else: 
-		print("Attack timer is off, starting it...")
+		#print("Attack timer is off, starting it...")
 		if current_target:
 			_launch_projectile()
 
@@ -52,6 +52,6 @@ func _on_timer_timeout() -> void:
 	_launch_projectile()
 
 func _stop_timer() -> void:
-	print("Attack Timer off")
+	#print("Attack Timer off")
 	attack_timer.stop()
-	print("Timer stopped?", attack_timer.is_stopped())
+	#print("Timer stopped?", attack_timer.is_stopped())

@@ -31,6 +31,12 @@ func _process(_delta: float) -> void:
 
 ## public methods
 func spawn_enemy() -> void:
+	print(
+		"Print desde el Main: \n",
+		"Kill Count:  ", GestorEtapa.kill_count, "\n",
+		"Current Etapa:  ", GestorEtapa.current_etapa[GestorEtapa.counter], "\n",
+	)
+	if GestorEtapa.kill_count == GestorEtapa.threshold_etapas[GestorEtapa.current_etapa[GestorEtapa.counter]]: return
 	var tries : = 0
 	await get_tree().create_timer(2.5).timeout
 	while _has_enemy_child() and tries <6:  ### Para que no spawnee más de un enemigo a la vez
@@ -48,7 +54,7 @@ func spawn_enemy() -> void:
 	add_child(enenmy_instance)
 	enenmy_instance.global_position = enemy_position
 	current_enemy = enenmy_instance
-	print("monono spawned")
+	#print("monono spawned")
 	minions.set_new_target(current_enemy)
 	
 func spawn_minion(type : UnitStats) -> void:
@@ -56,13 +62,13 @@ func spawn_minion(type : UnitStats) -> void:
 	minion_instance.stats = type
 	minions.add_child(minion_instance)
 	minion_instance.global_position = Vector2(400,400)
-	print("minion spawned")
+	#print("minion spawned")
 	
 func spawn_hourglass() -> void:
 	var hourglass = HOURGLASS.instantiate()
 	add_child(hourglass)
 	hourglass.global_position = Vector2(400,400)
-	print("hourglass spawned")
+	#print("hourglass spawned")
 	
 func hide_upgrades() -> void:
 	cards.get_node("Control").hide()

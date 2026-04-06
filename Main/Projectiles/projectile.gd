@@ -29,7 +29,6 @@ func _process(_delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("jugador"):
 		if is_in_group("player_projectile"): return
-		print("EL JUGADOR FUE ATACADO")
 		area.get_parent().lifeBar.take_damage(2)
 		queue_free()
 	if area.is_in_group("enemy"):
@@ -39,7 +38,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		Event.emit_signal("gain_juice",(parent.calculate_damage()))
 		queue_free()
 	if is_in_group("player_projectile") and area.get_parent().is_in_group("enemy_projectile"):
-		print("Projectiles collide")
 		area.get_parent().queue_free()
 		queue_free()
 
@@ -49,5 +47,4 @@ func _on_self_destruct_timeout() -> void:
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if is_in_group("enemy_projectile"):
 		if event is InputEventMouseButton and event.pressed:
-			print("Enemy projectile destroyed")
 			queue_free()

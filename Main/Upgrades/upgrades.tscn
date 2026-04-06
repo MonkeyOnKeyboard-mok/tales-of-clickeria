@@ -8,6 +8,8 @@
 [ext_resource type="Resource" uid="uid://c1gogp1t14u6t" path="res://Main/Upgrades/Cards/increase_light_damage.tres" id="6_rwimx"]
 [ext_resource type="Resource" uid="uid://de3xxnscsevl" path="res://Main/Upgrades/Cards/flat_cold_damage.tres" id="7_7crw6"]
 [ext_resource type="Resource" uid="uid://cnyqlv27xp4dh" path="res://Main/Upgrades/Cards/increase_cold_damage.tres" id="8_ivfpj"]
+[ext_resource type="Resource" uid="uid://duclcal7ksyr8" path="res://Main/Upgrades/Cards/flat_all_damage.tres" id="9_ivfpj"]
+[ext_resource type="Resource" uid="uid://sgxuqnurvar8" path="res://Main/Upgrades/Cards/increase_all_damage.tres" id="9_mmvtf"]
 
 [node name="Upgrades" type="CanvasLayer" unique_id=2034106112]
 process_mode = 3
@@ -21,7 +23,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_r4jiv")
-upgrade_pool = Array[ExtResource("2_1kii3")]([ExtResource("3_bc8dv"), ExtResource("4_x5sk2"), ExtResource("5_yed8k"), ExtResource("6_rwimx"), ExtResource("7_7crw6"), ExtResource("8_ivfpj")])
+common_pool = Array[ExtResource("2_1kii3")]([ExtResource("8_ivfpj"), ExtResource("4_x5sk2"), ExtResource("6_rwimx")])
+rare_pool = Array[ExtResource("2_1kii3")]([ExtResource("7_7crw6"), ExtResource("3_bc8dv"), ExtResource("5_yed8k")])
+epic_pool = Array[ExtResource("2_1kii3")]([ExtResource("9_mmvtf")])
+legendary_pool = Array[ExtResource("2_1kii3")]([ExtResource("9_ivfpj")])
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=879496888]
 layout_mode = 1

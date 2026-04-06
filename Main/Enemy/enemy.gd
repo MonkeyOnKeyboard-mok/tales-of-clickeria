@@ -10,14 +10,12 @@ class_name Enemy
 @onready var area_2d: Area2D = $Area2D
 @onready var projectile_attack: Node2D = $ProjectileAttack
 
-var projectiles_amount : int = 0
 var dying := false
 
 # Estado interno (opcional, para lógica de muerte)
 var esta_vivo: bool = true
 
 func _ready() -> void:
-	projectiles_amount = 2
 	projectile_attack.start_attack_timer()
 	# 1. Validar que existan los componentes necesarios
 	if not level_component:
@@ -54,7 +52,6 @@ func _process(_delta: float) -> void:
 			pass
 
 func _death_animation() -> void:
-	dying = true
 	area_2d.queue_free()
 # Step 1: jump up and to the right
 	var tween = create_tween()
@@ -79,8 +76,9 @@ func _death_animation() -> void:
 	tween.tween_property(sprite, "modulate:a", 0.0, 0.5) \
 	.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	# Step 7: clean up
+	GestorEtapa.kill_count += 1
 	Event.emit_signal("enemy_died")
-	print("SE EMITIO SEÑAL MUERTE DEL MONO")
+	#print("SE EMITIO SEÑAL MUERTE DEL MONO")
 	tween.finished.connect(func(): queue_free())
 
 func _on_area_2d_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:

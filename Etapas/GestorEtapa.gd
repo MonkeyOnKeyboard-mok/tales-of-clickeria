@@ -9,7 +9,26 @@ var etapa_actual: int = 1
 # Constantes de balanceo (Ajustables según necesites)
 const SALUD_BASE: float = 100.0
 const DPS_BASE: float = 10.0
-const MULTIPLICADOR_POR_NIVEL: float = 3.0 # Cada nivel es 50% más fuerte ## Santi: Lo cambié pa probar
+const MULTIPLICADOR_POR_NIVEL: float = 3.0 # Cada nivel es 50% más fuerte
+
+var  projectiles_amount : int = 2
+
+var current_etapa : Array = ["one", "two", "three", "four", "five", "six", "seven", "boss"]
+var threshold_etapas : Dictionary = {}
+var kill_count : int = 0
+var counter : int = 0
+
+func _ready() -> void:
+	threshold_etapas = {
+		"one" : 3,
+		"two" : 6,
+		"three" : 8,
+		"four" : 10,
+		"five" : 15,
+		"six" : 20,
+		"seven" : 25,
+		"boss" : 1,
+	}
 
 # Función para obtener las stats de un enemigo según la etapa
 func obtener_stats_enemigo(etapa: int) -> Dictionary:
@@ -18,6 +37,7 @@ func obtener_stats_enemigo(etapa: int) -> Dictionary:
 	# Cálculo de stats
 	var salud_max = SALUD_BASE * modificador
 	var dps = DPS_BASE * modificador
+	projectiles_amount += 1
 	
 	# Lógica de Resistencias (Preparado para el futuro)
 	var resistencias = {}

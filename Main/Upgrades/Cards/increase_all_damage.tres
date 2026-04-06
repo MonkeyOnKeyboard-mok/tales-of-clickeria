@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Cards" format=3 uid="uid://sgxuqnurvar8"]
+
+[ext_resource type="Texture2D" uid="uid://b87bu6037misv" path="res://Main/Upgrades/Cards/otherCard.png" id="1_jttn0"]
+[ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="2_8f612"]
+
+[resource]
+script = ExtResource("2_8f612")
+name = "PoliMagical Proficiency"
+description = "Increases all of your units damage by 25%"
+icon = ExtResource("1_jttn0")
+effect = "increased_damage"
+type = "global"
+value = 0.25
+metadata/_custom_type_script = "uid://bghgd4mavasf6"

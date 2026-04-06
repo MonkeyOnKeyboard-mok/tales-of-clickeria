@@ -31,7 +31,7 @@ func start_attack_timer()-> void:
 
 ## private methods
 func _launch_projectile(path : Path2D) -> void:
-	print("El enemigo lanzó un proyectil")
+	#print("El enemigo lanzó un proyectil")
 	var projectile = PROJECTILE.instantiate()
 	var pf = PathFollow2D.new()
 	path.add_child(pf)
@@ -51,6 +51,6 @@ func _on_timer_timeout() -> void:
 	if get_parent().dying == true: return
 	var shuffled_paths = paths.duplicate()
 	shuffled_paths.shuffle()
-	for i in range(get_parent().projectiles_amount):
+	for i in range(GestorEtapa.projectiles_amount):
 		_launch_projectile(shuffled_paths[i])
 	attack_timer.start(2.0)

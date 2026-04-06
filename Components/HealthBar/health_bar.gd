@@ -48,11 +48,13 @@ func get_health() -> float:
 	return _health
 
 func take_damage(damage : float) -> void:
+	if get_parent().dying == true: return
 	#print("Damage:", damage)
 	#print("Before:", health)
 	health -= damage
 	label.text = str(int(health))
 	if health < 1.0:
+		get_parent().dying = true
 		Event.emit_signal("gained_experience", get_parent().level_component.exp_granted)
 		#print("Enemy granted :", get_parent().level_component.exp_granted, "exp")
 		get_parent()._death_animation()

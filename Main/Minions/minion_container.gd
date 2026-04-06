@@ -20,6 +20,6 @@ func set_new_target(enemy: Node2D) -> void:   ## El target de los minions se set
 	for child in get_children():
 		if child is Node2D:
 			child.new_target(enemy)
-			print("minion new target set")
+			#print("minion new target set")
 
 ## private methods
