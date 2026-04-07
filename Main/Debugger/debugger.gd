@@ -5,6 +5,8 @@ extends Node
 ## public vars
 ## private vars
 ## onready vars
+@onready var level_up_rect: ColorRect = $LevelUp/LevelUpRect
+
 # "obj_" for node references;
 ## built-in override methods
 
@@ -12,7 +14,10 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	pass
+	if GlobalStats.playerStats["can_level_up"] == true:
+		level_up_rect.visible = true
+	else:
+		level_up_rect.visible = false
 
 ## public methods
 

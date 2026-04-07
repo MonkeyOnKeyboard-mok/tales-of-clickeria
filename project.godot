@@ -28,6 +28,7 @@ jugador=""
 enemy_projectile=""
 player_projectile=""
 minion=""
+passive=""
 
 [physics]
 

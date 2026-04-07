@@ -1,0 +1,29 @@
+extends Node
+## enums
+## consts
+## exports
+## public vars
+## private vars
+## onready vars
+@onready var arrow: TextureRect = $TextureRect
+@onready var next_zone: Label = $"Avanzar a la siguiente etapa"
+
+# "obj_" for node references;
+## built-in override methods
+
+func _ready() -> void:
+	pass
+
+func _process(_delta: float) -> void:
+	if GlobalStats.playerStats["can_level_up"] == true:
+		arrow.visible = true
+	else:
+		arrow.visible = false
+	if GestorEtapa.threshold_etapas[GestorEtapa.current_etapa[GestorEtapa.etapa_actual-1]] == GestorEtapa.kill_count:
+		next_zone.visible = true
+	else:
+		next_zone.visible = false
+
+## public methods
+
+## private methods

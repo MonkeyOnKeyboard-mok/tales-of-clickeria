@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://3u4d3lydnc1p" path="res://Components/Passives/passives.gd" id="1_4hwgg"]
 
 [node name="Passives" type="Control" unique_id=1403452478]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -16,9 +17,10 @@ mouse_filter = 2
 script = ExtResource("1_4hwgg")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=911341907]
-custom_minimum_size = Vector2(300, 50)
+texture_filter = 1
+custom_minimum_size = Vector2(500, 50)
 layout_mode = 0
-offset_left = -564.0
-offset_top = 278.0
-offset_right = -264.0
-offset_bottom = 328.0
+offset_left = -513.0
+offset_top = 317.0
+offset_right = -13.0
+offset_bottom = 367.0

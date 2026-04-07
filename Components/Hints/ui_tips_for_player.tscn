@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bppi172tfc867"]
+
+[ext_resource type="Script" uid="uid://crmsvsd2v61nr" path="res://Components/Hints/ui_tips_for_player.gd" id="1_6xh86"]
+[ext_resource type="Texture2D" uid="uid://c40kdj6j7ee61" path="res://PlaceHolders/58f8bd900ed2bdaf7c12830c.png" id="2_ghw81"]
+
+[node name="UITipsForPlayer" type="Control" unique_id=844002679]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 733.0
+offset_top = 10.0
+offset_right = 773.0
+offset_bottom = 50.0
+script = ExtResource("1_6xh86")
+
+[node name="Avanzar a la siguiente etapa" type="Label" parent="." unique_id=1699974415]
+layout_mode = 0
+offset_left = -513.0
+offset_top = 90.0
+offset_right = -291.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Avanzar a la siguiente zona ↑"
+
+[node name="ColorRect" type="ColorRect" parent="Avanzar a la siguiente etapa" unique_id=1543837038]
+z_index = -1
+layout_mode = 0
+offset_left = -5.0
+offset_top = -6.0
+offset_right = 35.0
+offset_bottom = 34.0
+scale = Vector2(5.7533565, 0.8770077)
+color = Color(1, 1, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Avanzar a la siguiente etapa" unique_id=579134533]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1947840981]
+layout_mode = 0
+offset_left = 20.999977
+offset_top = 86.00001
+offset_right = 426.99997
+offset_bottom = 556.0
+rotation = -1.6728612
+scale = Vector2(0.1312257, 0.1312257)
+texture = ExtResource("2_ghw81")

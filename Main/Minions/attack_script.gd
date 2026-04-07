@@ -36,14 +36,14 @@ func set_target(enemy) -> void:
 func _launch_projectile() -> void:
 	var projectile = PROJECTILE.instantiate()
 	#print("minion position: ",get_parent().global_position, "projectile position", projectile.global_position)
-	get_parent().sprite.play("attack")
+	get_parent().sprite.play(get_parent().attack_anim)
 	await get_parent().sprite.animation_finished
 	var direction = (enemy_position - get_parent().global_position).normalized()
 	projectile.direction = direction
 	add_child(projectile)
 	projectile.add_to_group("player_projectile")
 	projectile.global_position = get_parent().global_position
-	get_parent().sprite.play("idle")
+	get_parent().sprite.play(get_parent().idle_anim)
 	projectile.anim.play(get_parent().stats.type)
 	#print("El minion tiró un camotito")
 	attack_timer.start(get_parent().current_attack_speed)
@@ -53,6 +53,4 @@ func _on_timer_timeout() -> void:
 		_launch_projectile()
 
 func _stop_timer() -> void:
-	#print("Attack Timer off")
 	attack_timer.stop()
-	#print("Timer stopped?", attack_timer.is_stopped())

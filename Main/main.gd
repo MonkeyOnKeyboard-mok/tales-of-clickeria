@@ -14,6 +14,7 @@ var enemy_position: Vector2 = Vector2(576,160)
 @onready var minions: MinionManager = %MinionManager
 @onready var player: Node2D = %Player
 @onready var cards: CanvasLayer = %Upgrades
+
 # "obj_" for node references;
 ## built-in override methods
 
@@ -26,6 +27,7 @@ func _ready() -> void:
 	Event.spawn_hourglass.connect(spawn_hourglass)
 	## Reset all stats
 	GlobalStats.reset_stats()
+	spawn_enemy()
 
 func _process(_delta: float) -> void:
 	pass

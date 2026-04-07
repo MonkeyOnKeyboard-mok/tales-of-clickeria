@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bbjieseqih5r2" path="res://Main/particle_manager.gd" id="9_rj11h"]
 [ext_resource type="PackedScene" uid="uid://4i7jvh5b7tth" path="res://Components/Passives/passives.tscn" id="10_o60nc"]
 [ext_resource type="PackedScene" uid="uid://nju62x8f6byo" path="res://Main/Pause/pause.tscn" id="10_qac2q"]
+[ext_resource type="PackedScene" uid="uid://bppi172tfc867" path="res://Components/Hints/ui_tips_for_player.tscn" id="11_o60nc"]
 
 [sub_resource type="Curve2D" id="Curve2D_rj11h"]
 _data = {
@@ -139,9 +140,24 @@ layer = -1
 
 [node name="Passives" parent="." unique_id=1403452478 instance=ExtResource("10_o60nc")]
 z_index = 3
-offset_left = 571.0
-offset_top = 322.0
-offset_right = 571.0
-offset_bottom = 322.0
+custom_minimum_size = Vector2(0, 0)
+offset_left = 523.0
+offset_top = 272.0
+offset_right = 523.0
+offset_bottom = 272.0
+
+[node name="UITipsForPlayer" parent="." unique_id=844002679 instance=ExtResource("11_o60nc")]
+
+[node name="ColorRect2" parent="UITipsForPlayer/Avanzar a la siguiente etapa" parent_id_path=PackedInt32Array(844002679, 1699974415) index="1" unique_id=579134533]
+z_index = -1
+texture_filter = 1
+offset_left = 182.0
+offset_top = -92.0
+offset_right = 222.0
+offset_bottom = -52.0
+scale = Vector2(1.8424654, 1.8803318)
+mouse_filter = 2
+color = Color(0.12156863, 1, 0.40392157, 1)
 
 [editable path="Debugger"]
+[editable path="UITipsForPlayer"]

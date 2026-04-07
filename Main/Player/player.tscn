@@ -20,6 +20,12 @@ bg_color = Color(0.89411765, 0.88235295, 0.16470589, 1)
 [node name="Player" type="Node2D" unique_id=1417812519 groups=["jugador"]]
 script = ExtResource("1_8hbiy")
 
+[node name="PlayerLvl" type="Label" parent="." unique_id=341556207]
+offset_left = -1009.0
+offset_top = 178.0
+offset_right = -969.0
+offset_bottom = 201.0
+
 [node name="ProgressBar" parent="." unique_id=1483188681 instance=ExtResource("1_u6saw")]
 custom_minimum_size = Vector2(60, 250)
 offset_left = 54.0

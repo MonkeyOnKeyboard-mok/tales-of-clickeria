@@ -9,6 +9,7 @@ extends Node
 @onready var lifeBar: PlayerHealthBar = $ProgressBar
 @onready var juiceBar: ProgressBar = %MonsterJuice
 @onready var expBar: ExpBar = %ExpBar
+@onready var player_lvl: Label = $PlayerLvl
 
 # "obj_" for node references;
 ## built-in override methods
@@ -19,7 +20,7 @@ func _ready() -> void:
 	player_health.text = "Player Health"
 
 func _process(_delta: float) -> void:
-	pass
+	player_lvl.text = "Player Level: " + str(expBar.current_level)
 
 func recibir_ataque_enemigo(dano):
 	lifeBar.take_damage(dano)

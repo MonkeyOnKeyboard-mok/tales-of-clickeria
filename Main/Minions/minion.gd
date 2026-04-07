@@ -11,6 +11,10 @@ var damage : float
 var gs : Dictionary = GlobalStats.minionStats
 var current_attack_speed : float 
 var level : int = 1
+## Animation Variables
+var attack_anim : String 
+var idle_anim : String 
+
 ## private vars
 ## onready vars
 @onready var attack : AttackComponent = %AttackScript
@@ -23,9 +27,9 @@ var level : int = 1
 ## built-in override methods
 
 func _ready() -> void:
-	#print("MINION SPAWNEO EN: ", self.global_position)
 	dragg_and_drop.show_tooltip.connect(_show_tooltip)
-	sprite.play("idle")
+	_set_textures()
+	sprite.play(idle_anim)
 	current_attack_speed = stats.attack_speed
 	calculate_damage()
 	var enemy = get_tree().get_nodes_in_group("enemy")
@@ -71,3 +75,15 @@ func remove_atk_spd() -> void:
 
 func _show_tooltip() -> void:
 	tooltip.show()
+
+func _set_textures() -> void:
+	match stats.type:
+		"fire":
+			attack_anim = "attack_fire"
+			idle_anim = "idle_fire"
+		"light":
+			attack_anim = "attack_light"
+			idle_anim = "idle_light"
+		"cold":
+			attack_anim = "attack_cold"
+			idle_anim = "idle_cold"

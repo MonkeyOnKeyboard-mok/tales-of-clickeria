@@ -11,6 +11,7 @@ var _exp := 0.0
 var _max_exp := 30.0
 var initialized := false
 var overflow : float = 0
+var current_level : int = 1 
 ## private vars
 ## onready vars
 @onready var label: Label = $Label
@@ -18,7 +19,6 @@ var overflow : float = 0
 ## built-in override methods
 
 func _ready() -> void:
-
 	Event.gained_experience.connect(gain_exp)
 	Event.player_leveled_up.connect(_level_up)
 	if not initialized:
@@ -76,6 +76,7 @@ func _level_up() -> void:
 	max_exp = _get_required_xp(GlobalStats.playerStats["level"])
 	GlobalStats.playerStats["can_level_up"] = false
 	Event.emit_signal("pause_game")
+	current_level += 1
 
 func _get_required_xp(level: int) -> float:
 	return 30.0 * pow(1.18, level - 1)

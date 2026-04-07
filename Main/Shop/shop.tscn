@@ -99,6 +99,7 @@ offset_bottom = 91.0
 theme_override_font_sizes/font_size = 11
 
 [node name="LevelUp" type="TextureButton" parent="GridContainer" unique_id=1693494029]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("5_joexe")
 ignore_texture_size = true

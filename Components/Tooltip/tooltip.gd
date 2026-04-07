@@ -34,7 +34,7 @@ func _set_info()-> void:
 		"minion":
 			label.text = "\b Level: \b" + str(int(parent.level)) + "\n" \
 			+ "\b Element: \b" + parent.stats.type + "\n" \
-			 + "\b Damage: \b" + str(int(parent.calculate_damage()))  
+			 + "\b Damage: \b" + str(int(parent.calculate_damage()))
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
