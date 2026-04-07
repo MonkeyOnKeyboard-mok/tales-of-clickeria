@@ -4,11 +4,11 @@ class_name JuiceBar
 ## consts
 ## exports
 ## public vars
-var max_juice : float = 100000.0 : set = set_max_juice
+var max_juice : float = 1000000.0 : set = set_max_juice
 var juice : float: set = set_juice, get = get_juice
 var min_juice : float = 0.0
 var _juice := 0.0
-var _max_juice := 100000.0
+var _max_juice := 1000000.0
 var initialized := false
 ## private vars
 ## onready vars

@@ -40,6 +40,7 @@ offset_bottom = -112.0
 
 [node name="MonsterJuice" parent="." unique_id=1400228462 instance=ExtResource("4_b2fwe")]
 unique_name_in_owner = true
+max_value = 100000.0
 show_percentage = false
 script = ExtResource("5_jbntb")
 

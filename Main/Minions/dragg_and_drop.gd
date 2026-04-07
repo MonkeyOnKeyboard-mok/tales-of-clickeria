@@ -4,10 +4,10 @@ class_name DragAndDrop
 ## consts
 ## exports
 ## public vars
+signal show_tooltip
 var dragging := false
 var offset := Vector2.ZERO
 static var current_dragged = null
-signal show_tooltip
 ## private vars
 ## onready vars
 @onready var area_2d: Area2D = $Area2D

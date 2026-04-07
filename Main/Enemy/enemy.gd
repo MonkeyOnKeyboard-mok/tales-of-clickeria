@@ -36,11 +36,26 @@ func _ready() -> void:
 func _aplicar_nuevas_stats(nueva_salud_max: float, nuevo_dps: float, nuevas_resistencias: Dictionary, exp_granted : float) -> void:
 	# Actualizamos la barra de vida directamente con el nuevo máximo
 	# Tu clase HealthBar ya maneja la animación y el clamp internamente
-	health_bar.set_max_health(nueva_salud_max)
-	health_bar.set_health(nueva_salud_max)
-	health_bar.value = nueva_salud_max
-
-	#print("[Enemy] %s actualizado. Nueva Vida Máx: %.1f" % [nombre_enemigo, nueva_salud_max])
+	if GestorEtapa.etapa_actual == 8:
+		health_bar.set_max_health(nueva_salud_max * 100)
+		health_bar.set_health(nueva_salud_max * 100)
+		health_bar.value = nueva_salud_max * 100
+	else:
+		health_bar.set_max_health(nueva_salud_max)
+		health_bar.set_health(nueva_salud_max)
+		health_bar.value = nueva_salud_max
+	## Add more projectiles
+	match GestorEtapa.etapa_actual:
+			3:
+				GestorEtapa.projectiles_amount = 3
+			5:
+				GestorEtapa.projectiles_amount = 4
+			6:
+				GestorEtapa.projectiles_amount = 5
+			7: 
+				GestorEtapa.projectiles_amount = 6
+			8: 
+				GestorEtapa.projectiles_amount = 7
 
 # Loop de ataque (Daño al jugador)
 func _process(_delta: float) -> void:

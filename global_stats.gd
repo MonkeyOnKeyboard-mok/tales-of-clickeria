@@ -50,7 +50,7 @@ func reset_stats() -> void:
 	playerStats  = {
 	"level" : 1,
 	"can_level_up" : false,
-	"main_attack" : 100.0,
+	"main_attack" : 1.0,
 	"main_attack_juice" : 1.0,
 	"can_buy" : false,
 	"juice" : 0.0

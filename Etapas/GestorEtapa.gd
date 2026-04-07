@@ -12,7 +12,6 @@ const DPS_BASE: float = 10.0
 const MULTIPLICADOR_POR_NIVEL: float = 3.0 # Cada nivel es 50% más fuerte
 
 var  projectiles_amount : int = 2
-
 var current_etapa : Array = ["one", "two", "three", "four", "five", "six", "seven", "boss"]
 var threshold_etapas : Dictionary = {}
 var kill_count : int = 0
