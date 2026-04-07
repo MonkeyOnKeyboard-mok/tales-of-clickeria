@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dbk7uae2ink4b" path="res://Main/Upgrades/upgrades.tscn" id="7_ib3t1"]
 [ext_resource type="PackedScene" uid="uid://cjdyx712j6gev" path="res://Etapas/ui_etapa.tscn" id="8_rj11h"]
 [ext_resource type="Script" uid="uid://bbjieseqih5r2" path="res://Main/particle_manager.gd" id="9_rj11h"]
+[ext_resource type="PackedScene" uid="uid://4i7jvh5b7tth" path="res://Components/Passives/passives.tscn" id="10_o60nc"]
 [ext_resource type="PackedScene" uid="uid://nju62x8f6byo" path="res://Main/Pause/pause.tscn" id="10_qac2q"]
 
 [sub_resource type="Curve2D" id="Curve2D_rj11h"]
@@ -135,5 +136,12 @@ curve = SubResource("Curve2D_rj11h")
 [node name="Pause" parent="." unique_id=466694632 instance=ExtResource("10_qac2q")]
 process_mode = 3
 layer = -1
+
+[node name="Passives" parent="." unique_id=1403452478 instance=ExtResource("10_o60nc")]
+z_index = 3
+offset_left = 571.0
+offset_top = 322.0
+offset_right = 571.0
+offset_bottom = 322.0
 
 [editable path="Debugger"]

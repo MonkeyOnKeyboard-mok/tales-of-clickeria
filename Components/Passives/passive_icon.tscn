@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b22ksnq2ecclr"]
+
+[ext_resource type="Texture2D" uid="uid://o2en6msxm3j8" path="res://PlaceHolders/Wizard.png" id="1_d0wa0"]
+[ext_resource type="Script" uid="uid://chv8iyud5i2e4" path="res://Components/Passives/passive_icon.gd" id="2_pvh53"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pvh53"]
+
+[node name="PassiveIcon" type="TextureRect" unique_id=1898441871]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_d0wa0")
+script = ExtResource("2_pvh53")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2079218119]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=217867488]
+position = Vector2(21, 22.000002)
+scale = Vector2(1.9245887, 1.9245887)
+shape = SubResource("CircleShape2D_pvh53")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

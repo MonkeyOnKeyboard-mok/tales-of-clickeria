@@ -33,7 +33,7 @@ func _ready() -> void:
 	level_component.recalcular_stats(GestorEtapa.etapa_actual)
 
 # Esta función es llamada automáticamente por LevelComponent cuando hay nuevas stats
-func _aplicar_nuevas_stats(nueva_salud_max: float, nuevo_dps: float, nuevas_resistencias: Dictionary, exp_granted : float) -> void:
+func _aplicar_nuevas_stats(nueva_salud_max: float, _nuevo_dps: float, _nuevas_resistencias: Dictionary) -> void:
 	# Actualizamos la barra de vida directamente con el nuevo máximo
 	# Tu clase HealthBar ya maneja la animación y el clamp internamente
 	if GestorEtapa.etapa_actual == 8:

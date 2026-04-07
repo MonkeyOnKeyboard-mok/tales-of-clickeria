@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("jugador"):
 		if is_in_group("player_projectile"): return
-		area.get_parent().lifeBar.take_damage(2)
+		area.get_parent().lifeBar.take_damage(GestorEtapa.projectile_damage)
 		queue_free()
 	if area.is_in_group("enemy"):
 		if is_in_group("enemy_projectile"): return

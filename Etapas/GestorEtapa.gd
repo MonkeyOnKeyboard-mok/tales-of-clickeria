@@ -1,7 +1,6 @@
 extends Node
 
 signal etapa_cambiada(nueva_etapa: int)
-signal enemigo_derrotado()
 
 # Configuración actual
 var etapa_actual: int = 1
@@ -11,7 +10,8 @@ const SALUD_BASE: float = 100.0
 const DPS_BASE: float = 10.0
 const MULTIPLICADOR_POR_NIVEL: float = 3.0 # Cada nivel es 50% más fuerte
 
-var  projectiles_amount : int = 2
+var projectiles_amount : int = 2
+var projectile_damage : float = 2.0
 var current_etapa : Array = ["one", "two", "three", "four", "five", "six", "seven", "boss"]
 var threshold_etapas : Dictionary = {}
 var kill_count : int = 0
@@ -57,6 +57,7 @@ func obtener_stats_enemigo(etapa: int) -> Dictionary:
 # Función para avanzar de etapa
 func siguiente_etapa() -> void:
 	etapa_actual += 1
+	projectile_damage *= 2.0
 	#print("Avanzando a Etapa %d" % etapa_actual)
 	etapa_cambiada.emit(etapa_actual)
 	# Aquí podrías guardar el progreso si quisieras
