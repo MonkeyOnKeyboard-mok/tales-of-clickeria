@@ -58,9 +58,17 @@ offset_right = 956.0
 offset_bottom = 43.0
 text = "Pause"
 
+[node name="GainJuice" type="Button" parent="." unique_id=825615749]
+layout_mode = 0
+offset_top = 93.0
+offset_right = 85.0
+offset_bottom = 124.0
+text = "Gain Juice"
+
 [connection signal="pressed" from="EnemySpawner" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MinionSpawner" to="." method="_on_minion_spawner_pressed"]
 [connection signal="pressed" from="HourglasSpawner" to="." method="_on_hourglas_spawner_pressed"]
 [connection signal="pressed" from="LevelUp" to="." method="_on_level_up_pressed"]
 [connection signal="pressed" from="LevelUp/ByPass" to="." method="_on_by_pass_pressed"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="GainJuice" to="." method="_on_gain_juice_pressed"]

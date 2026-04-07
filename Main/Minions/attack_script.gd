@@ -49,7 +49,8 @@ func _launch_projectile() -> void:
 	attack_timer.start(get_parent().current_attack_speed)
 
 func _on_timer_timeout() -> void:
-	_launch_projectile()
+	if current_target:
+		_launch_projectile()
 
 func _stop_timer() -> void:
 	#print("Attack Timer off")

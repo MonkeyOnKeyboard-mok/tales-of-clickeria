@@ -7,6 +7,7 @@ class_name DragAndDrop
 var dragging := false
 var offset := Vector2.ZERO
 static var current_dragged = null
+signal show_tooltip
 ## private vars
 ## onready vars
 @onready var area_2d: Area2D = $Area2D
@@ -37,3 +38,7 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 				current_dragged = self
 				dragging = event.pressed
 				offset = self.global_position - get_viewport().get_mouse_position()
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
+		if event.pressed:
+			emit_signal("show_tooltip")
+			print("showing tooltip")

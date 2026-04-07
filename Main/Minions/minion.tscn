@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b1j1nvjj3olhh" path="res://Main/Minions/Assets/mage_attack.png" id="3_tc0qx"]
 [ext_resource type="Script" uid="uid://b2t0lnaaglegb" path="res://Main/Minions/MinionStats/minion_stats.gd" id="4_kx4vt"]
 [ext_resource type="PackedScene" uid="uid://m714shrd5pt0" path="res://Components/DragAndDrop/dragg_and_drop.tscn" id="6_tc0qx"]
+[ext_resource type="PackedScene" uid="uid://qq7n0xgmgeqt" path="res://Components/Tooltip/tooltip.tscn" id="7_si1lh"]
 
 [sub_resource type="Resource" id="Resource_kx4vt"]
 script = ExtResource("4_kx4vt")
@@ -108,7 +109,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Minion" type="Node2D" unique_id=1804796180]
+[node name="Minion" type="Node2D" unique_id=1804796180 groups=["minion"]]
 process_mode = 3
 z_index = 4
 scale = Vector2(0.2, 0.2)
@@ -133,7 +134,16 @@ one_shot = true
 
 [node name="Stats" type="Node" parent="." unique_id=345543992]
 unique_name_in_owner = true
+process_mode = 3
 
 [node name="DraggAndDrop" parent="." unique_id=644889432 instance=ExtResource("6_tc0qx")]
+process_mode = 3
+
+[node name="Tooltip" parent="." unique_id=1936437401 instance=ExtResource("7_si1lh")]
+process_mode = 3
+offset_left = 184.99998
+offset_top = -439.99997
+offset_right = 184.99998
+offset_bottom = -439.99997
 
 [connection signal="timeout" from="AttackScript/Timer" to="AttackScript" method="_on_timer_timeout"]

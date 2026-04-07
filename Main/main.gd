@@ -7,6 +7,7 @@ const HOURGLASS = preload("uid://cl0r173uf860r")
 ## exports
 ## public vars
 var current_enemy : Node2D = null
+var current_hourglass : Node2D = null
 ## private vars
 var enemy_position: Vector2 = Vector2(576,160)
 ## onready vars
@@ -65,10 +66,14 @@ func spawn_minion(type : UnitStats) -> void:
 	#print("minion spawned")
 	
 func spawn_hourglass() -> void:
-	var hourglass = HOURGLASS.instantiate()
-	add_child(hourglass)
-	hourglass.global_position = Vector2(400,400)
-	#print("hourglass spawned")
+	if current_hourglass:
+		current_hourglass.buff_count += 1
+	else: 
+		var hourglass = HOURGLASS.instantiate()
+		current_hourglass = hourglass
+		add_child(hourglass)
+		hourglass.global_position = Vector2(400,400)
+		#print("hourglass spawned")
 	
 func hide_upgrades() -> void:
 	cards.get_node("Control").hide()

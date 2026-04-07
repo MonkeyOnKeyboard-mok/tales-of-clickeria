@@ -15,6 +15,8 @@ signal spawn_minion
 @warning_ignore("unused_signal")
 signal spawn_hourglass
 @warning_ignore("unused_signal")
+signal spawn_level_up_potion
+@warning_ignore("unused_signal")
 signal upgrade_chosen
 @warning_ignore("unused_signal")
 signal pause_game
@@ -40,6 +42,7 @@ signal player_leveled_up
 ## Shop Signals
 @warning_ignore("unused_signal")
 signal update_price
+
 
 ## Minions 
 

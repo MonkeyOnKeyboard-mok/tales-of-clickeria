@@ -30,7 +30,7 @@ func _ready() -> void:
 		"boss" : 1,
 	}
 
-# Función para obtener las stats de un enemigo según la etapa
+## Función para obtener las stats de un enemigo según la etapa
 func obtener_stats_enemigo(etapa: int) -> Dictionary:
 	var modificador = pow(MULTIPLICADOR_POR_NIVEL, etapa - 1)
 	

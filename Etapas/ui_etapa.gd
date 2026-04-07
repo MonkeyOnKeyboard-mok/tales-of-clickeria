@@ -24,6 +24,7 @@ func _actualizar_ui_etapa(nueva_etapa: int) -> void:
 	lbl_etapa.text = "Etapa %d" % nueva_etapa
 	# Si tenemos un enemigo en escena, lo actualizamos
 	if enemigo_actual and enemigo_actual.has_method("actualizar_stats"):
+		enemigo_actual.counter += 1
 		enemigo_actual.actualizar_stats(nueva_etapa)
 
 func _on_btn_siguiente_pressed() -> void:
@@ -41,5 +42,3 @@ func _on_btn_siguiente_pressed() -> void:
 		"Kill Count:  ", GestorEtapa.kill_count, "\n",
 		"Current Etapa:  ", GestorEtapa.current_etapa[GestorEtapa.counter], "\n",
 	)
-	
-	

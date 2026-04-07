@@ -4,13 +4,13 @@ class_name ExpBar
 ## consts
 ## exports
 ## public vars
-var max_exp : float = 15.0 : set = set_max_exp, get = get_max_exp
+var max_exp : float = 30.0 : set = set_max_exp, get = get_max_exp
 var xp : float: set = set_exp, get = get_exp
 var min_exp : float = 0.0
 var _exp := 0.0
-var _max_exp := 15.0
+var _max_exp := 30.0
 var initialized := false
-var lvl_up_multiplier := 2.0
+var overflow : float = 0
 ## private vars
 ## onready vars
 @onready var label: Label = $Label
@@ -18,10 +18,11 @@ var lvl_up_multiplier := 2.0
 ## built-in override methods
 
 func _ready() -> void:
+
 	Event.gained_experience.connect(gain_exp)
 	Event.player_leveled_up.connect(_level_up)
 	if not initialized:
-		max_exp = 15.0
+		max_exp = 30.0
 		xp = 0.0
 		label.text = str(int(self.value))+"/"+str(int(_max_exp))
 		self.value = _exp
@@ -57,15 +58,24 @@ func get_max_exp() -> float:
 	return _max_exp
 	
 func gain_exp(gained_exp : float) -> void:
-	xp += gained_exp
-	if xp >= _max_exp:
+	var total_xp = xp + gained_exp
+	if total_xp >= _max_exp:
+		overflow += total_xp -_max_exp
+		xp = _max_exp
+		print("xp is greater max exp, overflow is now:" , overflow)
 		GlobalStats.playerStats["can_level_up"] = true
-
+	else:
+		xp = total_xp
 
 ## private methods
 func _level_up() -> void:
 	GlobalStats.playerStats["level"] += 1
-	xp = 0.0
-	max_exp *= lvl_up_multiplier  # or your scaling variable
+	xp = overflow
+	print("XP is :", xp, "Overflow is:  ", overflow)
+	overflow = 0.0
+	max_exp = _get_required_xp(GlobalStats.playerStats["level"])
 	GlobalStats.playerStats["can_level_up"] = false
 	Event.emit_signal("pause_game")
+
+func _get_required_xp(level: int) -> float:
+	return 30.0 * pow(1.18, level - 1)

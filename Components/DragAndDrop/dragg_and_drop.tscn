@@ -6,12 +6,15 @@
 radius = 7.9572997
 
 [node name="DraggAndDrop" type="Node2D" unique_id=644889432]
+process_mode = 3
 scale = Vector2(0.9999998, 0.9999998)
 script = ExtResource("1_wxbqw")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=35310777]
+process_mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=248571846]
+process_mode = 3
 position = Vector2(20.000002, 20.000004)
 scale = Vector2(19.380493, 19.8195)
 shape = SubResource("CircleShape2D_t0o5w")

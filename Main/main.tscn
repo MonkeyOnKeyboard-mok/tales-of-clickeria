@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://dahdgirdrj3jh" path="res://Main/Minions/minion_container.gd" id="3_eunhr"]
 [ext_resource type="PackedScene" uid="uid://bvftv4jsopgv6" path="res://Main/Debugger/debugger.tscn" id="5_k3v36"]
 [ext_resource type="PackedScene" uid="uid://dq8jdyv371hu5" path="res://Main/Shop/shop.tscn" id="5_liyct"]
-[ext_resource type="PackedScene" uid="uid://dr3t3eiqpx6e4" path="res://Economia/tienda.tscn" id="6_liyct"]
 [ext_resource type="PackedScene" uid="uid://dbk7uae2ink4b" path="res://Main/Upgrades/upgrades.tscn" id="7_ib3t1"]
 [ext_resource type="PackedScene" uid="uid://cjdyx712j6gev" path="res://Etapas/ui_etapa.tscn" id="8_rj11h"]
 [ext_resource type="Script" uid="uid://bbjieseqih5r2" path="res://Main/particle_manager.gd" id="9_rj11h"]
@@ -60,23 +59,59 @@ mouse_filter = 2
 color = Color(0, 0.5647059, 0, 0.20784314)
 
 [node name="Debugger" parent="." unique_id=452095247 instance=ExtResource("5_k3v36")]
-offset_left = 44.0
-offset_top = 37.0
-offset_right = 44.0
-offset_bottom = 37.0
+offset_left = 123.0
+offset_top = 263.0
+offset_right = 123.0
+offset_bottom = 263.0
+
+[node name="EnemySpawner" parent="Debugger" index="0" unique_id=1120795591]
+offset_left = 871.0
+offset_top = 56.0
+offset_right = 987.0
+offset_bottom = 87.0
+
+[node name="MinionSpawner" parent="Debugger" index="1" unique_id=1755754926]
+offset_left = 871.0
+offset_top = 87.0
+offset_right = 989.0
+offset_bottom = 118.0
+
+[node name="HourglasSpawner" parent="Debugger" index="2" unique_id=777940613]
+offset_left = 871.0
+offset_top = 117.0
+offset_right = 1012.0
+offset_bottom = 148.0
+
+[node name="LevelUp" parent="Debugger" index="3" unique_id=614754468]
+offset_left = 610.0
+offset_top = -255.0
+offset_right = 685.0
+offset_bottom = -224.0
+
+[node name="ByPass" parent="Debugger/LevelUp" index="0" unique_id=2050751296]
+offset_left = 85.0
+offset_top = -3.0
+offset_right = 267.0
+offset_bottom = 28.0
+
+[node name="Pause" parent="Debugger" index="4" unique_id=908958379]
+offset_left = 804.0
+offset_top = -225.0
+offset_right = 859.0
+offset_bottom = -194.0
+
+[node name="GainJuice" parent="Debugger" index="5" unique_id=825615749]
+offset_left = 871.0
+offset_top = 148.0
+offset_right = 956.0
+offset_bottom = 179.0
 
 [node name="Shop" parent="." unique_id=623432963 instance=ExtResource("5_liyct")]
 z_index = 4
-offset_left = 1136.0
-offset_top = 326.0
-offset_right = 1136.0
-offset_bottom = 326.0
-
-[node name="Tienda" parent="." unique_id=1459333485 instance=ExtResource("6_liyct")]
-offset_left = 17.0
-offset_top = 329.0
-offset_right = 17.0
-offset_bottom = 329.0
+offset_left = 7.0
+offset_top = 12.0
+offset_right = 7.0
+offset_bottom = 12.0
 
 [node name="Upgrades" parent="." unique_id=2034106112 instance=ExtResource("7_ib3t1")]
 unique_name_in_owner = true
@@ -100,3 +135,5 @@ curve = SubResource("Curve2D_rj11h")
 [node name="Pause" parent="." unique_id=466694632 instance=ExtResource("10_qac2q")]
 process_mode = 3
 layer = -1
+
+[editable path="Debugger"]

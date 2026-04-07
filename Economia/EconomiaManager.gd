@@ -1,17 +1,25 @@
 extends Node
 
-var multiplicador_base : float = 3.0
-
-# Variables principales
+## Variables principales
 var precios : Dictionary = {
 	"pocion_basica": 25.0,
 	"mago_fuego" : 10.0,
 	"mago_cold" : 10.0,
 	"mago_light" : 10.0,
 	"hourglass" : 1000.0,
+	"level_up_potion" : 50.0,
 }
 
-# Configuración inicial (puedes cargar esto desde un archivo JSON luego)
+var multiplicador : Dictionary = {
+	"pocion_basica": 1.0,
+	"mago_fuego" : 3.0,
+	"mago_cold" : 3.0,
+	"mago_light" : 3.0,
+	"hourglass" : 5.0,
+	"level_up_potion" : 2.0,
+}
+
+## Configuración inicial (puedes cargar esto desde un archivo JSON luego)
 func _ready() -> void:
 	Event.connect("update_price", actualizar_precios)
 	precios  = {
@@ -20,10 +28,19 @@ func _ready() -> void:
 	"mago_cold" : 10.0,
 	"mago_light" : 10.0,
 	"hourglass" : 1000.0,
+	"level_up_potion" : 50.0,
+}
+	multiplicador = {
+	"pocion_basica": 1.0,
+	"mago_fuego" : 3.0,
+	"mago_cold" : 3.0,
+	"mago_light" : 3.0,
+	"hourglass" : 5.0,
+	"level_up_potion" : 2.0,
 }
 
-# Configurar precios dinámicos (opcional, para subir precios según nivel)
+## Configurar precios dinámicos (opcional, para subir precios según nivel)
 func actualizar_precios(key: String) -> void:
 	print("Price to update: ", key)
-	precios[key] *= multiplicador_base
+	precios[key] *= multiplicador[key]
 	print("New price: ", precios[key])

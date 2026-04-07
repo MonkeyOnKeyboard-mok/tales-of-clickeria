@@ -27,6 +27,7 @@ Event="*uid://wukwlt1is33g"
 jugador=""
 enemy_projectile=""
 player_projectile=""
+minion=""
 
 [physics]
 

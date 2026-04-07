@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bwriviwwedlmi" path="res://PlaceHolders/Potion.png" id="3_vwf2g"]
 [ext_resource type="Texture2D" uid="uid://dy5wdwcdbs36x" path="res://Main/Upgrades/Hourglass/hourglass.jpg" id="4_2siow"]
 [ext_resource type="Texture2D" uid="uid://dn8pva60h306g" path="res://Main/Shop/animation_1-8.png" id="4_vwf2g"]
+[ext_resource type="Texture2D" uid="uid://drqkmap8kag1j" path="res://PlaceHolders/lvlUpPotion.png" id="5_joexe"]
 
 [node name="Shop" type="Control" unique_id=623432963]
 layout_mode = 3
@@ -95,13 +96,27 @@ offset_left = 2.0
 offset_top = 68.0
 offset_right = 42.0
 offset_bottom = 91.0
+theme_override_font_sizes/font_size = 11
+
+[node name="LevelUp" type="TextureButton" parent="GridContainer" unique_id=1693494029]
+layout_mode = 2
+texture_normal = ExtResource("5_joexe")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="GridContainer/LevelUp" unique_id=226364513]
+layout_mode = 0
+offset_top = 69.0
+offset_right = 40.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 11
 
 [node name="Label" type="Label" parent="." unique_id=1390789570]
 layout_mode = 0
-offset_left = 77.0
-offset_top = -30.0
-offset_right = 117.0
-offset_bottom = -7.0
+offset_left = 84.0
+offset_top = -19.0
+offset_right = 124.0
+offset_bottom = 4.0
 text = "Shop"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1099836972]
@@ -114,18 +129,20 @@ color = Color(1, 1, 1, 0.4745098)
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=139421506]
 layout_mode = 0
-offset_left = -34.0
+offset_left = 197.0
 offset_top = 171.0
-offset_right = 16.0
+offset_right = 247.0
 offset_bottom = 221.0
 rotation = -1.5707964
 scale = Vector2(1, 0.71999985)
 texture_normal = ExtResource("3_hqijh")
 texture_pressed = ExtResource("4_vwf2g")
+flip_v = true
 
 [connection signal="pressed" from="GridContainer/MinionFuego" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="GridContainer/MinionLuz" to="." method="_on_minion_luz_pressed"]
 [connection signal="pressed" from="GridContainer/MinionCold" to="." method="_on_minion_cold_pressed"]
 [connection signal="pressed" from="GridContainer/HealthPotion" to="." method="_on_health_potion_pressed"]
 [connection signal="pressed" from="GridContainer/HourGlass" to="." method="_on_hourglass_pressed"]
+[connection signal="pressed" from="GridContainer/LevelUp" to="." method="_on_level_up_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_arrow_pressed"]

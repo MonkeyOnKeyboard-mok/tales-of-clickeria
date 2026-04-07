@@ -3,22 +3,28 @@ extends Node
 ## consts
 ## exports
 @export var stats : UnitStats 
-@onready var sprite: AnimatedSprite2D = $Sprite2D
+
+
 ## public vars
 var target : Node2D = null
 var damage : float 
 var gs : Dictionary = GlobalStats.minionStats
 var current_attack_speed : float 
+var level : int = 1
 ## private vars
 ## onready vars
 @onready var attack : AttackComponent = %AttackScript
 @onready var base_attack_speed : float = stats.attack_speed
+@onready var sprite: AnimatedSprite2D = $Sprite2D
+@onready var tooltip: Panel = $Tooltip
+@onready var dragg_and_drop: DragAndDrop = $DraggAndDrop
 
 # "obj_" for node references;
 ## built-in override methods
 
 func _ready() -> void:
 	#print("MINION SPAWNEO EN: ", self.global_position)
+	dragg_and_drop.show_tooltip.connect(_show_tooltip)
 	sprite.play("idle")
 	current_attack_speed = stats.attack_speed
 	calculate_damage()
@@ -60,7 +66,8 @@ func apply_attack_speed_buff() -> void:
 func remove_atk_spd() -> void:
 	current_attack_speed = stats.attack_speed
 	sprite.speed_scale = 1.0
-	
-###  cambiar para que solo afectea este minion y no al resource
 
 ## private methods
+
+func _show_tooltip() -> void:
+	tooltip.show()

@@ -37,3 +37,6 @@ func _on_by_pass_pressed() -> void:
 
 func _on_pause_pressed() -> void:
 	Event.emit_signal("pause_game")
+
+func _on_gain_juice_pressed() -> void:
+	Event.emit_signal("gain_juice", 1000.0)

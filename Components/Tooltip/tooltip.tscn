@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://qq7n0xgmgeqt"]
+
+[ext_resource type="Script" uid="uid://bu8ao8sex3623" path="res://Components/Tooltip/tooltip.gd" id="1_wt5cp"]
+
+[node name="Tooltip" type="Panel" unique_id=1936437401]
+custom_minimum_size = Vector2(800, 500)
+script = ExtResource("1_wt5cp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=815781911]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 110
