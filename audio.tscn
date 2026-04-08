@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cjr8xrxroqh2d"]
+
+[ext_resource type="Script" uid="uid://ddpbqjsm278a3" path="res://audio.gd" id="1_qc0l7"]
+[ext_resource type="AudioStream" uid="uid://21mccb62av4s" path="res://PlaceHolders/Agua.wav" id="2_q45hi"]
+
+[node name="Audio" type="Node" unique_id=1966949987]
+script = ExtResource("1_qc0l7")
+
+[node name="cold_attack" type="AudioStreamPlayer" parent="." unique_id=1280494229]
+stream = ExtResource("2_q45hi")

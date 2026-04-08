@@ -5,8 +5,8 @@ class_name Enemy
 
 # Referencias a Componentes (Composición)
 @onready var level_component: LevelComponent = %LvLComponent
-@onready var health_bar: HealthBar = %HealthBar # Asumiendo que tu nodo se llama así
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var health_bar: HealthBar = %HealthBar 
+@onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var area_2d: Area2D = $Area2D
 @onready var projectile_attack: Node2D = $ProjectileAttack
 

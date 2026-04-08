@@ -408,7 +408,8 @@ stats = SubResource("Resource_kx4vt")
 texture_filter = 1
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_vo21e")
-animation = &"attack"
+animation = &"idle_light"
+frame_progress = 0.24011998
 
 [node name="AttackScript" type="Node" parent="." unique_id=948159779]
 unique_name_in_owner = true

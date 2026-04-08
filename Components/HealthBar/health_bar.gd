@@ -60,5 +60,4 @@ func take_damage(damage : float) -> void:
 		get_parent()._death_animation()
 	#print("After:", health)
 
-
 ## private methods

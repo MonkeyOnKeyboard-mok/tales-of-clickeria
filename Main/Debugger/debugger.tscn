@@ -13,14 +13,12 @@ grow_vertical = 2
 script = ExtResource("1_e1o5k")
 
 [node name="EnemySpawner" type="Button" parent="." unique_id=1120795591]
-visible = false
 layout_mode = 0
 offset_right = 60.0
 offset_bottom = 20.0
 text = "Spawn Enemy"
 
 [node name="MinionSpawner" type="Button" parent="." unique_id=1755754926]
-visible = false
 custom_minimum_size = Vector2(116, 31)
 layout_mode = 0
 offset_top = 31.0
@@ -29,7 +27,6 @@ offset_bottom = 62.0
 text = "Spawn Minion"
 
 [node name="HourglasSpawner" type="Button" parent="." unique_id=777940613]
-visible = false
 layout_mode = 0
 offset_top = 61.0
 offset_right = 141.0
@@ -45,7 +42,6 @@ offset_bottom = 48.0
 text = "Level Up"
 
 [node name="ByPass" type="Button" parent="LevelUp" unique_id=2050751296]
-visible = false
 layout_mode = 0
 offset_left = 80.0
 offset_top = -16.0
@@ -72,7 +68,6 @@ offset_bottom = 43.0
 text = "Pause"
 
 [node name="GainJuice" type="Button" parent="." unique_id=825615749]
-visible = false
 layout_mode = 0
 offset_top = 93.0
 offset_right = 85.0

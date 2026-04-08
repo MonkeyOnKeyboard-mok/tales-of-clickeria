@@ -25,7 +25,7 @@ func _ready() -> void:
 		"four" : 10,
 		"five" : 15,
 		"six" : 20,
-		"seven" : 25,
+		"seven" : 20,
 		"boss" : 1,
 	}
 
