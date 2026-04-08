@@ -400,6 +400,7 @@ animations = [{
 [node name="Minion" type="Node2D" unique_id=1804796180 groups=["minion"]]
 process_mode = 3
 z_index = 4
+texture_filter = 1
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_wgde4")
 stats = SubResource("Resource_kx4vt")
@@ -409,7 +410,6 @@ texture_filter = 1
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_vo21e")
 animation = &"idle_light"
-frame_progress = 0.24011998
 
 [node name="AttackScript" type="Node" parent="." unique_id=948159779]
 unique_name_in_owner = true
