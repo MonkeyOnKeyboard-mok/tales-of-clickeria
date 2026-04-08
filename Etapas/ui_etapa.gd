@@ -31,6 +31,9 @@ func _on_btn_siguiente_pressed() -> void:
 	if GestorEtapa.kill_count != GestorEtapa.threshold_etapas[GestorEtapa.current_etapa[GestorEtapa.counter]]:
 		print("You are not ready for the next zone")
 		return
+	if GestorEtapa.etapa_actual == 8 and GestorEtapa.boss_defeatd == true: 
+		print("You already won")
+		return
 	# Lógica opcional: ¿Puede avanzar solo si mató al anterior?
 	# Por ahora, permitimos avanzar libremente para probar
 	GestorEtapa.kill_count = 0

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c6qim3v6kfpcu"]
+
+[ext_resource type="Script" uid="uid://c75qnnw5ih0a0" path="res://Components/LvlUpPotion/lvl_up_potion.gd" id="1_0gea0"]
+[ext_resource type="Texture2D" uid="uid://drqkmap8kag1j" path="res://PlaceHolders/lvlUpPotion.png" id="1_1wmvy"]
+[ext_resource type="PackedScene" uid="uid://m714shrd5pt0" path="res://Components/DragAndDrop/dragg_and_drop.tscn" id="3_v2m5w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0gea0"]
+
+[node name="LvlUpPotion" type="Node2D" unique_id=1806774945 groups=["potion"]]
+script = ExtResource("1_0gea0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1556669710]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_1wmvy")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1015680284]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=354288803]
+position = Vector2(0, 7)
+scale = Vector2(1.9306775, 1.7092898)
+shape = SubResource("CircleShape2D_0gea0")
+
+[node name="DraggAndDrop" parent="." unique_id=644889432 instance=ExtResource("3_v2m5w")]
+position = Vector2(-1.9999999, 4.9999995)
+scale = Vector2(0.12423646, 0.12423646)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

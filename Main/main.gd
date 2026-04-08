@@ -4,10 +4,13 @@ extends Node
 const ENEMY = preload("uid://bboyklv1jcrnt")
 const MINION = preload("uid://b8hthhw0wyov")
 const HOURGLASS = preload("uid://cl0r173uf860r")
+const LVL_UP_POTION = preload("uid://c6qim3v6kfpcu")
 ## exports
 ## public vars
 var current_enemy : Node2D = null
 var current_hourglass : Node2D = null
+var current_lvl_up_potion : Node2D = null
+
 ## private vars
 var enemy_position: Vector2 = Vector2(576,160)
 ## onready vars
@@ -25,6 +28,7 @@ func _ready() -> void:
 	Event.spawn_minion.connect(spawn_minion)
 	Event.upgrade_chosen.connect(hide_upgrades)
 	Event.spawn_hourglass.connect(spawn_hourglass)
+	Event.spawn_level_up_potion.connect(spawn_level_up_potion)
 	## Reset all stats
 	GlobalStats.reset_stats()
 	spawn_enemy()
@@ -34,7 +38,10 @@ func _process(_delta: float) -> void:
 
 ## public methods
 func spawn_enemy() -> void:
-	if GestorEtapa.etapa_actual == 8 and GestorEtapa.boss_defeatd == true: return
+	print("Etapa Actual: "+ str(GestorEtapa.etapa_actual))
+	print("Boss defeated: " + str(GestorEtapa.boss_defeatd))
+	if GestorEtapa.etapa_actual == 8 and GestorEtapa.boss_defeatd == true: 
+		return
 	print(
 		"Print desde el Main: \n",
 		"Kill Count:  ", GestorEtapa.kill_count, "\n",
@@ -77,7 +84,17 @@ func spawn_hourglass() -> void:
 		add_child(hourglass)
 		hourglass.global_position = Vector2(400,400)
 		#print("hourglass spawned")
-	
+
+func spawn_level_up_potion() -> void:
+	if current_lvl_up_potion:
+		current_lvl_up_potion.counter += 1
+	var lvl_up_potion = LVL_UP_POTION.instantiate()
+	current_lvl_up_potion = lvl_up_potion
+	add_child(lvl_up_potion)
+	lvl_up_potion.global_position = Vector2(25,360)
+	print("lvl_up_potion spawned")
+
+
 func hide_upgrades() -> void:
 	cards.get_node("Control").hide()
 

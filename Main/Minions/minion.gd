@@ -7,15 +7,20 @@ extends Node
 
 ## public vars
 var target : Node2D = null
-var damage : float 
 var gs : Dictionary = GlobalStats.minionStats
-var current_attack_speed : float 
-var level : int = 1
+
 ## Animation Variables
 var attack_anim : String 
 var idle_anim : String 
 
 ## private vars
+var personal_damage : float = 0.0
+var current_attack_speed : float 
+var damage : float 
+var level : int = 1
+var multiplier : float = 1.0
+var level_up_cost : float = 60.0
+
 ## onready vars
 @onready var attack : AttackComponent = %AttackScript
 @onready var base_attack_speed : float = stats.attack_speed
@@ -23,6 +28,7 @@ var idle_anim : String
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var floor_halo: TextureRect = $Sprite2D/floor_halo
 @onready var hourglass_halo: TextureRect = $Sprite2D/hourglass_halo
+@onready var level_up_halo: TextureRect = $Sprite2D/level_up_halo
 
 @onready var tooltip: Panel = $Tooltip
 @onready var dragg_and_drop: DragAndDrop = $DraggAndDrop
@@ -59,7 +65,8 @@ func new_target(enemy: Node2D) -> void:
 	attack.set_target(enemy)
 
 func calculate_damage() -> float:
-	damage = (((stats.base_damage + gs["flat_damage"][stats.type] + gs["flat_damage"]["global"] ) * gs["increased_damage"][stats.type] ) * gs["increased_damage"]["global"])
+	damage = (((stats.base_damage + gs["flat_damage"][stats.type] + gs["flat_damage"]["global"]) + personal_damage \
+	* gs["increased_damage"][stats.type] ) * gs["increased_damage"]["global"])
 	#print("Minion Base Damage: ", stats.base_damage)
 	#print("Global Fire Damage Flat:", gs["flat_damage"][stats.type]) 
 	#print("Global Fire Damage Increase:", gs["increased_damage"][stats.type])
@@ -77,6 +84,23 @@ func remove_atk_spd() -> void:
 	current_attack_speed = stats.attack_speed
 	sprite.speed_scale = 1.0
 
+func glow() -> void:
+	level_up_halo.visible = true
+	
+func unglow() -> void:
+	level_up_halo.visible = false
+	
+func level_up() -> void:
+	if level_up_cost > GlobalStats.playerStats["juice"]: 
+		print("Not enough jucie to level up")
+		return
+	level += 1
+	personal_damage += 6 * multiplier
+	multiplier += 0.1
+	Event.emit_signal("spent_juice", level_up_cost)
+	level_up_cost *= 2.0
+	print("Minion leveled up")
+	
 ## private methods
 
 func _show_tooltip() -> void:

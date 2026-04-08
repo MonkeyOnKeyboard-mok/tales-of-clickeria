@@ -27,6 +27,8 @@ func _input(event):
 			if current_dragged == self:
 				dragging = false
 				current_dragged = null
+				if get_parent().is_in_group("potion"):
+					get_parent().try_level_up()
 
 ## public methods
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qq7n0xgmgeqt"]
 
 [ext_resource type="Script" uid="uid://bu8ao8sex3623" path="res://Components/Tooltip/tooltip.gd" id="1_wt5cp"]
+[ext_resource type="Texture2D" uid="uid://bcx6bf47h663t" path="res://Components/Particles/placeholder_particle.png" id="2_wqjsk"]
 
 [node name="Tooltip" type="Panel" unique_id=1936437401]
 custom_minimum_size = Vector2(800, 500)
@@ -13,3 +14,34 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme_override_font_sizes/normal_font_size = 110
 text = "asdasdasdasdasd"
+
+[node name="LevelUp" type="Button" parent="." unique_id=944896600]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 497.0
+offset_right = 476.0
+offset_bottom = 660.0
+theme_override_colors/font_hover_color = Color(0.8392157, 0.40392157, 0, 1)
+theme_override_font_sizes/font_size = 113
+text = "Level Up"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=210127959]
+texture_filter = 1
+layout_mode = 0
+offset_left = 491.0
+offset_top = 515.0
+offset_right = 531.0
+offset_bottom = 555.0
+scale = Vector2(3, 3)
+texture = ExtResource("2_wqjsk")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1649874231]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 500.0
+offset_right = 1079.0
+offset_bottom = 650.0
+theme_override_font_sizes/normal_font_size = 110
+scroll_active = false
+
+[connection signal="pressed" from="LevelUp" to="." method="_on_level_up_pressed"]

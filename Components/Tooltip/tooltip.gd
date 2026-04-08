@@ -8,6 +8,7 @@ var parent: Node2D = null
 var parent_type : String = " "
 ## onready vars
 @onready var label: RichTextLabel = $RichTextLabel
+@onready var lvl_up_cost: RichTextLabel = $RichTextLabel2
 # "obj_" for node references;
 ## built-in override methods
 
@@ -30,6 +31,7 @@ func _set_size_custom()-> void:
 		parent_type = "minion"
 
 func _set_info()-> void:
+	lvl_up_cost.text = "     " + str(int(parent.level_up_cost))
 	match parent_type:
 		"minion":
 			label.text = "\b Level: \b" + str(int(parent.level)) + "\n" \
@@ -43,3 +45,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			var mouse_pos = get_viewport().get_mouse_position()
 			if not self.get_global_rect().has_point(mouse_pos):
 				hide()
+
+func _on_level_up_pressed() -> void:
+	parent.level_up()
+	

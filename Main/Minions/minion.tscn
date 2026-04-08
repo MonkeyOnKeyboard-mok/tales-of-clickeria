@@ -420,6 +420,15 @@ height = 450
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="Gradient" id="Gradient_ce4ph"]
+offsets = PackedFloat32Array(0.2435484, 0.566129, 0.66612905, 0.66935486)
+colors = PackedColorArray(0, 0, 0, 0, 0.33407024, 0.2726835, 1.92523e-07, 1, 1, 0.8862745, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g18li"]
+gradient = SubResource("Gradient_ce4ph")
+fill = 1
+fill_from = Vector2(0.50641024, 0.49358973)
+
 [node name="Minion" type="Node2D" unique_id=1804796180 groups=["minion"]]
 process_mode = 3
 z_index = 4
@@ -454,6 +463,16 @@ offset_right = 427.5
 offset_bottom = 440.625
 scale = Vector2(0.1, 0.1)
 texture = SubResource("GradientTexture2D_t0qpd")
+
+[node name="level_up_halo" type="TextureRect" parent="Sprite2D" unique_id=993808136]
+visible = false
+z_index = -1
+offset_left = -23.125
+offset_top = -21.875
+offset_right = 26.875
+offset_bottom = 28.125
+texture = SubResource("GradientTexture2D_g18li")
+expand_mode = 1
 
 [node name="AttackScript" type="Node" parent="." unique_id=948159779]
 unique_name_in_owner = true

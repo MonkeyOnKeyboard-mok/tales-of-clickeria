@@ -10,7 +10,7 @@ process_mode = 3
 scale = Vector2(0.9999998, 0.9999998)
 script = ExtResource("1_wxbqw")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=35310777]
+[node name="Area2D" type="Area2D" parent="." unique_id=35310777 groups=["drag_drop"]]
 process_mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=248571846]

@@ -30,6 +30,8 @@ enemy_projectile=""
 player_projectile=""
 minion=""
 passive=""
+drag_drop=""
+potion=""
 
 [physics]
 
@@ -38,3 +40,4 @@ passive=""
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+viewport/hdr_2d=true
