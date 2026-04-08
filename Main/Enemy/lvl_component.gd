@@ -19,7 +19,7 @@ var resistencias_actuales: Dictionary = {}
 var exp_granted_per_level : Array = []
 
 func _ready() -> void:
-	exp_granted_per_level = [10,14,22,41,54,71,72]
+	exp_granted_per_level = [10,14,22,41,54,71,72,100]
 	# Al iniciar, calculamos las stats según la etapa global actual
 	recalcular_stats(GestorEtapa.etapa_actual)
 

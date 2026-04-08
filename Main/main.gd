@@ -34,6 +34,7 @@ func _process(_delta: float) -> void:
 
 ## public methods
 func spawn_enemy() -> void:
+	if GestorEtapa.etapa_actual == 8 and GestorEtapa.boss_defeatd == true: return
 	print(
 		"Print desde el Main: \n",
 		"Kill Count:  ", GestorEtapa.kill_count, "\n",

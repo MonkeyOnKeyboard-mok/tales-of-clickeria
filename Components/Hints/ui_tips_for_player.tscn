@@ -13,7 +13,7 @@ offset_bottom = 50.0
 mouse_filter = 2
 script = ExtResource("1_6xh86")
 
-[node name="Avanzar a la siguiente etapa" type="Label" parent="." unique_id=1699974415]
+[node name="Avanzaralasiguienteetapa" type="Label" parent="." unique_id=1699974415]
 layout_mode = 0
 offset_left = -513.0
 offset_top = 90.0
@@ -22,7 +22,7 @@ offset_bottom = 113.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Avanzar a la siguiente zona ↑"
 
-[node name="ColorRect" type="ColorRect" parent="Avanzar a la siguiente etapa" unique_id=1543837038]
+[node name="ColorRect" type="ColorRect" parent="Avanzaralasiguienteetapa" unique_id=1543837038]
 z_index = -1
 layout_mode = 0
 offset_left = -5.0
@@ -32,7 +32,7 @@ offset_bottom = 34.0
 scale = Vector2(5.7533565, 0.8770077)
 color = Color(1, 1, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Avanzar a la siguiente etapa" unique_id=579134533]
+[node name="ColorRect2" type="ColorRect" parent="Avanzaralasiguienteetapa" unique_id=579134533]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

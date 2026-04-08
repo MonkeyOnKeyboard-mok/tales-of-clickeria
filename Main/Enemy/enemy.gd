@@ -52,10 +52,12 @@ func _aplicar_nuevas_stats(nueva_salud_max: float, _nuevo_dps: float, _nuevas_re
 				GestorEtapa.projectiles_amount = 4
 			6:
 				GestorEtapa.projectiles_amount = 5
+				GestorEtapa.attack_speed = 2.0
 			7: 
 				GestorEtapa.projectiles_amount = 6
 			8: 
 				GestorEtapa.projectiles_amount = 7
+				GestorEtapa.attack_speed = 1.0
 
 # Loop de ataque (Daño al jugador)
 func _process(_delta: float) -> void:
@@ -68,6 +70,7 @@ func _process(_delta: float) -> void:
 
 func _death_animation() -> void:
 	sprite.stop()
+	if GestorEtapa.etapa_actual == 8: GestorEtapa.boss_defeatd = true
 # Step 1: jump up and to the right
 	var tween = create_tween()
 	tween.tween_property(sprite, "position", sprite.position + Vector2(30, -50), 0.3) \

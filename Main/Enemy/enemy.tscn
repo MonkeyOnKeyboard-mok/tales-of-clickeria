@@ -131,7 +131,7 @@ shape = SubResource("RectangleShape2D_jskd6")
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_nbxsl")
 autoplay = "default"
-frame_progress = 0.46213982
+frame_progress = 0.0542376
 
 [node name="LvLComponent" type="Node" parent="." unique_id=1034687758]
 unique_name_in_owner = true

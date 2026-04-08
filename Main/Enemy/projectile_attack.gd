@@ -53,4 +53,4 @@ func _on_timer_timeout() -> void:
 	shuffled_paths.shuffle()
 	for i in range(GestorEtapa.projectiles_amount):
 		_launch_projectile(shuffled_paths[i])
-	attack_timer.start(2.0)
+	attack_timer.start(GestorEtapa.attack_speed)

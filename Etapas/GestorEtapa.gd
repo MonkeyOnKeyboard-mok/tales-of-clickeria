@@ -16,6 +16,8 @@ var current_etapa : Array = ["one", "two", "three", "four", "five", "six", "seve
 var threshold_etapas : Dictionary = {}
 var kill_count : int = 0
 var counter : int = 0
+var attack_speed : float = 3.0
+var boss_defeatd : bool = false
 
 func _ready() -> void:
 	threshold_etapas = {
@@ -57,7 +59,7 @@ func obtener_stats_enemigo(etapa: int) -> Dictionary:
 # Función para avanzar de etapa
 func siguiente_etapa() -> void:
 	etapa_actual += 1
-	projectile_damage *= 2.0
+	projectile_damage *= 1.5
 	#print("Avanzando a Etapa %d" % etapa_actual)
 	etapa_cambiada.emit(etapa_actual)
 	# Aquí podrías guardar el progreso si quisieras

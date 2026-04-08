@@ -6,7 +6,7 @@ extends Node
 ## private vars
 ## onready vars
 @onready var arrow: TextureRect = $TextureRect
-@onready var next_zone: Label = $"Avanzar a la siguiente etapa"
+@onready var next_zone: Label = $"Avanzaralasiguienteetapa"
 @onready var waves: Label = $Waves
 
 # "obj_" for node references;
@@ -21,7 +21,9 @@ func _process(_delta: float) -> void:
 	else:
 		arrow.visible = false
 	if GestorEtapa.threshold_etapas[GestorEtapa.current_etapa[GestorEtapa.etapa_actual-1]] == GestorEtapa.kill_count:
-		next_zone.visible = true
+		if GestorEtapa.etapa_actual == 8 and GestorEtapa.boss_defeatd == true: return
+		else:
+			next_zone.visible = true
 	else:
 		next_zone.visible = false
 	waves.text = str(GestorEtapa.kill_count) + "/" + str(GestorEtapa.threshold_etapas[GestorEtapa.current_etapa[GestorEtapa.etapa_actual-1]])
