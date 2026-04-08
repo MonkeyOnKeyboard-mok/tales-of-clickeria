@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6322tohkq5il"
-path="res://.godot/imported/mono_anim.png-e5b2e64ee332ebf5a579964ddfb4dc67.ctex"
+uid="uid://bcmyx688xem2"
+path="res://.godot/imported/mono_anim2.png-fba4412e1394a6b42a37fc3108579445.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Main/Enemy/mono_anim.png"
-dest_files=["res://.godot/imported/mono_anim.png-e5b2e64ee332ebf5a579964ddfb4dc67.ctex"]
+source_file="res://Main/Enemy/mono_anim2.png"
+dest_files=["res://.godot/imported/mono_anim2.png-fba4412e1394a6b42a37fc3108579445.ctex"]
 
 [params]
 

@@ -108,6 +108,12 @@ offset_top = 148.0
 offset_right = 956.0
 offset_bottom = 179.0
 
+[node name="TriggerBoss" parent="Debugger" index="6" unique_id=469303370]
+offset_left = 871.0
+offset_top = 179.0
+offset_right = 974.0
+offset_bottom = 210.0
+
 [node name="Shop" parent="." unique_id=623432963 instance=ExtResource("5_liyct")]
 z_index = 4
 offset_left = 7.0
@@ -147,7 +153,6 @@ offset_right = 523.0
 offset_bottom = 272.0
 
 [node name="UITipsForPlayer" parent="." unique_id=844002679 instance=ExtResource("11_o60nc")]
-mouse_filter = 2
 
 [node name="ColorRect2" parent="UITipsForPlayer/Avanzar a la siguiente etapa" parent_id_path=PackedInt32Array(844002679, 1699974415) index="1" unique_id=579134533]
 z_index = -1
@@ -159,6 +164,12 @@ offset_bottom = -52.0
 scale = Vector2(1.8424654, 1.8803318)
 mouse_filter = 2
 color = Color(0.12156863, 1, 0.40392157, 1)
+
+[node name="Waves" parent="UITipsForPlayer" index="2" unique_id=926097882]
+offset_left = -381.0
+offset_top = 2.0
+offset_right = -341.0
+offset_bottom = 25.0
 
 [editable path="Debugger"]
 [editable path="UITipsForPlayer"]

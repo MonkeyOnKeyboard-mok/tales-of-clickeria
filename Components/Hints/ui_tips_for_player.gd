@@ -7,6 +7,7 @@ extends Node
 ## onready vars
 @onready var arrow: TextureRect = $TextureRect
 @onready var next_zone: Label = $"Avanzar a la siguiente etapa"
+@onready var waves: Label = $Waves
 
 # "obj_" for node references;
 ## built-in override methods
@@ -23,7 +24,8 @@ func _process(_delta: float) -> void:
 		next_zone.visible = true
 	else:
 		next_zone.visible = false
-
+	waves.text = str(GestorEtapa.kill_count) + "/" + str(GestorEtapa.threshold_etapas[GestorEtapa.current_etapa[GestorEtapa.etapa_actual-1]])
+	
 ## public methods
 
 ## private methods

@@ -397,6 +397,29 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_t0qpd"]
+offsets = PackedFloat32Array(0.566129, 0.86290324, 0.89193547)
+colors = PackedColorArray(0.0021631045, 0.012617188, 0.0018920706, 0, 1, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ce4ph"]
+gradient = SubResource("Gradient_t0qpd")
+width = 500
+height = 500
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.20726496)
+
+[sub_resource type="Gradient" id="Gradient_yy0su"]
+offsets = PackedFloat32Array(0.43064517, 0.6532258, 0.7532258)
+colors = PackedColorArray(0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t0qpd"]
+gradient = SubResource("Gradient_yy0su")
+width = 450
+height = 450
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Minion" type="Node2D" unique_id=1804796180 groups=["minion"]]
 process_mode = 3
 z_index = 4
@@ -410,6 +433,27 @@ texture_filter = 1
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_vo21e")
 animation = &"idle_light"
+frame_progress = 0.6556955
+
+[node name="floor_halo" type="TextureRect" parent="Sprite2D" unique_id=452541063]
+visible = false
+z_index = -1
+offset_left = -26.250002
+offset_top = -11.250001
+offset_right = 473.75
+offset_bottom = 488.75
+scale = Vector2(0.1, 0.1)
+texture = SubResource("GradientTexture2D_ce4ph")
+
+[node name="hourglass_halo" type="TextureRect" parent="Sprite2D" unique_id=1953215282]
+visible = false
+z_index = -1
+offset_left = -22.500002
+offset_top = -9.375001
+offset_right = 427.5
+offset_bottom = 440.625
+scale = Vector2(0.1, 0.1)
+texture = SubResource("GradientTexture2D_t0qpd")
 
 [node name="AttackScript" type="Node" parent="." unique_id=948159779]
 unique_name_in_owner = true

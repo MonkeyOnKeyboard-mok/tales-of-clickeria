@@ -21,12 +21,12 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	label_fire.text = "Fire Wizard \n      " + str(int(EconomiaManager.precios["mago_fuego"]))
-	label_light.text = "Light Wizard \n      " + str(int(EconomiaManager.precios["mago_light"]))
-	label_cold.text = "Cold Wizard \n      " + str(int(EconomiaManager.precios["mago_cold"]))
-	label_basic_potion.text = "Basic Potion \n      " + str(int(EconomiaManager.precios["pocion_basica"]))
-	label_hourglass.text = "Hourglass \n      " + str(int(EconomiaManager.precios["hourglass"]))
-	label_level_up_potion.text = "Level Up Potion \n      " + str(int(EconomiaManager.precios["level_up_potion"]))
+	label_fire.text = "Fire Wizard \n       " + str(int(EconomiaManager.precios["mago_fuego"]))
+	label_light.text = "Light Wizard \n       " + str(int(EconomiaManager.precios["mago_light"]))
+	label_cold.text = "Cold Wizard \n       " + str(int(EconomiaManager.precios["mago_cold"]))
+	label_basic_potion.text = "Basic Potion \n       " + str(int(EconomiaManager.precios["pocion_basica"]))
+	label_hourglass.text = "Hourglass \n       " + str(int(EconomiaManager.precios["hourglass"]))
+	label_level_up_potion.text = "Level Up Potion \n       " + str(int(EconomiaManager.precios["level_up_potion"]))
 	
 ## public methods
 

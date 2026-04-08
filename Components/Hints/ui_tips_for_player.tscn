@@ -10,6 +10,7 @@ offset_left = 733.0
 offset_top = 10.0
 offset_right = 773.0
 offset_bottom = 50.0
+mouse_filter = 2
 script = ExtResource("1_6xh86")
 
 [node name="Avanzar a la siguiente etapa" type="Label" parent="." unique_id=1699974415]
@@ -45,3 +46,8 @@ offset_bottom = 556.0
 rotation = -1.6728612
 scale = Vector2(0.1312257, 0.1312257)
 texture = ExtResource("2_ghw81")
+
+[node name="Waves" type="Label" parent="." unique_id=926097882]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

@@ -45,3 +45,7 @@ func _on_pause_pressed() -> void:
 
 func _on_gain_juice_pressed() -> void:
 	Event.emit_signal("gain_juice", 1000.0)
+
+func _on_trigger_boss_pressed() -> void:
+	GestorEtapa.etapa_actual = 8
+	GestorEtapa.kill_count = 0

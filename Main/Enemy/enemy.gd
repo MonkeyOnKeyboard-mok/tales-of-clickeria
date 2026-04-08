@@ -37,9 +37,9 @@ func _aplicar_nuevas_stats(nueva_salud_max: float, _nuevo_dps: float, _nuevas_re
 	# Actualizamos la barra de vida directamente con el nuevo máximo
 	# Tu clase HealthBar ya maneja la animación y el clamp internamente
 	if GestorEtapa.etapa_actual == 8:
-		health_bar.set_max_health(nueva_salud_max * 100)
-		health_bar.set_health(nueva_salud_max * 100)
-		health_bar.value = nueva_salud_max * 100
+		health_bar.set_max_health(nueva_salud_max * 2)
+		health_bar.set_health(nueva_salud_max * 2)
+		health_bar.value = nueva_salud_max * 2
 	else:
 		health_bar.set_max_health(nueva_salud_max)
 		health_bar.set_health(nueva_salud_max)
@@ -67,7 +67,7 @@ func _process(_delta: float) -> void:
 			pass
 
 func _death_animation() -> void:
-	area_2d.queue_free()
+	sprite.stop()
 # Step 1: jump up and to the right
 	var tween = create_tween()
 	tween.tween_property(sprite, "position", sprite.position + Vector2(30, -50), 0.3) \

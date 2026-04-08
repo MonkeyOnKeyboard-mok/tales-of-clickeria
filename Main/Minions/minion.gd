@@ -19,7 +19,11 @@ var idle_anim : String
 ## onready vars
 @onready var attack : AttackComponent = %AttackScript
 @onready var base_attack_speed : float = stats.attack_speed
+## Sprites:
 @onready var sprite: AnimatedSprite2D = $Sprite2D
+@onready var floor_halo: TextureRect = $Sprite2D/floor_halo
+@onready var hourglass_halo: TextureRect = $Sprite2D/hourglass_halo
+
 @onready var tooltip: Panel = $Tooltip
 @onready var dragg_and_drop: DragAndDrop = $DraggAndDrop
 
@@ -64,10 +68,12 @@ func calculate_damage() -> float:
 	return damage
 
 func apply_attack_speed_buff() -> void:
+	hourglass_halo.visible = true
 	current_attack_speed *= 0.1
 	sprite.speed_scale += 1.0
 
 func remove_atk_spd() -> void:
+	hourglass_halo.visible = false
 	current_attack_speed = stats.attack_speed
 	sprite.speed_scale = 1.0
 

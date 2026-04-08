@@ -74,6 +74,13 @@ offset_right = 85.0
 offset_bottom = 124.0
 text = "Gain Juice"
 
+[node name="TriggerBoss" type="Button" parent="." unique_id=469303370]
+layout_mode = 0
+offset_top = 123.0
+offset_right = 103.0
+offset_bottom = 154.0
+text = "Trigger Boss"
+
 [connection signal="pressed" from="EnemySpawner" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MinionSpawner" to="." method="_on_minion_spawner_pressed"]
 [connection signal="pressed" from="HourglasSpawner" to="." method="_on_hourglas_spawner_pressed"]
@@ -81,3 +88,4 @@ text = "Gain Juice"
 [connection signal="pressed" from="LevelUp/ByPass" to="." method="_on_by_pass_pressed"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="GainJuice" to="." method="_on_gain_juice_pressed"]
+[connection signal="pressed" from="TriggerBoss" to="." method="_on_trigger_boss_pressed"]
