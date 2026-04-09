@@ -32,6 +32,7 @@ minion=""
 passive=""
 drag_drop=""
 potion=""
+cuadrante=""
 
 [physics]
 

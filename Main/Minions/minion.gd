@@ -8,6 +8,7 @@ extends Node
 ## public vars
 var target : Node2D = null
 var gs : Dictionary = GlobalStats.minionStats
+var buffed : bool = false
 
 ## Animation Variables
 var attack_anim : String 
@@ -84,12 +85,20 @@ func remove_atk_spd() -> void:
 	current_attack_speed = stats.attack_speed
 	sprite.speed_scale = 1.0
 
-func glow() -> void:
-	level_up_halo.visible = true
+#func glow() -> void:
+	#level_up_halo.visible = true
+	#
+#func unglow() -> void:
+	#level_up_halo.visible = false
 	
-func unglow() -> void:
-	level_up_halo.visible = false
+func buff() -> void:
+	floor_halo.visible = true
+	buffed = true
 	
+func unbuff() -> void:
+	floor_halo.visible = false
+	buffed = false
+
 func level_up() -> void:
 	if level_up_cost > GlobalStats.playerStats["juice"]: 
 		print("Not enough jucie to level up")

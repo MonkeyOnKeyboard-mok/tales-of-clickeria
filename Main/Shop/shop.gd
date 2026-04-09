@@ -12,8 +12,7 @@ var offset : Vector2 = Vector2.ZERO
 @onready var label_cold: Label = $GridContainer/MinionCold/Label
 @onready var label_basic_potion: Label = $GridContainer/HealthPotion/Label
 @onready var label_hourglass: Label = $GridContainer/HourGlass/Label
-@onready var label_level_up_potion: Label = $GridContainer/LevelUp/Label
-
+@onready var label_cuadrante_potion: Label = $GridContainer/CuadrantePotion/Label
 # "obj_" for node references;
 ## built-in override methods
 
@@ -26,7 +25,7 @@ func _process(_delta: float) -> void:
 	label_cold.text = "Cold Wizard \n       " + str(int(EconomiaManager.precios["mago_cold"]))
 	label_basic_potion.text = "Basic Potion \n       " + str(int(EconomiaManager.precios["pocion_basica"]))
 	label_hourglass.text = "Hourglass \n       " + str(int(EconomiaManager.precios["hourglass"]))
-	label_level_up_potion.text = "Level Up Potion \n       " + str(int(EconomiaManager.precios["level_up_potion"]))
+	label_cuadrante_potion.text = "Level Up Potion \n       " + str(int(EconomiaManager.precios["level_up_potion"]))
 
 ## public methods
 
@@ -60,8 +59,8 @@ func _on_health_potion_pressed() -> void:
 func _on_hourglass_pressed() -> void:
 	_spawn_bought_item("artifact", "spawn_hourglass", EconomiaManager.precios["hourglass"], "hourglass") 
 	## Para los artefactos, el segundo argumento es una String con el artefacto
-#func _on_level_up_pressed() -> void:
-	#_spawn_bought_item("artifact", "spawn_level_up_potion", EconomiaManager.precios["level_up_potion"], "level_up_potion") 
+func _on_level_up_pressed() -> void:
+	_spawn_bought_item("artifact", "spawn_level_up_potion", EconomiaManager.precios["level_up_potion"], "level_up_potion") 
 	### Para los artefactos, el segundo argumento es una String con el artefacto
 
 func _spawn_bought_item(itemType: String, data, amount:float, key: String) -> void:

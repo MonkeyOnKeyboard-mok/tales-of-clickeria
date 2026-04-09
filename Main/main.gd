@@ -91,8 +91,8 @@ func spawn_level_up_potion() -> void:
 	var lvl_up_potion = LVL_UP_POTION.instantiate()
 	current_lvl_up_potion = lvl_up_potion
 	add_child(lvl_up_potion)
-	lvl_up_potion.global_position = Vector2(25,360)
-	print("lvl_up_potion spawned")
+	lvl_up_potion.global_position = Vector2(250,50)
+	print("Cuadrante Potion spawned")
 
 
 func hide_upgrades() -> void:

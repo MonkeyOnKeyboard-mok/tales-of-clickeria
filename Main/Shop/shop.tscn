@@ -99,15 +99,13 @@ offset_right = 42.0
 offset_bottom = 91.0
 theme_override_font_sizes/font_size = 11
 
-[node name="LevelUp" type="TextureButton" parent="GridContainer" unique_id=1693494029]
-visible = false
+[node name="CuadrantePotion" type="TextureButton" parent="GridContainer" unique_id=1693494029]
 layout_mode = 2
 texture_normal = ExtResource("5_joexe")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="GridContainer/LevelUp" unique_id=226364513]
-visible = false
+[node name="Label" type="Label" parent="GridContainer/CuadrantePotion" unique_id=226364513]
 layout_mode = 0
 offset_top = 69.0
 offset_right = 40.0
@@ -147,5 +145,5 @@ flip_v = true
 [connection signal="pressed" from="GridContainer/MinionCold" to="." method="_on_minion_cold_pressed"]
 [connection signal="pressed" from="GridContainer/HealthPotion" to="." method="_on_health_potion_pressed"]
 [connection signal="pressed" from="GridContainer/HourGlass" to="." method="_on_hourglass_pressed"]
-[connection signal="pressed" from="GridContainer/LevelUp" to="." method="_on_level_up_pressed"]
+[connection signal="pressed" from="GridContainer/CuadrantePotion" to="." method="_on_level_up_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_arrow_pressed"]

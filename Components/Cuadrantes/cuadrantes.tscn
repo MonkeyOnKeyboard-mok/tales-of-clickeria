@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bcwjx3suc0x8p"]
+
+[ext_resource type="Script" uid="uid://ds62nwo6rja1e" path="res://Components/Cuadrantes/cuadrantes.gd" id="1_n413k"]
+[ext_resource type="PackedScene" uid="uid://djwq2tguyxmgh" path="res://Components/Cuadrantes/texture_rect_cuadrante.tscn" id="2_muwj8"]
+
+[node name="Cuadrantes" type="Control" unique_id=1006395462]
+z_index = -3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("1_n413k")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=257594036]
+custom_minimum_size = Vector2(1150, 330)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 319.0
+offset_right = 1153.0
+offset_bottom = 649.0
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="Cuadrante1" parent="GridContainer" unique_id=42219155 instance=ExtResource("2_muwj8")]
+layout_mode = 2
+
+[node name="Cuadrante2" parent="GridContainer" unique_id=1256276104 instance=ExtResource("2_muwj8")]
+layout_mode = 2
+
+[node name="Cuadrante3" parent="GridContainer" unique_id=1394622842 instance=ExtResource("2_muwj8")]
+layout_mode = 2
+
+[node name="Cuadrante4" parent="GridContainer" unique_id=1809070130 instance=ExtResource("2_muwj8")]
+layout_mode = 2
+
+[node name="Cuadrante5" parent="GridContainer" unique_id=2031216534 instance=ExtResource("2_muwj8")]
+layout_mode = 2
+
+[node name="Cuadrante6" parent="GridContainer" unique_id=2139562802 instance=ExtResource("2_muwj8")]
+layout_mode = 2

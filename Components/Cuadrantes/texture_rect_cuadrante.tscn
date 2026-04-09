@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://djwq2tguyxmgh"]
+
+[ext_resource type="Script" uid="uid://cwhhi6o5nyw0s" path="res://Components/Cuadrantes/texture_rect_cuadrante.gd" id="1_hgdiw"]
+
+[sub_resource type="Gradient" id="Gradient_f3gf5"]
+offsets = PackedFloat32Array(0.82419354, 0.88870966, 0.92419356)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0.47843137, 0.81960785, 0.99607843, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rix8b"]
+gradient = SubResource("Gradient_f3gf5")
+fill = 2
+fill_from = Vector2(0.49786323, 0.50213677)
+metadata/_snap_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgdiw"]
+size = Vector2(380, 165)
+
+[node name="Cuadrante" type="TextureRect" unique_id=42219155]
+custom_minimum_size = Vector2(380, 165)
+mouse_filter = 2
+script = ExtResource("1_hgdiw")
+
+[node name="Highlight" type="TextureRect" parent="." unique_id=47611660]
+visible = false
+custom_minimum_size = Vector2(380, 165)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_rix8b")
+
+[node name="Floor" type="ColorRect" parent="." unique_id=1222610266]
+layout_mode = 0
+offset_right = 380.0
+offset_bottom = 165.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1109502302 groups=["cuadrante"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1139061800]
+position = Vector2(190, 82.5)
+scale = Vector2(0.8, 0.6)
+shape = SubResource("RectangleShape2D_hgdiw")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
