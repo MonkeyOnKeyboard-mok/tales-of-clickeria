@@ -23,6 +23,11 @@ GlobalStats="*uid://7s2hxkcf3k11"
 Event="*uid://wukwlt1is33g"
 Audio="*uid://cjr8xrxroqh2d"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
+
 [global_group]
 
 jugador=""
@@ -56,3 +61,5 @@ click={
 
 rendering_device/driver.windows="d3d12"
 viewport/hdr_2d=true
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

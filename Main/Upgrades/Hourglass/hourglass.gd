@@ -37,9 +37,12 @@ func check_proximity() -> void:
 	var new_affected: Array[Node2D] = minions.slice(0, buff_count)
 # Step 4: remove buff only from those no longer affected
 	for m in affected_minions:
+		if not is_instance_valid(m):
+			continue  # skip freed minions
 		if not new_affected.has(m):
-			if m.has_method("remove_atk_spd"):
-				m.remove_atk_spd()
+			if m:
+				if m.has_method("remove_atk_spd"):
+					m.remove_atk_spd()
 
 	# Step 5: apply buff only to newly affected
 	for m in new_affected:

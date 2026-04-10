@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://dq8jdyv371hu5"]
 
-[ext_resource type="Texture2D" uid="uid://bwp6jousxhbw7" path="res://Main/Minions/chess-chimp.png" id="1_60qt2"]
 [ext_resource type="Script" uid="uid://kwsgbjh26k2v" path="res://Main/Shop/shop.gd" id="1_rafwt"]
+[ext_resource type="Texture2D" uid="uid://rl5hylwfaloa" path="res://Main/Shop/icons/mage_red.png" id="2_obr8y"]
+[ext_resource type="Texture2D" uid="uid://0laqevgtstdk" path="res://Main/Shop/icons/mage_yellow.png" id="3_4ov50"]
 [ext_resource type="Texture2D" uid="uid://bamtcc6sauohu" path="res://Main/Shop/animation_1-9.png" id="3_hqijh"]
-[ext_resource type="Texture2D" uid="uid://bwriviwwedlmi" path="res://PlaceHolders/Potion.png" id="3_vwf2g"]
-[ext_resource type="Texture2D" uid="uid://dy5wdwcdbs36x" path="res://Main/Upgrades/Hourglass/hourglass.jpg" id="4_2siow"]
+[ext_resource type="Texture2D" uid="uid://cj1ucwmeog5wt" path="res://Main/Shop/icons/mage_blue.png" id="4_1hfxh"]
 [ext_resource type="Texture2D" uid="uid://dn8pva60h306g" path="res://Main/Shop/animation_1-8.png" id="4_vwf2g"]
-[ext_resource type="Texture2D" uid="uid://drqkmap8kag1j" path="res://PlaceHolders/lvlUpPotion.png" id="5_joexe"]
+[ext_resource type="Texture2D" uid="uid://c170454ngjyde" path="res://Main/Shop/icons/potion.png" id="5_2cinx"]
+[ext_resource type="Texture2D" uid="uid://3nnatx3cx1ss" path="res://Main/Shop/icons/hourglass.png" id="6_uq48g"]
+[ext_resource type="Texture2D" uid="uid://cu4jd17blq1kh" path="res://Main/Shop/icons/aura.png" id="7_3xyt2"]
 
 [node name="Shop" type="Control" unique_id=623432963]
 layout_mode = 3
@@ -21,16 +23,18 @@ script = ExtResource("1_rafwt")
 z_index = 1
 texture_filter = 1
 layout_mode = 0
+offset_top = 14.0
 offset_right = 200.0
-offset_bottom = 300.0
+offset_bottom = 314.0
 theme_override_constants/h_separation = 7
-theme_override_constants/v_separation = 40
+theme_override_constants/v_separation = 44
 columns = 3
 
 [node name="MinionFuego" type="TextureButton" parent="GridContainer" unique_id=1275999442]
+texture_filter = 1
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-texture_normal = ExtResource("1_60qt2")
+texture_normal = ExtResource("2_obr8y")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -44,38 +48,44 @@ theme_override_font_sizes/font_size = 11
 text = " "
 
 [node name="MinionLuz" type="TextureButton" parent="GridContainer" unique_id=1723744708]
+texture_filter = 1
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-texture_normal = ExtResource("1_60qt2")
+texture_normal = ExtResource("3_4ov50")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="GridContainer/MinionLuz" unique_id=590246935]
 layout_mode = 0
-offset_left = 3.0
+offset_left = 2.0
 offset_top = 67.0
-offset_right = 68.0
+offset_right = 67.0
 offset_bottom = 142.0
 theme_override_font_sizes/font_size = 11
 
 [node name="MinionCold" type="TextureButton" parent="GridContainer" unique_id=755642287]
+texture_filter = 1
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-texture_normal = ExtResource("1_60qt2")
+texture_normal = ExtResource("4_1hfxh")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="GridContainer/MinionCold" unique_id=1350720556]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 69.0
-offset_right = 67.0
-offset_bottom = 144.0
+offset_left = 1.0
+offset_top = 67.0
+offset_right = 66.0
+offset_bottom = 142.0
 theme_override_font_sizes/font_size = 11
 
 [node name="HealthPotion" type="TextureButton" parent="GridContainer" unique_id=1476557663]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-texture_normal = ExtResource("3_vwf2g")
+texture_normal = ExtResource("5_2cinx")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="GridContainer/HealthPotion" unique_id=1725016388]
 layout_mode = 0
@@ -86,10 +96,12 @@ offset_bottom = 87.0
 theme_override_font_sizes/font_size = 11
 
 [node name="HourGlass" type="TextureButton" parent="GridContainer" unique_id=754265909]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-texture_normal = ExtResource("4_2siow")
+texture_normal = ExtResource("6_uq48g")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="GridContainer/HourGlass" unique_id=155082979]
 layout_mode = 0
@@ -100,10 +112,12 @@ offset_bottom = 91.0
 theme_override_font_sizes/font_size = 11
 
 [node name="CuadrantePotion" type="TextureButton" parent="GridContainer" unique_id=1693494029]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-texture_normal = ExtResource("5_joexe")
+texture_normal = ExtResource("7_3xyt2")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="GridContainer/CuadrantePotion" unique_id=226364513]
 layout_mode = 0
@@ -113,11 +127,12 @@ offset_bottom = 92.0
 theme_override_font_sizes/font_size = 11
 
 [node name="Label" type="Label" parent="." unique_id=1390789570]
+z_index = 1
 layout_mode = 0
-offset_left = 84.0
-offset_top = -19.0
-offset_right = 124.0
-offset_bottom = 4.0
+offset_left = 80.0
+offset_top = -3.0
+offset_right = 120.0
+offset_bottom = 20.0
 text = "Shop"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1099836972]
@@ -126,7 +141,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(5.0096025, 7.521226)
 mouse_filter = 2
-color = Color(1, 1, 1, 0.4745098)
+color = Color(0, 0, 0, 0.972549)
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=139421506]
 layout_mode = 0
