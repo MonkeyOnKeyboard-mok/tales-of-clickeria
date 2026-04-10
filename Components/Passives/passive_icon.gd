@@ -28,9 +28,11 @@ func set_texture(texture : Texture2D) -> void:
 func set_text(effect: String, type: String) -> void:
 	match effect:
 		"flat_damage":
-			label.text = "Your " + type + " units deal " + str(GlobalStats.minionStats[effect][type]) + " more base damage"
+			label.text = "Your " + type + " units deal " + str(int(GlobalStats.minionStats[effect][type])) + " more base damage"
 		"increased_damage":
-			label.text = "Your " + type + " units deal " + str(GlobalStats.minionStats[effect][type]) + " increased damage"
+			label.text = "Your " + type + " units deal " + str(int((GlobalStats.minionStats[effect][type] - 1.0) * 100.0)) + "% increased damage"
+		"harvest":
+			label.text = "Your units generate " + str(int((GlobalStats.minionStats[effect][type] - 1.0) * 100.0)) + "% increased juice"
 	print("Text set")
 
 func _on_area_2d_mouse_entered() -> void:

@@ -429,6 +429,14 @@ gradient = SubResource("Gradient_ce4ph")
 fill = 1
 fill_from = Vector2(0.50641024, 0.49358973)
 
+[sub_resource type="Gradient" id="Gradient_g18li"]
+colors = PackedColorArray(0.9052691, 2.3102762e-06, 4.813075e-07, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7mp72"]
+gradient = SubResource("Gradient_g18li")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yy0su"]
+
 [node name="Minion" type="Node2D" unique_id=1804796180 groups=["minion"]]
 process_mode = 3
 z_index = 4
@@ -474,6 +482,14 @@ offset_bottom = 28.125
 texture = SubResource("GradientTexture2D_g18li")
 expand_mode = 1
 
+[node name="Aim" type="TextureRect" parent="Sprite2D" unique_id=1922931989]
+visible = false
+offset_right = 256.0
+offset_bottom = 1.0
+rotation = 4.712389
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_7mp72")
+
 [node name="AttackScript" type="Node" parent="." unique_id=948159779]
 unique_name_in_owner = true
 process_mode = 1
@@ -497,4 +513,12 @@ offset_top = -439.99997
 offset_right = 184.99998
 offset_bottom = -439.99997
 
+[node name="Area2D" type="Area2D" parent="." unique_id=239039450 groups=["minion"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1147974960 groups=["minion"]]
+position = Vector2(29.999996, 119.999985)
+shape = SubResource("CircleShape2D_yy0su")
+
 [connection signal="timeout" from="AttackScript/Timer" to="AttackScript" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

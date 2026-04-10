@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_syj4e")
 name = "Cold Mastery"
-description = "Increases your cold units base damage by 1"
+description = "Increases your cold units base damage by 5"
 icon = ExtResource("1_d0k62")
 effect = "flat_damage"
 type = "cold"

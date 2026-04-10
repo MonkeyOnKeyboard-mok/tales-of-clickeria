@@ -9,6 +9,7 @@ extends Node
 var target : Node2D = null
 var gs : Dictionary = GlobalStats.minionStats
 var buffed : bool = false
+var buff_owner : Node = null
 
 ## Animation Variables
 var attack_anim : String 
@@ -31,6 +32,7 @@ var level_up_cost : float = 60.0
 @onready var hourglass_halo: TextureRect = $Sprite2D/hourglass_halo
 @onready var level_up_halo: TextureRect = $Sprite2D/level_up_halo
 
+
 @onready var tooltip: Panel = $Tooltip
 @onready var dragg_and_drop: DragAndDrop = $DraggAndDrop
 
@@ -52,7 +54,7 @@ func _ready() -> void:
 	#print("Minion Atk SPD: ", stats.attack_speed)
 	#print("Minion Base DMG: ", stats.base_damage)
 	#print("Minion Crit Chance: ", stats.crit_chance)
-	
+
 
 func _process(_delta: float) -> void:
 	if self.global_position.x > 1152.0/2.0:
@@ -90,14 +92,21 @@ func remove_atk_spd() -> void:
 	#
 #func unglow() -> void:
 	#level_up_halo.visible = false
-	
-func buff() -> void:
+
+func buff(_owner: Node) -> void:
+	## Duplicating Halo and Gradient
+	# Duplicate the texture deeply (including gradient)
+	var grad_tex := (floor_halo.texture as GradientTexture2D).duplicate(true)
+	floor_halo.texture = grad_tex
+	# Now each minion has its own gradient copy
+	grad_tex.gradient.set_color(1, _owner.buff_color)
 	floor_halo.visible = true
-	buffed = true
+	## Apply Buff
+	personal_damage += _owner.buff_value
 	
-func unbuff() -> void:
+func unbuff(_owner: Node) -> void:
 	floor_halo.visible = false
-	buffed = false
+	personal_damage -= _owner.buff_value
 
 func level_up() -> void:
 	if level_up_cost > GlobalStats.playerStats["juice"]: 
@@ -126,3 +135,23 @@ func _set_textures() -> void:
 		"cold":
 			attack_anim = "attack_cold"
 			idle_anim = "idle_cold"
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if !area.is_in_group("cuadrante"): return
+	if area.get_parent().on == false: return
+	if buffed : return
+	if buff_owner == null and area.get_parent().target == null:
+		buff_owner = area.get_parent()
+		if buff_owner.check_if_owned(): return
+		buff_owner.target = self
+		buff(buff_owner)
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if !area.is_in_group("cuadrante"): return
+	if area.get_parent().on == false: return
+	if buff_owner == area.get_parent():
+		unbuff(buff_owner)
+		buff_owner.target = null
+		buff_owner = null
+		

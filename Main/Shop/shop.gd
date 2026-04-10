@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 	label_cold.text = "Cold Wizard \n       " + str(int(EconomiaManager.precios["mago_cold"]))
 	label_basic_potion.text = "Basic Potion \n       " + str(int(EconomiaManager.precios["pocion_basica"]))
 	label_hourglass.text = "Hourglass \n       " + str(int(EconomiaManager.precios["hourglass"]))
-	label_cuadrante_potion.text = "Level Up Potion \n       " + str(int(EconomiaManager.precios["level_up_potion"]))
+	label_cuadrante_potion.text = "Mystery Mix \n       " + str(int(EconomiaManager.precios["cuadrante_potion"]))
 
 ## public methods
 
@@ -60,7 +60,7 @@ func _on_hourglass_pressed() -> void:
 	_spawn_bought_item("artifact", "spawn_hourglass", EconomiaManager.precios["hourglass"], "hourglass") 
 	## Para los artefactos, el segundo argumento es una String con el artefacto
 func _on_level_up_pressed() -> void:
-	_spawn_bought_item("artifact", "spawn_level_up_potion", EconomiaManager.precios["level_up_potion"], "level_up_potion") 
+	_spawn_bought_item("artifact", "spawn_cuadrante_potion", EconomiaManager.precios["cuadrante_potion"], "cuadrante_potion") 
 	### Para los artefactos, el segundo argumento es una String con el artefacto
 
 func _spawn_bought_item(itemType: String, data, amount:float, key: String) -> void:
@@ -81,4 +81,3 @@ func _spawn_bought_item(itemType: String, data, amount:float, key: String) -> vo
 				Event.emit_signal("spent_juice", amount)
 				Event.emit_signal("update_price", key)
 				Event.emit_signal(data)
-			

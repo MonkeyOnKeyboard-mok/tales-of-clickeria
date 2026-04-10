@@ -19,7 +19,7 @@ signal spawn_minion
 @warning_ignore("unused_signal")
 signal spawn_hourglass
 @warning_ignore("unused_signal")
-signal spawn_level_up_potion
+signal spawn_cuadrante_potion
 @warning_ignore("unused_signal")
 signal upgrade_chosen
 @warning_ignore("unused_signal")

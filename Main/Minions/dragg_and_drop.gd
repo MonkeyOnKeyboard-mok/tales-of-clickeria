@@ -6,6 +6,7 @@ class_name DragAndDrop
 ## public vars
 signal show_tooltip
 var dragging := false
+var rotating := false
 var offset := Vector2.ZERO
 static var current_dragged = null
 ## private vars
@@ -18,7 +19,7 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	if dragging and current_dragged == self:
+	if dragging and current_dragged == self and !rotating:
 		get_parent().global_position = get_parent().global_position.lerp(get_viewport().get_mouse_position() + offset, 0.4)
 
 func _input(event):
@@ -29,6 +30,7 @@ func _input(event):
 				current_dragged = null
 				if get_parent().is_in_group("potion"):
 					get_parent().try_level_up()
+	
 
 ## public methods
 

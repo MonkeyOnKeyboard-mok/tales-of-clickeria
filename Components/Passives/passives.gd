@@ -44,7 +44,7 @@ func _ready() -> void:
 		"global" : [false, GLOBAL_INCREASED], ##
 	},
 	"harvest" : {
-		"minion_harvest": [false, null], ## REPLACE ONCE IMPLEMENTED 
+		"minion_harvest": [false, HARVEST_1], ## REPLACE ONCE IMPLEMENTED 
 		"player_harvest" : [false, null], ## REPLACE ONCE IMPLEMENTED
 	}
 }

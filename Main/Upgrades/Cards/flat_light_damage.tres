@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_0llgf")
 name = "Lighting Mastery"
-description = "Increases your lightning units base damage by 1"
+description = "Increases your lightning units base damage by 5"
 icon = ExtResource("1_grpsb")
 effect = "flat_damage"
 type = "light"

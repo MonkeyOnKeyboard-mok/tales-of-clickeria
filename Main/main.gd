@@ -28,7 +28,7 @@ func _ready() -> void:
 	Event.spawn_minion.connect(spawn_minion)
 	Event.upgrade_chosen.connect(hide_upgrades)
 	Event.spawn_hourglass.connect(spawn_hourglass)
-	Event.spawn_level_up_potion.connect(spawn_level_up_potion)
+	Event.spawn_cuadrante_potion.connect(spawn_cuadrante_potion)
 	## Reset all stats
 	GlobalStats.reset_stats()
 	spawn_enemy()
@@ -38,6 +38,7 @@ func _process(_delta: float) -> void:
 
 ## public methods
 func spawn_enemy() -> void:
+	#return ## for testing
 	print("Etapa Actual: "+ str(GestorEtapa.etapa_actual))
 	print("Boss defeated: " + str(GestorEtapa.boss_defeatd))
 	if GestorEtapa.etapa_actual == 8 and GestorEtapa.boss_defeatd == true: 
@@ -69,12 +70,13 @@ func spawn_enemy() -> void:
 	minions.set_new_target(current_enemy)
 	
 func spawn_minion(type : UnitStats) -> void:
+	if GlobalStats.minion_counter >= 6: return
 	var minion_instance = MINION.instantiate()
 	minion_instance.stats = type
 	minions.add_child(minion_instance)
 	minion_instance.global_position = Vector2(400,400)
-	#print("minion spawned")
-	
+	GlobalStats.minion_counter += 1
+
 func spawn_hourglass() -> void:
 	if current_hourglass:
 		current_hourglass.buff_count += 1
@@ -83,17 +85,14 @@ func spawn_hourglass() -> void:
 		current_hourglass = hourglass
 		add_child(hourglass)
 		hourglass.global_position = Vector2(400,400)
-		#print("hourglass spawned")
 
-func spawn_level_up_potion() -> void:
+func spawn_cuadrante_potion() -> void:
 	if current_lvl_up_potion:
 		current_lvl_up_potion.counter += 1
 	var lvl_up_potion = LVL_UP_POTION.instantiate()
 	current_lvl_up_potion = lvl_up_potion
 	add_child(lvl_up_potion)
 	lvl_up_potion.global_position = Vector2(250,50)
-	print("Cuadrante Potion spawned")
-
 
 func hide_upgrades() -> void:
 	cards.get_node("Control").hide()

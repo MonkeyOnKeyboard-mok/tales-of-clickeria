@@ -6,39 +6,11 @@ var debugging : Dictionary = {
 }
 
 ## Player Variables
-var playerStats : Dictionary = {
-	"level" : 1,
-	"can_level_up" : false,
-	"main_attack" : 100.0,
-	"main_attack_juice" : 1.0,
-	"can_buy" : false,
-	"juice" : 0.0
-}
+var playerStats : Dictionary = {}
 
 ###### Minion Variables ######
-var minionStats : Dictionary = {
-	"flat_damage" :{
-		"fire" : 0.0,
-		"cold" : 0.0,
-		"light": 0.0,
-		"earth": 0.0,
-		"global": 0.0
-	},
-	"increased_damage" :{
-		"fire" : 1.0,
-		"cold" : 1.0,
-		"light": 1.0,
-		"earth": 1.0,
-		"global": 1.0
-	},
-	"attack_speed" :{
-		"fire" : 0.0,
-		"cold" : 0.0,
-		"light": 0.0,
-		"earth": 0.0,
-		"global": 0.0
-	}
-}
+var minionStats : Dictionary = {}
+var minion_counter : int = 0
 
 func _ready() -> void:
 	reset_stats()
@@ -76,5 +48,8 @@ func reset_stats() -> void:
 		"light": 0.0,
 		"earth": 0.0,
 		"global": 0.0
-	}
+	},
+	"harvest" : {
+		"minion_harvest" : 1.0
+	} 
 }

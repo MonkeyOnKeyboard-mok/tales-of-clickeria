@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_uab0u")
 name = "Fire Proficiency"
-description = "Increases your fire units damage by 5%"
+description = "Increases your fire units damage by 50%"
 icon = ExtResource("1_widxw")
 effect = "increased_damage"
 type = "fire"

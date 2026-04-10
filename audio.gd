@@ -6,13 +6,13 @@ const AGUA = preload("uid://21mccb62av4s")
 ## public vars
 ## private vars
 ## onready vars
+@onready var main_loop: AudioStreamPlayer = $main_loop
 @onready var cold_attack: AudioStreamPlayer = $cold_attack
-
 # "obj_" for node references;
 ## built-in override methods
 
 func _ready() -> void:
-	pass
+	main_loop.play()
 
 func _process(_delta: float) -> void:
 	pass

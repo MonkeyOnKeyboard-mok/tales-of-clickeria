@@ -4,7 +4,7 @@ extends Node
 ## exports
 ## public vars
 var direction := Vector2.ZERO
-var speed : float = 300.0
+var speed : float = 350.0
 var spawnRot : float
 var enemy : Node2D = null
 ## private vars
@@ -35,7 +35,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if is_in_group("enemy_projectile"): return
 		area.get_parent().health_bar.take_damage(parent.calculate_damage())
 		Event.emit_signal("spawn_particle",self.global_position)
-		Event.emit_signal("gain_juice",(parent.calculate_damage()))
+		Event.emit_signal("gain_juice",(parent.calculate_damage() * GlobalStats.minionStats["harvest"]["minion_harvest"]))
 		queue_free()
 	if is_in_group("player_projectile") and area.get_parent().is_in_group("enemy_projectile"):
 		area.get_parent().queue_free()

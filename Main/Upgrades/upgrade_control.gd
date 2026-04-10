@@ -16,16 +16,15 @@ func show_upgrades(count: int = 3):
 	for child in container.get_children():
 		child.queue_free()
 	var selected_upgrades : Array = []
-	for card in range(count):
-		var select_upgrade = _get_random_upgrades()
-		selected_upgrades.append(select_upgrade)
+	while selected_upgrades.size() < count:
+		var candidate = _get_random_upgrades()
+		if not selected_upgrades.has(candidate):
+			selected_upgrades.append(candidate)
 	for card in selected_upgrades:
 		var choice = CARD.instantiate()
 		container.add_child(choice)
 		choice.set_card(card)
-		#print(choice.global_position)
 	show()
-	#print("mostrando upgrdaes")
 	
 func _get_random_upgrades() -> Cards:
 	var pool = _get_rarity()

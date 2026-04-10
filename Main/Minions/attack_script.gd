@@ -7,9 +7,12 @@ const PROJECTILE = preload("uid://bcpb5orwfprdb")
 ## public vars
 var current_target : Node2D = null
 var enemy_position: Vector2 = Vector2(576,160)
+
 ## private vars
 ## onready vars
 @onready var attack_timer: Timer = $Timer
+@onready var sprite: AnimatedSprite2D = $"../Sprite2D"
+
 # "obj_" for node references;
 ## built-in override methods
 
