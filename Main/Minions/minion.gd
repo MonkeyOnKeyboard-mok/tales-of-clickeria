@@ -10,6 +10,7 @@ var target : Node2D = null
 var gs : Dictionary = GlobalStats.minionStats
 var buffed : bool = false
 var buff_owner : Node = null
+var dying : bool = false
 
 ## Animation Variables
 var attack_anim : String 
@@ -26,7 +27,9 @@ var level_up_cost : float = 60.0
 ## onready vars
 @onready var attack : AttackComponent = %AttackScript
 @onready var base_attack_speed : float = stats.attack_speed
+@onready var area_2d: Area2D = $Area2D
 ## Sprites:
+
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var floor_halo: TextureRect = $Sprite2D/floor_halo
 @onready var hourglass_halo: TextureRect = $Sprite2D/hourglass_halo
@@ -64,17 +67,11 @@ func _process(_delta: float) -> void:
 ## public methods
 
 func new_target(enemy: Node2D) -> void:
-	#print("Minion target: ", enemy)
 	attack.set_target(enemy)
 
 func calculate_damage() -> float:
 	damage = (((stats.base_damage + gs["flat_damage"][stats.type] + gs["flat_damage"]["global"]) + personal_damage \
 	* gs["increased_damage"][stats.type] ) * gs["increased_damage"]["global"])
-	#print("Minion Base Damage: ", stats.base_damage)
-	#print("Global Fire Damage Flat:", gs["flat_damage"][stats.type]) 
-	#print("Global Fire Damage Increase:", gs["increased_damage"][stats.type])
-	#print("This minion's damage is: ", damage) 
-	#print(damage)
 	return damage
 
 func apply_attack_speed_buff() -> void:
@@ -86,12 +83,6 @@ func remove_atk_spd() -> void:
 	hourglass_halo.visible = false
 	current_attack_speed = stats.attack_speed
 	sprite.speed_scale = 1.0
-
-#func glow() -> void:
-	#level_up_halo.visible = true
-	#
-#func unglow() -> void:
-	#level_up_halo.visible = false
 
 func buff(_owner: Node) -> void:
 	## Duplicating Halo and Gradient
@@ -118,7 +109,16 @@ func level_up() -> void:
 	Event.emit_signal("spent_juice", level_up_cost)
 	level_up_cost *= 2.0
 	print("Minion leveled up")
-	
+
+func try_sell() -> void:
+	var overlap = area_2d.get_overlapping_areas()
+	for o in overlap:
+		if o.is_in_group("blender"):
+			o.get_parent().sell_minion(self)
+			_die()
+			dying = true
+			
+
 ## private methods
 
 func _show_tooltip() -> void:
@@ -154,4 +154,16 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		unbuff(buff_owner)
 		buff_owner.target = null
 		buff_owner = null
-		
+
+func _die()-> void:
+	var skew_tween = create_tween()
+	var rot_tween = create_tween()
+	var small_tween = create_tween()
+	small_tween.tween_property(self, "scale", Vector2(0.001, 0.001), 1.5)
+	skew_tween.tween_property(self, "skew", 86.0, 1.0)
+	rot_tween.tween_property(self, "rotation_degrees", 360, 1.0)
+	rot_tween.set_loops()  # keeps repeating
+	GlobalStats.minion_counter -= 1
+	Event.emit_signal("gain_juice", (level * calculate_damage()))
+	Event.emit_signal("spawn_particle", self.global_position)
+	small_tween.tween_callback(Callable(self,"queue_free"))

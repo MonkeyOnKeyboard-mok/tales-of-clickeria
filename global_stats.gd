@@ -11,6 +11,7 @@ var playerStats : Dictionary = {}
 ###### Minion Variables ######
 var minionStats : Dictionary = {}
 var minion_counter : int = 0
+var dragging_minion : bool = false
 
 func _ready() -> void:
 	reset_stats()

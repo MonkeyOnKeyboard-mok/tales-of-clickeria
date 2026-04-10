@@ -30,7 +30,10 @@ func _input(event):
 				current_dragged = null
 				if get_parent().is_in_group("potion"):
 					get_parent().try_level_up()
-	
+				if get_parent().is_in_group("minion"):
+					get_parent().try_sell()
+					GlobalStats.dragging_minion = false
+
 
 ## public methods
 
@@ -41,6 +44,8 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 			if current_dragged == null:
 				current_dragged = self
 				dragging = event.pressed
+				if get_parent().is_in_group("minion"):
+					GlobalStats.dragging_minion = true
 				offset = self.global_position - get_viewport().get_mouse_position()
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
 		if event.pressed:

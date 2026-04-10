@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bo5n528ry2djy"]
+
+[ext_resource type="Texture2D" uid="uid://cvtr01rqfxqsf" path="res://PlaceHolders/blender-mixer-food-processor-small-appliance-home-appliance-blender-7eb36ae0f7632c21fd0e5c761b1c6dce.png" id="1_haq1w"]
+[ext_resource type="Script" uid="uid://bdibkvr0pkjdw" path="res://Components/Blender/blender.gd" id="1_vlv1k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vlv1k"]
+
+[node name="Blender" type="Node2D" unique_id=324550344 groups=["blender"]]
+script = ExtResource("1_vlv1k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1567625444]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_haq1w")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1549941664]
+z_index = -1
+offset_left = -32.0
+offset_top = -40.000004
+offset_right = 8.0
+scale = Vector2(1.5848554, 2.0859857)
+mouse_filter = 2
+color = Color(1.4802706, 1.4802706, 0, 0.13333334)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2084516969 groups=["blender"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=766422910 groups=["blender"]]
+scale = Vector2(2.5513165, 3.5317748)
+shape = SubResource("CircleShape2D_vlv1k")

@@ -43,6 +43,7 @@ func _launch_projectile() -> void:
 	await get_parent().sprite.animation_finished
 	var direction = (enemy_position - get_parent().global_position).normalized()
 	projectile.direction = direction
+	if get_parent().dying: return
 	add_child(projectile)
 	projectile.add_to_group("player_projectile")
 	projectile.global_position = get_parent().global_position

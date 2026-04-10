@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://nju62x8f6byo" path="res://Main/Pause/pause.tscn" id="10_qac2q"]
 [ext_resource type="PackedScene" uid="uid://bppi172tfc867" path="res://Components/Hints/ui_tips_for_player.tscn" id="11_o60nc"]
 [ext_resource type="PackedScene" uid="uid://bcwjx3suc0x8p" path="res://Components/Cuadrantes/cuadrantes.tscn" id="12_f3gf5"]
+[ext_resource type="PackedScene" uid="uid://bo5n528ry2djy" path="res://Components/Blender/blender.tscn" id="13_rix8b"]
 
 [sub_resource type="Curve2D" id="Curve2D_rj11h"]
 _data = {
@@ -174,6 +175,10 @@ offset_right = -341.0
 offset_bottom = 25.0
 
 [node name="Cuadrantes" parent="." unique_id=1006395462 instance=ExtResource("12_f3gf5")]
+
+[node name="Blender" parent="." unique_id=324550344 instance=ExtResource("13_rix8b")]
+texture_filter = 1
+position = Vector2(1122, 502)
 
 [editable path="Debugger"]
 [editable path="UITipsForPlayer"]

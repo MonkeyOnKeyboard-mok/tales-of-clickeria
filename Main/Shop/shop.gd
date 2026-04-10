@@ -70,6 +70,7 @@ func _spawn_bought_item(itemType: String, data, amount:float, key: String) -> vo
 	else: 
 		match itemType:
 			"minion":
+				if GlobalStats.minion_counter >= 6: return
 				Event.emit_signal("spent_juice", amount)
 				Event.emit_signal("spawn_minion",data)
 				Event.emit_signal("update_price", key)
