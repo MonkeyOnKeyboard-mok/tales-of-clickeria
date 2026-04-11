@@ -29,6 +29,8 @@ func _ready() -> void:
 	Event.upgrade_chosen.connect(hide_upgrades)
 	Event.spawn_hourglass.connect(spawn_hourglass)
 	Event.spawn_cuadrante_potion.connect(spawn_cuadrante_potion)
+	Audio.main_loop.play()
+	$ColorRect/AnimationPlayer.play("fade_out")
 	## Reset all stats
 	GlobalStats.reset_stats()
 	spawn_enemy()

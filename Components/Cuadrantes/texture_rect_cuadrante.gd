@@ -1,6 +1,7 @@
 extends Node
 ## enums
 ## consts
+
 ## exports
 ## public vars
 var colors : Dictionary = {}
@@ -13,15 +14,18 @@ var buff_value : float = 0.0
 @onready var highlight: TextureRect = $Highlight
 @onready var floors: ColorRect = $Floor
 @onready var area_2d: Area2D = $Area2D
+@onready var panel: PanelContainer = $PanelContainer
+@onready var sprite_2d: Sprite2D = $PanelContainer/Sprite2D
 
 # "obj_" for node references;
 ## built-in override methods
 
 func _ready() -> void:
+	sprite_2d.visible = false
 	colors = {
-		"fire" : [Color(0.659, 0.0, 0.0, 0.784), Color(1.0, 0.0, 0.0, 1.0), 10.0],
-		"cold" : [Color(0.106, 0.345, 1.0, 0.784),  Color(0.276, 0.476, 1.0, 1.0), 10.0],
-		"light" : [Color(0.616, 0.521, 0.0, 0.784), Color(1.0, 1.0, 0.0, 1.0), 10.0],
+		"fire" : [Color(0.659, 0.0, 0.0, 0.118), Color(1.0, 0.0, 0.0, 1.0), 10.0],
+		"cold" : [Color(0.106, 0.345, 1.0, 0.118),  Color(0.276, 0.476, 1.0, 1.0), 10.0],
+		"light" : [Color(0.616, 0.522, 0.0, 0.118), Color(1.0, 1.0, 0.0, 1.0), 10.0],
 	}
 
 
@@ -37,6 +41,7 @@ func set_color(type : String)  -> void:
 	buff_value = colors[type][2]
 	on = true
 	_check_overlaps()
+	sprite_2d.visible = true
 
 func glow() -> void:
 	highlight.visible = true

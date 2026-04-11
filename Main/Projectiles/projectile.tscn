@@ -106,8 +106,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjc6y"]
-radius = 9.772949
-height = 40.82643
+radius = 15.202366
+height = 62.083134
 
 [node name="Projectile" type="CharacterBody2D" unique_id=981540825]
 z_index = 4

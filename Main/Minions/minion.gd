@@ -11,6 +11,7 @@ var gs : Dictionary = GlobalStats.minionStats
 var buffed : bool = false
 var buff_owner : Node = null
 var dying : bool = false
+var enhance_target : Node = null
 
 ## Animation Variables
 var attack_anim : String 
@@ -28,6 +29,8 @@ var level_up_cost : float = 60.0
 @onready var attack : AttackComponent = %AttackScript
 @onready var base_attack_speed : float = stats.attack_speed
 @onready var area_2d: Area2D = $Area2D
+@onready var shape: CollisionShape2D = $Area2D/CollisionShape2D
+
 ## Sprites:
 
 @onready var sprite: AnimatedSprite2D = $Sprite2D
@@ -70,7 +73,7 @@ func new_target(enemy: Node2D) -> void:
 	attack.set_target(enemy)
 
 func calculate_damage() -> float:
-	damage = (((stats.base_damage + gs["flat_damage"][stats.type] + gs["flat_damage"]["global"]) + personal_damage \
+	damage = ((((stats.base_damage + gs["flat_damage"][stats.type] + gs["flat_damage"]["global"]) + personal_damage) \
 	* gs["increased_damage"][stats.type] ) * gs["increased_damage"]["global"])
 	return damage
 
@@ -83,6 +86,12 @@ func remove_atk_spd() -> void:
 	hourglass_halo.visible = false
 	current_attack_speed = stats.attack_speed
 	sprite.speed_scale = 1.0
+
+func glow() -> void:
+	level_up_halo.visible = true
+
+func unglow() -> void:
+	level_up_halo.visible = false
 
 func buff(_owner: Node) -> void:
 	## Duplicating Halo and Gradient
@@ -167,3 +176,21 @@ func _die()-> void:
 	Event.emit_signal("gain_juice", (level * calculate_damage()))
 	Event.emit_signal("spawn_particle", self.global_position)
 	small_tween.tween_callback(Callable(self,"queue_free"))
+
+
+func _input(event: InputEvent) -> void:
+	if enhance_target == null: return
+	if get_tree().paused and Event.spell_echo_sel_on:
+		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			Event.emit_signal("pause_game")
+			attack.spell_echo = true
+			Event.spell_echo_sel_on = false
+			Event.emit_signal("spell_echo_selected")
+
+func _on_area_2d_mouse_entered() -> void:
+	if get_tree().paused and Event.spell_echo_sel_on:
+		enhance_target = self
+
+func _on_area_2d_mouse_exited() -> void:
+	if get_tree().paused and Event.spell_echo_sel_on:
+		enhance_target = null

@@ -514,11 +514,17 @@ offset_right = 184.99998
 offset_bottom = -439.99997
 
 [node name="Area2D" type="Area2D" parent="." unique_id=239039450 groups=["minion"]]
+process_mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1147974960 groups=["minion"]]
-position = Vector2(29.999996, 119.999985)
+process_mode = 3
+position = Vector2(24.999998, 50)
+scale = Vector2(11.579567, 12.772535)
 shape = SubResource("CircleShape2D_yy0su")
 
 [connection signal="timeout" from="AttackScript/Timer" to="AttackScript" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

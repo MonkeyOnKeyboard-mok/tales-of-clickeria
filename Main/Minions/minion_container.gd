@@ -10,8 +10,8 @@ class_name MinionManager
 ## built-in override methods
 
 func _ready() -> void:
-	pass
-
+	Event.spell_echo_selection.connect(spell_echo_selection)
+	Event.spell_echo_selected.connect(spell_echo_selected)
 func _process(_delta: float) -> void:
 	pass
 
@@ -21,5 +21,17 @@ func set_new_target(enemy: Node2D) -> void:   ## El target de los minions se set
 		if child is Node2D:
 			child.new_target(enemy)
 			#print("minion new target set")
+
+func spell_echo_selection() -> void:
+	print("Pick a unit to apply Spell Echo to")
+	for child in get_children():
+		if child is Node2D:
+			child.glow()
+
+func spell_echo_selected() -> void:
+	print("Spell Echo Applied")
+	for child in get_children():
+		if child is Node2D:
+			child.unglow()
 
 ## private methods

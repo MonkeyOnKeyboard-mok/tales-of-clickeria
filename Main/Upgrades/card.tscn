@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bgrkg8wdxx0ln"]
 
 [ext_resource type="Script" uid="uid://bg6tg44tqesw0" path="res://Main/Upgrades/card_set_up.gd" id="1_5eta7"]
-[ext_resource type="Texture2D" uid="uid://8ikbe6ihck2u" path="res://Main/Upgrades/Cards/minionCard.png" id="2_xmhy7"]
+[ext_resource type="Texture2D" uid="uid://ubipm4crav3y" path="res://Main/Upgrades/Cards/carta_minions.png" id="2_5eta7"]
 [ext_resource type="Texture2D" uid="uid://bos6l3u72f83k" path="res://PlaceHolders/Coin.png" id="3_5eta7"]
 [ext_resource type="Texture2D" uid="uid://bwriviwwedlmi" path="res://PlaceHolders/Potion.png" id="4_5eta7"]
 
@@ -25,17 +25,19 @@ scale = Vector2(2.0305831, 2.0305831)
 mouse_filter = 2
 
 [node name="texture" type="Sprite2D" parent="Panel" unique_id=1259260295]
+texture_filter = 1
 position = Vector2(78.99999, 102.99999)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_xmhy7")
+texture = ExtResource("2_5eta7")
 
 [node name="name" type="Label" parent="Panel" unique_id=173712737]
+texture_filter = 1
 layout_mode = 0
-offset_left = 21.0
-offset_top = 13.0
-offset_right = 76.0
-offset_bottom = 36.0
-scale = Vector2(0.9561572, 0.76198804)
+offset_left = 39.889988
+offset_top = 6.4021015
+offset_right = 107.889984
+offset_bottom = 23.402102
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
 
 [node name="desc" type="Label" parent="Panel" unique_id=1991507179]
 clip_contents = true
@@ -43,10 +45,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 39.889988
-offset_top = 50.724342
-offset_right = 39.889984
-offset_bottom = 50.724335
+offset_left = 26.100845
+offset_top = 35.950264
+offset_right = 26.100845
+offset_bottom = 35.950256
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)

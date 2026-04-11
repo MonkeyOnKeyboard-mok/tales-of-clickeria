@@ -32,6 +32,8 @@ func _set_size_custom()-> void:
 
 func _set_info()-> void:
 	lvl_up_cost.text = "     " + str(int(parent.level_up_cost))
+	if parent.level == 10:
+		lvl_up_cost.text = "     " + "Max Level"
 	match parent_type:
 		"minion":
 			label.text = "\b Level: \b" + str(int(parent.level)) + "\n" \
@@ -47,5 +49,6 @@ func _unhandled_input(event: InputEvent) -> void:
 				hide()
 
 func _on_level_up_pressed() -> void:
+	if parent.level == 10: return
 	parent.level_up()
 	

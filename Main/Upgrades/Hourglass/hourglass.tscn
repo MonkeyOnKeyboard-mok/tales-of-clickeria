@@ -1,14 +1,81 @@
 [gd_scene format=3 uid="uid://cl0r173uf860r"]
 
-[ext_resource type="Texture2D" uid="uid://dy5wdwcdbs36x" path="res://Main/Upgrades/Hourglass/hourglass.jpg" id="1_kgrww"]
 [ext_resource type="Script" uid="uid://odd6u7nq2u5r" path="res://Main/Upgrades/Hourglass/hourglass.gd" id="1_mpu12"]
+[ext_resource type="Texture2D" uid="uid://cqmkat88e1y75" path="res://Main/Upgrades/Hourglass/hourglass.png" id="2_mpu12"]
 [ext_resource type="PackedScene" uid="uid://m714shrd5pt0" path="res://Components/DragAndDrop/dragg_and_drop.tscn" id="2_nkfu3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_374qx"]
+atlas = ExtResource("2_mpu12")
+region = Rect2(0, 0, 54, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbaoc"]
+atlas = ExtResource("2_mpu12")
+region = Rect2(54, 0, 54, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joain"]
+atlas = ExtResource("2_mpu12")
+region = Rect2(108, 0, 54, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_or0wm"]
+atlas = ExtResource("2_mpu12")
+region = Rect2(162, 0, 54, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic8o6"]
+atlas = ExtResource("2_mpu12")
+region = Rect2(216, 0, 54, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fchnm"]
+atlas = ExtResource("2_mpu12")
+region = Rect2(270, 0, 54, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkuxu"]
+atlas = ExtResource("2_mpu12")
+region = Rect2(324, 0, 54, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4g2i"]
+atlas = ExtResource("2_mpu12")
+region = Rect2(378, 0, 54, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lu6i"]
+atlas = ExtResource("2_mpu12")
+region = Rect2(432, 0, 54, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv72l"]
+atlas = ExtResource("2_mpu12")
+region = Rect2(486, 0, 54, 105)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nkfu3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_kgrww")
+"texture": SubResource("AtlasTexture_374qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbaoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joain")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_or0wm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic8o6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fchnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkuxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4g2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lu6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv72l")
 }],
 "loop": true,
 "name": &"default",
@@ -16,11 +83,15 @@ animations = [{
 }]
 
 [node name="Hourglass" type="Node2D" unique_id=2110053612]
+z_index = -1
 script = ExtResource("1_mpu12")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=119809491]
-scale = Vector2(0.12864469, 0.12864469)
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_nkfu3")
+autoplay = "default"
+frame_progress = 0.5800312
 
 [node name="DraggAndDrop" parent="." unique_id=644889432 instance=ExtResource("2_nkfu3")]
 scale = Vector2(0.9999998, 0.9976643)

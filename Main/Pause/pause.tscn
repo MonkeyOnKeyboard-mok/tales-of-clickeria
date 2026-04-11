@@ -10,4 +10,5 @@ script = ExtResource("1_mlhic")
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.792078, 16.224434)
+mouse_filter = 2
 color = Color(0.07766842, 0.09743906, 0.31378233, 0.7647059)

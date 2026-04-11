@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Cards" format=3 uid="uid://7qihs345c1w3"]
+
+[ext_resource type="Texture2D" uid="uid://ubipm4crav3y" path="res://Main/Upgrades/Cards/carta_minions.png" id="1_goirt"]
+[ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="2_3yjtt"]
+
+[resource]
+script = ExtResource("2_3yjtt")
+name = "Spell Echo"
+description = "Give a unit of your choice the ability to shoot 3 projectiles at once"
+icon = ExtResource("1_goirt")
+effect = "item"
+type = "spell_echo"
+value = 1.0
+metadata/_custom_type_script = "uid://bghgd4mavasf6"

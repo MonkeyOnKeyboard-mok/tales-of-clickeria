@@ -19,18 +19,25 @@ var scream_counter : int = 0
 @onready var main_loop: AudioStreamPlayer = $main_loop
 @onready var cold_attack: AudioStreamPlayer = $cold_attack
 @onready var blender: AudioStreamPlayer = $blender
+@onready var menu: AudioStreamPlayer = $menu
 
 # "obj_" for node references;
 ## built-in override methods
 
 func _ready() -> void:
 	screams = [SCREAM_1, SCREAM_2, SCREAM_3, SCREAM_4, SCREAM_5]
-	main_loop.play()
+	
 
 func _process(_delta: float) -> void:
 	pass
 
 ## public methods
+func main_menu() -> void:
+	menu.play()
+
+func menu_out() -> void:
+	var tween = create_tween()
+	tween.tween_property(menu, "volume_db", -45 , 2.0)
 
 func cold_attacks() -> void:
 	cold_attack.play()

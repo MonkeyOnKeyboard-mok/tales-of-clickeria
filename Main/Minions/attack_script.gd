@@ -7,7 +7,7 @@ const PROJECTILE = preload("uid://bcpb5orwfprdb")
 ## public vars
 var current_target : Node2D = null
 var enemy_position: Vector2 = Vector2(576,160)
-
+var spell_echo : bool = false
 ## private vars
 ## onready vars
 @onready var attack_timer: Timer = $Timer
@@ -32,7 +32,11 @@ func set_target(enemy) -> void:
 	else: 
 		#print("Attack timer is off, starting it...")
 		if current_target:
-			_launch_projectile()
+			if spell_echo:
+				_spell_echo()
+			else:
+				_launch_projectile()
+			
 
 ## private methods
 
@@ -54,7 +58,30 @@ func _launch_projectile() -> void:
 
 func _on_timer_timeout() -> void:
 	if current_target:
-		_launch_projectile()
+		if spell_echo:
+			_spell_echo()
+		else:
+			_launch_projectile()
 
 func _stop_timer() -> void:
 	attack_timer.stop()
+
+func _spell_echo() -> void:
+	var projectile = PROJECTILE.instantiate()
+	var projectiles = [projectile, projectile.duplicate(), projectile.duplicate()]
+	#print("minion position: ",get_parent().global_position, "projectile position", projectile.global_position)
+	get_parent().sprite.play(get_parent().attack_anim)
+	await get_parent().sprite.animation_finished
+	var direction = (enemy_position - get_parent().global_position).normalized()
+	var offset := Vector2.ZERO
+	for proj in projectiles:
+		proj.direction = direction
+		if get_parent().dying: return
+		add_child(proj)
+		proj.add_to_group("player_projectile")
+		proj.global_position = get_parent().global_position + offset
+		get_parent().sprite.play(get_parent().idle_anim)
+		proj.anim.play(get_parent().stats.type)
+		#print("El minion tiró un camotito")
+		attack_timer.start(get_parent().current_attack_speed)
+		offset += Vector2(20,20)

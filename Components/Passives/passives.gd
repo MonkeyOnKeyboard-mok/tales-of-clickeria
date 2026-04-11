@@ -67,5 +67,5 @@ func update_icons (type: String, effect : String, _value: float) -> void:
 		icon.set_text(effect, type)
 		dict[effect][type].append(icon) 
 		print(dict)
-		
+
 ## private methods

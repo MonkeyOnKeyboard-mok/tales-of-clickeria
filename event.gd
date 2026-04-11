@@ -47,8 +47,13 @@ signal player_leveled_up
 @warning_ignore("unused_signal")
 signal update_price
 
-
 ## Minions 
+@warning_ignore("unused_signal")
+signal spell_echo_selection
+@warning_ignore("unused_signal")
+signal spell_echo_selected
+
+var spell_echo_sel_on : bool = false
 
 ## Minion Types - Packed Scenes - Constants
 const MINION_TYPES = {

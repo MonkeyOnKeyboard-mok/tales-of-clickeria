@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djwq2tguyxmgh"]
 
 [ext_resource type="Script" uid="uid://cwhhi6o5nyw0s" path="res://Components/Cuadrantes/texture_rect_cuadrante.gd" id="1_hgdiw"]
+[ext_resource type="Texture2D" uid="uid://cu4jd17blq1kh" path="res://Main/Shop/icons/aura.png" id="2_yah7w"]
 
 [sub_resource type="Gradient" id="Gradient_f3gf5"]
 offsets = PackedFloat32Array(0.82419354, 0.88870966, 0.92419356)
@@ -14,6 +15,9 @@ metadata/_snap_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgdiw"]
 size = Vector2(380, 165)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgdiw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Cuadrante" type="TextureRect" unique_id=42219155]
 custom_minimum_size = Vector2(380, 165)
@@ -42,3 +46,27 @@ color = Color(1, 1, 1, 0)
 position = Vector2(190, 82.5)
 scale = Vector2(0.8, 0.6)
 shape = SubResource("RectangleShape2D_hgdiw")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1028820728]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgdiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer" unique_id=41514902]
+texture_filter = 1
+position = Vector2(30, 30.5)
+scale = Vector2(2, 2)
+texture = ExtResource("2_yah7w")
+offset = Vector2(-0.125, -0.6800003)

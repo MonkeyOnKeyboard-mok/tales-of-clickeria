@@ -10,6 +10,7 @@ const CARD = preload("uid://bgrkg8wdxx0ln")
 
 func _ready() -> void: 
 	Event.player_leveled_up.connect(show_upgrades)
+	Event.spell_echo_selected.connect(_remove_spell_echo)
 	hide() 
 
 func show_upgrades(count: int = 3):
@@ -44,3 +45,8 @@ func _get_rarity() -> Array[Cards]:
 	elif rarity > 90 and rarity < 100: 
 		return legendary_pool	
 	return common_pool
+
+func _remove_spell_echo()-> void:
+	await get_tree().create_timer(2.0).timeout
+	legendary_pool.remove_at(1)
+	print("spell echo removed from future choices")

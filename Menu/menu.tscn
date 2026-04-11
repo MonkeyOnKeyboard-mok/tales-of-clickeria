@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://d0d1ewsmblyi5"]
+
+[ext_resource type="Script" uid="uid://c05ob32se01b7" path="res://Menu/menu.gd" id="1_ofseh"]
+[ext_resource type="Texture2D" uid="uid://dkhyxguitr2dk" path="res://PlaceHolders/fondo.png" id="2_eafcm"]
+[ext_resource type="Texture2D" uid="uid://d3j43sxacb0rb" path="res://Menu/botones-20260411T165329Z-3-001/botones/jugar.png" id="3_eafcm"]
+[ext_resource type="Texture2D" uid="uid://d2tstnjjtxbim" path="res://PlaceHolders/game_logo.png" id="4_eafcm"]
+[ext_resource type="Texture2D" uid="uid://cj6ywmqwo8y26" path="res://Menu/botones-20260411T165329Z-3-001/botones/jugar_select.png" id="4_tf6kh"]
+[ext_resource type="Texture2D" uid="uid://brg5811iro21f" path="res://Menu/botones-20260411T165329Z-3-001/botones/salir.png" id="5_mf1wf"]
+[ext_resource type="PackedScene" uid="uid://c8l6dajwjn8pd" path="res://Components/Transition/transition.tscn" id="6_w6voe"]
+[ext_resource type="Texture2D" uid="uid://1bfhscyo4q5w" path="res://Menu/botones-20260411T165329Z-3-001/botones/salir_select.png" id="6_xuj3a"]
+[ext_resource type="Texture2D" uid="uid://un1xrdjn3tle" path="res://Menu/botones-20260411T165329Z-3-001/botones/creditos.png" id="7_xuj3a"]
+[ext_resource type="Texture2D" uid="uid://cngdxkrgyhsuj" path="res://Menu/botones-20260411T165329Z-3-001/botones/creditos_select.png" id="8_0k1h5"]
+
+[node name="Menu" type="Control" unique_id=1418015951]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ofseh")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1217550831]
+custom_minimum_size = Vector2(1150, 650)
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+mouse_filter = 2
+texture = ExtResource("2_eafcm")
+expand_mode = 1
+
+[node name="Jugar" type="TextureButton" parent="." unique_id=1312941538]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 154.0
+offset_right = 803.0
+offset_bottom = 487.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("3_eafcm")
+texture_pressed = ExtResource("4_tf6kh")
+texture_hover = ExtResource("4_tf6kh")
+stretch_mode = 3
+
+[node name="Salir" type="TextureButton" parent="." unique_id=1531508965]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 238.0
+offset_right = 803.0
+offset_bottom = 571.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("5_mf1wf")
+texture_pressed = ExtResource("6_xuj3a")
+texture_hover = ExtResource("6_xuj3a")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="Creditos" type="TextureButton" parent="." unique_id=1013322052]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 934.0
+offset_top = 547.0
+offset_right = 1827.0
+offset_bottom = 880.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("7_xuj3a")
+texture_hover = ExtResource("8_0k1h5")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=138992665]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -324.0
+offset_right = 1949.0
+offset_bottom = 1345.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+mouse_filter = 2
+texture = ExtResource("4_eafcm")
+
+[node name="fade_transition" parent="." unique_id=1856880805 instance=ExtResource("6_w6voe")]
+visible = false
+layout_mode = 0
+mouse_filter = 2
+
+[node name="Fade_timer" type="Timer" parent="fade_transition" unique_id=847641203]
+wait_time = 2.0
+
+[connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="timeout" from="fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]
