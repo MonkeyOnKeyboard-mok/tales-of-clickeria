@@ -10,7 +10,7 @@ script = ExtResource("1_vlv1k")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1567625444]
 texture_filter = 1
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 texture = ExtResource("2_vlv1k")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1549941664]

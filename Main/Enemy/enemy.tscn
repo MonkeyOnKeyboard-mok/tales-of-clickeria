@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://defngvidp2kdu" path="res://Main/Enemy/enemy.gd" id="1_svo2v"]
 [ext_resource type="PackedScene" uid="uid://cu1egge4kvlo8" path="res://Components/HealthBar/progress_bar.tscn" id="2_svo2v"]
 [ext_resource type="Texture2D" uid="uid://bcmyx688xem2" path="res://Main/Enemy/mono_anim2.png" id="3_1ftki"]
+[ext_resource type="Script" uid="uid://1vextof777o0" path="res://Main/Enemy/stun_attack.gd" id="6_4bh3l"]
 [ext_resource type="Script" uid="uid://ctel2h81i66u5" path="res://Main/Enemy/lvl_component.gd" id="6_ulnfe"]
 [ext_resource type="Script" uid="uid://yikabhio3ltp" path="res://Main/Enemy/projectile_attack.gd" id="7_4bh3l"]
 
@@ -164,5 +165,17 @@ curve = SubResource("Curve2D_4bo1o")
 [node name="Path7" type="Path2D" parent="ProjectileAttack" unique_id=829113881]
 curve = SubResource("Curve2D_mb6jb")
 
+[node name="StunAttack" type="Node2D" parent="." unique_id=2141488290]
+unique_name_in_owner = true
+script = ExtResource("6_4bh3l")
+
+[node name="StunTimer" type="Timer" parent="StunAttack" unique_id=1384467133]
+one_shot = true
+
+[node name="StartTimer" type="Timer" parent="StunAttack" unique_id=600880138]
+one_shot = true
+
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="ProjectileAttack/Timer" to="ProjectileAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="StunAttack/StunTimer" to="StunAttack" method="_on_stun_timer_timeout"]
+[connection signal="timeout" from="StunAttack/StartTimer" to="StunAttack" method="_on_start_timer_timeout"]

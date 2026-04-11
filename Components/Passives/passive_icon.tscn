@@ -22,7 +22,7 @@ scale = Vector2(1.9245887, 1.9245887)
 shape = SubResource("CircleShape2D_pvh53")
 
 [node name="Panel" type="Panel" parent="." unique_id=809848179]
-z_index = 1
+z_index = 5
 custom_minimum_size = Vector2(200, 60)
 layout_mode = 0
 offset_left = 30.0

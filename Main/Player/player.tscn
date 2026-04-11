@@ -6,8 +6,48 @@
 [ext_resource type="PackedScene" uid="uid://d28x0qag1hbp2" path="res://Components/MonsterJuice/monster_juice.tscn" id="4_b2fwe"]
 [ext_resource type="Script" uid="uid://lhh8auc8ilow" path="res://Components/MonsterJuice/monster_juice.gd" id="5_jbntb"]
 [ext_resource type="PackedScene" uid="uid://bxqaed1vqrw2n" path="res://Components/ExpBar/exp_bar.tscn" id="6_0tgs8"]
+[ext_resource type="Texture2D" uid="uid://dv4ag7tc8r7h2" path="res://PlaceHolders/caldera_frames/caldera_animated1.png" id="6_nwnk3"]
+[ext_resource type="Texture2D" uid="uid://b1v7jxe33xbph" path="res://PlaceHolders/caldera_frames/caldera_animated2.png" id="7_lm78b"]
 [ext_resource type="Script" uid="uid://pq636u6d2swp" path="res://Components/ExpBar/exp_bar.gd" id="7_qn1bl"]
-[ext_resource type="Texture2D" uid="uid://b2c60yjufmk68" path="res://Main/Player/cabecita.png" id="8_qn1bl"]
+[ext_resource type="Texture2D" uid="uid://pw2u2nhxpalc" path="res://PlaceHolders/caldera_frames/caldera_animated3.png" id="8_w2snj"]
+[ext_resource type="Texture2D" uid="uid://beu8wjnjch31k" path="res://PlaceHolders/caldera_frames/caldera_animated4.png" id="9_bqqf7"]
+[ext_resource type="Texture2D" uid="uid://baqnxa6nj2nvm" path="res://PlaceHolders/caldera_frames/caldera_animated5.png" id="10_c140y"]
+[ext_resource type="Texture2D" uid="uid://547pjyicso5i" path="res://PlaceHolders/caldera_frames/caldera_animated6.png" id="11_75nts"]
+[ext_resource type="Texture2D" uid="uid://m80w7mougv4a" path="res://PlaceHolders/caldera_frames/caldera_animated7.png" id="12_msdf6"]
+[ext_resource type="Texture2D" uid="uid://bhsjgbx4gelfq" path="res://PlaceHolders/caldera_frames/caldera_animated8.png" id="13_akor8"]
+[ext_resource type="Texture2D" uid="uid://d3vmfvf50jep8" path="res://PlaceHolders/castle.png" id="16_nwnk3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qn1bl"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("6_nwnk3")
+}, {
+"duration": 0.8,
+"texture": ExtResource("7_lm78b")
+}, {
+"duration": 0.8,
+"texture": ExtResource("8_w2snj")
+}, {
+"duration": 0.8,
+"texture": ExtResource("9_bqqf7")
+}, {
+"duration": 0.8,
+"texture": ExtResource("10_c140y")
+}, {
+"duration": 0.8,
+"texture": ExtResource("11_75nts")
+}, {
+"duration": 0.8,
+"texture": ExtResource("12_msdf6")
+}, {
+"duration": 0.8,
+"texture": ExtResource("13_akor8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tgs8"]
 bg_color = Color(0.7411765, 0.5764706, 0, 0.5254902)
@@ -46,16 +86,28 @@ offset_bottom = -112.0
 
 [node name="MonsterJuice" parent="." unique_id=1400228462 instance=ExtResource("4_b2fwe")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+offset_right = -9.0
+offset_bottom = -105.0
 max_value = 100000.0
 show_percentage = false
 script = ExtResource("5_jbntb")
 
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MonsterJuice" unique_id=570908603]
+texture_filter = 1
+position = Vector2(55, 251)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_qn1bl")
+autoplay = "default"
+frame_progress = 0.7751991
+
 [node name="Label" type="Label" parent="MonsterJuice" unique_id=1558422045]
+z_index = 1
 layout_mode = 0
-offset_left = 21.0
-offset_top = 115.0
-offset_right = 61.0
-offset_bottom = 138.0
+offset_left = 42.0
+offset_top = 244.0
+offset_right = 82.0
+offset_bottom = 267.0
 
 [node name="ExpBar" parent="." unique_id=1593121915 instance=ExtResource("6_0tgs8")]
 unique_name_in_owner = true
@@ -86,6 +138,5 @@ shape = SubResource("CircleShape2D_qn1bl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=435465360]
 texture_filter = 1
-position = Vector2(-450.00003, 464)
-scale = Vector2(7, 7)
-texture = ExtResource("8_qn1bl")
+position = Vector2(-450.00003, 441)
+texture = ExtResource("16_nwnk3")

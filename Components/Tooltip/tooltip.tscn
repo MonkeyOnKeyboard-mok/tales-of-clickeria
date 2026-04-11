@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bcx6bf47h663t" path="res://Components/Particles/placeholder_particle.png" id="2_wqjsk"]
 
 [node name="Tooltip" type="Panel" unique_id=1936437401]
+z_index = 1
 custom_minimum_size = Vector2(800, 500)
 script = ExtResource("1_wt5cp")
 

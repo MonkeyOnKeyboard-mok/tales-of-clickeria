@@ -9,6 +9,7 @@ class_name Enemy
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var area_2d: Area2D = $Area2D
 @onready var projectile_attack: Node2D = $ProjectileAttack
+@onready var stun_attack: Node2D = %StunAttack
 
 var dying := false
 

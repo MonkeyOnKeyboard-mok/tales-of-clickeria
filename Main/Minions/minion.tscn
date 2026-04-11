@@ -507,7 +507,6 @@ process_mode = 3
 
 [node name="Tooltip" parent="." unique_id=1936437401 instance=ExtResource("7_si1lh")]
 process_mode = 3
-z_index = 1
 offset_left = 184.99998
 offset_top = -439.99997
 offset_right = 184.99998
@@ -515,6 +514,7 @@ offset_bottom = -439.99997
 
 [node name="Area2D" type="Area2D" parent="." unique_id=239039450 groups=["minion"]]
 process_mode = 3
+collision_layer = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1147974960 groups=["minion"]]
 process_mode = 3
