@@ -31,7 +31,7 @@ func set_target(enemy) -> void:
 		return
 	else: 
 		#print("Attack timer is off, starting it...")
-		if current_target:
+		if current_target and !get_parent().stunned_state:
 			if spell_echo:
 				_spell_echo()
 			else:
@@ -47,7 +47,7 @@ func _launch_projectile() -> void:
 	await get_parent().sprite.animation_finished
 	var direction = (enemy_position - get_parent().global_position).normalized()
 	projectile.direction = direction
-	if get_parent().dying: return
+	if get_parent().dying or get_parent().stunned_state: return
 	add_child(projectile)
 	projectile.add_to_group("player_projectile")
 	projectile.global_position = get_parent().global_position
@@ -76,7 +76,7 @@ func _spell_echo() -> void:
 	var offset := Vector2.ZERO
 	for proj in projectiles:
 		proj.direction = direction
-		if get_parent().dying: return
+		if get_parent().dying or get_parent().stunned_state: return
 		add_child(proj)
 		proj.add_to_group("player_projectile")
 		proj.global_position = get_parent().global_position + offset

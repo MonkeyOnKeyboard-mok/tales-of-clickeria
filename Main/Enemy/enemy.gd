@@ -49,16 +49,21 @@ func _aplicar_nuevas_stats(nueva_salud_max: float, _nuevo_dps: float, _nuevas_re
 	match GestorEtapa.etapa_actual:
 			3:
 				GestorEtapa.projectiles_amount = 3
+				GestorEtapa.size_increase_cone += Vector2(50,0)
 			5:
 				GestorEtapa.projectiles_amount = 4
+				GestorEtapa.size_increase_cone += Vector2(50,0)
 			6:
 				GestorEtapa.projectiles_amount = 5
 				GestorEtapa.attack_speed = 2.0
+				GestorEtapa.size_increase_cone += Vector2(50,0)
 			7: 
 				GestorEtapa.projectiles_amount = 6
+				GestorEtapa.size_increase_cone += Vector2(100,0)
 			8: 
 				GestorEtapa.projectiles_amount = 7
 				GestorEtapa.attack_speed = 1.0
+				GestorEtapa.size_increase_cone += Vector2(100,0)
 
 # Loop de ataque (Daño al jugador)
 func _process(_delta: float) -> void:

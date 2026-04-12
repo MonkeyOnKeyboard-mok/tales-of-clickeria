@@ -12,6 +12,7 @@ var buffed : bool = false
 var buff_owner : Node = null
 var dying : bool = false
 var enhance_target : Node = null
+var stunned_state : bool = false
 
 ## Animation Variables
 var attack_anim : String 
@@ -128,6 +129,15 @@ func try_sell() -> void:
 			dying = true
 			
 
+func stunned()-> void:
+	stunned_state = true
+	var stun_tween = create_tween()
+	stun_tween.tween_property(sprite, "modulate",Color(0.373, 0.373, 0.373, 0.596), 0.5)
+	await get_tree().create_timer(2.0).timeout
+	var stun_tween2 = create_tween()
+	stun_tween2.tween_property(sprite, "modulate",Color(1.0, 1.0, 1.0), 0.5)
+	stunned_state = false
+
 ## private methods
 
 func _show_tooltip() -> void:
@@ -176,7 +186,6 @@ func _die()-> void:
 	Event.emit_signal("gain_juice", (level * calculate_damage()))
 	Event.emit_signal("spawn_particle", self.global_position)
 	small_tween.tween_callback(Callable(self,"queue_free"))
-
 
 func _input(event: InputEvent) -> void:
 	if enhance_target == null: return

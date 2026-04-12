@@ -13,7 +13,6 @@ var max_angle : float = 66.0
 ## onready vars
 @onready var stun_timer: Timer = $StunTimer
 @onready var start_timer: Timer = $StartTimer
-
 # "obj_" for node references;
 ## built-in override methods
 
@@ -33,7 +32,6 @@ func stun_attack() -> void:
 	add_child(stun)
 	cone = stun
 
-
 func stun_stop() -> void:
 	_rotating = false
 	cone.attack()
@@ -50,15 +48,12 @@ func _start_timer() -> void:
 	start_timer.start(value)
 	print("Start timer initiated")
 
-
 func _on_start_timer_timeout() -> void:
 	stun_attack()
 	_stun_timer()
 	print("Stun attack function")
 
-
 func _on_stun_timer_timeout() -> void:
 	stun_stop()
-	var value = randf_range(1.0, 3.0)
-	start_timer.start(value)
+	start_timer.start(5.0)
 	print("Start timer initiated again")

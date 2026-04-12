@@ -11,10 +11,10 @@ collision_mask = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1194677221]
 position = Vector2(-25, 6)
-build_mode = 1
 polygon = PackedVector2Array(25, 0, 50, 750, 0, 750)
 
 [node name="Polygon2D" type="Polygon2D" parent="Area2D/CollisionPolygon2D" unique_id=2092586039]
+visible = false
 position = Vector2(0, -6)
 color = Color(0.87058824, 0.14901961, 0.12156863, 0.30980393)
 polygon = PackedVector2Array(25, 0, 50, 750, 0, 750)
