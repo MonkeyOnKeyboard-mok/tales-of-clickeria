@@ -9,7 +9,7 @@ var etapa_actual: int = 1
 const SALUD_BASE: float = 100.0
 const DPS_BASE: float = 10.0
 const MULTIPLICADOR_POR_NIVEL: float = 3.0 # Cada nivel es 50% más fuerte
-
+## ---------------- ##
 var projectiles_amount : int = 2
 var projectile_damage : float = 2.0
 var current_etapa : Array = ["one", "two", "three", "four", "five", "six", "seven", "boss"]
@@ -18,7 +18,7 @@ var kill_count : int = 0
 var counter : int = 0
 var attack_speed : float = 3.0
 var boss_defeatd : bool = false
-var size_increase_cone : Vector2 = Vector2(0,0)
+var size_increase_cone : Vector2 = Vector2(50,0) ##
 
 func _ready() -> void:
 	threshold_etapas = {

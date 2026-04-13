@@ -21,6 +21,9 @@ _data = {
 }
 point_count = 14
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jx5h"]
+size = Vector2(1153, 334)
+
 [node name="Main" type="Node2D" unique_id=1222045523]
 process_mode = 1
 script = ExtResource("1_k3v36")
@@ -189,10 +192,17 @@ position = Vector2(1117, 502)
 
 [node name="ColorRect" parent="." unique_id=1856880805 instance=ExtResource("14_0jx5h")]
 process_mode = 3
+visible = false
 scale = Vector2(28.99131, 16.897177)
 mouse_filter = 2
 
 [node name="fade_timer" type="Timer" parent="ColorRect" unique_id=578036143]
+
+[node name="Bounds" type="StaticBody2D" parent="." unique_id=742334317]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds" unique_id=26609341]
+position = Vector2(576.5, 482)
+shape = SubResource("RectangleShape2D_0jx5h")
 
 [editable path="Debugger"]
 [editable path="UITipsForPlayer"]

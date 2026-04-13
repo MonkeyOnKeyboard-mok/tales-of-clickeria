@@ -15,6 +15,7 @@ var minions : Array = []
 ## built-in override methods
 
 func _ready() -> void:
+	Event.enemy_died.connect(_free_self)
 	set_size()
 
 func _process(_delta: float) -> void:
@@ -58,3 +59,6 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 			print("Minion borrado")
 			minions.erase(area.get_parent())
 			print("Minions: ", minions)
+
+func _free_self() -> void:
+	queue_free()

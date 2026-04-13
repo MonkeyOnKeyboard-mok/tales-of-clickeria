@@ -137,6 +137,10 @@ func stunned()-> void:
 	var stun_tween2 = create_tween()
 	stun_tween2.tween_property(sprite, "modulate",Color(1.0, 1.0, 1.0), 0.5)
 	stunned_state = false
+	var enemy = get_tree().get_nodes_in_group("enemy")
+	#print("Enemy is :",enemy)
+	if enemy.size() > 0:
+		new_target(enemy[0])
 
 ## private methods
 

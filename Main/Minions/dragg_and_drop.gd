@@ -3,6 +3,7 @@ class_name DragAndDrop
 ## enums
 ## consts
 ## exports
+var bounds : CollisionShape2D
 ## public vars
 signal show_tooltip
 var dragging := false
