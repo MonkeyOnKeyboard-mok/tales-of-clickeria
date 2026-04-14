@@ -142,6 +142,10 @@ func stunned()-> void:
 	if enemy.size() > 0:
 		new_target(enemy[0])
 
+func push_back() -> void:
+	var push_tween = create_tween()
+	push_tween.tween_property(self, "global_position" , Vector2(575,480),0.2)
+
 ## private methods
 
 func _show_tooltip() -> void:

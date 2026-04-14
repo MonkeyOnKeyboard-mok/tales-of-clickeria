@@ -34,7 +34,8 @@ func stun_attack() -> void:
 
 func stun_stop() -> void:
 	_rotating = false
-	cone.attack()
+	if !cone: return
+	cone.attack()   ## Crashed
 	print("Stun place selected")
 
 ## private methods

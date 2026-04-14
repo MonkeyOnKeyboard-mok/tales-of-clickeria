@@ -9,6 +9,7 @@ signal show_tooltip
 var dragging := false
 var rotating := false
 var offset := Vector2.ZERO
+var within_bounds := false 
 static var current_dragged = null
 ## private vars
 ## onready vars
@@ -20,6 +21,7 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
+	if !within_bounds: return
 	if dragging and current_dragged == self and !rotating:
 		get_parent().global_position = get_parent().global_position.lerp(get_viewport().get_mouse_position() + offset, 0.4)
 
@@ -52,3 +54,16 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 		if event.pressed:
 			emit_signal("show_tooltip")
 			print("showing tooltip")
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if get_parent().is_in_group("minion") and area.is_in_group("minion_bounds"):
+		within_bounds = true
+		print("within bounds")
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if get_parent().is_in_group("minion") and area.is_in_group("minion_bounds"):
+		within_bounds = false
+		get_parent().push_back()
+		print("out of bounds")
