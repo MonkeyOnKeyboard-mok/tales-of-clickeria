@@ -18,7 +18,7 @@ var kill_count : int = 0
 var counter : int = 0
 var attack_speed : float = 3.0
 var boss_defeatd : bool = false
-var size_increase_cone : Vector2 = Vector2(50,0) ##
+var size_increase_cone : Vector2 = Vector2(10,0) ##
 
 func _ready() -> void:
 	threshold_etapas = {

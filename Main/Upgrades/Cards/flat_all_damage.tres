@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" format=3 uid="uid://duclcal7ksyr8"]
 
+[ext_resource type="Texture2D" uid="uid://dhh5dd388q7uy" path="res://Main/Upgrades/Cards/hover/hover/carta_minions_hover.png" id="1_pminc"]
 [ext_resource type="Texture2D" uid="uid://ubipm4crav3y" path="res://Main/Upgrades/Cards/carta_minions.png" id="1_y1rc5"]
 [ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="2_pminc"]
 
@@ -8,6 +9,7 @@ script = ExtResource("2_pminc")
 name = "PoliMagical Mastery"
 description = "Increases all of your units base damage by 3"
 icon = ExtResource("1_y1rc5")
+hover = ExtResource("1_pminc")
 effect = "flat_damage"
 type = "global"
 value = 3.0

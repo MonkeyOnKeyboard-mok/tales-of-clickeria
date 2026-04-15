@@ -92,13 +92,13 @@ offset_right = -969.0
 offset_bottom = 201.0
 
 [node name="ProgressBar" parent="." unique_id=1483188681 instance=ExtResource("1_u6saw")]
+z_index = 1
 custom_minimum_size = Vector2(60, 250)
 offset_left = 78.0
 offset_top = -107.0
 offset_right = 138.0
 offset_bottom = 143.0
 mouse_filter = 2
-allow_greater = false
 script = ExtResource("3_kwyrm")
 top_y = -103.0
 bottom_y = 85.0
@@ -109,6 +109,9 @@ z_index = -1
 position = Vector2(-1, -110.5)
 frame = 2
 frame_progress = 0.58468086
+
+[node name="Sprite2D2" parent="ProgressBar/Mask" parent_id_path=PackedInt32Array(1483188681, 2067253388) index="1" unique_id=550595415]
+z_index = -1
 
 [node name="PlayerHealth" type="Label" parent="." unique_id=1597409113]
 unique_name_in_owner = true
@@ -127,7 +130,6 @@ show_percentage = false
 script = ExtResource("5_jbntb")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MonsterJuice" unique_id=570908603]
-z_index = -1
 texture_filter = 1
 position = Vector2(55, 251)
 scale = Vector2(2, 2)
@@ -149,14 +151,15 @@ offset_right = -10.0
 offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 12
 
 [node name="ExpBar" parent="." unique_id=1593121915 instance=ExtResource("6_0tgs8")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 30)
-offset_left = -499.0
-offset_top = -147.0
-offset_right = -299.0
-offset_bottom = -117.0
+offset_left = -530.0
+offset_top = -143.0
+offset_right = -330.0
+offset_bottom = -113.0
 theme_override_styles/background = SubResource("StyleBoxFlat_0tgs8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qn1bl")
 show_percentage = false
@@ -180,6 +183,7 @@ shape = SubResource("CircleShape2D_qn1bl")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=435465360]
 texture_filter = 1
 position = Vector2(-450.00003, 441)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("16_nwnk3")
 
 [editable path="ProgressBar"]

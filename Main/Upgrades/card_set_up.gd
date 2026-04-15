@@ -2,14 +2,14 @@ extends Control
 
 var card: Cards
 
-@onready var icon = $Panel/texture
+@onready var icon: TextureButton = $Panel/select
 @onready var name_label = $Panel/name
 @onready var desc_label = $Panel/desc
-@onready var button = $Panel/select
 
 func set_card(new_card: Cards):
 	card = new_card
-	icon.texture = card.icon
+	icon.texture_normal = card.icon
+	icon.texture_hover = card.hover
 	name_label.text = card.name
 	desc_label.text = card.description
 

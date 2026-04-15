@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://lavhxrtdf0q2" path="res://Main/main.gd" id="1_k3v36"]
 [ext_resource type="PackedScene" uid="uid://cabsunufi42v0" path="res://Main/Player/player.tscn" id="2_2w1kt"]
 [ext_resource type="Script" uid="uid://dahdgirdrj3jh" path="res://Main/Minions/minion_container.gd" id="3_eunhr"]
+[ext_resource type="Texture2D" uid="uid://bvvx6rown4im8" path="res://PlaceHolders/wips/wip1.png" id="4_uhr2j"]
 [ext_resource type="PackedScene" uid="uid://bvftv4jsopgv6" path="res://Main/Debugger/debugger.tscn" id="5_k3v36"]
 [ext_resource type="PackedScene" uid="uid://dq8jdyv371hu5" path="res://Main/Shop/shop.tscn" id="5_liyct"]
 [ext_resource type="PackedScene" uid="uid://dbk7uae2ink4b" path="res://Main/Upgrades/upgrades.tscn" id="7_ib3t1"]
@@ -22,7 +23,7 @@ _data = {
 point_count = 14
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jx5h"]
-size = Vector2(1153, 334)
+size = Vector2(1110, 225)
 
 [node name="Main" type="Node2D" unique_id=1222045523]
 process_mode = 1
@@ -43,33 +44,20 @@ script = ExtResource("3_eunhr")
 [node name="UIContainer" type="Control" parent="." unique_id=1660199315]
 process_mode = 3
 z_index = -1
+custom_minimum_size = Vector2(1152, 648)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1153.0
 offset_bottom = 647.0
 mouse_filter = 2
 
-[node name="MainLayout" type="VBoxContainer" parent="UIContainer" unique_id=1979908562]
+[node name="TextureRect" type="TextureRect" parent="UIContainer" unique_id=1529371773]
 layout_mode = 0
 offset_right = 1152.0
-offset_bottom = 1000.0
-scale = Vector2(1, 0.9872359)
+offset_bottom = 648.0
 mouse_filter = 2
-theme_override_constants/separation = 0
-
-[node name="Enemy" type="ColorRect" parent="UIContainer/MainLayout" unique_id=587117373]
-process_mode = 3
-custom_minimum_size = Vector2(0, 323)
-layout_mode = 2
-mouse_filter = 2
-color = Color(0.54509807, 0, 0, 0.30588236)
-
-[node name="Minions" type="ColorRect" parent="UIContainer/MainLayout" unique_id=2126235408]
-process_mode = 3
-custom_minimum_size = Vector2(0, 400)
-layout_mode = 2
-mouse_filter = 2
-color = Color(0, 0.5647059, 0, 0.20784314)
+texture = ExtResource("4_uhr2j")
+expand_mode = 1
 
 [node name="Debugger" parent="." unique_id=452095247 instance=ExtResource("5_k3v36")]
 offset_left = 123.0
@@ -167,12 +155,17 @@ offset_bottom = 272.0
 
 [node name="UITipsForPlayer" parent="." unique_id=844002679 instance=ExtResource("11_o60nc")]
 
-[node name="ColorRect2" parent="UITipsForPlayer/Avanzaralasiguienteetapa" parent_id_path=PackedInt32Array(844002679, 1699974415) index="1" unique_id=579134533]
+[node name="Avanzaralasiguienteetapa" parent="UITipsForPlayer" index="0" unique_id=1699974415]
+offset_left = -289.0
+offset_right = -63.0
+text = "↑ Avanzar a la siguiente zona "
+
+[node name="ColorRect2" parent="UITipsForPlayer/Avanzaralasiguienteetapa" index="1" unique_id=579134533]
 z_index = -1
 texture_filter = 1
-offset_left = 182.0
+offset_left = -43.000015
 offset_top = -92.0
-offset_right = 222.0
+offset_right = -3.0000153
 offset_bottom = -52.0
 scale = Vector2(1.8424654, 1.8803318)
 mouse_filter = 2
@@ -185,13 +178,17 @@ offset_right = -341.0
 offset_bottom = 25.0
 
 [node name="Cuadrantes" parent="." unique_id=1006395462 instance=ExtResource("12_f3gf5")]
+z_index = -1
+offset_top = 47.0
+offset_bottom = 87.0
 
 [node name="Blender" parent="." unique_id=324550344 instance=ExtResource("13_rix8b")]
 texture_filter = 1
-position = Vector2(1117, 502)
+position = Vector2(1107, 574)
 
 [node name="ColorRect" parent="." unique_id=1856880805 instance=ExtResource("14_0jx5h")]
 process_mode = 3
+visible = false
 scale = Vector2(28.99131, 16.897177)
 mouse_filter = 2
 
@@ -202,7 +199,7 @@ mouse_filter = 2
 [node name="Area2D" type="Area2D" parent="MinionBounds" unique_id=365645852 groups=["minion_bounds"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MinionBounds/Area2D" unique_id=26609341]
-position = Vector2(576.5, 482)
+position = Vector2(579, 508.5)
 shape = SubResource("RectangleShape2D_0jx5h")
 
 [editable path="Debugger"]

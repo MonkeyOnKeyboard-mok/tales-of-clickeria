@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bg6tg44tqesw0" path="res://Main/Upgrades/card_set_up.gd" id="1_5eta7"]
 [ext_resource type="Texture2D" uid="uid://ubipm4crav3y" path="res://Main/Upgrades/Cards/carta_minions.png" id="2_5eta7"]
-[ext_resource type="Texture2D" uid="uid://bos6l3u72f83k" path="res://PlaceHolders/Coin.png" id="3_5eta7"]
-[ext_resource type="Texture2D" uid="uid://bwriviwwedlmi" path="res://PlaceHolders/Potion.png" id="4_5eta7"]
+[ext_resource type="Texture2D" uid="uid://cds53m5tnobh3" path="res://Main/Upgrades/Cards/carta_cold.png" id="3_5eta7"]
+[ext_resource type="Texture2D" uid="uid://c0ukxq511fvmj" path="res://Main/Upgrades/Cards/hover/hover/carta_cold_hover.png" id="4_213ra"]
 
 [node name="Card" type="Control" unique_id=1436057887]
 z_index = 900
@@ -25,19 +25,32 @@ scale = Vector2(2.0305831, 2.0305831)
 mouse_filter = 2
 
 [node name="texture" type="Sprite2D" parent="Panel" unique_id=1259260295]
+visible = false
 texture_filter = 1
 position = Vector2(78.99999, 102.99999)
 texture = ExtResource("2_5eta7")
 
 [node name="name" type="Label" parent="Panel" unique_id=173712737]
+z_index = 6
 texture_filter = 1
 layout_mode = 0
-offset_left = 39.889988
-offset_top = 6.4021015
-offset_right = 107.889984
-offset_bottom = 23.402102
+offset_left = 37.427643
+offset_top = 12.804203
+offset_right = 105.42764
+offset_bottom = 29.804203
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
+text = "sdfsdf"
+
+[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=568606533]
+z_index = -1
+layout_mode = 0
+offset_left = 12.311703
+offset_top = 33.980385
+offset_right = 52.311703
+offset_bottom = 73.98038
+scale = Vector2(3.376822, 3.157409)
+color = Color(0, 0, 0, 1)
 
 [node name="desc" type="Label" parent="Panel" unique_id=1991507179]
 clip_contents = true
@@ -45,10 +58,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 26.100845
-offset_top = 35.950264
-offset_right = 26.100845
-offset_bottom = 35.950256
+offset_left = 23.146027
+offset_top = 43.337296
+offset_right = 23.146027
+offset_bottom = 43.337296
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -56,13 +69,11 @@ theme_override_font_sizes/font_size = 12
 autowrap_mode = 2
 
 [node name="select" type="TextureButton" parent="Panel" unique_id=771094596]
+z_index = 5
 layout_mode = 0
-offset_left = 39.000004
-offset_top = 164.0
-offset_right = 103.0
-offset_bottom = 230.0
-scale = Vector2(1.244004, 0.4908446)
+offset_right = 152.0
+offset_bottom = 221.0
 texture_normal = ExtResource("3_5eta7")
-texture_hover = ExtResource("4_5eta7")
+texture_hover = ExtResource("4_213ra")
 
 [connection signal="pressed" from="Panel/select" to="." method="_on_select_pressed"]

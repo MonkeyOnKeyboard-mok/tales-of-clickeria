@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Cards" format=3 uid="uid://hcf0x2w6s28d"]
 
 [ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="1_8ou4s"]
+[ext_resource type="Texture2D" uid="uid://dnjkta6swktjp" path="res://Main/Upgrades/Cards/hover/hover/carta_fuego_hover.png" id="1_vvqkq"]
 [ext_resource type="Texture2D" uid="uid://dy0y5l6v3diio" path="res://Main/Upgrades/Cards/carta_fuego.png" id="1_w1pwv"]
 
 [resource]
@@ -8,6 +9,7 @@ script = ExtResource("1_8ou4s")
 name = "Fire Mastery"
 description = "Increases your fire units base damage by 5"
 icon = ExtResource("1_w1pwv")
+hover = ExtResource("1_vvqkq")
 effect = "flat_damage"
 type = "fire"
 value = 5.0

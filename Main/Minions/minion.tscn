@@ -435,9 +435,11 @@ colors = PackedColorArray(0.9052691, 2.3102762e-06, 4.813075e-07, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_7mp72"]
 gradient = SubResource("Gradient_g18li")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yy0su"]
-
 [sub_resource type="SystemFont" id="SystemFont_yy0su"]
+font_names = PackedStringArray("Times New Roman")
+subpixel_positioning = 0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yy0su"]
 
 [node name="Minion" type="Node2D" unique_id=1804796180 groups=["minion"]]
 process_mode = 3
@@ -491,6 +493,25 @@ rotation = 4.712389
 mouse_filter = 2
 texture = SubResource("GradientTexture1D_7mp72")
 
+[node name="LevelText" type="Label" parent="Sprite2D" unique_id=5906779]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -27.0
+offset_right = -15.5
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.9714672, 0.36861667, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_yy0su")
+theme_override_font_sizes/font_size = 20
+text = "I"
+
 [node name="AttackScript" type="Node" parent="." unique_id=948159779]
 unique_name_in_owner = true
 process_mode = 1
@@ -522,18 +543,6 @@ process_mode = 3
 position = Vector2(24.999998, 50)
 scale = Vector2(11.579567, 12.772535)
 shape = SubResource("CircleShape2D_yy0su")
-
-[node name="LevelText" type="Label" parent="." unique_id=5906779]
-offset_left = -9.999999
-offset_top = 175.0
-offset_right = 30.0
-offset_bottom = 312.0
-theme_override_colors/font_color = Color(0, 0.9714672, 0.36861667, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_yy0su")
-theme_override_font_sizes/font_size = 100
-text = "I"
 
 [connection signal="timeout" from="AttackScript/Timer" to="AttackScript" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

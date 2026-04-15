@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" format=3 uid="uid://b3oveyu1dbm38"]
 
+[ext_resource type="Texture2D" uid="uid://dnjkta6swktjp" path="res://Main/Upgrades/Cards/hover/hover/carta_fuego_hover.png" id="1_3rjct"]
 [ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="1_uab0u"]
 [ext_resource type="Texture2D" uid="uid://dy0y5l6v3diio" path="res://Main/Upgrades/Cards/carta_fuego.png" id="1_widxw"]
 
@@ -8,6 +9,7 @@ script = ExtResource("1_uab0u")
 name = "Fire Proficiency"
 description = "Increases your fire units damage by 50%"
 icon = ExtResource("1_widxw")
+hover = ExtResource("1_3rjct")
 effect = "increased_damage"
 type = "fire"
 value = 0.5

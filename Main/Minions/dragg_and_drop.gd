@@ -21,7 +21,9 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	if !within_bounds: return
+	if !within_bounds: 
+		if !get_parent().is_in_group("potion"):
+			return
 	if dragging and current_dragged == self and !rotating:
 		get_parent().global_position = get_parent().global_position.lerp(get_viewport().get_mouse_position() + offset, 0.4)
 

@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Cards" format=3 uid="uid://de3xxnscsevl"]
 
+[ext_resource type="Texture2D" uid="uid://c0ukxq511fvmj" path="res://Main/Upgrades/Cards/hover/hover/carta_cold_hover.png" id="1_412bh"]
 [ext_resource type="Texture2D" uid="uid://cds53m5tnobh3" path="res://Main/Upgrades/Cards/carta_cold.png" id="1_d0k62"]
 [ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="1_syj4e"]
 
@@ -8,6 +9,7 @@ script = ExtResource("1_syj4e")
 name = "Cold Mastery"
 description = "Increases your cold units base damage by 5"
 icon = ExtResource("1_d0k62")
+hover = ExtResource("1_412bh")
 effect = "flat_damage"
 type = "cold"
 value = 5.0
