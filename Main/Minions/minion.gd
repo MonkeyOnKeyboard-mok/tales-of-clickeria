@@ -25,12 +25,14 @@ var damage : float
 var level : int = 1
 var multiplier : float = 1.0
 var level_up_cost : float = 60.0
+var level_text_array : Array = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"]
 
 ## onready vars
 @onready var attack : AttackComponent = %AttackScript
 @onready var base_attack_speed : float = stats.attack_speed
 @onready var area_2d: Area2D = $Area2D
 @onready var shape: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var level_text: Label = $LevelText
 
 ## Sprites:
 
@@ -64,6 +66,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	level_text.text = level_text_array[level-1]
 	if self.global_position.x > 1152.0/2.0:
 		sprite.flip_h = false
 	else: sprite.flip_h = true

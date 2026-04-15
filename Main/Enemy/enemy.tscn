@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://defngvidp2kdu" path="res://Main/Enemy/enemy.gd" id="1_svo2v"]
 [ext_resource type="PackedScene" uid="uid://cu1egge4kvlo8" path="res://Components/HealthBar/progress_bar.tscn" id="2_svo2v"]
 [ext_resource type="Texture2D" uid="uid://bcmyx688xem2" path="res://Main/Enemy/mono_anim2.png" id="3_1ftki"]
+[ext_resource type="Texture2D" uid="uid://caqyev4jjq1ok" path="res://Main/Enemy/anubis.png" id="3_5an88"]
+[ext_resource type="Texture2D" uid="uid://bdfm57iqt861e" path="res://Main/Enemy/boss_draft.png" id="4_yynbb"]
 [ext_resource type="Script" uid="uid://1vextof777o0" path="res://Main/Enemy/stun_attack.gd" id="6_4bh3l"]
+[ext_resource type="Texture2D" uid="uid://b3rjv8uqsa4xt" path="res://Main/Enemy/lobo.png" id="6_5gxkj"]
 [ext_resource type="Script" uid="uid://ctel2h81i66u5" path="res://Main/Enemy/lvl_component.gd" id="6_ulnfe"]
 [ext_resource type="Script" uid="uid://yikabhio3ltp" path="res://Main/Enemy/projectile_attack.gd" id="7_4bh3l"]
 
@@ -38,6 +41,22 @@ region = Rect2(540, 0, 108, 116)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_5an88")
+}],
+"loop": true,
+"name": &"anubis",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_yynbb")
+}],
+"loop": true,
+"name": &"boss",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ulnfe")
 }, {
 "duration": 0.8,
@@ -56,7 +75,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_5gxkj")
 }],
 "loop": true,
-"name": &"default",
+"name": &"monkey",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5gxkj")
+}],
+"loop": true,
+"name": &"wolf",
 "speed": 5.0
 }]
 
@@ -129,10 +156,9 @@ z_index = 1
 shape = SubResource("RectangleShape2D_jskd6")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=2032228099]
-scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_nbxsl")
-autoplay = "default"
-frame_progress = 0.0542376
+animation = &"boss"
+autoplay = "monkey"
 
 [node name="LvLComponent" type="Node" parent="." unique_id=1034687758]
 unique_name_in_owner = true

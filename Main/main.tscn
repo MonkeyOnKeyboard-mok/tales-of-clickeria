@@ -200,7 +200,6 @@ mouse_filter = 2
 [node name="MinionBounds" type="Node2D" parent="." unique_id=1039106456 groups=["minion_bounds"]]
 
 [node name="Area2D" type="Area2D" parent="MinionBounds" unique_id=365645852 groups=["minion_bounds"]]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MinionBounds/Area2D" unique_id=26609341]
 position = Vector2(576.5, 482)

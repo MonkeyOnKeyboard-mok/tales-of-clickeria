@@ -437,6 +437,8 @@ gradient = SubResource("Gradient_g18li")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yy0su"]
 
+[sub_resource type="SystemFont" id="SystemFont_yy0su"]
+
 [node name="Minion" type="Node2D" unique_id=1804796180 groups=["minion"]]
 process_mode = 3
 z_index = 4
@@ -520,6 +522,18 @@ process_mode = 3
 position = Vector2(24.999998, 50)
 scale = Vector2(11.579567, 12.772535)
 shape = SubResource("CircleShape2D_yy0su")
+
+[node name="LevelText" type="Label" parent="." unique_id=5906779]
+offset_left = -9.999999
+offset_top = 175.0
+offset_right = 30.0
+offset_bottom = 312.0
+theme_override_colors/font_color = Color(0, 0.9714672, 0.36861667, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_yy0su")
+theme_override_font_sizes/font_size = 100
+text = "I"
 
 [connection signal="timeout" from="AttackScript/Timer" to="AttackScript" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

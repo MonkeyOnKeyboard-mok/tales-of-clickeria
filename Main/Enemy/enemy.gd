@@ -17,6 +17,7 @@ var dying := false
 var esta_vivo: bool = true
 
 func _ready() -> void:
+	_set_texture()
 	projectile_attack.start_attack_timer()
 	# 1. Validar que existan los componentes necesarios
 	if not level_component:
@@ -111,3 +112,13 @@ func _on_area_2d_input_event(_viewport, event: InputEvent, _shape_idx: int) -> v
 		health_bar.take_damage(GlobalStats.playerStats["main_attack"])
 		Event.emit_signal("spawn_particle", get_global_mouse_position())
 		Event.emit_signal("gain_juice", GlobalStats.playerStats["main_attack_juice"])
+
+func _set_texture() -> void:
+	if GestorEtapa.etapa_actual <= 3:
+		sprite.play("monkey")
+	elif GestorEtapa.etapa_actual <= 6:
+		sprite.play("wolf")
+	elif GestorEtapa.etapa_actual < 8:
+		sprite.play("anubis")
+	elif GestorEtapa.etapa_actual == 8:
+		sprite.play("boss")

@@ -82,6 +82,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpu12"]
+size = Vector2(7.4646997, 11.914463)
+
 [node name="Hourglass" type="Node2D" unique_id=2110053612 groups=["hourglass"]]
 z_index = -1
 script = ExtResource("1_mpu12")
@@ -97,7 +100,8 @@ frame_progress = 0.5800312
 scale = Vector2(0.9999998, 0.9976643)
 
 [node name="CollisionShape2D" parent="DraggAndDrop/Area2D" parent_id_path=PackedInt32Array(644889432, 35310777) index="0" unique_id=248571846]
-position = Vector2(2.0000005, 3.0070248)
-scale = Vector2(7.2340465, 11.189038)
+position = Vector2(2.0000014, -1.5035127)
+scale = Vector2(7.23405, 11.189038)
+shape = SubResource("RectangleShape2D_mpu12")
 
 [editable path="DraggAndDrop"]
