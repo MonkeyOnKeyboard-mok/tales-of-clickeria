@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dq8jdyv371hu5"]
 
 [ext_resource type="Script" uid="uid://kwsgbjh26k2v" path="res://Main/Shop/shop.gd" id="1_rafwt"]
+[ext_resource type="Texture2D" uid="uid://dhea6wy2r0whr" path="res://Main/Shop/Shop/shop_item_box.png" id="2_1hfxh"]
 [ext_resource type="Texture2D" uid="uid://rl5hylwfaloa" path="res://Main/Shop/icons/mage_red.png" id="2_obr8y"]
 [ext_resource type="Texture2D" uid="uid://0laqevgtstdk" path="res://Main/Shop/icons/mage_yellow.png" id="3_4ov50"]
 [ext_resource type="Texture2D" uid="uid://bamtcc6sauohu" path="res://Main/Shop/animation_1-9.png" id="3_hqijh"]
@@ -9,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://c170454ngjyde" path="res://Main/Shop/icons/potion.png" id="5_2cinx"]
 [ext_resource type="Texture2D" uid="uid://3nnatx3cx1ss" path="res://Main/Shop/icons/hourglass.png" id="6_uq48g"]
 [ext_resource type="Texture2D" uid="uid://cu4jd17blq1kh" path="res://Main/Shop/icons/aura.png" id="7_3xyt2"]
+[ext_resource type="PackedScene" uid="uid://0bb6mg4qemsx" path="res://Main/Shop/lock.tscn" id="8_2cinx"]
+[ext_resource type="Texture2D" uid="uid://cybh0cuskkr7i" path="res://Main/Shop/Shop/shop_bg.png" id="8_4ov50"]
 
 [node name="Shop" type="Control" unique_id=623432963]
 layout_mode = 3
@@ -19,146 +22,276 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rafwt")
 
-[node name="GridContainer" type="GridContainer" parent="." unique_id=960699991]
+[node name="VScrollBar" type="ScrollContainer" parent="." unique_id=1259845378]
+z_index = 1
+clip_contents = false
+layout_mode = 1
+offset_left = 34.0
+offset_top = 29.0
+offset_right = 284.0
+offset_bottom = 299.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VScrollBar" unique_id=1661350868]
 z_index = 1
 texture_filter = 1
-layout_mode = 0
-offset_top = 14.0
-offset_right = 200.0
-offset_bottom = 314.0
-theme_override_constants/h_separation = 7
-theme_override_constants/v_separation = 44
-columns = 3
-
-[node name="MinionFuego" type="TextureButton" parent="GridContainer" unique_id=1275999442]
-texture_filter = 1
-custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-texture_normal = ExtResource("2_obr8y")
+theme_override_constants/separation = -4
+
+[node name="MinionColdButton" type="TextureButton" parent="VScrollBar/VBoxContainer" unique_id=755642287]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+texture_normal = ExtResource("2_1hfxh")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="GridContainer/MinionFuego" unique_id=584724045]
+[node name="Label" type="Label" parent="VScrollBar/VBoxContainer/MinionColdButton" unique_id=1350720556]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 8.0
+offset_right = 153.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 11
+text = "Mago Hielofdfd
+"
+
+[node name="MinionColdIcon" type="TextureRect" parent="VScrollBar/VBoxContainer/MinionColdButton" unique_id=178039283]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 0
 offset_left = 3.0
-offset_top = 67.0
-offset_right = 71.0
-offset_bottom = 120.0
-theme_override_font_sizes/font_size = 11
-text = " "
+offset_top = 8.0
+offset_right = 53.0
+offset_bottom = 58.0
+mouse_filter = 2
+texture = ExtResource("4_1hfxh")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="MinionLuz" type="TextureButton" parent="GridContainer" unique_id=1723744708]
+[node name="MinionFuegoButton" type="TextureButton" parent="VScrollBar/VBoxContainer" unique_id=1275999442]
 texture_filter = 1
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(187, 65)
 layout_mode = 2
-texture_normal = ExtResource("3_4ov50")
+texture_normal = ExtResource("2_1hfxh")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="GridContainer/MinionLuz" unique_id=590246935]
+[node name="Label" type="Label" parent="VScrollBar/VBoxContainer/MinionFuegoButton" unique_id=584724045]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 67.0
-offset_right = 67.0
-offset_bottom = 142.0
+offset_left = 71.0
+offset_top = 8.0
+offset_right = 176.0
+offset_bottom = 61.0
 theme_override_font_sizes/font_size = 11
+text = "Mago Fuegooooooo
+"
 
-[node name="MinionCold" type="TextureButton" parent="GridContainer" unique_id=755642287]
+[node name="MinionFuegoIcon" type="TextureRect" parent="VScrollBar/VBoxContainer/MinionFuegoButton" unique_id=1509253474]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 53.0
+offset_bottom = 57.0
+mouse_filter = 2
+texture = ExtResource("2_obr8y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MinionLuzButton" type="TextureButton" parent="VScrollBar/VBoxContainer" unique_id=1723744708]
 texture_filter = 1
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(187, 65)
 layout_mode = 2
-texture_normal = ExtResource("4_1hfxh")
+texture_normal = ExtResource("2_1hfxh")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="GridContainer/MinionCold" unique_id=1350720556]
+[node name="Label" type="Label" parent="VScrollBar/VBoxContainer/MinionLuzButton" unique_id=590246935]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 67.0
-offset_right = 66.0
-offset_bottom = 142.0
+offset_left = 71.0
+offset_top = 4.0
+offset_right = 170.0
+offset_bottom = 54.0
 theme_override_font_sizes/font_size = 11
+text = "Mago Liiiightttttttt
+dfgdfg"
 
-[node name="HealthPotion" type="TextureButton" parent="GridContainer" unique_id=1476557663]
-texture_filter = 1
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-texture_normal = ExtResource("5_2cinx")
-ignore_texture_size = true
+[node name="MinionLightIcon" type="TextureRect" parent="VScrollBar/VBoxContainer/MinionLuzButton" unique_id=1851630290]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 53.0
+offset_bottom = 57.0
+mouse_filter = 2
+texture = ExtResource("3_4ov50")
+expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="GridContainer/HealthPotion" unique_id=1725016388]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 64.0
-offset_right = 58.0
-offset_bottom = 87.0
-theme_override_font_sizes/font_size = 11
-
-[node name="HourGlass" type="TextureButton" parent="GridContainer" unique_id=754265909]
-texture_filter = 1
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-texture_normal = ExtResource("6_uq48g")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="GridContainer/HourGlass" unique_id=155082979]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 68.0
-offset_right = 42.0
-offset_bottom = 91.0
-theme_override_font_sizes/font_size = 11
-
-[node name="CuadrantePotion" type="TextureButton" parent="GridContainer" unique_id=1693494029]
-texture_filter = 1
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-texture_normal = ExtResource("7_3xyt2")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="GridContainer/CuadrantePotion" unique_id=226364513]
-layout_mode = 0
-offset_top = 69.0
-offset_right = 40.0
-offset_bottom = 92.0
-theme_override_font_sizes/font_size = 11
-
-[node name="Label" type="Label" parent="." unique_id=1390789570]
+[node name="VScrollItems" type="ScrollContainer" parent="." unique_id=1984899185]
+visible = false
 z_index = 1
 layout_mode = 0
-offset_left = 80.0
-offset_top = -3.0
-offset_right = 120.0
-offset_bottom = 20.0
+offset_left = 34.0
+offset_top = 30.0
+offset_right = 284.0
+offset_bottom = 300.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VScrollItems" unique_id=1674809782]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="HealthPotionButton" type="TextureButton" parent="VScrollItems/VBoxContainer" unique_id=1476557663]
+texture_filter = 1
+custom_minimum_size = Vector2(187, 65)
+layout_mode = 2
+texture_normal = ExtResource("2_1hfxh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VScrollItems/VBoxContainer/HealthPotionButton" unique_id=1725016388]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 9.0
+offset_right = 144.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 11
+text = "Poción Básica"
+
+[node name="PocionIcon" type="TextureRect" parent="VScrollItems/VBoxContainer/HealthPotionButton" unique_id=1200786126]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 54.0
+offset_bottom = 54.0
+texture = ExtResource("5_2cinx")
+stretch_mode = 5
+
+[node name="HourGlassButton" type="TextureButton" parent="VScrollItems/VBoxContainer" unique_id=754265909]
+texture_filter = 1
+custom_minimum_size = Vector2(187, 65)
+layout_mode = 2
+texture_normal = ExtResource("2_1hfxh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VScrollItems/VBoxContainer/HourGlassButton" unique_id=155082979]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 16.0
+offset_right = 124.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 11
+text = "Hourglass"
+
+[node name="HourGlassIcon" type="TextureRect" parent="VScrollItems/VBoxContainer/HourGlassButton" unique_id=867393893]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 53.0
+offset_bottom = 54.0
+texture = ExtResource("6_uq48g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Lock" parent="VScrollItems/VBoxContainer/HourGlassButton" unique_id=233084860 instance=ExtResource("8_2cinx")]
+visible = false
+layout_mode = 0
+mouse_filter = 0
+
+[node name="CuadrantePotion" type="TextureButton" parent="VScrollItems/VBoxContainer" unique_id=1693494029]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 65)
+layout_mode = 2
+texture_normal = ExtResource("2_1hfxh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VScrollItems/VBoxContainer/CuadrantePotion" unique_id=226364513]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 17.0
+offset_right = 111.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 11
+
+[node name="TextureRect" type="TextureRect" parent="VScrollItems/VBoxContainer/CuadrantePotion" unique_id=840283079]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 58.0
+offset_bottom = 56.0
+texture = ExtResource("7_3xyt2")
+
+[node name="Lock" parent="VScrollItems/VBoxContainer/CuadrantePotion" unique_id=723828273 instance=ExtResource("8_2cinx")]
+visible = false
+layout_mode = 0
+offset_right = 187.0
+offset_bottom = 65.0
+mouse_filter = 0
+
+[node name="LabelShop" type="Label" parent="." unique_id=1390789570]
+z_index = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 2.0
+offset_right = 144.0
+offset_bottom = 25.0
 text = "Shop"
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1099836972]
+[node name="ShopBackground" type="TextureRect" parent="." unique_id=289818024]
 layout_mode = 0
-offset_right = 40.0
+offset_left = -34.0
+offset_right = 6.0
 offset_bottom = 40.0
-scale = Vector2(5.0096025, 7.521226)
+scale = Vector2(8, 8)
 mouse_filter = 2
-color = Color(0, 0, 0, 0.972549)
+texture = ExtResource("8_4ov50")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=139421506]
+[node name="Flecha" type="TextureButton" parent="." unique_id=139421506]
 layout_mode = 0
-offset_left = 197.0
-offset_top = 171.0
-offset_right = 247.0
-offset_bottom = 221.0
+offset_left = 236.0
+offset_top = 178.0
+offset_right = 286.0
+offset_bottom = 228.0
 rotation = -1.5707964
 scale = Vector2(1, 0.71999985)
 texture_normal = ExtResource("3_hqijh")
 texture_pressed = ExtResource("4_vwf2g")
 flip_v = true
 
-[connection signal="pressed" from="GridContainer/MinionFuego" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="GridContainer/MinionLuz" to="." method="_on_minion_luz_pressed"]
-[connection signal="pressed" from="GridContainer/MinionCold" to="." method="_on_minion_cold_pressed"]
-[connection signal="pressed" from="GridContainer/HealthPotion" to="." method="_on_health_potion_pressed"]
-[connection signal="pressed" from="GridContainer/HourGlass" to="." method="_on_hourglass_pressed"]
-[connection signal="pressed" from="GridContainer/CuadrantePotion" to="." method="_on_level_up_pressed"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_arrow_pressed"]
+[node name="MagosTabButton" type="Button" parent="." unique_id=2129895403]
+z_index = -1
+layout_mode = 0
+offset_left = 238.0
+offset_top = 12.0
+offset_right = 268.0
+offset_bottom = 139.0
+text = "M
+A
+G
+O
+S"
+
+[node name="ItemsTabButton" type="Button" parent="." unique_id=2025741426]
+z_index = -1
+layout_mode = 0
+offset_left = 238.0
+offset_top = 192.0
+offset_right = 261.0
+offset_bottom = 315.0
+text = "I
+T
+E
+M
+S"
+
+[connection signal="pressed" from="VScrollBar/VBoxContainer/MinionColdButton" to="." method="_on_minion_cold_pressed"]
+[connection signal="pressed" from="VScrollBar/VBoxContainer/MinionFuegoButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="VScrollBar/VBoxContainer/MinionLuzButton" to="." method="_on_minion_luz_pressed"]
+[connection signal="pressed" from="VScrollItems/VBoxContainer/HealthPotionButton" to="." method="_on_health_potion_pressed"]
+[connection signal="pressed" from="VScrollItems/VBoxContainer/HourGlassButton" to="." method="_on_hourglass_pressed"]
+[connection signal="pressed" from="VScrollItems/VBoxContainer/CuadrantePotion" to="." method="_on_level_up_pressed"]
+[connection signal="pressed" from="Flecha" to="." method="_on_arrow_pressed"]
+[connection signal="pressed" from="MagosTabButton" to="." method="_on_magos_tab_button_pressed"]
+[connection signal="pressed" from="ItemsTabButton" to="." method="_on_items_tab_button_pressed"]

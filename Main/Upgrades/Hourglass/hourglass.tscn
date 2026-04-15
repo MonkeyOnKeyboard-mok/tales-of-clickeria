@@ -82,7 +82,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Hourglass" type="Node2D" unique_id=2110053612]
+[node name="Hourglass" type="Node2D" unique_id=2110053612 groups=["hourglass"]]
 z_index = -1
 script = ExtResource("1_mpu12")
 

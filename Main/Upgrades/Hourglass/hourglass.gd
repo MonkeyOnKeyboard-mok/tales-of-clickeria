@@ -21,6 +21,10 @@ func _process(_delta: float) -> void:
 	current_pos = self.global_position
 	check_proximity()
 
+func push_back() -> void:
+	var push_tween = create_tween()
+	push_tween.tween_property(self, "global_position" , Vector2(575,480),0.2)
+
 func check_proximity() -> void:
 	# Step 1: collect all minions
 	var minions: Array[Node2D] = []

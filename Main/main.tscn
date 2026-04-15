@@ -192,7 +192,6 @@ position = Vector2(1117, 502)
 
 [node name="ColorRect" parent="." unique_id=1856880805 instance=ExtResource("14_0jx5h")]
 process_mode = 3
-visible = false
 scale = Vector2(28.99131, 16.897177)
 mouse_filter = 2
 
@@ -201,6 +200,7 @@ mouse_filter = 2
 [node name="MinionBounds" type="Node2D" parent="." unique_id=1039106456 groups=["minion_bounds"]]
 
 [node name="Area2D" type="Area2D" parent="MinionBounds" unique_id=365645852 groups=["minion_bounds"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MinionBounds/Area2D" unique_id=26609341]
 position = Vector2(576.5, 482)

@@ -7,12 +7,17 @@ extends Node
 var displayed : bool = false
 var offset : Vector2 = Vector2.ZERO
 ## onready vars
-@onready var label_fire: Label = $GridContainer/MinionFuego/Label
-@onready var label_light: Label = $GridContainer/MinionLuz/Label
-@onready var label_cold: Label = $GridContainer/MinionCold/Label
-@onready var label_basic_potion: Label = $GridContainer/HealthPotion/Label
-@onready var label_hourglass: Label = $GridContainer/HourGlass/Label
-@onready var label_cuadrante_potion: Label = $GridContainer/CuadrantePotion/Label
+@onready var label_fire: Label = $VScrollBar/VBoxContainer/MinionFuegoButton/Label
+@onready var label_light: Label = $VScrollBar/VBoxContainer/MinionLuzButton/Label
+@onready var label_cold: Label = $VScrollBar/VBoxContainer/MinionColdButton/Label
+@onready var label_basic_potion: Label = $VScrollItems/VBoxContainer/HealthPotionButton/Label
+@onready var label_hourglass: Label = $VScrollItems/VBoxContainer/HourGlassButton/Label
+@onready var label_cuadrante_potion: Label = $VScrollItems/VBoxContainer/CuadrantePotion/Label
+@onready var v_scroll_minions: ScrollContainer = $VScrollBar
+@onready var v_scroll_items: ScrollContainer = $VScrollItems
+##############################
+@onready var lock_hourglass: TextureRect = $VScrollItems/VBoxContainer/HourGlassButton/Lock
+@onready var lock_cuadrante_potion: TextureRect = $VScrollItems/VBoxContainer/CuadrantePotion/Lock
 # "obj_" for node references;
 ## built-in override methods
 
@@ -44,7 +49,6 @@ func _on_arrow_pressed() -> void:
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "global_position", final_pos, 0.15)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-
 
 ## Señales de los botones
 func _on_texture_button_pressed() -> void:
@@ -82,3 +86,12 @@ func _spawn_bought_item(itemType: String, data, amount:float, key: String) -> vo
 				Event.emit_signal("spent_juice", amount)
 				Event.emit_signal("update_price", key)
 				Event.emit_signal(data)
+
+
+func _on_magos_tab_button_pressed() -> void:
+	v_scroll_minions.visible = true
+	v_scroll_items.visible = false
+
+func _on_items_tab_button_pressed() -> void:
+	v_scroll_minions.visible = false
+	v_scroll_items.visible = true

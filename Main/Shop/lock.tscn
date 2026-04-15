@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://0bb6mg4qemsx"]
+
+[ext_resource type="Texture2D" uid="uid://buv44jh55mk6r" path="res://Main/Shop/Shop/locked_item_shadow.png" id="1_3bmnd"]
+[ext_resource type="Texture2D" uid="uid://08wovgewt5md" path="res://Main/Shop/Shop/locked_item_lock.png" id="2_dp11h"]
+
+[node name="Lock" type="TextureRect" unique_id=233084860]
+custom_minimum_size = Vector2(187, 65)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3bmnd")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=477073504]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dp11h")
