@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://tnb4os80mwa4"]
+
+[ext_resource type="Script" uid="uid://p37tdhsyhg6u" path="res://Main/Enemy/enemy_health_bar.gd" id="1_ltpgi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ltpgi"]
+bg_color = Color(0.8569161, 0.32355466, 0.07619267, 0.43529412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqmbw"]
+bg_color = Color(0, 0.64705884, 0.02745098, 0.9137255)
+
+[node name="EnemyHealthBar" type="ProgressBar" unique_id=2121140898]
+custom_minimum_size = Vector2(100, 15)
+offset_right = 4.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ltpgi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gqmbw")
+show_percentage = false
+script = ExtResource("1_ltpgi")
+
+[node name="Label" type="Label" parent="." unique_id=1084555425]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = -11.5
+offset_right = 12.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2

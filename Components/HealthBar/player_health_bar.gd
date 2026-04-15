@@ -3,6 +3,8 @@ class_name PlayerHealthBar
 ## enums
 ## consts
 ## exports
+@export var top_y: float = -103.0     # full HP position
+@export var bottom_y: float = 85.0 # empty HP position
 @onready var player_health2 : Label = get_node("/root/Main/Player/PlayerHealth")
 
 ## public vars
@@ -22,8 +24,9 @@ func _ready() -> void:
 	health = max_health
 	self.value = _health
 	initialized = true
+
 func _process(_delta: float) -> void:
-	pass
+	_funcion_ro()
 
 ## public methods
 
@@ -58,3 +61,10 @@ func gain_health(health_gained: float) -> void:
 	health += health_gained
 
 ## private methods
+func _funcion_ro() -> void:
+	if _health < 92:
+		$Mask/Bar_top.visible = true
+	var ratio: float = clamp(_health / _max_health, 0.0, 1.0)
+	# Interpolate between empty and full
+	var y_pos: float = lerp(bottom_y, top_y, ratio)
+	$Mask/Bar_top.position.y = y_pos 

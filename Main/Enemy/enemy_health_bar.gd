@@ -1,10 +1,8 @@
 extends Node
-class_name HealthBar
+class_name EnemyHealthBar
 ## enums
 ## consts
 ## exports
-@export var top_y: float = -83.0     # full HP position
-@export var bottom_y: float = 100.0 # empty HP position
 ## public vars
 var max_health : float  : set = set_max_health
 var health : float: set = set_health, get = get_health
@@ -20,10 +18,9 @@ var initialized := false
 
 func _ready() -> void:
 	initialized = true
-	self.value =  40.0
 
 func _process(_delta: float) -> void:
-	_funcion_ro()
+	pass
 
 ## public methods
 
@@ -35,6 +32,8 @@ func set_max_health(new_value: float) -> void:
 	health += difference
 
 func set_health(new_health: float) -> void:
+	#if new_health < health:
+		#%HappyBooSkin.hurt()
 	
 	_health = clamp(new_health, 0.0, _max_health)
 	label.text = str(int(health))
@@ -62,12 +61,3 @@ func take_damage(damage : float) -> void:
 	#print("After:", health)
 
 ## private methods
-func _funcion_ro() -> void:
-	print("_health =", _health)
-	if _health < 92:
-		$Mask/Bar_top.visible = true
-		print("vida es menos que 92")
-	var ratio: float = clamp(self.value / _max_health, 0.0, 1.0)
-	# Interpolate between empty and full
-	var y_pos: float = lerp(bottom_y, top_y, ratio)
-	$Mask/Bar_top.position.y = y_pos

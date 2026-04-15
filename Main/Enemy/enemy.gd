@@ -5,7 +5,7 @@ class_name Enemy
 
 # Referencias a Componentes (Composición)
 @onready var level_component: LevelComponent = %LvLComponent
-@onready var health_bar: HealthBar = %HealthBar 
+@onready var health_bar: EnemyHealthBar = %EnemyHealthBar 
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var area_2d: Area2D = $Area2D
 @onready var projectile_attack: Node2D = $ProjectileAttack

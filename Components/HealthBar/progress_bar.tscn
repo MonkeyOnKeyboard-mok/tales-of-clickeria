@@ -1,20 +1,104 @@
 [gd_scene format=3 uid="uid://cu1egge4kvlo8"]
 
 [ext_resource type="Script" uid="uid://cw3dnefg3tdnm" path="res://Components/HealthBar/health_bar.gd" id="1_b02bx"]
+[ext_resource type="Texture2D" uid="uid://c7yxi1y1f8763" path="res://Main/Player/BarraTexture/over.png" id="1_upe5p"]
+[ext_resource type="Texture2D" uid="uid://bc5iiaqikqmb4" path="res://Main/Player/BarraTexture/base.png" id="2_3siji"]
+[ext_resource type="Texture2D" uid="uid://digwx5vy6erfj" path="res://Main/Player/BarraTexture/mask.png" id="4_dipug"]
+[ext_resource type="Texture2D" uid="uid://cvfps8m7xe48k" path="res://Main/Player/BarraTexture/top_sprite2.png" id="5_j2vm1"]
+[ext_resource type="Texture2D" uid="uid://bk3hrx8igfo0j" path="res://Main/Player/BarraTexture/cover2.png" id="6_et6bd"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b02bx"]
-bg_color = Color(0.67684084, 0.091105334, 0.14654154, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0edts"]
+atlas = ExtResource("5_j2vm1")
+region = Rect2(0, 0, 21, 7)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o22js"]
-bg_color = Color(0.35812277, 0.6997674, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvvwt"]
+atlas = ExtResource("5_j2vm1")
+region = Rect2(21, 0, 21, 7)
 
-[node name="ProgressBar" type="ProgressBar" unique_id=1483188681]
-custom_minimum_size = Vector2(100, 30)
-offset_left = -46.0
-offset_right = 54.0
-offset_bottom = 30.0
-theme_override_styles/background = SubResource("StyleBoxFlat_b02bx")
-theme_override_styles/fill = SubResource("StyleBoxFlat_o22js")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wxya"]
+atlas = ExtResource("5_j2vm1")
+region = Rect2(42, 0, 21, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33gug"]
+atlas = ExtResource("5_j2vm1")
+region = Rect2(63, 0, 21, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia14v"]
+atlas = ExtResource("5_j2vm1")
+region = Rect2(84, 0, 21, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8b22t"]
+atlas = ExtResource("5_j2vm1")
+region = Rect2(105, 0, 21, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7ows"]
+atlas = ExtResource("5_j2vm1")
+region = Rect2(126, 0, 21, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5q1g"]
+atlas = ExtResource("5_j2vm1")
+region = Rect2(147, 0, 21, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vrj3f"]
+animations = [{
+"frames": [{
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_0edts")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_pvvwt")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_3wxya")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_33gug")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_ia14v")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_8b22t")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_d7ows")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_t5q1g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ProgressBar" type="TextureProgressBar" unique_id=2059067378]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 198.0
+scale = Vector2(2, 2)
 value = 100.0
 allow_greater = true
+fill_mode = 3
+texture_over = ExtResource("1_upe5p")
+texture_progress = ExtResource("2_3siji")
 script = ExtResource("1_b02bx")
+
+[node name="Mask" type="Sprite2D" parent="." unique_id=2067253388]
+clip_children = 1
+z_index = 1
+texture_filter = 1
+position = Vector2(13.667, 99)
+texture = ExtResource("4_dipug")
+
+[node name="Bar_top" type="AnimatedSprite2D" parent="Mask" unique_id=609775867]
+z_index = -2
+texture_filter = 1
+position = Vector2(0.33, -83)
+sprite_frames = SubResource("SpriteFrames_vrj3f")
+autoplay = "default"
+frame_progress = 0.56412685
+
+[node name="Sprite2D2" type="Sprite2D" parent="Mask" unique_id=550595415]
+texture_filter = 1
+position = Vector2(-0.3, -0.3)
+texture = ExtResource("6_et6bd")

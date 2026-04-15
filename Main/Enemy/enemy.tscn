@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bboyklv1jcrnt"]
 
 [ext_resource type="Script" uid="uid://defngvidp2kdu" path="res://Main/Enemy/enemy.gd" id="1_svo2v"]
-[ext_resource type="PackedScene" uid="uid://cu1egge4kvlo8" path="res://Components/HealthBar/progress_bar.tscn" id="2_svo2v"]
+[ext_resource type="PackedScene" uid="uid://tnb4os80mwa4" path="res://Main/Enemy/enemy_health_bar.tscn" id="2_5an88"]
 [ext_resource type="Texture2D" uid="uid://bcmyx688xem2" path="res://Main/Enemy/mono_anim2.png" id="3_1ftki"]
 [ext_resource type="Texture2D" uid="uid://caqyev4jjq1ok" path="res://Main/Enemy/anubis.png" id="3_5an88"]
 [ext_resource type="Texture2D" uid="uid://bdfm57iqt861e" path="res://Main/Enemy/boss_draft.png" id="4_yynbb"]
@@ -133,21 +133,13 @@ point_count = 2
 z_index = 1
 script = ExtResource("1_svo2v")
 
-[node name="HealthBar" parent="." unique_id=1483188681 instance=ExtResource("2_svo2v")]
+[node name="EnemyHealthBar" parent="." unique_id=2121140898 instance=ExtResource("2_5an88")]
 unique_name_in_owner = true
-offset_left = -48.0
-offset_top = 77.0
-offset_right = 52.0
-offset_bottom = 107.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="HealthBar" unique_id=32151952]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 3.0
-offset_right = 135.0
-offset_bottom = 33.0
-text = "100"
+custom_minimum_size = Vector2(150, 0)
+offset_left = -73.0
+offset_top = 88.0
+offset_right = 77.0
+offset_bottom = 115.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1530025120 groups=["enemy"]]
 z_index = 1

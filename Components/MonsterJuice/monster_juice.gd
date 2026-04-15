@@ -12,7 +12,7 @@ var _max_juice := 1000000.0
 var initialized := false
 ## private vars
 ## onready vars
-@onready var label: Label = $Label
+@onready var label: Label = $Sprite2D/Label
 # "obj_" for node references;
 
 ## built-in override methods
