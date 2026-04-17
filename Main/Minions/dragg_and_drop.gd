@@ -39,7 +39,6 @@ func _input(event):
 					get_parent().try_sell()
 					GlobalStats.dragging_minion = false
 
-
 ## public methods
 
 ## private methods

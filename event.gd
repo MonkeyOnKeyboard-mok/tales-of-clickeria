@@ -52,6 +52,8 @@ signal update_price
 signal spell_echo_selection
 @warning_ignore("unused_signal")
 signal spell_echo_selected
+@warning_ignore("unused_signal")
+signal spawn_healer_minion
 
 var spell_echo_sel_on : bool = false
 

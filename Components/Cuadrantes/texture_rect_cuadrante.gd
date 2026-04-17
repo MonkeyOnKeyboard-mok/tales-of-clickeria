@@ -28,8 +28,6 @@ func _ready() -> void:
 		"light" : [Color(0.616, 0.522, 0.0, 0.118), Color(1.0, 1.0, 0.0, 1.0), 10.0],
 	}
 
-
-
 func _process(_delta: float) -> void:
 	pass
 

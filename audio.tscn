@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ddpbqjsm278a3" path="res://audio.gd" id="1_qc0l7"]
 [ext_resource type="AudioStream" uid="uid://21mccb62av4s" path="res://PlaceHolders/Agua.wav" id="2_q45hi"]
 [ext_resource type="AudioStream" uid="uid://b8b2d2xxc2als" path="res://Audio/Audio/Tales_of_Clickeria_tema_principal_loopeado.wav" id="3_ybffx"]
-[ext_resource type="AudioStream" uid="uid://c65kifu2qrr74" path="res://Audio/Audio/BlenderSounds/blender.wav" id="4_p423y"]
+[ext_resource type="AudioStream" uid="uid://c65kifu2qrr74" path="res://Audio/BlenderSounds/blender.wav" id="4_p423y"]
 [ext_resource type="AudioStream" uid="uid://da8pgbeof154l" path="res://Audio/Audio/Main_Menu.wav" id="5_8w7rj"]
 
 [node name="Audio" type="Node" unique_id=1966949987]

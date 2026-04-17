@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://bvftv4jsopgv6"]
 
 [ext_resource type="Script" uid="uid://bgr6av6g1yt40" path="res://Main/Debugger/debugger.gd" id="1_e1o5k"]
+[ext_resource type="Texture2D" uid="uid://bceb86iqha3fo" path="res://Main/Debugger/UI/level_up-ready.png" id="2_0k67k"]
+[ext_resource type="Texture2D" uid="uid://bp0873ao7rb0y" path="res://Main/Debugger/UI/pausa_normal.png" id="2_7l10j"]
+[ext_resource type="Texture2D" uid="uid://38te7v8ibl4e" path="res://Main/Debugger/UI/level_up-pressed.png" id="3_6g7fs"]
+[ext_resource type="Texture2D" uid="uid://cuv6tw70rosae" path="res://Main/Debugger/UI/pausa_pressed.png" id="3_b23he"]
+[ext_resource type="Texture2D" uid="uid://bpcj0unrlewpa" path="res://Main/Debugger/UI/level_up-normal.png" id="4_kr6sn"]
+[ext_resource type="Texture2D" uid="uid://lgrbnc7o5jxm" path="res://Main/Debugger/UI/pausa_hoverl.png" id="4_nu5l5"]
 
 [node name="Debugger" type="Control" unique_id=452095247]
 process_mode = 3
@@ -33,13 +39,19 @@ offset_right = 141.0
 offset_bottom = 92.0
 text = "Spawn Hourglass"
 
-[node name="LevelUp" type="Button" parent="." unique_id=614754468]
+[node name="LevelUp" type="TextureButton" parent="." unique_id=893534778]
+texture_filter = 1
 layout_mode = 0
 offset_left = 723.0
 offset_top = 17.0
 offset_right = 798.0
 offset_bottom = 48.0
-text = "Level Up"
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("2_0k67k")
+texture_pressed = ExtResource("3_6g7fs")
+texture_disabled = ExtResource("4_kr6sn")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="ByPass" type="Button" parent="LevelUp" unique_id=2050751296]
 layout_mode = 0
@@ -50,22 +62,18 @@ offset_bottom = 15.0
 scale = Vector2(0.5, 0.5)
 text = "Bypass Exp Restriciton"
 
-[node name="LevelUpRect" type="ColorRect" parent="LevelUp" unique_id=2054861597]
-z_index = -1
+[node name="Pause" type="TextureButton" parent="." unique_id=1834535897]
+texture_filter = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(1.872883, 0.7674132)
-mouse_filter = 2
-color = Color(0.49019608, 1, 0, 1)
-
-[node name="Pause" type="Button" parent="." unique_id=908958379]
-layout_mode = 0
-offset_left = 901.0
-offset_top = 12.0
-offset_right = 956.0
-offset_bottom = 43.0
-text = "Pause"
+offset_left = 908.0
+offset_top = 16.0
+offset_right = 963.0
+offset_bottom = 47.0
+scale = Vector2(1.7372328, 1.7372328)
+texture_normal = ExtResource("2_7l10j")
+texture_pressed = ExtResource("3_b23he")
+texture_hover = ExtResource("4_nu5l5")
+stretch_mode = 3
 
 [node name="GainJuice" type="Button" parent="." unique_id=825615749]
 layout_mode = 0

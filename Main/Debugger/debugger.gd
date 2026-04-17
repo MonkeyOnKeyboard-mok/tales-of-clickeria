@@ -3,9 +3,10 @@ extends Node
 ## consts
 ## exports
 ## public vars
+var play_level_up_sound := false
 ## private vars
 ## onready vars
-@onready var level_up_rect: ColorRect = $LevelUp/LevelUpRect
+@onready var level_up: TextureButton = $LevelUp
 
 # "obj_" for node references;
 ## built-in override methods
@@ -15,11 +16,17 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if GlobalStats.playerStats["can_level_up"] == true:
-		level_up_rect.visible = true
+		level_up.disabled = false
+		_play_level_up_sound()
 	else:
-		level_up_rect.visible = false
+		level_up.disabled = true
+		play_level_up_sound = false
 
 ## public methods
+func _play_level_up_sound() -> void:
+	if play_level_up_sound == true: return
+	Audio.can_level_up()
+	play_level_up_sound = true
 
 ## private methods
 

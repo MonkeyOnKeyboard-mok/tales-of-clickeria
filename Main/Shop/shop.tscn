@@ -8,10 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://cj1ucwmeog5wt" path="res://Main/Shop/icons/mage_blue.png" id="4_1hfxh"]
 [ext_resource type="Texture2D" uid="uid://dn8pva60h306g" path="res://Main/Shop/animation_1-8.png" id="4_vwf2g"]
 [ext_resource type="Texture2D" uid="uid://c170454ngjyde" path="res://Main/Shop/icons/potion.png" id="5_2cinx"]
+[ext_resource type="Texture2D" uid="uid://cjwq537yjdhck" path="res://Main/Shop/icons/mage_default.png" id="6_sp6pw"]
 [ext_resource type="Texture2D" uid="uid://3nnatx3cx1ss" path="res://Main/Shop/icons/hourglass.png" id="6_uq48g"]
 [ext_resource type="Texture2D" uid="uid://cu4jd17blq1kh" path="res://Main/Shop/icons/aura.png" id="7_3xyt2"]
 [ext_resource type="PackedScene" uid="uid://0bb6mg4qemsx" path="res://Main/Shop/lock.tscn" id="8_2cinx"]
 [ext_resource type="Texture2D" uid="uid://cybh0cuskkr7i" path="res://Main/Shop/Shop/shop_bg.png" id="8_4ov50"]
+[ext_resource type="Texture2D" uid="uid://djpqcle0fepy8" path="res://Main/Debugger/UI/magos.png" id="13_33xd7"]
+[ext_resource type="Texture2D" uid="uid://btvkqjwlcysui" path="res://Main/Debugger/UI/magos_hover.png" id="14_sp6pw"]
+[ext_resource type="Texture2D" uid="uid://brw8wpm0r1egf" path="res://Main/Debugger/UI/items.png" id="15_6ljwk"]
+[ext_resource type="Texture2D" uid="uid://b0dveqfk650cv" path="res://Main/Debugger/UI/items_hover.png" id="16_pggwp"]
 
 [node name="Shop" type="Control" unique_id=623432963]
 layout_mode = 3
@@ -125,6 +130,29 @@ texture = ExtResource("3_4ov50")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="MinionHealerButton" type="TextureButton" parent="VScrollBar/VBoxContainer" unique_id=992561602]
+custom_minimum_size = Vector2(187, 65)
+layout_mode = 2
+texture_normal = ExtResource("2_1hfxh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VScrollBar/VBoxContainer/MinionHealerButton" unique_id=135008778]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 12.0
+offset_right = 114.0
+offset_bottom = 35.0
+
+[node name="MinionHealerIcon" type="TextureRect" parent="VScrollBar/VBoxContainer/MinionHealerButton" unique_id=442969764]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 59.0
+offset_bottom = 59.0
+texture = ExtResource("6_sp6pw")
+flip_h = true
+
 [node name="VScrollItems" type="ScrollContainer" parent="." unique_id=1984899185]
 visible = false
 z_index = 1
@@ -194,6 +222,8 @@ stretch_mode = 5
 [node name="Lock" parent="VScrollItems/VBoxContainer/HourGlassButton" unique_id=233084860 instance=ExtResource("8_2cinx")]
 visible = false
 layout_mode = 0
+offset_right = 187.0
+offset_bottom = 65.0
 mouse_filter = 0
 
 [node name="CuadrantePotion" type="TextureButton" parent="VScrollItems/VBoxContainer" unique_id=1693494029]
@@ -249,46 +279,46 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Flecha" type="TextureButton" parent="." unique_id=139421506]
+z_index = -1
 layout_mode = 0
 offset_left = 236.0
-offset_top = 178.0
+offset_top = 190.0
 offset_right = 286.0
-offset_bottom = 228.0
+offset_bottom = 240.0
 rotation = -1.5707964
 scale = Vector2(1, 0.71999985)
 texture_normal = ExtResource("3_hqijh")
 texture_pressed = ExtResource("4_vwf2g")
 flip_v = true
 
-[node name="MagosTabButton" type="Button" parent="." unique_id=2129895403]
+[node name="MagosTabButton" type="TextureButton" parent="." unique_id=1946242255]
 z_index = -1
 layout_mode = 0
 offset_left = 238.0
 offset_top = 12.0
 offset_right = 268.0
 offset_bottom = 139.0
-text = "M
-A
-G
-O
-S"
+texture_normal = ExtResource("13_33xd7")
+texture_hover = ExtResource("14_sp6pw")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="ItemsTabButton" type="Button" parent="." unique_id=2025741426]
+[node name="ItemsTabButton" type="TextureButton" parent="." unique_id=18400906]
 z_index = -1
 layout_mode = 0
 offset_left = 238.0
 offset_top = 192.0
 offset_right = 261.0
 offset_bottom = 315.0
-text = "I
-T
-E
-M
-S"
+texture_normal = ExtResource("15_6ljwk")
+texture_hover = ExtResource("16_pggwp")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="pressed" from="VScrollBar/VBoxContainer/MinionColdButton" to="." method="_on_minion_cold_pressed"]
 [connection signal="pressed" from="VScrollBar/VBoxContainer/MinionFuegoButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="VScrollBar/VBoxContainer/MinionLuzButton" to="." method="_on_minion_luz_pressed"]
+[connection signal="pressed" from="VScrollBar/VBoxContainer/MinionHealerButton" to="." method="_on_minion_healer_button_pressed"]
 [connection signal="pressed" from="VScrollItems/VBoxContainer/HealthPotionButton" to="." method="_on_health_potion_pressed"]
 [connection signal="pressed" from="VScrollItems/VBoxContainer/HourGlassButton" to="." method="_on_hourglass_pressed"]
 [connection signal="pressed" from="VScrollItems/VBoxContainer/CuadrantePotion" to="." method="_on_level_up_pressed"]

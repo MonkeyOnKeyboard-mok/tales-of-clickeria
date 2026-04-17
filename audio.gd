@@ -8,8 +8,12 @@ const SCREAM_3 = preload("uid://cpowua8nhgysl")
 const SCREAM_4 = preload("uid://dgio02pqsfbt")
 const SCREAM_5 = preload("uid://cmqvpm8jkasym")
 const BLENDER = preload("uid://c65kifu2qrr74")
-
-
+const ANUNCIO_ETAPA = preload("uid://brw8brkgjovbb")
+const ANUNCIO_LEVEL_UP = preload("uid://cnt56i3opd8pm")
+const CLICK = preload("uid://bt42hef85u0vo")
+const COMPRA = preload("uid://dgm8268u6j3vg")
+const GORILA_APARECE = preload("uid://bxfjqkxia88c2")
+const POCIÓN = preload("uid://cjeohfuiqdac5")
 ## exports
 ## public vars
 ## private vars
@@ -51,6 +55,38 @@ func minion_death() -> void:
 	add_child(player)
 	player.play()
 	scream_counter += 1
+	player.finished.connect(player.queue_free)
+
+func click() -> void:
+	var player = AudioStreamPlayer.new()
+	player.stream = CLICK
+	add_child(player)
+	player.volume_db = -13.066
+	player.play()
+	player.finished.connect(player.queue_free)
+
+func compra() -> void:
+	var player = AudioStreamPlayer.new()
+	player.stream = COMPRA
+	add_child(player)
+	player.volume_db = -13.066
+	player.play()
+	player.finished.connect(player.queue_free)
+
+func can_level_up() -> void:
+	var player = AudioStreamPlayer.new()
+	player.stream = ANUNCIO_LEVEL_UP
+	add_child(player)
+	player.volume_db = -13.066
+	player.play()
+	player.finished.connect(player.queue_free)
+
+func can_zone_up() -> void:
+	var player = AudioStreamPlayer.new()
+	player.stream = ANUNCIO_ETAPA
+	add_child(player)
+	player.volume_db = -13.066
+	player.play()
 	player.finished.connect(player.queue_free)
 
 ## private methods

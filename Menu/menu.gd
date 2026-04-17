@@ -24,6 +24,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_jugar_pressed() -> void:
+	Audio.click()
 	button_type = "start"
 	fade_transition.show()
 	Audio.menu_out()
@@ -34,9 +35,11 @@ func _on_jugar_pressed() -> void:
 	
 
 func _on_salir_pressed() -> void:
+	Audio.click()
 	get_tree().quit()
 
 func _on_creditos_pressed() -> void:
+	Audio.click()
 	button_type = "credits"
 	fade_transition.show()
 	$fade_transition/Fade_timer.start()

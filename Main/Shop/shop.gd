@@ -10,6 +10,7 @@ var offset : Vector2 = Vector2.ZERO
 @onready var label_fire: Label = $VScrollBar/VBoxContainer/MinionFuegoButton/Label
 @onready var label_light: Label = $VScrollBar/VBoxContainer/MinionLuzButton/Label
 @onready var label_cold: Label = $VScrollBar/VBoxContainer/MinionColdButton/Label
+@onready var label_healer: Label = $VScrollBar/VBoxContainer/MinionHealerButton/Label
 @onready var label_basic_potion: Label = $VScrollItems/VBoxContainer/HealthPotionButton/Label
 @onready var label_hourglass: Label = $VScrollItems/VBoxContainer/HourGlassButton/Label
 @onready var label_cuadrante_potion: Label = $VScrollItems/VBoxContainer/CuadrantePotion/Label
@@ -28,6 +29,7 @@ func _process(_delta: float) -> void:
 	label_fire.text = "Fire Wizard \n       " + str(int(EconomiaManager.precios["mago_fuego"]))
 	label_light.text = "Light Wizard \n       " + str(int(EconomiaManager.precios["mago_light"]))
 	label_cold.text = "Cold Wizard \n       " + str(int(EconomiaManager.precios["mago_cold"]))
+	label_healer.text = "Healer Wizard \n       " + str(int(EconomiaManager.precios["mago_healer"]))
 	label_basic_potion.text = "Basic Potion \n       " + str(int(EconomiaManager.precios["pocion_basica"]))
 	label_hourglass.text = "Hourglass \n       " + str(int(EconomiaManager.precios["hourglass"]))
 	label_cuadrante_potion.text = "Mystery Mix \n       " + str(int(EconomiaManager.precios["cuadrante_potion"]))
@@ -66,6 +68,8 @@ func _on_hourglass_pressed() -> void:
 func _on_level_up_pressed() -> void:
 	_spawn_bought_item("artifact", "spawn_cuadrante_potion", EconomiaManager.precios["cuadrante_potion"], "cuadrante_potion") 
 	### Para los artefactos, el segundo argumento es una String con el artefacto
+func _on_minion_healer_button_pressed() -> void:
+	_spawn_bought_item("artifact", "spawn_healer_minion", EconomiaManager.precios["mago_healer"], "mago_healer") 
 
 func _spawn_bought_item(itemType: String, data, amount:float, key: String) -> void:
 	if GlobalStats.playerStats["juice"] < amount: 
@@ -86,7 +90,7 @@ func _spawn_bought_item(itemType: String, data, amount:float, key: String) -> vo
 				Event.emit_signal("spent_juice", amount)
 				Event.emit_signal("update_price", key)
 				Event.emit_signal(data)
-
+	Audio.compra()
 
 func _on_magos_tab_button_pressed() -> void:
 	v_scroll_minions.visible = true

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bxqaed1vqrw2n" path="res://Components/ExpBar/exp_bar.tscn" id="6_0tgs8"]
 [ext_resource type="Texture2D" uid="uid://cjw7xkogwy40x" path="res://Main/Player/caldera.png" id="6_y2cg6"]
 [ext_resource type="Script" uid="uid://pq636u6d2swp" path="res://Components/ExpBar/exp_bar.gd" id="7_qn1bl"]
-[ext_resource type="Texture2D" uid="uid://d3vmfvf50jep8" path="res://PlaceHolders/castle.png" id="16_nwnk3"]
+[ext_resource type="Texture2D" uid="uid://dv68ddf1ngqpu" path="res://Main/Player/castillo.png" id="9_y2cg6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mh6t3"]
 atlas = ExtResource("6_y2cg6")
@@ -82,6 +82,38 @@ bg_color = Color(0.89411765, 0.88235295, 0.16470589, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qn1bl"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2snj"]
+atlas = ExtResource("9_y2cg6")
+region = Rect2(0, 0, 408, 398)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqqf7"]
+atlas = ExtResource("9_y2cg6")
+region = Rect2(408, 0, 408, 398)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c140y"]
+atlas = ExtResource("9_y2cg6")
+region = Rect2(816, 0, 408, 398)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75nts"]
+animations = [{
+"frames": [{
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_w2snj")
+}, {
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_bqqf7")
+}, {
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_c140y")
+}, {
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_bqqf7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player" type="Node2D" unique_id=1417812519 groups=["jugador"]]
 script = ExtResource("1_8hbiy")
 
@@ -151,7 +183,7 @@ offset_right = -10.0
 offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 
 [node name="ExpBar" parent="." unique_id=1593121915 instance=ExtResource("6_0tgs8")]
 unique_name_in_owner = true
@@ -180,10 +212,12 @@ position = Vector2(4, 3)
 scale = Vector2(5.554742, 4.6420646)
 shape = SubResource("CircleShape2D_qn1bl")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=435465360]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1312853066]
 texture_filter = 1
 position = Vector2(-450.00003, 441)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("16_nwnk3")
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_75nts")
+autoplay = "default"
+frame_progress = 0.027431617
 
 [editable path="ProgressBar"]

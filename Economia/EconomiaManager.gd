@@ -8,6 +8,7 @@ var precios : Dictionary = {
 	"mago_light" : 10.0,
 	"hourglass" : 1000.0,
 	"cuadrante_potion" : 3000.0,
+	"mago_healer" : 30000.0
 }
 
 var multiplicador : Dictionary = {
@@ -29,6 +30,7 @@ func _ready() -> void:
 	"mago_light" : 10.0,
 	"hourglass" : 1000.0,
 	"cuadrante_potion" : 3000.0,
+	"mago_healer" : 30000.0
 }
 	multiplicador = {
 	"pocion_basica": 1.0,
@@ -37,6 +39,7 @@ func _ready() -> void:
 	"mago_light" : 3.0,
 	"hourglass" : 5.0,
 	"cuadrante_potion" : 2.0,
+	"mago_healer" : 2.0
 }
 
 ## Configurar precios dinámicos (opcional, para subir precios según nivel)

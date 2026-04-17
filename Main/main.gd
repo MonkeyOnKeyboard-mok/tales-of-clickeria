@@ -3,6 +3,7 @@ extends Node
 ## consts
 const ENEMY = preload("uid://bboyklv1jcrnt")
 const MINION = preload("uid://b8hthhw0wyov")
+const MINION_HEALER = preload("uid://c5i6rr3kk4djo")
 const HOURGLASS = preload("uid://cl0r173uf860r")
 const LVL_UP_POTION = preload("uid://c6qim3v6kfpcu")
 ## exports
@@ -26,6 +27,7 @@ func _ready() -> void:
 	Event.enemy_died.connect(spawn_enemy)
 	Event.spawn_enemy.connect(spawn_enemy)
 	Event.spawn_minion.connect(spawn_minion)
+	Event.spawn_healer_minion.connect(spawn_healer_minion)
 	Event.upgrade_chosen.connect(hide_upgrades)
 	Event.spawn_hourglass.connect(spawn_hourglass)
 	Event.spawn_cuadrante_potion.connect(spawn_cuadrante_potion)
@@ -78,6 +80,11 @@ func spawn_minion(type : UnitStats) -> void:
 	minions.add_child(minion_instance)
 	minion_instance.global_position = Vector2(400,400)
 	GlobalStats.minion_counter += 1
+
+func spawn_healer_minion() -> void:
+	var minion_instance = MINION_HEALER.instantiate()
+	add_child(minion_instance)
+	minion_instance.global_position = Vector2(400,400)
 
 func spawn_hourglass() -> void:
 	if current_hourglass:

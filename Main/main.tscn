@@ -18,7 +18,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_rj11h"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 27, 32, 0, 0, 0, 0, 75, 61, 0, 0, 0, 0, 107, 87, 0, 0, 0, 0, 135, 32, 0, 0, 0, 0, 153, -15, 0, 0, 0, 0, 186, -35, 0, 0, 0, 0, 231, 5, 0, 0, 0, 0, 265, 39, 0, 0, 0, 0, 290, 70, 0, 0, 0, 0, 329, 85, 0, 0, 0, 0, 361, 29, 0, 0, 0, 0, 387, -1, 0, 0, 0, 0, 435, -31, 0, 0, 0, 0, 450, 46)
+"points": PackedVector2Array(0, 0, 0, 0, 27, 32, 0, 0, 0, 0, 75, 61, 0, 0, 0, 0, 107, 87, 0, 0, 0, 0, 135, 32, 0, 0, 0, 0, 153, -15, 0, 0, 0, 0, 186, -35, 0, 0, 0, 0, 231, 5, 0, 0, 0, 0, 265, 39, 0, 0, 0, 0, 290, 70, 0, 0, 0, 0, 329, 85, 0, 0, 0, 0, 361, 29, 0, 0, 0, 0, 387, -1, 0, 0, 0, 0, 435, -31, 0, 0, 0, 0, 465, 48)
 }
 point_count = 14
 
@@ -32,7 +32,7 @@ script = ExtResource("1_k3v36")
 [node name="Player" parent="." unique_id=1417812519 instance=ExtResource("2_2w1kt")]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(1018, 157)
+position = Vector2(1023, 149)
 
 [node name="MinionManager" type="Node2D" parent="." unique_id=2037279204]
 unique_name_in_owner = true
@@ -84,7 +84,7 @@ offset_top = 117.0
 offset_right = 1012.0
 offset_bottom = 148.0
 
-[node name="LevelUp" parent="Debugger" index="3" unique_id=614754468]
+[node name="LevelUp" parent="Debugger" index="3" unique_id=893534778]
 offset_left = 610.0
 offset_top = -255.0
 offset_right = 685.0
@@ -96,7 +96,7 @@ offset_top = -3.0
 offset_right = 267.0
 offset_bottom = 28.0
 
-[node name="Pause" parent="Debugger" index="4" unique_id=908958379]
+[node name="Pause" parent="Debugger" index="4" unique_id=1834535897]
 offset_left = 804.0
 offset_top = -225.0
 offset_right = 859.0
@@ -163,19 +163,19 @@ text = "↑ Avanzar a la siguiente zona "
 [node name="ColorRect2" parent="UITipsForPlayer/Avanzaralasiguienteetapa" index="1" unique_id=579134533]
 z_index = -1
 texture_filter = 1
-offset_left = -43.000015
+offset_left = -34.000015
 offset_top = -92.0
-offset_right = -3.0000153
+offset_right = 5.9999847
 offset_bottom = -52.0
 scale = Vector2(1.8424654, 1.8803318)
 mouse_filter = 2
 color = Color(0.12156863, 1, 0.40392157, 1)
 
 [node name="Waves" parent="UITipsForPlayer" index="2" unique_id=926097882]
-offset_left = -381.0
-offset_top = 2.0
-offset_right = -341.0
-offset_bottom = 25.0
+offset_left = -386.0
+offset_top = 46.0
+offset_right = -346.0
+offset_bottom = 69.0
 
 [node name="Cuadrantes" parent="." unique_id=1006395462 instance=ExtResource("12_f3gf5")]
 z_index = -1

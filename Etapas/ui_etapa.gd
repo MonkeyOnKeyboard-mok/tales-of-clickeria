@@ -1,6 +1,6 @@
 extends Control
 
-@onready var lbl_etapa: Label = $HBoxContainer/LabelEtapa
+@onready var lbl_etapa: Label = $HBoxContainer/TextureRect/LabelEtapa
 @onready var btn_siguiente: Button = $HBoxContainer/ButtonSiguienteEtapa
 
 
