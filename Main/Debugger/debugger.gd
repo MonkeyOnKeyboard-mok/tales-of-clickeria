@@ -21,6 +21,7 @@ func _process(_delta: float) -> void:
 	else:
 		level_up.disabled = true
 		play_level_up_sound = false
+	_debug_visibility()
 
 ## public methods
 func _play_level_up_sound() -> void:
@@ -56,3 +57,19 @@ func _on_gain_juice_pressed() -> void:
 func _on_trigger_boss_pressed() -> void:
 	GestorEtapa.etapa_actual = 8
 	GestorEtapa.kill_count = 0
+
+func _debug_visibility()-> void:
+	if GlobalStats.debugging["general"] == false:
+		$EnemySpawner.visible = false
+		$MinionSpawner.visible = false
+		$HourglasSpawner.visible = false
+		$LevelUp/ByPass.visible = false
+		$TriggerBoss.visible = false
+		$GainJuice.visible = false
+	else:
+		$EnemySpawner.visible = true
+		$MinionSpawner.visible = true
+		$HourglasSpawner.visible = true
+		$LevelUp/ByPass.visible = true
+		$TriggerBoss.visible = true
+		$GainJuice.visible = true

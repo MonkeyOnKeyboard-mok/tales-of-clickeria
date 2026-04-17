@@ -2,7 +2,8 @@ extends Node
 
 ## Debuggin Variables
 var debugging : Dictionary = {
-	"level" : false
+	"level" : false,
+	"general" : false,
 }
 
 ## Player Variables
@@ -20,6 +21,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func reset_stats() -> void:
+	minion_counter = 0
 	playerStats  = {
 	"level" : 1,
 	"can_level_up" : false,

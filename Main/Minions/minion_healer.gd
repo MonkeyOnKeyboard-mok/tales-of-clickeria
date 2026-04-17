@@ -30,7 +30,7 @@ var level_up_cost : float = 60.0
 func _ready() -> void:
 	_set_textures()
 	calculate_damage()
-	heal_timer.start()
+	heal()
 
 func _process(_delta: float) -> void:
 	if self.global_position.x > 1152.0/2.0:
@@ -47,6 +47,7 @@ func level_up() -> void:
 	if level_up_cost > GlobalStats.playerStats["juice"]: 
 		print("Not enough jucie to level up")
 		return
+
 	level += 1
 	personal_damage += 6 * multiplier
 	multiplier += 0.1
@@ -82,7 +83,7 @@ func push_back() -> void:
 func heal() -> void:
 	sprite.play("default")
 	Event.emit_signal("player_gained_health", 1.0)
-
+	heal_timer.start()
 
 ## private methods
 
@@ -103,4 +104,3 @@ func _die()-> void:
 
 func _on_heal_timeout() -> void:
 	heal()
-	heal_timer.start()

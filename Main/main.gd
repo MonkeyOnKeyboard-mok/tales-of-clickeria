@@ -31,10 +31,13 @@ func _ready() -> void:
 	Event.upgrade_chosen.connect(hide_upgrades)
 	Event.spawn_hourglass.connect(spawn_hourglass)
 	Event.spawn_cuadrante_potion.connect(spawn_cuadrante_potion)
+	Event.player_died.connect(game_over)
 	Audio.main_loop.play()
 	$ColorRect/AnimationPlayer.play("fade_out")
 	## Reset all stats
 	GlobalStats.reset_stats()
+	GestorEtapa.reset_stats()
+	EconomiaManager.reset_stats()
 	spawn_enemy()
 
 func _process(_delta: float) -> void:
@@ -106,6 +109,11 @@ func spawn_cuadrante_potion() -> void:
 func hide_upgrades() -> void:
 	cards.get_node("Control").hide()
 
+func game_over() -> void:
+	Audio.main_loop_out()
+	$ColorRect/AnimationPlayer.play("fade_in")
+	$ColorRect/fade_timer.start()
+
 ## private methods
 
 func _has_enemy_child() -> bool:
@@ -122,3 +130,7 @@ func _is_enemy_dying_while_paused() -> bool:
 				return true
 	print("Enemy is not dying while paused, return")
 	return false
+
+
+func _on_fade_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://GameOVer/GameOver.tscn")

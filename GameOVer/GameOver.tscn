@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cag0k0qykreep"]
+
+[ext_resource type="Script" uid="uid://yfjiy8v26w5y" path="res://GameOVer/game_over.gd" id="1_aerqy"]
+[ext_resource type="PackedScene" uid="uid://c8l6dajwjn8pd" path="res://Components/Transition/transition.tscn" id="2_gj118"]
+[ext_resource type="Texture2D" uid="uid://d3j43sxacb0rb" path="res://Menu/botones-20260411T165329Z-3-001/botones/jugar.png" id="3_amu80"]
+[ext_resource type="Texture2D" uid="uid://cj6ywmqwo8y26" path="res://Menu/botones-20260411T165329Z-3-001/botones/jugar_select.png" id="4_6jmfj"]
+[ext_resource type="Texture2D" uid="uid://brg5811iro21f" path="res://Menu/botones-20260411T165329Z-3-001/botones/salir.png" id="5_jy7u6"]
+[ext_resource type="Texture2D" uid="uid://1bfhscyo4q5w" path="res://Menu/botones-20260411T165329Z-3-001/botones/salir_select.png" id="6_3mh6k"]
+
+[node name="GameOver" type="Control" unique_id=1194438764]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aerqy")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1930248341]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Jugar" type="TextureButton" parent="." unique_id=955129362]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -233.0
+offset_top = -188.0
+offset_right = -33.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_amu80")
+texture_pressed = ExtResource("4_6jmfj")
+texture_hover = ExtResource("4_6jmfj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Salir" type="TextureButton" parent="." unique_id=1431823243]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 460.0
+offset_right = 851.0
+offset_bottom = 560.0
+texture_normal = ExtResource("5_jy7u6")
+texture_pressed = ExtResource("6_3mh6k")
+texture_hover = ExtResource("6_3mh6k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ColorRect" parent="." unique_id=1856880805 instance=ExtResource("2_gj118")]
+layout_mode = 0
+mouse_filter = 2
+
+[node name="Fade_timer" type="Timer" parent="ColorRect" unique_id=1865113328]
+
+[connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]
+[connection signal="timeout" from="ColorRect/Fade_timer" to="." method="_on_fade_timer_timeout"]

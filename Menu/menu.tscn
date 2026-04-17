@@ -101,7 +101,6 @@ mouse_filter = 2
 texture = ExtResource("4_eafcm")
 
 [node name="fade_transition" parent="." unique_id=1856880805 instance=ExtResource("6_w6voe")]
-visible = false
 layout_mode = 0
 mouse_filter = 2
 

@@ -139,10 +139,11 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="VScrollBar/VBoxContainer/MinionHealerButton" unique_id=135008778]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 12.0
-offset_right = 114.0
-offset_bottom = 35.0
+offset_left = 71.0
+offset_top = 13.0
+offset_right = 111.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 11
 
 [node name="MinionHealerIcon" type="TextureRect" parent="VScrollBar/VBoxContainer/MinionHealerButton" unique_id=442969764]
 layout_mode = 0
@@ -152,6 +153,10 @@ offset_right = 59.0
 offset_bottom = 59.0
 texture = ExtResource("6_sp6pw")
 flip_h = true
+
+[node name="Lock" parent="VScrollBar/VBoxContainer/MinionHealerButton" unique_id=233084860 instance=ExtResource("8_2cinx")]
+layout_mode = 0
+mouse_filter = 0
 
 [node name="VScrollItems" type="ScrollContainer" parent="." unique_id=1984899185]
 visible = false
@@ -219,7 +224,7 @@ texture = ExtResource("6_uq48g")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Lock" parent="VScrollItems/VBoxContainer/HourGlassButton" unique_id=233084860 instance=ExtResource("8_2cinx")]
+[node name="Lock" parent="VScrollItems/VBoxContainer/HourGlassButton" unique_id=1382088566 instance=ExtResource("8_2cinx")]
 visible = false
 layout_mode = 0
 offset_right = 187.0

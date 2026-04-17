@@ -11,7 +11,7 @@ const DPS_BASE: float = 10.0
 const MULTIPLICADOR_POR_NIVEL: float = 3.0 # Cada nivel es 50% más fuerte
 ## ---------------- ##
 var projectiles_amount : int = 2
-var projectile_damage : float = 2.0
+var projectile_damage : float = 25.0
 var current_etapa : Array = ["one", "two", "three", "four", "five", "six", "seven", "boss"]
 var threshold_etapas : Dictionary = {}
 var kill_count : int = 0
@@ -31,6 +31,15 @@ func _ready() -> void:
 		"seven" : 20,
 		"boss" : 1,
 	}
+
+func reset_stats() -> void:
+	projectiles_amount = 2
+	projectile_damage = 2.0
+	kill_count = 0
+	counter = 0
+	attack_speed = 3.0
+	boss_defeatd = false
+	size_increase_cone = Vector2(10,0)
 
 ## Función para obtener las stats de un enemigo según la etapa
 func obtener_stats_enemigo(etapa: int) -> Dictionary:

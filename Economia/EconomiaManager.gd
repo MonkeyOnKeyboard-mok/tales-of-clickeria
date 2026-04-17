@@ -42,6 +42,26 @@ func _ready() -> void:
 	"mago_healer" : 2.0
 }
 
+func reset_stats() ->void:
+	precios  = {
+	"pocion_basica": 25.0,
+	"mago_fuego" : 10.0,
+	"mago_cold" : 10.0,
+	"mago_light" : 10.0,
+	"hourglass" : 1000.0,
+	"cuadrante_potion" : 3000.0,
+	"mago_healer" : 30000.0
+}
+	multiplicador = {
+	"pocion_basica": 1.0,
+	"mago_fuego" : 3.0,
+	"mago_cold" : 3.0,
+	"mago_light" : 3.0,
+	"hourglass" : 5.0,
+	"cuadrante_potion" : 2.0,
+	"mago_healer" : 2.0
+}
+
 ## Configurar precios dinámicos (opcional, para subir precios según nivel)
 func actualizar_precios(key: String) -> void:
 	print("Price to update: ", key)

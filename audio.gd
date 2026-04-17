@@ -30,7 +30,6 @@ var scream_counter : int = 0
 
 func _ready() -> void:
 	screams = [SCREAM_1, SCREAM_2, SCREAM_3, SCREAM_4, SCREAM_5]
-	
 
 func _process(_delta: float) -> void:
 	pass
@@ -42,6 +41,16 @@ func main_menu() -> void:
 func menu_out() -> void:
 	var tween = create_tween()
 	tween.tween_property(menu, "volume_db", -45 , 2.0)
+	tween.tween_callback(func ll(): 
+		menu.stop() 
+		menu.volume_db = -14.133)
+
+func main_loop_out() -> void:
+	var tween = create_tween()
+	tween.tween_property(main_loop, "volume_db", -45 , 2.0)
+	tween.tween_callback(func ll(): 
+		main_loop.stop() 
+		main_loop.volume_db = -14.133)
 
 func cold_attacks() -> void:
 	cold_attack.play()

@@ -56,6 +56,8 @@ func get_health() -> float:
 
 func take_damage(damage : float) -> void:
 	health -= damage
+	if health < 1.0:
+		Event.emit_signal("player_died")
 
 func gain_health(health_gained: float) -> void:
 	health += health_gained
