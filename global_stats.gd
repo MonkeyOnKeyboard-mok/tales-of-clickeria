@@ -3,12 +3,12 @@ extends Node
 ## Debuggin Variables
 var debugging : Dictionary = {
 	"level" : false,
-	"general" : false,
+	"general" : true,
 }
 
 ## Player Variables
 var playerStats : Dictionary = {}
-
+var player_is_dead : bool = false
 ###### Minion Variables ######
 var minionStats : Dictionary = {}
 var minion_counter : int = 0
@@ -21,6 +21,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func reset_stats() -> void:
+	player_is_dead = false
 	minion_counter = 0
 	playerStats  = {
 	"level" : 1,

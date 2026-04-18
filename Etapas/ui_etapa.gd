@@ -15,17 +15,18 @@ func _ready() -> void:
 	GestorEtapa.etapa_cambiada.connect(_actualizar_ui_etapa)
 	btn_siguiente.pressed.connect(_on_btn_siguiente_pressed)
 	
-	_actualizar_ui_etapa(GestorEtapa.etapa_actual)
+	_actualizar_ui_etapa()
 
 func _process(_delta: float) -> void:
 	pass
 
-func _actualizar_ui_etapa(nueva_etapa: int) -> void:
-	lbl_etapa.text = "Etapa %d" % nueva_etapa
+func _actualizar_ui_etapa() -> void:
+	print("Nueva etapa XDXD : ", GestorEtapa.etapa_actual)
+	lbl_etapa.text = "Etapa %d" % GestorEtapa.etapa_actual
 	# Si tenemos un enemigo en escena, lo actualizamos
 	if enemigo_actual and enemigo_actual.has_method("actualizar_stats"):
 		enemigo_actual.counter += 1
-		enemigo_actual.actualizar_stats(nueva_etapa)
+		enemigo_actual.actualizar_stats(GestorEtapa.etapa_actual)
 
 func _on_btn_siguiente_pressed() -> void:
 	if GestorEtapa.kill_count != GestorEtapa.threshold_etapas[GestorEtapa.current_etapa[GestorEtapa.counter]]:

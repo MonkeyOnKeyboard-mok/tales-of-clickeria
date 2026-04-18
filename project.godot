@@ -43,6 +43,10 @@ blender=""
 minion_bounds=""
 hourglass=""
 
+[gui]
+
+theme/default_font_subpixel_positioning=0
+
 [input]
 
 rotate={

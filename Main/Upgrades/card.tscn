@@ -5,6 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://cds53m5tnobh3" path="res://Main/Upgrades/Cards/carta_cold.png" id="3_5eta7"]
 [ext_resource type="Texture2D" uid="uid://c0ukxq511fvmj" path="res://Main/Upgrades/Cards/hover/hover/carta_cold_hover.png" id="4_213ra"]
 
+[sub_resource type="SystemFont" id="SystemFont_5eta7"]
+font_names = PackedStringArray("Yu Gothic")
+subpixel_positioning = 0
+multichannel_signed_distance_field = true
+msdf_size = 47
+
+[sub_resource type="SystemFont" id="SystemFont_213ra"]
+subpixel_positioning = 0
+multichannel_signed_distance_field = true
+
 [node name="Card" type="Control" unique_id=1436057887]
 z_index = 900
 custom_minimum_size = Vector2(350, 0)
@@ -35,12 +45,13 @@ z_index = 6
 texture_filter = 1
 layout_mode = 0
 offset_left = 37.427643
-offset_top = 12.804203
-offset_right = 105.42764
-offset_bottom = 29.804203
+offset_top = 14.77408
+offset_right = 136.42764
+offset_bottom = 28.27408
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_5eta7")
 theme_override_font_sizes/font_size = 12
-text = "sdfsdf"
+text = "Texto de testeo"
 
 [node name="ColorRect" type="ColorRect" parent="Panel" unique_id=568606533]
 z_index = -1
@@ -53,23 +64,23 @@ scale = Vector2(3.376822, 3.157409)
 color = Color(0, 0, 0, 1)
 
 [node name="desc" type="Label" parent="Panel" unique_id=1991507179]
-clip_contents = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 23.146027
-offset_top = 43.337296
-offset_right = 23.146027
-offset_bottom = 43.337296
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 12
-autowrap_mode = 2
+z_index = 6
+texture_filter = 1
+layout_mode = 0
+offset_left = 22.65356
+offset_top = 161.52995
+offset_right = 132.65355
+offset_bottom = 210.52995
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = SubResource("SystemFont_213ra")
+theme_override_font_sizes/font_size = 11
+text = "Si estás leyendo esto es porque me la re mandé jaja perdón "
+autowrap_mode = 3
 
 [node name="select" type="TextureButton" parent="Panel" unique_id=771094596]
 z_index = 5
+texture_filter = 1
 layout_mode = 0
 offset_right = 152.0
 offset_bottom = 221.0

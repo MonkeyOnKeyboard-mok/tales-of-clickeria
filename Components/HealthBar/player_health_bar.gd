@@ -56,8 +56,10 @@ func get_health() -> float:
 
 func take_damage(damage : float) -> void:
 	health -= damage
-	if health < 1.0:
+	if health < 1.0 and !GlobalStats.player_is_dead:
 		Event.emit_signal("player_died")
+		GlobalStats.player_is_dead = true
+		GestorEtapa.etapa_actual = 1
 
 func gain_health(health_gained: float) -> void:
 	health += health_gained

@@ -33,6 +33,7 @@ func _ready() -> void:
 	}
 
 func reset_stats() -> void:
+	etapa_actual = 1
 	projectiles_amount = 2
 	projectile_damage = 2.0
 	kill_count = 0

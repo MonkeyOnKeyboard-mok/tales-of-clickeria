@@ -74,6 +74,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SystemFont" id="SystemFont_y2cg6"]
+font_names = PackedStringArray("Sylfaen")
+multichannel_signed_distance_field = true
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tgs8"]
 bg_color = Color(0.7411765, 0.5764706, 0, 0.5254902)
 
@@ -177,13 +181,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -42.0
-offset_right = -10.0
-offset_bottom = -19.0
+offset_left = -45.0
+offset_top = -31.5
+offset_right = -15.0
+offset_bottom = -21.083328
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_y2cg6")
 theme_override_font_sizes/font_size = 10
+text = "100000"
 
 [node name="ExpBar" parent="." unique_id=1593121915 instance=ExtResource("6_0tgs8")]
 unique_name_in_owner = true
