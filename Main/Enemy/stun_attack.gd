@@ -9,7 +9,7 @@ var cone : Node2D = null
 var _rotating : bool = true
 var time : float = 0.0
 var speed :float = 2.0     # controls how fast it oscillates
-var max_angle : float = 66.0
+var max_angle : float = 55.0
 ## onready vars
 @onready var stun_timer: Timer = $StunTimer
 @onready var start_timer: Timer = $StartTimer

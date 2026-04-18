@@ -2,14 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://dhh5dd388q7uy" path="res://Main/Upgrades/Cards/hover/hover/carta_minions_hover.png" id="1_8f612"]
 [ext_resource type="Texture2D" uid="uid://ubipm4crav3y" path="res://Main/Upgrades/Cards/carta_minions.png" id="1_jttn0"]
+[ext_resource type="Texture2D" uid="uid://cesruo5y3rnkb" path="res://Components/Particles/us.png" id="1_mriyk"]
 [ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="2_8f612"]
 
 [resource]
 script = ExtResource("2_8f612")
-name = "PoliMagical Proficiency"
+name = "Polimagical Chain"
 description = "Increases all of your units damage by 25%"
 icon = ExtResource("1_jttn0")
 hover = ExtResource("1_8f612")
+art = ExtResource("1_mriyk")
 effect = "increased_damage"
 type = "global"
 value = 0.25

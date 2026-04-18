@@ -12,18 +12,22 @@ var idle_anim : String
 
 ## private vars
 var personal_damage : float = 0.0
-var damage : float 
+var damage : float = 2.0
 var level : int = 1
-var multiplier : float = 1.0
+var multiplier : float = -6.0
 var level_up_cost : float = 60.0
-
+var level_text_array : Array = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"]
 ## onready vars
 @onready var area_2d: Area2D = $Area2D
 @onready var shape: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var tooltip: Panel = $Tooltip
 ## Sprites:
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var dragg_and_drop: DragAndDrop = $DraggAndDrop
 @onready var heal_timer: Timer = $heal
+@onready var level_text: Label = $Sprite2D/LevelText
+
+
 # "obj_" for node references;
 ## built-in override methods
 
@@ -31,8 +35,10 @@ func _ready() -> void:
 	_set_textures()
 	calculate_damage()
 	heal()
+	dragg_and_drop.show_tooltip.connect(_show_tooltip)
 
 func _process(_delta: float) -> void:
+	level_text.text = level_text_array[level-1]
 	if self.global_position.x > 1152.0/2.0:
 		sprite.flip_h = false
 	else: sprite.flip_h = true
@@ -40,19 +46,17 @@ func _process(_delta: float) -> void:
 ## public methods
 
 func calculate_damage() -> float:
-	damage = 5.0
 	return damage
 
 func level_up() -> void:
 	if level_up_cost > GlobalStats.playerStats["juice"]: 
 		print("Not enough jucie to level up")
 		return
-
 	level += 1
-	personal_damage += 6 * multiplier
+	damage += 2.0
 	multiplier += 0.1
 	Event.emit_signal("spent_juice", level_up_cost)
-	level_up_cost *= 2.0
+	level_up_cost *= 3.0
 	print("Minion leveled up")
 
 func try_sell() -> void:
@@ -82,10 +86,12 @@ func push_back() -> void:
 
 func heal() -> void:
 	sprite.play("default")
-	Event.emit_signal("player_gained_health", 1.0)
+	Event.emit_signal("player_gained_health", damage)
 	heal_timer.start()
 
 ## private methods
+func _show_tooltip() -> void:
+	tooltip.show()
 
 func _set_textures() -> void:
 	pass ## Use

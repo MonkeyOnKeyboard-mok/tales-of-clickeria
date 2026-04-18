@@ -4,72 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c7yxi1y1f8763" path="res://Main/Player/BarraTexture/over.png" id="1_upe5p"]
 [ext_resource type="Texture2D" uid="uid://bc5iiaqikqmb4" path="res://Main/Player/BarraTexture/base.png" id="2_3siji"]
 [ext_resource type="Texture2D" uid="uid://digwx5vy6erfj" path="res://Main/Player/BarraTexture/mask.png" id="4_dipug"]
-[ext_resource type="Texture2D" uid="uid://cvfps8m7xe48k" path="res://Main/Player/BarraTexture/top_sprite2.png" id="5_j2vm1"]
 [ext_resource type="Texture2D" uid="uid://bk3hrx8igfo0j" path="res://Main/Player/BarraTexture/cover2.png" id="6_et6bd"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0edts"]
-atlas = ExtResource("5_j2vm1")
-region = Rect2(0, 0, 21, 7)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pvvwt"]
-atlas = ExtResource("5_j2vm1")
-region = Rect2(21, 0, 21, 7)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3wxya"]
-atlas = ExtResource("5_j2vm1")
-region = Rect2(42, 0, 21, 7)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_33gug"]
-atlas = ExtResource("5_j2vm1")
-region = Rect2(63, 0, 21, 7)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ia14v"]
-atlas = ExtResource("5_j2vm1")
-region = Rect2(84, 0, 21, 7)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8b22t"]
-atlas = ExtResource("5_j2vm1")
-region = Rect2(105, 0, 21, 7)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d7ows"]
-atlas = ExtResource("5_j2vm1")
-region = Rect2(126, 0, 21, 7)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t5q1g"]
-atlas = ExtResource("5_j2vm1")
-region = Rect2(147, 0, 21, 7)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vrj3f"]
-animations = [{
-"frames": [{
-"duration": 0.61,
-"texture": SubResource("AtlasTexture_0edts")
-}, {
-"duration": 0.61,
-"texture": SubResource("AtlasTexture_pvvwt")
-}, {
-"duration": 0.61,
-"texture": SubResource("AtlasTexture_3wxya")
-}, {
-"duration": 0.61,
-"texture": SubResource("AtlasTexture_33gug")
-}, {
-"duration": 0.61,
-"texture": SubResource("AtlasTexture_ia14v")
-}, {
-"duration": 0.61,
-"texture": SubResource("AtlasTexture_8b22t")
-}, {
-"duration": 0.61,
-"texture": SubResource("AtlasTexture_d7ows")
-}, {
-"duration": 0.61,
-"texture": SubResource("AtlasTexture_t5q1g")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="ProgressBar" type="TextureProgressBar" unique_id=2059067378]
 texture_filter = 1
@@ -89,14 +24,6 @@ z_index = 1
 texture_filter = 1
 position = Vector2(13.667, 99)
 texture = ExtResource("4_dipug")
-
-[node name="Bar_top" type="AnimatedSprite2D" parent="Mask" unique_id=609775867]
-z_index = -2
-texture_filter = 1
-position = Vector2(0.33, -83)
-sprite_frames = SubResource("SpriteFrames_vrj3f")
-autoplay = "default"
-frame_progress = 0.56412685
 
 [node name="Sprite2D2" type="Sprite2D" parent="Mask" unique_id=550595415]
 texture_filter = 1

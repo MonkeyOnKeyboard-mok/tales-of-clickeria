@@ -196,7 +196,6 @@ shape = SubResource("RectangleShape2D_0jx5h")
 
 [node name="ColorRect" parent="." unique_id=1856880805 instance=ExtResource("14_0jx5h")]
 process_mode = 3
-visible = false
 z_index = 7
 scale = Vector2(28.99131, 16.897177)
 mouse_filter = 2

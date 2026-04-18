@@ -5,9 +5,11 @@ var card: Cards
 @onready var icon: TextureButton = $Panel/select
 @onready var name_label = $Panel/name
 @onready var desc_label = $Panel/desc
+@onready var color_rect: TextureRect = $Panel/ColorRect
 
 func set_card(new_card: Cards):
 	card = new_card
+	color_rect.texture = card.art
 	icon.texture_normal = card.icon
 	icon.texture_hover = card.hover
 	name_label.text = card.name

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b6fu8if7xdwyt" path="res://Main/Minions/minion_healer.gd" id="1_juwev"]
 [ext_resource type="PackedScene" uid="uid://m714shrd5pt0" path="res://Components/DragAndDrop/dragg_and_drop.tscn" id="2_p20r0"]
 [ext_resource type="Texture2D" uid="uid://brc65pjwnqfve" path="res://Main/Minions/Assets/mage_kiss.png" id="3_4lbmp"]
+[ext_resource type="PackedScene" uid="uid://qq7n0xgmgeqt" path="res://Components/Tooltip/tooltip.tscn" id="4_ddebw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ddebw"]
 atlas = ExtResource("3_4lbmp")
@@ -61,6 +62,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SystemFont" id="SystemFont_ddebw"]
+font_names = PackedStringArray("Times New Roman")
+subpixel_positioning = 0
+
+[sub_resource type="Gradient" id="Gradient_7mp72"]
+offsets = PackedFloat32Array(0.5435484, 0.68225807, 0.8112903)
+colors = PackedColorArray(0, 0, 0, 0.93333334, 0, 0, 0, 0.38039216, 0.8156863, 0.8156863, 0.8156863, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ddebw"]
+gradient = SubResource("Gradient_7mp72")
+fill = 1
+fill_from = Vector2(0.48504272, 0.5106838)
+fill_to = Vector2(0.21581197, 0.6773504)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_4lbmp"]
 
 [node name="MinionHealer" type="Node2D" unique_id=1692115157 groups=["minion"]]
@@ -69,12 +84,47 @@ script = ExtResource("1_juwev")
 
 [node name="DraggAndDrop" parent="." unique_id=644889432 instance=ExtResource("2_p20r0")]
 
+[node name="Area2D" parent="DraggAndDrop" index="0" unique_id=35310777]
+scale = Vector2(1.7607292, 1.1097757)
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1453537492]
 texture_filter = 1
+position = Vector2(70, -15)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_60va1")
 autoplay = "default"
-frame_progress = 0.3567226
+flip_h = true
+
+[node name="LevelText" type="Label" parent="Sprite2D" unique_id=863608113]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.25
+offset_top = -27.125
+offset_right = -24.25
+offset_bottom = -4.124996
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.9714672, 0.36861667, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_ddebw")
+theme_override_font_sizes/font_size = 20
+text = "I"
+
+[node name="Sombra" type="TextureRect" parent="Sprite2D" unique_id=1822040551]
+z_index = -1
+texture_filter = 1
+offset_left = -49.375004
+offset_top = -13.125
+offset_right = 14.624996
+offset_bottom = 50.875
+scale = Vector2(1.5415716, 0.6853366)
+pivot_offset = Vector2(0, 32)
+texture = SubResource("GradientTexture2D_ddebw")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=174962798 groups=["minion"]]
 collision_layer = 9
@@ -88,4 +138,9 @@ shape = SubResource("CircleShape2D_4lbmp")
 wait_time = 1.5
 one_shot = true
 
+[node name="Tooltip" parent="." unique_id=1936437401 instance=ExtResource("4_ddebw")]
+z_index = 6
+
 [connection signal="timeout" from="heal" to="." method="_on_heal_timeout"]
+
+[editable path="DraggAndDrop"]

@@ -62,7 +62,7 @@ func gain_exp(gained_exp : float) -> void:
 	if total_xp >= _max_exp:
 		overflow += total_xp -_max_exp
 		xp = _max_exp
-		print("xp is greater max exp, overflow is now:" , overflow)
+		#print("xp is greater max exp, overflow is now:" , overflow)
 		GlobalStats.playerStats["can_level_up"] = true
 	else:
 		xp = total_xp
@@ -71,7 +71,7 @@ func gain_exp(gained_exp : float) -> void:
 func _level_up() -> void:
 	GlobalStats.playerStats["level"] += 1
 	xp = overflow
-	print("XP is :", xp, "Overflow is:  ", overflow)
+	#print("XP is :", xp, "Overflow is:  ", overflow)
 	overflow = 0.0
 	max_exp = _get_required_xp(GlobalStats.playerStats["level"])
 	GlobalStats.playerStats["can_level_up"] = false

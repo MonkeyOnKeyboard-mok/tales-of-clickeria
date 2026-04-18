@@ -1,15 +1,17 @@
 [gd_resource type="Resource" script_class="Cards" format=3 uid="uid://c1gogp1t14u6t"]
 
 [ext_resource type="Texture2D" uid="uid://cixdvaliyyiek" path="res://Main/Upgrades/Cards/hover/hover/carta_lighting_hover.png" id="1_2b3k0"]
+[ext_resource type="Texture2D" uid="uid://bhclrjww5s4ll" path="res://Components/Particles/lightning_up.png" id="1_snxs0"]
 [ext_resource type="Texture2D" uid="uid://25wddjyjmkp1" path="res://Main/Upgrades/Cards/carta_lighting.png" id="1_ugfxs"]
 [ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="2_2b3k0"]
 
 [resource]
 script = ExtResource("2_2b3k0")
-name = "Light Proficiency"
+name = "Blitz Thunder"
 description = "Increases your lightning units damage by 50%"
 icon = ExtResource("1_ugfxs")
 hover = ExtResource("1_2b3k0")
+art = ExtResource("1_snxs0")
 effect = "increased_damage"
 type = "light"
 value = 0.5

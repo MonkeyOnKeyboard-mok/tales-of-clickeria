@@ -6,7 +6,7 @@ const PROJECTILE = preload("uid://bcpb5orwfprdb")
 ## exports
 ## public vars
 var current_target : Node2D = null
-var enemy_position: Vector2 = Vector2(576,160)
+var enemy_position: Vector2 = Vector2(590,200)
 var spell_echo : bool = false
 ## private vars
 ## onready vars

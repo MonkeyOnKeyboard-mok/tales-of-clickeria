@@ -15,6 +15,8 @@ var initialized := false
 ## private vars
 ## onready vars
 @onready var label: Label = $Label
+@onready var bar_top: AnimatedSprite2D = $Bar_top
+
 # "obj_" for node references;
 ## built-in override methods
 
@@ -65,9 +67,9 @@ func take_damage(damage : float) -> void:
 func _funcion_ro() -> void:
 	print("_health =", _health)
 	if _health < 92:
-		$Mask/Bar_top.visible = true
+		bar_top.visible = true
 		print("vida es menos que 92")
 	var ratio: float = clamp(self.value / _max_health, 0.0, 1.0)
 	# Interpolate between empty and full
 	var y_pos: float = lerp(bottom_y, top_y, ratio)
-	$Mask/Bar_top.position.y = y_pos
+	bar_top.position.y = y_pos

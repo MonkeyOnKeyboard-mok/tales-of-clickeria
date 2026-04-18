@@ -7,11 +7,13 @@ var button_type = null
 ## private vars
 ## onready vars
 @onready var fade_transition: ColorRect = $fade_transition
+@onready var creditos_png: TextureRect = $creditosPNG
 
 # "obj_" for node references;
 ## built-in override methods
 
 func _ready() -> void:
+	creditos_png.hide()
 	Audio.menu.play()
 	$fade_transition/AnimationPlayer.play("fade_out")
 
@@ -37,13 +39,16 @@ func _on_salir_pressed() -> void:
 func _on_creditos_pressed() -> void:
 	Audio.click()
 	button_type = "credits"
-	fade_transition.show()
-	$fade_transition/Fade_timer.start()
-	$fade_transition/AnimationPlayer.play("fade_in")
+	creditos()
+
 
 func _on_fade_timer_timeout() -> void:
 	match button_type:
 		"start": 
 			get_tree().change_scene_to_file("res://Main/main.tscn")
-		"credits":
-			fade_transition.hide() ## For Now
+
+func creditos() -> void:
+	creditos_png.show()
+
+func _on_salir_creditos_pressed() -> void:
+	creditos_png.hide()

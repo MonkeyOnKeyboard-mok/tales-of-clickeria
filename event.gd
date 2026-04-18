@@ -44,6 +44,8 @@ signal player_gained_health(amount : float)
 signal player_leveled_up
 @warning_ignore("unused_signal")
 signal player_died
+@warning_ignore("unused_signal")
+signal player_won
 
 ## Shop Signals
 @warning_ignore("unused_signal")

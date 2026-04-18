@@ -15,7 +15,7 @@ const LIGHT_INCREASED = preload("uid://5we37crvvjnw")
 const GLOBAL_INCREASED = preload("uid://imo3bpbxq4b")
 
 ## Harvest: 
-const HARVEST_1 = preload("uid://bybnkd7f1e72w")
+const HARVEST_1 = preload("uid://cu6mya4bt8h1c")
 const HARVEST_2 = preload("uid://1osprvxfy7ib")
 
 ## exports

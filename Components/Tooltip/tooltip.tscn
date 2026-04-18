@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qq7n0xgmgeqt"]
 
 [ext_resource type="Script" uid="uid://bu8ao8sex3623" path="res://Components/Tooltip/tooltip.gd" id="1_wt5cp"]
-[ext_resource type="Texture2D" uid="uid://bcx6bf47h663t" path="res://Components/Particles/placeholder_particle.png" id="2_wqjsk"]
+[ext_resource type="Texture2D" uid="uid://dtwom58swsvte" path="res://Main/Shop/Shop/monster_juice.png" id="2_wqjsk"]
 
 [node name="Tooltip" type="Panel" unique_id=1936437401]
 z_index = 1

@@ -29,6 +29,8 @@ func _set_size_custom()-> void:
 		label.custom_minimum_size = Vector2(800,500)
 		parent = get_parent()
 		parent_type = "minion"
+		if parent.multiplier == -6:
+			parent_type = "healer"
 
 func _set_info()-> void:
 	lvl_up_cost.text = "     " + str(int(parent.level_up_cost))
@@ -39,6 +41,9 @@ func _set_info()-> void:
 			label.text = "\b Level: \b" + str(int(parent.level)) + "\n" \
 			+ "\b Element: \b" + parent.stats.type + "\n" \
 			 + "\b Damage: \b" + str(int(parent.calculate_damage()))
+		"healer":
+			label.text = "\b Level: \b" + str(int(parent.level)) + "\n" \
+			 + "\b Healing: \b" + str(int(parent.calculate_damage()))
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:

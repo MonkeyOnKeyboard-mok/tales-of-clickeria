@@ -22,6 +22,6 @@ func _process(_delta: float) -> void:
 ## public methods
 func sell_minion(_target : Node2D) -> void:
 	Audio.minion_death()
-	print("Vendiste al minion")
+	#print("Vendiste al minion")
 
 ## private methods

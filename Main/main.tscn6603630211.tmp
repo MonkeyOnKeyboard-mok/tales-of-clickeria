@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://dekvsha1jjdtp"]
+
+[ext_resource type="Script" uid="uid://lavhxrtdf0q2" path="res://Main/main.gd" id="1_k3v36"]
+[ext_resource type="PackedScene" uid="uid://cabsunufi42v0" path="res://Main/Player/player.tscn" id="2_2w1kt"]
+[ext_resource type="Script" uid="uid://dahdgirdrj3jh" path="res://Main/Minions/minion_container.gd" id="3_eunhr"]
+[ext_resource type="Texture2D" uid="uid://bvvx6rown4im8" path="res://PlaceHolders/wips/wip1.png" id="4_uhr2j"]
+[ext_resource type="PackedScene" uid="uid://bvftv4jsopgv6" path="res://Main/Debugger/debugger.tscn" id="5_k3v36"]
+[ext_resource type="PackedScene" uid="uid://dq8jdyv371hu5" path="res://Main/Shop/shop.tscn" id="5_liyct"]
+[ext_resource type="PackedScene" uid="uid://dbk7uae2ink4b" path="res://Main/Upgrades/upgrades.tscn" id="7_ib3t1"]
+[ext_resource type="PackedScene" uid="uid://cjdyx712j6gev" path="res://Etapas/ui_etapa.tscn" id="8_rj11h"]
+[ext_resource type="Script" uid="uid://bbjieseqih5r2" path="res://Main/particle_manager.gd" id="9_rj11h"]
+[ext_resource type="PackedScene" uid="uid://4i7jvh5b7tth" path="res://Components/Passives/passives.tscn" id="10_o60nc"]
+[ext_resource type="PackedScene" uid="uid://nju62x8f6byo" path="res://Main/Pause/pause.tscn" id="10_qac2q"]
+[ext_resource type="PackedScene" uid="uid://bppi172tfc867" path="res://Components/Hints/ui_tips_for_player.tscn" id="11_o60nc"]
+[ext_resource type="PackedScene" uid="uid://bcwjx3suc0x8p" path="res://Components/Cuadrantes/cuadrantes.tscn" id="12_f3gf5"]
+[ext_resource type="PackedScene" uid="uid://bo5n528ry2djy" path="res://Components/Blender/blender.tscn" id="13_rix8b"]
+[ext_resource type="PackedScene" uid="uid://c8l6dajwjn8pd" path="res://Components/Transition/transition.tscn" id="14_0jx5h"]
+
+[sub_resource type="Curve2D" id="Curve2D_rj11h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 27, 32, 0, 0, 0, 0, 75, 61, 0, 0, 0, 0, 107, 87, 0, 0, 0, 0, 135, 32, 0, 0, 0, 0, 153, -15, 0, 0, 0, 0, 186, -35, 0, 0, 0, 0, 231, 5, 0, 0, 0, 0, 265, 39, 0, 0, 0, 0, 290, 70, 0, 0, 0, 0, 329, 85, 0, 0, 0, 0, 361, 29, 0, 0, 0, 0, 387, -1, 0, 0, 0, 0, 435, -31, 0, 0, 0, 0, 465, 48)
+}
+point_count = 14
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jx5h"]
+size = Vector2(1110, 225)
+
+[node name="Main" type="Node2D" unique_id=1222045523]
+process_mode = 1
+script = ExtResource("1_k3v36")
+
+[node name="Player" parent="." unique_id=1417812519 instance=ExtResource("2_2w1kt")]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(1023, 149)
+
+[node name="MinionManager" type="Node2D" parent="." unique_id=2037279204]
+unique_name_in_owner = true
+process_mode = 3
+z_index = 1
+position = Vector2(400, 400)
+script = ExtResource("3_eunhr")
+
+[node name="UIContainer" type="Control" parent="." unique_id=1660199315]
+process_mode = 3
+z_index = -1
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="UIContainer" unique_id=1529371773]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("4_uhr2j")
+expand_mode = 1
+
+[node name="Debugger" parent="." unique_id=452095247 instance=ExtResource("5_k3v36")]
+offset_left = 123.0
+offset_top = 263.0
+offset_right = 123.0
+offset_bottom = 263.0
+mouse_filter = 2
+
+[node name="EnemySpawner" parent="Debugger" index="0" unique_id=1120795591]
+offset_left = 871.0
+offset_top = 56.0
+offset_right = 987.0
+offset_bottom = 87.0
+
+[node name="MinionSpawner" parent="Debugger" index="1" unique_id=1755754926]
+offset_left = 871.0
+offset_top = 87.0
+offset_right = 989.0
+offset_bottom = 118.0
+
+[node name="HourglasSpawner" parent="Debugger" index="2" unique_id=777940613]
+offset_left = 871.0
+offset_top = 117.0
+offset_right = 1012.0
+offset_bottom = 148.0
+
+[node name="LevelUp" parent="Debugger" index="3" unique_id=893534778]
+offset_left = 610.0
+offset_top = -255.0
+offset_right = 685.0
+offset_bottom = -224.0
+
+[node name="ByPass" parent="Debugger/LevelUp" index="0" unique_id=2050751296]
+offset_left = 85.0
+offset_top = -3.0
+offset_right = 267.0
+offset_bottom = 28.0
+
+[node name="Pause" parent="Debugger" index="4" unique_id=1834535897]
+offset_left = 804.0
+offset_top = -225.0
+offset_right = 859.0
+offset_bottom = -194.0
+
+[node name="GainJuice" parent="Debugger" index="5" unique_id=825615749]
+offset_left = 871.0
+offset_top = 148.0
+offset_right = 956.0
+offset_bottom = 179.0
+
+[node name="TriggerBoss" parent="Debugger" index="6" unique_id=469303370]
+offset_left = 871.0
+offset_top = 179.0
+offset_right = 974.0
+offset_bottom = 210.0
+
+[node name="Shop" parent="." unique_id=623432963 instance=ExtResource("5_liyct")]
+z_index = 4
+offset_left = 7.0
+offset_top = 12.0
+offset_right = 7.0
+offset_bottom = 12.0
+
+[node name="Upgrades" parent="." unique_id=2034106112 instance=ExtResource("7_ib3t1")]
+unique_name_in_owner = true
+
+[node name="UI_Etapa" parent="." unique_id=16359694 instance=ExtResource("8_rj11h")]
+offset_left = 341.0
+offset_top = 9.0
+offset_right = 341.0
+offset_bottom = 9.0
+
+[node name="ParticleManager" type="Node2D" parent="." unique_id=1202987496]
+z_index = 2
+position = Vector2(592, 161)
+script = ExtResource("9_rj11h")
+
+[node name="Path2D" type="Path2D" parent="ParticleManager" unique_id=483570856]
+z_index = 2
+position = Vector2(6, 10)
+curve = SubResource("Curve2D_rj11h")
+
+[node name="Pause" parent="." unique_id=466694632 instance=ExtResource("10_qac2q")]
+process_mode = 3
+layer = -1
+
+[node name="Passives" parent="." unique_id=1403452478 instance=ExtResource("10_o60nc")]
+process_mode = 3
+z_index = 3
+custom_minimum_size = Vector2(0, 0)
+offset_left = 523.0
+offset_top = 272.0
+offset_right = 523.0
+offset_bottom = 272.0
+
+[node name="UITipsForPlayer" parent="." unique_id=844002679 instance=ExtResource("11_o60nc")]
+
+[node name="Avanzaralasiguienteetapa" parent="UITipsForPlayer" index="0" unique_id=1699974415]
+offset_left = -289.0
+offset_right = -63.0
+text = "↑ Avanzar a la siguiente zona "
+
+[node name="ColorRect2" parent="UITipsForPlayer/Avanzaralasiguienteetapa" index="1" unique_id=579134533]
+z_index = -1
+texture_filter = 1
+offset_left = -34.000015
+offset_top = -92.0
+offset_right = 5.9999847
+offset_bottom = -52.0
+scale = Vector2(1.8424654, 1.8803318)
+mouse_filter = 2
+color = Color(0.12156863, 1, 0.40392157, 1)
+
+[node name="Waves" parent="UITipsForPlayer" index="2" unique_id=926097882]
+offset_left = -386.0
+offset_top = 46.0
+offset_right = -346.0
+offset_bottom = 69.0
+
+[node name="Cuadrantes" parent="." unique_id=1006395462 instance=ExtResource("12_f3gf5")]
+z_index = -1
+offset_top = 47.0
+offset_bottom = 87.0
+
+[node name="Blender" parent="." unique_id=324550344 instance=ExtResource("13_rix8b")]
+texture_filter = 1
+position = Vector2(1107, 574)
+
+[node name="MinionBounds" type="Node2D" parent="." unique_id=1039106456 groups=["minion_bounds"]]
+
+[node name="Area2D" type="Area2D" parent="MinionBounds" unique_id=365645852 groups=["minion_bounds"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MinionBounds/Area2D" unique_id=26609341]
+position = Vector2(579, 508.5)
+shape = SubResource("RectangleShape2D_0jx5h")
+
+[node name="ColorRect" parent="." unique_id=1856880805 instance=ExtResource("14_0jx5h")]
+process_mode = 3
+visible = false
+z_index = 7
+scale = Vector2(28.99131, 16.897177)
+mouse_filter = 2
+
+[node name="fade_timer" type="Timer" parent="ColorRect" unique_id=578036143]
+
+[connection signal="timeout" from="ColorRect/fade_timer" to="." method="_on_fade_timer_timeout"]
+
+[editable path="Player"]
+[editable path="Player/ProgressBar"]
+[editable path="Debugger"]
+[editable path="UITipsForPlayer"]

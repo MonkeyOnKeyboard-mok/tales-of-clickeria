@@ -11,14 +11,14 @@ const DPS_BASE: float = 10.0
 const MULTIPLICADOR_POR_NIVEL: float = 3.0 # Cada nivel es 50% más fuerte
 ## ---------------- ##
 var projectiles_amount : int = 2
-var projectile_damage : float = 25.0
+var projectile_damage : float = 2.0
 var current_etapa : Array = ["one", "two", "three", "four", "five", "six", "seven", "boss"]
 var threshold_etapas : Dictionary = {}
 var kill_count : int = 0
 var counter : int = 0
 var attack_speed : float = 3.0
 var boss_defeatd : bool = false
-var size_increase_cone : Vector2 = Vector2(10,0) ##
+var size_increase_cone : Vector2 = Vector2(5,0)
 
 func _ready() -> void:
 	threshold_etapas = {
@@ -40,7 +40,7 @@ func reset_stats() -> void:
 	counter = 0
 	attack_speed = 3.0
 	boss_defeatd = false
-	size_increase_cone = Vector2(10,0)
+	size_increase_cone = Vector2(5,0)
 
 ## Función para obtener las stats de un enemigo según la etapa
 func obtener_stats_enemigo(etapa: int) -> Dictionary:
@@ -70,9 +70,9 @@ func obtener_stats_enemigo(etapa: int) -> Dictionary:
 # Función para avanzar de etapa
 func siguiente_etapa() -> void:
 	etapa_actual += 1
-	projectile_damage *= 1.5
+	projectile_damage *= 1.2
 	#print("Avanzando a Etapa %d" % etapa_actual)
-	etapa_cambiada.emit(etapa_actual)
+	etapa_cambiada.emit()
 	# Aquí podrías guardar el progreso si quisieras
 
 # Función para reiniciar (Game Over o Nueva Partida)

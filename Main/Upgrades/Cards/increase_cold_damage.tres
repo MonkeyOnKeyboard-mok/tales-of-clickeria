@@ -1,15 +1,17 @@
 [gd_resource type="Resource" script_class="Cards" format=3 uid="uid://cnyqlv27xp4dh"]
 
+[ext_resource type="Texture2D" uid="uid://cy1h24tm2ucit" path="res://Components/Particles/cold_up.png" id="1_dal31"]
 [ext_resource type="Texture2D" uid="uid://c0ukxq511fvmj" path="res://Main/Upgrades/Cards/hover/hover/carta_cold_hover.png" id="1_ew364"]
 [ext_resource type="Texture2D" uid="uid://cds53m5tnobh3" path="res://Main/Upgrades/Cards/carta_cold.png" id="1_ieaoi"]
 [ext_resource type="Script" uid="uid://bghgd4mavasf6" path="res://Main/Upgrades/cards.gd" id="2_ew364"]
 
 [resource]
 script = ExtResource("2_ew364")
-name = "Cold Proficiency"
+name = "Light Breeze"
 description = "Increases your cold units damage by 50%"
 icon = ExtResource("1_ieaoi")
 hover = ExtResource("1_ew364")
+art = ExtResource("1_dal31")
 effect = "increased_damage"
 type = "cold"
 value = 0.5

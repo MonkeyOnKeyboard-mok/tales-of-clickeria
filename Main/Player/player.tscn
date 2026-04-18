@@ -76,6 +76,7 @@ animations = [{
 
 [sub_resource type="SystemFont" id="SystemFont_y2cg6"]
 font_names = PackedStringArray("Sylfaen")
+subpixel_positioning = 0
 multichannel_signed_distance_field = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tgs8"]
@@ -85,6 +86,7 @@ bg_color = Color(0.7411765, 0.5764706, 0, 0.5254902)
 bg_color = Color(0.89411765, 0.88235295, 0.16470589, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qn1bl"]
+radius = 12.745861
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w2snj"]
 atlas = ExtResource("9_y2cg6")
@@ -135,18 +137,10 @@ offset_top = -107.0
 offset_right = 138.0
 offset_bottom = 143.0
 mouse_filter = 2
+value = 92.0
 script = ExtResource("3_kwyrm")
-top_y = -103.0
-bottom_y = 85.0
 
-[node name="Bar_top" parent="ProgressBar/Mask" parent_id_path=PackedInt32Array(1483188681, 2067253388) index="0" unique_id=609775867]
-visible = false
-z_index = -1
-position = Vector2(-1, -110.5)
-frame = 2
-frame_progress = 0.58468086
-
-[node name="Sprite2D2" parent="ProgressBar/Mask" parent_id_path=PackedInt32Array(1483188681, 2067253388) index="1" unique_id=550595415]
+[node name="Sprite2D2" parent="ProgressBar/Mask" parent_id_path=PackedInt32Array(1483188681, 2067253388) index="0" unique_id=550595415]
 z_index = -1
 
 [node name="PlayerHealth" type="Label" parent="." unique_id=1597409113]
@@ -211,16 +205,17 @@ offset_right = 128.0
 offset_bottom = 25.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2056130545 groups=["jugador"]]
-position = Vector2(-452, 463)
+position = Vector2(-433.79996, 463)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1819720218]
-position = Vector2(4, 3)
+position = Vector2(4, 7)
 scale = Vector2(5.554742, 4.6420646)
 shape = SubResource("CircleShape2D_qn1bl")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1312853066]
+z_index = 2
 texture_filter = 1
-position = Vector2(-450.00003, 441)
+position = Vector2(-431.8, 441)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_75nts")
 autoplay = "default"

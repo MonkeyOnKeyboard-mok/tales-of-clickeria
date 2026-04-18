@@ -3,9 +3,8 @@ extends Node
 ## Debuggin Variables
 var debugging : Dictionary = {
 	"level" : false,
-	"general" : true,
+	"general" : false,
 }
-
 ## Player Variables
 var playerStats : Dictionary = {}
 var player_is_dead : bool = false

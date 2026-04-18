@@ -55,13 +55,15 @@ func check_if_owned() -> bool:
 
 ## private methods
 func _check_overlaps() -> void:
-	print("checking")
-	print(area_2d.get_overlapping_areas())
+	#print("checking")
+	#print(area_2d.get_overlapping_areas())
 	for body in area_2d.get_overlapping_areas():
 		if body.is_in_group("minion"):
 			body.get_parent().buff(self)
-			print("applying buff to overlapping body")
+			#print("applying buff to overlapping body")
 			target = body.get_parent()
 			target.buff_owner = self
 			break
-		else: print("No body found")
+		else: 
+			pass
+			#print("No body found")

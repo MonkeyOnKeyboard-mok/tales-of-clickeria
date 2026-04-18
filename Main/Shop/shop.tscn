@@ -150,7 +150,8 @@ layout_mode = 0
 offset_left = 9.0
 offset_top = 9.0
 offset_right = 59.0
-offset_bottom = 59.0
+offset_bottom = 69.0
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("6_sp6pw")
 flip_h = true
 

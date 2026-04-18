@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://1bfhscyo4q5w" path="res://Menu/botones-20260411T165329Z-3-001/botones/salir_select.png" id="6_xuj3a"]
 [ext_resource type="Texture2D" uid="uid://un1xrdjn3tle" path="res://Menu/botones-20260411T165329Z-3-001/botones/creditos.png" id="7_xuj3a"]
 [ext_resource type="Texture2D" uid="uid://cngdxkrgyhsuj" path="res://Menu/botones-20260411T165329Z-3-001/botones/creditos_select.png" id="8_0k1h5"]
+[ext_resource type="Texture2D" uid="uid://di6wa2fk5lucw" path="res://Components/Particles/creditos (1).png" id="11_0k1h5"]
 
 [node name="Menu" type="Control" unique_id=1418015951]
 layout_mode = 3
@@ -107,7 +108,25 @@ mouse_filter = 2
 [node name="Fade_timer" type="Timer" parent="fade_transition" unique_id=847641203]
 wait_time = 2.0
 
+[node name="creditosPNG" type="TextureRect" parent="." unique_id=521299020]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("11_0k1h5")
+
+[node name="salirCreditos" type="TextureButton" parent="creditosPNG" unique_id=231092528]
+layout_mode = 0
+offset_left = 819.0
+offset_top = 519.0
+offset_right = 1712.0
+offset_bottom = 852.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_mf1wf")
+texture_pressed = ExtResource("6_xuj3a")
+texture_hover = ExtResource("6_xuj3a")
+
 [connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="timeout" from="fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="pressed" from="creditosPNG/salirCreditos" to="." method="_on_salir_creditos_pressed"]

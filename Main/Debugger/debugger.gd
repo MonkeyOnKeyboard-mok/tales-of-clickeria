@@ -46,6 +46,8 @@ func _on_level_up_pressed() -> void:
 
 func _on_by_pass_pressed() -> void:
 	GlobalStats.debugging["level"] = !GlobalStats.debugging["level"]
+	GlobalStats.playerStats["can_level_up"] = true
+	level_up.disabled = false
 	#print(GlobalStats.debugging["level"])
 
 func _on_pause_pressed() -> void:

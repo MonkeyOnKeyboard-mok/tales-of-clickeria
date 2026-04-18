@@ -11,9 +11,9 @@ const LVL_UP_POTION = preload("uid://c6qim3v6kfpcu")
 var current_enemy : Node2D = null
 var current_hourglass : Node2D = null
 var current_lvl_up_potion : Node2D = null
-
+var scene : String = ""
 ## private vars
-var enemy_position: Vector2 = Vector2(576,160)
+var enemy_position: Vector2 = Vector2(590,200)
 ## onready vars
 @onready var minions: MinionManager = %MinionManager
 @onready var player: Node2D = %Player
@@ -32,6 +32,7 @@ func _ready() -> void:
 	Event.spawn_hourglass.connect(spawn_hourglass)
 	Event.spawn_cuadrante_potion.connect(spawn_cuadrante_potion)
 	Event.player_died.connect(game_over)
+	Event.player_won.connect(game_won)
 	Audio.main_loop.play()
 	$ColorRect/AnimationPlayer.play("fade_out")
 	## Reset all stats
@@ -77,7 +78,7 @@ func spawn_enemy() -> void:
 	minions.set_new_target(current_enemy)
 	
 func spawn_minion(type : UnitStats) -> void:
-	if GlobalStats.minion_counter >= 6: return
+	if GlobalStats.minion_counter >= 10: return
 	var minion_instance = MINION.instantiate()
 	minion_instance.stats = type
 	minions.add_child(minion_instance)
@@ -104,7 +105,7 @@ func spawn_cuadrante_potion() -> void:
 	var lvl_up_potion = LVL_UP_POTION.instantiate()
 	current_lvl_up_potion = lvl_up_potion
 	add_child(lvl_up_potion)
-	lvl_up_potion.global_position = Vector2(250,50)
+	lvl_up_potion.global_position = Vector2(300,50)
 
 func hide_upgrades() -> void:
 	cards.get_node("Control").hide()
@@ -113,6 +114,13 @@ func game_over() -> void:
 	Audio.main_loop_out()
 	$ColorRect/AnimationPlayer.play("fade_in")
 	$ColorRect/fade_timer.start()
+	scene = "lost"
+
+func game_won() -> void:
+	Audio.main_loop_out()
+	$ColorRect/AnimationPlayer.play("fade_in")
+	$ColorRect/fade_timer.start()
+	scene = "won"
 
 ## private methods
 
@@ -131,6 +139,10 @@ func _is_enemy_dying_while_paused() -> bool:
 	print("Enemy is not dying while paused, return")
 	return false
 
-
 func _on_fade_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://GameOVer/GameOver.tscn")
+	GestorEtapa.etapa_actual = 1
+	match scene:
+		"lost":
+			get_tree().change_scene_to_file("res://GameOVer/GameOver.tscn")
+		"won":
+			get_tree().change_scene_to_file("res://Win/win.tscn")

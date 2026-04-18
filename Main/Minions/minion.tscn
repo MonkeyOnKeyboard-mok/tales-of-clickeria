@@ -439,6 +439,16 @@ gradient = SubResource("Gradient_g18li")
 font_names = PackedStringArray("Times New Roman")
 subpixel_positioning = 0
 
+[sub_resource type="Gradient" id="Gradient_7mp72"]
+offsets = PackedFloat32Array(0.5435484, 0.68225807, 0.8112903)
+colors = PackedColorArray(0, 0, 0, 0.93333334, 0, 0, 0, 0.38039216, 0.8156863, 0.8156863, 0.8156863, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o74ij"]
+gradient = SubResource("Gradient_7mp72")
+fill = 1
+fill_from = Vector2(0.48504272, 0.5106838)
+fill_to = Vector2(0.21581197, 0.6773504)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_yy0su"]
 
 [node name="Minion" type="Node2D" unique_id=1804796180 groups=["minion"]]
@@ -494,14 +504,15 @@ mouse_filter = 2
 texture = SubResource("GradientTexture1D_7mp72")
 
 [node name="LevelText" type="Label" parent="Sprite2D" unique_id=5906779]
+texture_filter = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -22.5
+offset_left = -21.5
 offset_top = -27.0
-offset_right = -15.5
+offset_right = -14.5
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -511,6 +522,17 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_yy0su")
 theme_override_font_sizes/font_size = 20
 text = "I"
+
+[node name="Sombra" type="TextureRect" parent="Sprite2D" unique_id=832118484]
+z_index = -1
+texture_filter = 1
+offset_left = -40.0
+offset_top = -12.5
+offset_right = 24.0
+offset_bottom = 51.5
+scale = Vector2(1.285593, 0.5921525)
+pivot_offset = Vector2(0, 32)
+texture = SubResource("GradientTexture2D_o74ij")
 
 [node name="AttackScript" type="Node" parent="." unique_id=948159779]
 unique_name_in_owner = true

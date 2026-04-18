@@ -19,11 +19,15 @@ var offset : Vector2 = Vector2.ZERO
 ##############################
 @onready var lock_hourglass: TextureRect = $VScrollItems/VBoxContainer/HourGlassButton/Lock
 @onready var lock_cuadrante_potion: TextureRect = $VScrollItems/VBoxContainer/CuadrantePotion/Lock
+@onready var lock_healer: TextureRect = $VScrollBar/VBoxContainer/MinionHealerButton/Lock
+
 # "obj_" for node references;
 ## built-in override methods
 
 func _ready() -> void:
-	pass
+	lock_hourglass.visible = true
+	lock_cuadrante_potion.visible = true
+	lock_healer.visible = true
 
 func _process(_delta: float) -> void:
 	label_fire.text = "Fire Wizard \n       " + str(int(EconomiaManager.precios["mago_fuego"]))
@@ -32,8 +36,13 @@ func _process(_delta: float) -> void:
 	label_healer.text = "Healer Wizard \n       " + str(int(EconomiaManager.precios["mago_healer"]))
 	label_basic_potion.text = "Basic Potion \n       " + str(int(EconomiaManager.precios["pocion_basica"]))
 	label_hourglass.text = "Hourglass \n       " + str(int(EconomiaManager.precios["hourglass"]))
-	label_cuadrante_potion.text = "Mystery Mix \n       " + str(int(EconomiaManager.precios["cuadrante_potion"]))
-
+	label_cuadrante_potion.text = "Area Enhancer \n       " + str(int(EconomiaManager.precios["cuadrante_potion"]))
+	if GlobalStats.playerStats["juice"] >= 25000:
+		lock_healer.visible = false
+	if GlobalStats.playerStats["juice"] >= 20000:
+		lock_cuadrante_potion.visible = false
+	if GlobalStats.playerStats["juice"] >= 20000:
+		lock_hourglass.visible = false
 ## public methods
 
 ## private methods
@@ -78,7 +87,7 @@ func _spawn_bought_item(itemType: String, data, amount:float, key: String) -> vo
 	else: 
 		match itemType:
 			"minion":
-				if GlobalStats.minion_counter >= 6: return
+				if GlobalStats.minion_counter >= 10: return
 				Event.emit_signal("spent_juice", amount)
 				Event.emit_signal("spawn_minion",data)
 				Event.emit_signal("update_price", key)

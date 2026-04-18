@@ -5,6 +5,7 @@ class_name Cards
 @export var description: String
 @export var icon: Texture2D
 @export var hover: Texture2D
+@export var art: Texture2D
 @export var rarity: int = 1
 @export var effect: String  
 @export var type: String  

@@ -2,40 +2,40 @@
 
 [ext_resource type="Script" uid="uid://defngvidp2kdu" path="res://Main/Enemy/enemy.gd" id="1_svo2v"]
 [ext_resource type="PackedScene" uid="uid://tnb4os80mwa4" path="res://Main/Enemy/enemy_health_bar.tscn" id="2_5an88"]
-[ext_resource type="Texture2D" uid="uid://bcmyx688xem2" path="res://Main/Enemy/mono_anim2.png" id="3_1ftki"]
-[ext_resource type="Texture2D" uid="uid://caqyev4jjq1ok" path="res://Main/Enemy/anubis.png" id="3_5an88"]
-[ext_resource type="Texture2D" uid="uid://bdfm57iqt861e" path="res://Main/Enemy/boss_draft.png" id="4_yynbb"]
+[ext_resource type="Texture2D" uid="uid://cg26qxb0gi8tg" path="res://Components/Particles/anubis_outline.png" id="3_5an88"]
+[ext_resource type="Texture2D" uid="uid://xpx50spq8q60" path="res://Components/Particles/boss_outline.png" id="4_5an88"]
+[ext_resource type="Texture2D" uid="uid://cavteiu2yfxj3" path="res://Components/Particles/mono_outline.png" id="5_yynbb"]
 [ext_resource type="Script" uid="uid://1vextof777o0" path="res://Main/Enemy/stun_attack.gd" id="6_4bh3l"]
-[ext_resource type="Texture2D" uid="uid://b3rjv8uqsa4xt" path="res://Main/Enemy/lobo.png" id="6_5gxkj"]
+[ext_resource type="Texture2D" uid="uid://cq6n1m248ink5" path="res://Components/Particles/lobo_outline.png" id="6_5an88"]
 [ext_resource type="Script" uid="uid://ctel2h81i66u5" path="res://Main/Enemy/lvl_component.gd" id="6_ulnfe"]
 [ext_resource type="Script" uid="uid://yikabhio3ltp" path="res://Main/Enemy/projectile_attack.gd" id="7_4bh3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jskd6"]
 size = Vector2(136, 136)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ulnfe"]
-atlas = ExtResource("3_1ftki")
-region = Rect2(0, 0, 108, 116)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4bh3l"]
-atlas = ExtResource("3_1ftki")
-region = Rect2(108, 0, 108, 116)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e3jus"]
-atlas = ExtResource("3_1ftki")
-region = Rect2(216, 0, 108, 116)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5an88"]
-atlas = ExtResource("3_1ftki")
-region = Rect2(324, 0, 108, 116)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yynbb"]
-atlas = ExtResource("3_1ftki")
-region = Rect2(432, 0, 108, 116)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gxkj"]
-atlas = ExtResource("3_1ftki")
-region = Rect2(540, 0, 108, 116)
+atlas = ExtResource("5_yynbb")
+region = Rect2(0, 0, 110, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bo1o"]
+atlas = ExtResource("5_yynbb")
+region = Rect2(110, 0, 110, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mb6jb"]
+atlas = ExtResource("5_yynbb")
+region = Rect2(220, 0, 110, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kqtw"]
+atlas = ExtResource("5_yynbb")
+region = Rect2(330, 0, 110, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqic2"]
+atlas = ExtResource("5_yynbb")
+region = Rect2(440, 0, 110, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx4bq"]
+atlas = ExtResource("5_yynbb")
+region = Rect2(550, 0, 110, 118)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nbxsl"]
 animations = [{
@@ -49,7 +49,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_yynbb")
+"texture": ExtResource("4_5an88")
 }],
 "loop": true,
 "name": &"boss",
@@ -57,22 +57,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ulnfe")
+"texture": SubResource("AtlasTexture_5gxkj")
 }, {
 "duration": 0.8,
-"texture": SubResource("AtlasTexture_4bh3l")
+"texture": SubResource("AtlasTexture_4bo1o")
 }, {
 "duration": 1.2,
-"texture": SubResource("AtlasTexture_e3jus")
+"texture": SubResource("AtlasTexture_mb6jb")
 }, {
 "duration": 1.2,
-"texture": SubResource("AtlasTexture_5an88")
+"texture": SubResource("AtlasTexture_3kqtw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yynbb")
+"texture": SubResource("AtlasTexture_iqic2")
 }, {
 "duration": 0.9,
-"texture": SubResource("AtlasTexture_5gxkj")
+"texture": SubResource("AtlasTexture_hx4bq")
 }],
 "loop": true,
 "name": &"monkey",
@@ -80,7 +80,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_5gxkj")
+"texture": ExtResource("6_5an88")
 }],
 "loop": true,
 "name": &"wolf",
@@ -89,7 +89,7 @@ animations = [{
 
 [sub_resource type="Curve2D" id="Curve2D_4bh3l"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -72, 9, 0, 0, 0, 0, -299, 158, 0, 0, 0, 0, -5, 518)
+"points": PackedVector2Array(0, 0, 0, 0, -72, 9, 0, 0, 0, 0, -299, 158, 0, 0, 0, 0, 9, 521)
 }
 point_count = 3
 
@@ -149,7 +149,7 @@ shape = SubResource("RectangleShape2D_jskd6")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=2032228099]
 sprite_frames = SubResource("SpriteFrames_nbxsl")
-animation = &"boss"
+animation = &"wolf"
 autoplay = "monkey"
 
 [node name="LvLComponent" type="Node" parent="." unique_id=1034687758]
