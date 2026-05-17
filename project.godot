@@ -25,8 +25,9 @@ Audio="*uid://cjr8xrxroqh2d"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
-window/stretch/scale_mode="integer"
+window/stretch/aspect="expand"
 mouse_cursor/custom_image="uid://c3v87edd3rwul"
 
 [global_group]
